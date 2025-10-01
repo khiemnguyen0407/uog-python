@@ -1,1 +1,3 @@
 __pycache__/\n*.pyc\n.env
+fem/
+assignments/
