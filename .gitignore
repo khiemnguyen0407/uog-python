@@ -1,3 +1,8 @@
 __pycache__/\n*.pyc\n.env
 fem/
 assignments/
+*.qmd
+*.pdf
+*.html
+*.docx
+*.tex

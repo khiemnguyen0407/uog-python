@@ -11,6 +11,8 @@ jupyter: python3
 For a demonstration of a line plot, see @fig-line
 
 ```{python}
+#| label: fig-line
+#| fig-cap: "A line plot on xy axes"
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -18,3 +20,9 @@ x = np.linspace(0, 1)
 f = np.sin(2 * np.pi * x)
 plt.plot(x, f)
 ```
+| Default | Left | Right | Center |
+|---------|:-----|------:|:------:|
+| 12      | 12   |    12 |   12   |
+| 123     | 123  |   123 |  123   |
+| 1       | 1    |     1 |   1    |
+: Demonstration of pipe table syntax
