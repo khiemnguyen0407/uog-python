@@ -1,8 +1,13 @@
 __pycache__/\n*.pyc\n.env
 fem/
 assignments/
+presentation-demo_files/
+presentation_files/
+demo_files/
 *.qmd
 *.pdf
-*.html
 *.docx
 *.tex
+demo.*
+presentation-demo.*
+./'Python Code -- Functions.ipynb'
