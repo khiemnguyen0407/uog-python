@@ -251,7 +251,7 @@
 </section>
 <section id="function-doc-string" class="slide level2">
 <h2>Function: Doc string</h2>
-<div id="2bbf8893" class="cell" data-execution_count="1">
+<div id="8faf8400" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="kw">def</span> call_me_maybe(number):</span>
 <span id="cb2-2"><a href=""></a>    <span class="co">"""</span></span>
 <span id="cb2-3"><a href=""></a><span class="co">    This function is inspired by a famous song.</span></span>
@@ -260,14 +260,14 @@
 <span id="cb2-6"><a href=""></a>    <span class="bu">print</span>(<span class="ss">f"Call me via number </span><span class="sc">{</span>number<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>⭕ Use <strong>question mark</strong> to request function’s doc string – This slide does not show the output.</p>
-<div id="314c121b" class="cell" data-execution_count="2">
+<div id="ec93af60" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href=""></a>call_me_maybe?</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>⭕ Illustration by live coding at this point.</p>
 </section>
 <section id="function-example" class="slide level2">
 <h2>Function: Example</h2>
-<div id="c8a4c27d" class="cell" data-execution_count="3">
+<div id="cdd93661" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="kw">def</span> cat_age_to_human_age(cat_age):</span>
 <span id="cb4-2"><a href=""></a>    <span class="co">"""Translate cat age to human age."""</span></span>
 <span id="cb4-3"><a href=""></a>    multiplier <span class="op">=</span> <span class="dv">4</span></span>
@@ -278,7 +278,7 @@
 <span id="cb4-8"><a href=""></a>    <span class="cf">return</span> cat_age <span class="op">*</span> multiplier <span class="op">+</span> <span class="dv">16</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>After the function is defined, we can call them by:</p>
-<div id="8b513a22" class="cell" data-execution_count="4">
+<div id="d082b6a1" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href=""></a>my_age <span class="op">=</span> <span class="dv">46</span></span>
 <span id="cb5-2"><a href=""></a>cat_age_to_human_age(<span class="dv">12</span>)  <span class="co"># pointless, ignores answer</span></span>
 <span id="cb5-3"><a href=""></a>felix_age <span class="op">=</span> cat_age_to_human_age(<span class="dv">4</span>)     <span class="co"># felix_age = 32</span></span>
@@ -293,7 +293,7 @@
 <ul>
 <li>As mentioned, every variable in Python is an object. A function is also an object.</li>
 </ul>
-<div id="ab225166" class="cell" data-execution_count="5">
+<div id="2554606c" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href=""></a><span class="kw">def</span> greet():</span>
 <span id="cb7-2"><a href=""></a>    <span class="co">"""Simple function to greet people."""</span></span>
 <span id="cb7-3"><a href=""></a>    <span class="bu">print</span>(<span class="st">"Hello there!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -301,7 +301,7 @@
 <ul>
 <li>We call a function by using parentheses after the function name.</li>
 </ul>
-<div id="4e022a3a" class="cell" data-execution_count="6">
+<div id="805f5cd8" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href=""></a><span class="co"># Call the function by:</span></span>
 <span id="cb8-2"><a href=""></a>greet()</span>
 <span id="cb8-3"><a href=""></a></span>
@@ -310,7 +310,7 @@
 <div class="cell-output cell-output-stdout">
 <pre><code>Hello there!</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="6">
+<div class="cell-output cell-output-display" data-execution_count="30">
 <pre><code>&lt;function __main__.greet()&gt;</code></pre>
 </div>
 </div>
@@ -331,7 +331,7 @@
 <section id="function-multiple-input-arguments" class="slide level2">
 <h2>Function: Multiple input arguments</h2>
 <p>In function definition many input arguments can be declared – recall the syntax!</p>
-<div id="9336a093" class="cell" data-execution_count="7">
+<div id="8d0faea1" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href=""></a><span class="kw">def</span> print_max(a, b):</span>
 <span id="cb11-2"><a href=""></a>    <span class="co">"""Print the maximum value between a and b."""</span></span>
 <span id="cb11-3"><a href=""></a>    <span class="cf">if</span> a <span class="op">&gt;</span> b:</span>
@@ -344,7 +344,7 @@
 <span id="cb11-10"><a href=""></a><span class="bu">max</span>(<span class="dv">3</span>, <span class="dv">4</span>)           <span class="co"># accept literals, print out 4</span></span>
 <span id="cb11-11"><a href=""></a>fred, anne <span class="op">=</span> <span class="dv">7</span>, <span class="dv">6</span>   <span class="co"># multiple assignments</span></span>
 <span id="cb11-12"><a href=""></a><span class="bu">max</span>(fred, anne)     <span class="co"># accept variables too, print out 7</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="31">
 <pre><code>7</code></pre>
 </div>
 </div>
@@ -364,7 +364,7 @@
 <ul>
 <li>Solve a linear equation <span class="math inline">\(a x + b = 0\)</span></li>
 </ul>
-<div id="bda40b2f" class="cell" data-execution_count="8">
+<div id="d41d5296" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href=""></a><span class="kw">def</span> solve_linear_equation(a, b):</span>
 <span id="cb13-2"><a href=""></a>    <span class="co">"""Solve equation a x + b = 0 for x"""</span></span>
 <span id="cb13-3"><a href=""></a>    <span class="cf">if</span> a <span class="op">!=</span> <span class="dv">0</span>:</span>
@@ -386,7 +386,7 @@
 <ul>
 <li>Use of the function <code>solver_linear_equation()</code></li>
 </ul>
-<div id="800735ba" class="cell" data-execution_count="9">
+<div id="09d532a5" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href=""></a><span class="bu">print</span>(<span class="st">"Solve equation 2 x + 1 = 0:"</span>, solve_linear_equation(<span class="dv">2</span>, <span class="dv">1</span>))</span>
 <span id="cb14-2"><a href=""></a><span class="bu">print</span>(<span class="st">"Solve equation   x + 2 = 0:"</span>, solve_linear_equation(<span class="dv">1</span>, <span class="dv">2</span>))</span>
 <span id="cb14-3"><a href=""></a><span class="bu">print</span>(<span class="st">"Solve equation   x     = 0:"</span>, solve_linear_equation(<span class="dv">1</span>, <span class="dv">0</span>)) </span>
@@ -412,7 +412,7 @@ Solve equation 0 x + 1 = 0: None</code></pre>
 </section>
 <section id="keyword-arguments" class="slide level2">
 <h2>Keyword arguments</h2>
-<div id="6c524896" class="cell" data-execution_count="10">
+<div id="663061f8" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href=""></a><span class="kw">def</span> solve_linear_equation(a, b):</span>
 <span id="cb16-2"><a href=""></a>    <span class="co">"""Solve equation a x + b = 0 for x"""</span></span>
 <span id="cb16-3"><a href=""></a>    <span class="cf">if</span> a <span class="op">!=</span> <span class="dv">0</span>:</span>
@@ -430,7 +430,7 @@ Solve equation 0 x + 1 = 0: None</code></pre>
 <center>
 <code>kwarg=value</code>
 </center>
-<div id="abf81a03" class="cell" data-execution_count="11">
+<div id="0db04d6d" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href=""></a><span class="co"># These two lines of code are equivalent</span></span>
 <span id="cb17-2"><a href=""></a><span class="co"># as we have assigned a and b to the same set of values.</span></span>
 <span id="cb17-3"><a href=""></a><span class="bu">print</span>(<span class="st">"Solve equation 2 x + 1 = 0:"</span>, solve_linear_equation(b<span class="op">=</span><span class="dv">1</span>, a<span class="op">=</span><span class="dv">2</span>)) </span>
@@ -442,8 +442,47 @@ Solve equation 2 x + 1 = 0: -0.5</code></pre>
 </div>
 </div>
 </section>
-<section id="keyword-arguments-1" class="slide level2">
-<h2>Keyword arguments</h2>
+<section id="keyword-arguments-further-explanation" class="slide level2">
+<h2>Keyword arguments: further explanation</h2>
+<ul>
+<li>We may normally see function calls that look like this
+<center>
+<code>function(a=a, b=b, c=c, ...)</code>
+</center>
+In this function call, the variables on the right-hand side of assignment sign “=” provide the values to the input arguments with the names as indicated on the left-hand side.</li>
+</ul>
+<div id="3635a9e5" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href=""></a>v1, v2 <span class="op">=</span> <span class="dv">2</span>, <span class="dv">1</span></span>
+<span id="cb19-2"><a href=""></a><span class="bu">print</span>(<span class="st">"Solve equation 2 x + 1 = 0:"</span>, solve_linear_equation(a<span class="op">=</span>v1, b<span class="op">=</span>v2))</span>
+<span id="cb19-3"><a href=""></a></span>
+<span id="cb19-4"><a href=""></a>a, b <span class="op">=</span> <span class="dv">2</span>, <span class="dv">1</span></span>
+<span id="cb19-5"><a href=""></a><span class="co"># In the writing "a=a" and "b=b", the keyword arguments </span></span>
+<span id="cb19-6"><a href=""></a><span class="co"># "a=" and "b=" mean that a and b expect to receive values </span></span>
+<span id="cb19-7"><a href=""></a><span class="co"># while the actual values are given on the right-hand sides </span></span>
+<span id="cb19-8"><a href=""></a><span class="co"># of a and b.</span></span>
+<span id="cb19-9"><a href=""></a><span class="bu">print</span>(<span class="st">"Solve equation 2 x + 1 = 0:"</span>, solve_linear_equation(b<span class="op">=</span>b, a<span class="op">=</span>a))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Solve equation 2 x + 1 = 0: -0.5
+Solve equation 2 x + 1 = 0: -0.5</code></pre>
+</div>
+</div>
+<div class="fragment">
+<ul>
+<li>Question: Can you name any scenario that may need a lot of input arguments and thus the use of keyword arguments will benefit such cases?</li>
+</ul>
+</div>
+</section>
+<section id="brain-storm" class="slide level2">
+<h2>Brain storm</h2>
+<p>So let us examine a Newton-Raphson method to solve algebraic equation <span class="math inline">\(f(x) = 0\)</span>.</p>
+<div class="fragment">
+<ul>
+<li>Question: What happens if don’t need to supply values to all the input arguments?</li>
+</ul>
+</div>
+<div class="fragment">
+<pre><code>Answer: Some input arguments may take **default** values if no values are supplied.</code></pre>
+</div>
 </section>
 <section id="positional-arguments" class="slide level2">
 <h2>Positional arguments</h2>

@@ -200,11 +200,36 @@ print("Solve equation 2 x + 1 = 0:", solve_linear_equation(2, 1))
 :::
 
 ## Keyword arguments: further explanation
+
+- We may normally see function calls that look like this
+<center> `function(a=a, b=b, c=c, ...)` </center>
+In this function call, the variables on the right-hand side of assignment sign "=" provide the values to the input arguments with the names as indicated on the left-hand side.
+
 ```{python}
 v1, v2 = 2, 1
-print("Solve equation 2 x + 1 = 0:", solve_linear_equation(a=c1, b=c2))
+print("Solve equation 2 x + 1 = 0:", solve_linear_equation(a=v1, b=v2))
+
+a, b = 2, 1
+# In the writing "a=a" and "b=b", the keyword arguments 
+# "a=" and "b=" mean that a and b expect to receive values 
+# while the actual values are given on the right-hand sides 
+# of a and b.
+print("Solve equation 2 x + 1 = 0:", solve_linear_equation(b=b, a=a))
 ```
 
+::: {.fragment}
+- Question: Can you name any scenario that may need a lot of input arguments and thus the use of keyword arguments will benefit such cases?
+:::
+
+## Brain storm
+So let us examine a Newton-Raphson method to solve algebraic equation $f(x) = 0$.
+
+::: {.fragment}
+- Question: What happens if don't need to supply values to all the input arguments?
+:::
+::: {.fragment}
+    Answer: Some input arguments may take **default** values if no values are supplied.
+:::
 
 ## Positional arguments
 
