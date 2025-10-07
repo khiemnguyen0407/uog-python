@@ -4,7 +4,7 @@ assignments/
 presentation-demo_files/
 presentation_files/
 demo_files/
-*.qmd
+demo/
 *.pdf
 *.docx
 *.tex
