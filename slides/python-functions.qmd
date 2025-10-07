@@ -1,0 +1,211 @@
+---
+title: "Functions in Python"
+author: |
+    Khiem Nguyen 
+    <br>Lecturer in Multiscale Materials
+    <br><khiem.nguyen@glasgow.ac.uk>
+author-meta: "Lecturer in Multiscale Materials"
+format: 
+    revealjs:
+        theme: default
+        title-slide-style: pandoc
+        echo: true
+        code-overflow: wrap
+        code-line-numbers: true
+        css: style.css
+---
+
+# Intended Learning Outcomes
+
+## Intended Learning Outcomes
+- Why are the functions used?
+- Basic syntax of writing functions in Python
+    - doc strings
+    - positional arguments
+    - default arguments
+    - keyword arguments
+- Arbitrary number of input arguments
+
+## Why are functions
+- We have used functions all the time: `print()`, `max()`, `len()`, etc.
+- We need to write our own.
+
+<center><font color="red"> **Why functions** </font> </center>
+- Make a program more readable, understandble
+- Break down a big problem into many smaller, solvable tasks/problems. These smaller tasks are assembled to solve the original *big* problem.
+- Be recycle and reusable
+
+<center><font color="gold"> **Golden Rule** </font> </center>
+
+<center> <span style="font-size: 2.0em;"> 
+**Do not reinvent the wheel!** 
+</span> </center>
+
+## Function: Syntax
+```Python
+def function_name(argument1, argument2, argument3, ...):
+    """
+    Text description: Explain what the function does and the meanings
+    of the input arguments and possibly outputs of the function.
+    """
+    <statement>
+    <statement>
+    return expression   # optional --> function returns values
+```
+⭕ Always write text description for function unless it is very short and self-explanatory.
+
+## Function: Doc string
+```{python}
+def call_me_maybe(number):
+    """
+    This function is inspired by a famous song.
+    This second line explains absolutely nothing.
+    """
+    print(f"Call me via number {number}")
+```
+⭕ Use **question mark** to request function's doc string -- This slide does not show the output.
+```{python}
+call_me_maybe?
+```
+⭕ Illustration by live coding at this point.
+
+## Function: Example
+```{python}
+def cat_age_to_human_age(cat_age):
+    """Translate cat age to human age."""
+    multiplier = 4
+    if (cat_age == 1): 
+        return 15
+    if (cat_age == 2): 
+        return 24
+    return cat_age * multiplier + 16
+```
+
+After the function is defined, we can call them by:
+```{python}
+my_age = 46
+cat_age_to_human_age(12)  # pointless, ignores answer
+felix_age = cat_age_to_human_age(4)     # felix_age = 32
+print(cat_age_to_human_age(12))         # very old
+```
+
+## Call a function
+- As mentioned, every variable in Python is an object. A function is also an object.
+```{python}
+def greet():
+    """Simple function to greet people."""
+    print("Hello there!")
+```
+
+- We call a function by using parentheses after the function name.
+
+```{python}
+# Call the function by:
+greet()
+
+# This is a function object - remember: every variable is an object
+greet
+```
+::: {.callout-note}
+**Use the parenthesis when calling a function**, not just the name of the function.
+:::
+
+## Function: Multiple input arguments
+
+In function definition many input arguments can be declared -- recall the syntax!
+
+```{python}
+def print_max(a, b):
+    """Print the maximum value between a and b."""
+    if a > b:
+        print(a)
+    else:
+        print(b)
+
+# After function definition, we can call it. 
+# he function exists but has not been executed to this point.
+max(3, 4)           # accept literals, print out 4
+fred, anne = 7, 6   # multiple assignments
+max(fred, anne)     # accept variables too, print out 7
+```
+
+
+
+::: {.fragment}
+- In this example, the order of the variables `a` and `b` is not important as they carry the same meaning.
+:::
+::: {.fragment}
+- Question: Can you give me an example in which the positions of the input arguments are important?
+:::
+
+
+## Function: **positional* arguments
+- Solve a linear equation $a x + b = 0$
+```{python}
+def solve_linear_equation(a, b):
+    """Solve equation a x + b = 0 for x"""
+    if a != 0:
+        return -b/a
+    else:
+        if b == 0:
+            print("Equation has infinite number of solutions.")
+        else:
+            print("Equation does not have solution.")
+```
+
+::: {.fragment}
+- Question: What happens and what is the return of this function when $a = b = 0$?
+::: 
+
+## Function: **positional** arguments
+- Use of the function `solver_linear_equation()`
+```{python}
+print("Solve equation 2 x + 1 = 0:", solve_linear_equation(2, 1))
+print("Solve equation   x + 2 = 0:", solve_linear_equation(1, 2))
+print("Solve equation   x     = 0:", solve_linear_equation(1, 0)) 
+print("Solve equation 0 x + 1 = 0:", solve_linear_equation(0, 1))  
+```
+
+::: {.fragment}
+- Question: How can we remember the meanings of all the input arguments if the function needs a long list of arguments?
+:::
+
+::: {.fragment}
+- Answer: Use of **keyword** argument. We can specify which argument takes which value.
+:::
+
+## Keyword arguments
+```{python}
+def solve_linear_equation(a, b):
+    """Solve equation a x + b = 0 for x"""
+    if a != 0:
+        return -b/a
+    else:
+        if b == 0:
+            print("Equation has infinite number of solutions.")
+        else:
+            print("Equation does not have solution.")
+```
+
+::: {.fragment}
+- Functions can also be called using keyword arguments of the form
+
+<center> `kwarg=value` </center> 
+```{python}
+# These two lines of code are equivalent
+# as we have assigned a and b to the same set of values.
+print("Solve equation 2 x + 1 = 0:", solve_linear_equation(b=1, a=2)) 
+print("Solve equation 2 x + 1 = 0:", solve_linear_equation(2, 1))
+```
+:::
+
+## Keyword arguments: further explanation
+```{python}
+v1, v2 = 2, 1
+print("Solve equation 2 x + 1 = 0:", solve_linear_equation(a=c1, b=c2))
+```
+
+
+## Positional arguments
+
+

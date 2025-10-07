@@ -1,0 +1,344 @@
+---
+title: "Object-oriented Programming in Python"
+author: |
+    Khiem Nguyen 
+    <br>Lecturer in Multiscale Materials
+    <br><khiem.nguyen@glasgow.ac.uk>
+author-meta: "Lecturer in Multiscale Materials"
+format: 
+    revealjs:
+        theme: default
+        title-slide-style: pandoc
+        echo: true
+        code-overflow: wrap
+        code-line-numbers: true
+        css: style.css
+---
+
+# Object-oriented programing
+
+## Class definition syntax
+```python
+class ClassName:
+    <statement-1>
+    .
+    .
+    .
+    <statement-N>
+```
+> A **Class** is defined by the keyword `class` followed by the name of the class.
+>
+> Note the colon "**:**" and "**indentation**"
+
+- The statements can define variables
+- The statements can define functions
+- The statements can implement all sorts of stuff you need to.
+
+## Concept: A gentle introduction
+- Template for a **Circle**
+```{python}
+class Circle:       # class name
+
+    def __init__(self, center_outside, radius_outside): # constructor
+        self.center = center_outside        # data
+        self.radius = radius_outside        # data
+
+    def draw(self):                         # method
+        print("Drawing is done")    # plotting is done here.
+
+    def show_data(self):                    # method
+        print(f"Circle: center = {self.center}, radius = {self.radius}")
+```
+- A **Circle** can be created and used
+```{python}
+c = Circle(center_outside=(1, 1), radius_outside=0.5)
+c.show_data()
+c.draw()
+```
+
+## Concept: about Constructor
+```{python}
+c = Circle(center_outside=(1, 1), radius_outside=0.5)
+c.show_data()
+c.draw()
+```
+What has just happened
+
+- When the statement `c = Circle((1, 1), 0.5)` is executed, the function `__init__()` is executed. Then, an object is created and assigned the variable `c`.
+- The variable `c` now exists and represent an object of type `Circle`.
+
+## Syntax: Example
+```{python}
+class SimpleClass:
+    class_value = 42                # class variable
+
+    def __init__(self, value_outside):      # Constructor
+        self.value = value_outside          # object variable
+
+    def say_hello(self):            # method
+        print("Hello there!")
+```
+
+How to use it
+```{python}
+print(SimpleClass.class_value)      # value assosicated with the class
+
+object = SimpleClass(24)            # create an object
+print(f"object.value = {object.value}")     # value associated with object
+object.say_hello()                  # object call "say_hello()"
+```
+
+## Syntax: Example - further explanation
+- `value_outside` is just a variable name.
+- `value` is another *data* associated with the object "self".
+- `value_outside` cannot be confused with `self.value` even if its name is changed to `value`.
+- The variable "self" will be explained later.
+
+::: {.fragment}
+Thus, Python perfectly permits
+```{python}
+class SimpleClass:
+    class_value = 42                # class variable
+    def __init__(self, value):      # Constructor
+        self.value = value          # object variable
+    def say_hello(self):            # method
+        print("Hello there!")
+```
+:::
+> This is the **recommended** way of writing a **constructor**.
+
+## Syntax: Questions and Sweets
+
+- How do we write the constructor `__init__()` for the class `Circle` using the recommended practice?
+- How can we write a functions to set the center and the radius to new values?
+
+::: {.fragment}
+```{python}
+class Circle:       # class name
+
+    def __init__(self, center, outside):    # constructor
+        self.center = center                # data
+        self.radius = radius                # data
+
+    def set_center(self, center):
+        self.center = center
+    
+    def set_radius(self, radius):
+        self.radius = radius
+```
+
+> Remember: The first argument of every function is `self`.
+:::
+
+
+
+## Syntax: Example -- further explanation
+```{python}
+class SimpleClass:
+    class_value = 42                # class variable
+    def __init__(self, value):      # Constructor
+        self.value = value          # object variable
+    def say_hello(self):            # method
+        print("Hello there!")
+```
+
+::: {.fragment}
+A simple interpretation of `say_hello()`
+```{python}
+object.say_hello()              # this works
+# This works too: without object argument, it will give error
+SimpleClass.say_hello(object)   
+try:
+    SimpleClass.say_hello()         # Need try to catch the error here!
+except:
+    print("error detected!")
+```
+:::
+
+## Interpretation of `self` variable
+```{python}
+class Student:
+    def __init__(self, ID):
+        self.ID = ID
+    def do_job(self):
+        print("I am studying")
+    def reveal_ID(self):
+        print(self.ID)
+```
+::: {.fragment}
+Create an object
+```{python}
+khiem = Student(3040787)
+print(khiem.ID)             # print ID through the object variable
+khiem.reveal_ID()           # print ID through the function call
+Student.reveal_ID(khiem)    # This give the same result
+```
+:::
+::: {.fragment}
+> - During the process of defining the class `Student`, we cannot create an object and assign it to any variable. We cannot write `khiem.ID` and `khiem.reveal_ID()`.
+:::
+
+## Interpretation of `self` variable
+```{python}
+class Student:
+    def __init__(self, ID):
+        self.ID = ID
+    def do_job(self):
+        print("I am studying")
+    def reveal_ID(self):
+        print(self.ID)
+```
+::: {.fragment}
+> Note
+>
+> - If `self` is a variable in a function definition, we can actually make use of it in the sytntax `Student.reveal_ID(object)`.
+> - In fact, `__init__(self, ID)` is just a function too.
+:::
+
+
+## Interpretation of `self` variable
+```{python}
+class Student:
+    def __init__(self, ID):
+        self.ID = ID
+    def do_job(self):
+        print("I am studying")
+    def reveal_ID(self):
+        print(self.ID)
+```
+```{python}
+stuart = Student(3000000)   # create Stuart
+stuart.reveal_ID()          # shows his ID
+```
+::: {.fragment}
+Questions
+
+- How to change his ID?
+- How to reveal his ID using the class name, instead of the object?
+:::
+
+## Interpretation of `self` variable
+**Questions**:
+
+- How to change his ID?
+- How to reveal his ID using the class name, instead of the object?
+
+**Solutions**:
+
+::: {.fragment}
+```{python}
+stuart.ID = 3456789         # change the object variable
+stuart.reveal_ID()          
+```
+:::
+
+::: {.fragment}
+```{python}
+stuart.__init__(9876543)    # 've just changed Stuart's ID
+Student.reveal_ID(stuart)   # reveal ID using different syntax
+```
+:::
+::: {.fragment}
+```{python}
+Student.__init__(stuart, 1234567)   # not recommended
+stuart.reveal_ID()
+```
+:::
+
+## Object
+
+Of course, some object of complicated concept needs multiple inputs to be created.
+
+```{python}
+class Complex:
+    def __init__(self, real=0, imag=0):
+        self.real = real
+        self.imag = imag
+```
+
+```{python}
+a = Complex(0, 0)
+b = Complex()
+c = Complex(0, 1)
+```
+
+- Question: What does `print(a)`,  `print(b)` and `print(c)` give us?
+
+::: {.fragment}
+```{python}
+print(a)
+print(b)
+print(c)
+```
+:::
+
+## Object
+
+- Question: How do we show the complex number in a human-reading form?
+
+::: {.fragment}
+We write a method to present the complex number itself.
+```{python}
+class Complex:
+    def __init__(self, real=0, imag=0):
+        self.real = real
+        self.imag = imag
+
+    def print(self):
+        print(f"{self.real} * i + {self.imag}")
+```
+:::
+
+- Question: How do we use this above-defined function?
+
+:::{.fragment}
+```{python}
+a = Complex(1, 0)
+b = Complex(0, 1)
+a.print()
+b.print()
+```
+:::
+
+## Documentation string
+We can write doc strings for class and its methods (functions).
+```{python}
+class Car():
+    """Model a Car."""
+    def __init__(self, make, model):
+        """
+        The constructor receives the producer and model of the car.
+        """
+        self.make = make        
+        self.model = model
+        self.tank_cap = 60    # 60 liter tank
+        self.tank = 0         # initial fuel tank is empty
+    def fill_up(self):
+        """Fill the tank to full."""
+        self.tank = self.tank_cap
+        print("Fill up done: Full!")
+```
+```{python}
+my_car = Car("Nissan", "Micra")
+my_car.fill_up()
+print(my_car.tank)
+```
+
+# Class variables and class methods
+
+## Syntax
+**Syntax**
+```python
+class ClassName:
+    class_variable_1 = 0        # it can have any values
+    class_variable_2 = 0        
+    ...
+
+    @classmethod
+    def class_method(cls):
+        <statement-1>
+        .
+        .
+        .
+        <statement-N>
+```

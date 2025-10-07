@@ -1,0 +1,541 @@
+---
+title: "Python Recap"
+author: |
+    Khiem Nguyen 
+    <br>Lecturer in Multiscale Materials
+    <br><khiem.nguyen@glasgow.ac.uk>
+author-meta: "Lecturer in Multiscale Materials"
+format: 
+    revealjs:
+        theme: default
+        title-slide-style: pandoc
+        echo: true
+        code-overflow: wrap
+        code-line-numbers: true
+        css: style.css
+---
+
+# Literals and variables
+
+## Literals and variables
+
+-   are common in daily, programming, and scientific languages
+-   is one of the smallest components in any programming language
+
+```{python}
+#| code-line-numbers: "true"
+#| code-overflow: wrap
+#| 
+
+# Good to repeat here: Comments are always useful in any code. 
+# Comments in Python start with the hash tag "#"
+# 'Albert' is a literal, first_name is a variable, single quotes for string
+first_name = 'Albert'
+# "Einstein" is a literal, last_name is a variable, double quotes for a string
+last_name = "Einstein"
+# evaluate the right-hand side (RHS), 
+# then assign to the left-hand side (LHS) variable
+full_name = first_name + ' ' + last_name
+print(full_name)
+```
+
+# Operators
+
+## Useful operators
+
+|       |                        |
+|-------|------------------------|
+| `not` | unary logical negation |
+| `and` | and                    |
+| `or`  | or                     |
+: Logical operators
+
+|          |                            |
+|----------|----------------------------|
+| `is`     | is the same object         |
+| `is not` | is **not** the same object |
+: Identity operators
+
+## Arithmetic operators
+
+- Arithmetic operators such as `+`, `-`, `*`, `/`, `%` are well-known.
+- Furthermore:
+
+|      |          |                          |
+|------|----------|--------------------------|
+| `=`  | `x = 3`  | `x` becomes equal to $3$ |
+| `+=` | `x += 3` | `x = x + 3`              |
+| `-=` | `x -= 3` | `x = x - 3`              |
+| `*=` | `x *= 3` | `x = x * 3`              |
+| `/=` | `x /= 3` | `x = x / 3`              |
+| `%=` | `x %= 3` | `x = x % 3`              |
+| `//=` | `x //=3 ` | `x = x // 3`           |
+| `**=` | `x **=3`  | `x = x ** 3`           |
+| some more | | |
+: Assignment operators
+
+## Operators: Examples
+
+Example 1
+```{python}
+x = 7; x //= 3
+y = 7; y %= 3
+z = 3; z **= 3
+print(f"x = {x}, y = {y}, z = {z}")
+```
+
+Example 2
+```{python}
+x = 3
+print(id(x), id(3))
+y = '3'
+print(id(y), id('3'))
+
+print(f"x is y = {x is y}")
+print(f"x is not y = {x is not y}")
+```
+
+# Print with style
+## Nice printing with string format
+
+A useful method of string: `str.format(*args, **kwargs)`
+
+- The string contains literal text or replacement fields delimited by braces `{}`.
+- Replacement fields contain the numeric index of a positional arg/name of a keyword argument.
+
+```python
+# default ordering
+print("a = {}, b = {}, c = {}.".format(arg1, arg2, arg3))    
+# positional argument   
+print("a = {2}, b = {0}, c = {1}".format(arg1, arg2, arg3))     
+# keyword argument
+print("a = {v3}, b= {v1}, c = {v2}".format(v1=arg1, v2=arg2, v3=arg3)) 
+```
+
+## Nice printing with string format
+
+Example 1
+```{python}
+import numpy as np
+print("a = {:.5f}, b = {}, c = {}".format(np.pi, 2, 3))
+print("a = {2:.5f}, b = {0:.2f}, c = {1:.1f}".format(1.3, 2.56, np.pi))
+```
+
+Example 2: mostly useless for now -- maybe useful later
+```{python}
+# The following examples are self-explanatory
+print("{:<30}".format('left aligned'))      # < -- aligned to the left
+print("{:>30}".format('right aligned'))     # > -- aligned to the right
+print("{:^30}".format('centered'))          # ^ -- alinged centered
+print("{:*^30}".format('centered using *'))  # note * and then ^
+```
+
+## Nice printing with f-string
+**Formatted string** literals
+
+- prefixed with the Python code `f`
+- similar to the format strings accepted by `str.format()`
+- contains replacement fields surrounded by curly braces
+- evaluated at run time, and then formatted using `format()` protocol
+
+Example
+```{python}
+import numpy as np
+v1, v2 = 10, 20
+print(f"a = {v1}, b = {v2}")
+v1, v2 = np.pi, np.exp(1)
+print(f"a = {v1:.5f}, b = {v2:.5f}") 
+```
+
+# Control flows
+
+## Control flows: Quick Intro
+1. **Sequential statments**
+   
+   Run step by step
+2. **Conditional statements**
+   
+   Run procedure #1 when one condition is `True` or run procedure #2 else when `False`
+
+3. **Loop statements**
+
+   Repeat the procedure until the condition is or is not satisfied
+
+4. `break` and `continue`
+
+   Enhance the use of the loop
+
+## `if` statement
+
+![](./figures/python-recap/python-if-statement.png)
+
+**Remark** &nbsp; (Remember please please please !!!)
+
+- **Colon** `:` at the end of `if` statement, right after the condition
+- **Indentation** using ***tab*** for the block of statements associated with `if` condition
+
+## `if-else` statement
+![](./figures/python-recap/python-if-else-statement.png)
+
+
+**Interpretation**: If you can read English, you should understand this construction.
+
+## `if-elif-else` statement
+
+![](./figures/python-recap/python-if-elif-else-statement.png)
+
+**Interpretation**: If you can read English, you should understand this construction.
+
+## Conditional statement exmaples
+
+:::{.column}
+```python
+marks = input("Your marks?")
+marks = int(marks)
+if (marks <= 50):
+    grade = 'D'
+else:
+    if (marks <= 59):
+        grade = 'C'
+    else:
+        if (marks <= 69):
+            grade = 'B'
+        else:
+            grade = 'A'
+print("Letter grade is", grade)
+```
+:::
+:::{.column}
+```python
+marks = input("Your marks")
+marks = int(marks)
+if (marks <= 50):
+    grade = 'D'
+elif (marks <= 59):
+    grade = 'C'
+elif (marks <= 69):
+    grade = 'B'
+else:
+    grade = 'A'
+print("Letter grade is", grade)
+
+
+
+```
+:::
+
+## Loops
+
+> 😘 Two types of loops
+
+1. **indefinite** loops/ **sentinel** loops
+
+    Loop runs until a condition is encountered and satisfied, which you don't know in advance, either due to external inputs or complex calculations.
+
+2. **counter** loops
+
+    You can be clear in advance how many iterations will occur.
+
+> 😘 Two loop statements are
+
+1. `while` loop
+2. `for` loop
+
+## `while` loop
+
+![](./figures/python-recap/python-while-loop.png)
+
+> _Reminder_: **colon** ":" and **indentation** using "*tab*"
+
+## `while` loop: Example
+
+- Example 1
+```python
+counter, value = 0, 1       # multiple assignments
+n = input("Value of index?")
+if n.isnumeric():
+    n = int(n)      # convert to integer if it is numeric
+else:
+    n = 5           # otherwise, default n to 5
+print("2^{0:^2} = {1}".format(counter, value))
+while counter < n:
+    value *= 2
+    counter += 1
+    print("2^{0:^2} = {1}".format(counter, value))
+```
+
+- Example 2
+```python
+while True:
+    n = input("Input a floating number")
+    if n.isnumeric():
+        break   # we shall talk about "break" quickly
+```
+
+## `for` loop
+
+![](./figures/python-recap/python-for-loop.png)
+
+> _Reminder_: **colon** ":" and **indentation** using "*tab*"
+
+## `for` loop: Examples
+
+```{python}
+value = 1
+for j in range(10):
+    print("2^{0:^1} = {1}".format(j, value), end=" \t") # \t for tab
+    if (j + 1) % 5 == 0:
+        print()   # one new line is added by default
+    value *= 2
+```
+
+```{python}
+my_list = ["I", "have", 2, "dogs", "&", 3, "cats"]
+for x in my_list:
+    print(x, end=' ')
+print("\n")   # two new lines, one line is added by default
+for y in reversed(my_list):
+    print(y, end=' ')
+```
+
+## `break` and `continue`
+
+:::{.column}
+![](./figures/python-recap/python-break-and-continue.png)
+:::
+
+:::{.column}
+`break` and `continue` statements are best demonstrated as in the *left* figure. They are *literally* interpreted as their English meanings.
+
+- `break` statement immediately terminates a loop entirely. 
+
+    *Program execution proceeds to the first statement following the loop body.*
+- `continue` statement immediately terminates the **current** loop iteration.
+    
+    *Execution jumps to the top of the loop.*
+:::
+
+## `break` and `continue`
+:::{.column}
+- Use of `break` statement
+
+![](./figures/python-recap/working-break-statement-python.png)
+:::
+:::{.column}
+- Use of `continue` statement 
+
+![](./figures/python-recap/working-continue-statement-python.png)
+:::
+    
+## `break` and `continue`: Examples
+- Example 1
+```python
+for i in range(10):
+    n = input("Enter a number smaller than 10")
+    if int(n) < 10:
+        print("Good job! You follow the instruction.")
+        break
+```
+
+- Example 2
+```{python}
+n = 0
+while n < 10:
+    n += 1
+    if n % 2 == 0:
+        continue
+    print(n)
+```
+
+# Basic data structures in Python
+
+## List: Indexing
+<center> <img src='./figures/python-recap/python-list-indexing.png' width="800" height="200"> </center>
+
+```{python}
+my_list = ['red', 'green', 'blue', 'yellow', 'black']
+print(my_list[0])   # output: red
+print(my_list[3])   # output: yellow
+for element in my_list:
+    print(element, end="; ")
+# output: red; green; blue; yellow; black;
+```
+
+## List: Negative indexing
+<center> <img src='./figures/python-recap/python-list-negative-indexing.png' width="800" height="200"> </center>
+
+<center> Indexing with $-1$ (negative one) means the last element in the array, $-2$ the second last element, etc. </center>
+
+```{python}
+my_list = ['red', 'green', 'blue', 'yellow', 'black']
+print(my_list[-1])   # output: black
+print(my_list[-5])   # output: red
+for j in range(-5, 0, 1):
+    print(my_list[j], end=" \t")
+```
+
+## List: Negative indexing
+<center> <img src='./figures/python-recap/python-list-negative-indexing.png' width="800" height="200"> </center>
+
+<center> Indexing with $-1$ (negative one) means the last element in the array, $-2$ the second last element, etc. </center>
+
+```{python}
+my_list = ['red', 'green', 'blue', 'yellow', 'black']
+for j in range(-1, -6, -1):
+    print(my_list[j], end=" \t")
+```
+
+## List: Nested list
+<center> <img src='./figures/python-recap/python-nested-list-indexing.png'> </center>
+
+```{python}
+L = ['a', 'b', ['cc', 'dd', ['eee', 'fff']], 'g', 'h']
+print(L[2])         # output: ['cc', 'dd', ['eee', 'fff']]
+print(L[2][2])      # output: ['eee', 'fff']
+
+# print(L[2,2])       # this syntax gives error!!!
+```
+
+## List: Sum of two lists
+- List can contain elements of any data type.
+- We can interpret them like a carrier (not a mathematical set).
+- A list can contain elements with the same value, a set cannot.
+- Sum of two lists just concatenate them.
+
+```{python}
+L1 = [1, 2, 3, 4, 5]
+L2 = [5, 4, 3, 2, 1]
+L3 = ['5', '4', '3', '2', '1']
+print("L1 + L2 =", L1 + L2)
+print("L1 + L3 =", L1 + L3)
+```
+
+## Quick detour to NumPy arrays
+- Repeat "sum of two lists"
+```{python}
+L1 = [1, 2, 3, 4, 5]
+L2 = [5, 4, 3, 2, 1]
+L3 = ['5', '4', '3', '2', '1']
+print("L1 + L2 =", L1 + L2)
+print("L1 + L3 =", L1 + L3)
+```
+
+- Later we will learn **NumPy** arrays that allow arithemtic operations seemlessly
+```{python}
+import numpy as np
+a1 = np.array([1, 2, 3, 4, 5])    # we discuss this later
+a2 = np.array([5, 4, 3, 2, 1])
+print("a1 + a2 =", a1 + a2)
+```
+
+## List: Slicing
+<center><img src='./figures/python-recap/Python-List-Slicing-Syntax.png' width=600 height=185></center>
+
+- The slicing does not take the `stop` position -- it stops right before it
+- If `start` is mising, it counts from `0` (beginning of the list)
+- If `stop` is missing, it steps until the end of the list (indexing `-1`)
+
+```{python}
+L = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+print(L[1:5])       # gives [1, 2, 3, 4]
+print(L[1:5:2])     # gives [1, 3]
+print(L[:5:3])      # gives [0, 3]
+print(L[1::3])      # gives [1, 4, 7]
+print(L[::3])       # gives [0, 3, 6, 9]
+# print(L[[0, 3, 6, 7]]) # Raise an Error, uncomment to see -- cannot slice like this!
+```
+
+## Tuple
+![](./figures/python-recap/python-tuple.png)
+
+:::{.column}
+**List**
+
+- Use square brackets `[ ... ]`
+- **mutable** in nature
+- Operations are performed better
+- More memory consumption
+- Consists of *various built-in methods*
+- Iterations are time-consuming in a list
+:::
+
+:::{.column}
+**Tuple**
+
+- Use parenthesis `( ... )`
+- **immutable** in nature
+- Elements can be accessed faster
+- Less memory consumption
+- Do *not consists of any built-in methods*
+- Iterations are faster in tuple
+:::
+
+<center>mutable = modifiable/changable &nbsp;&nbsp;&nbsp;&nbsp; vs &nbsp;&nbsp;&nbsp;&nbsp; immutable = not modifiable/unchangable</center>
+
+## Tuple: Packing and unpacking
+
+- **Tuple packing**: We don't use parentheses in the following definition:
+
+    `t = 0, 1, 'two'   # equivalent to t = (0, 1, 'two')`
+
+    The values `0`, `1`, `'two'` are *packed* together in a tuple
+
+- **Sequence unpacking**:
+
+    `t1, t2, t3 = t     # --> t1 == 0, t2 == 1, t3 == 'two'`
+
+    *Sequence unpacking* requires: There are as many variables on the left side of equal sign as there are elements in the sequence on the right side.
+
+- Combining both *tuple packing* and *sequence unpacking*
+
+    ```python
+    t = v1, v2, ..., vN     # tuple packing
+    t1, t2, ..., tN = t     # sequence unpacking, t1 takes v1, t2 takes v2, etc.
+    ```
+
+- Multiple asignment
+
+    `a, b, c = 1, 2, 3`
+
+    is a combination of *tuple packing*, and <u>then</u> *sequence unpacking*.
+
+## Dictionary
+
+- unlike sequences (e.g. *list* and *tuple*) indexed by numbers, or range of numbers
+- indexed by **keys** (immutable type - we shoud not/cannot change the keys)
+
+Syntax
+```python
+my_dict = {key1: value1, key2: value2, ..., keyN: valueN}
+
+dict([(key1, value1), (key2, value2), ..., (keyN, valueN)])
+```
+
+- The *key-value* pairs are put into curly braces
+- Constructed by using the constructor `dict` (we must learn Classes and Objects to understand)
+- Access elements of dictionary: Use key instead of numeric indexing
+
+## Dictionary: Example
+
+```{python}
+tel = {'Iron Man': 4098, 'Hulk': 4139}  # define a list
+
+tel['Saitama'] = 5014           # add key:value pair to the dictionary
+tel['Mononoke'] = 6017          # add more element to the dictionary
+
+print("tel =", tel)             # print the whole dictionary
+# access element of dictionary
+print("tel['Iron Man'] =", tel['Iron Man']) 
+
+del tel['Hulk']                             # delete one element
+print("After deletion: tel = ", tel)        # print after deletion
+
+list_from_dict = list(tel) # return a list of keys of the dictionary
+print("list_from_dict =", list_from_dict)
+```
+
+## Writing mathematical formulas
+
+$$
+v = \begin{bmatrix}1 & 2 \\ 3 & 4\end{bmatrix} \in \mathbb{R}^{2 \times 2}
+$$
