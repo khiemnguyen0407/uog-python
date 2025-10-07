@@ -210,56 +210,91 @@ Khiem Nguyen
 <h1>Object-oriented programing</h1>
 
 </section>
-<section id="intro-to-concept-by-code" class="slide level2">
-<h2>Intro to concept by code</h2>
+<section id="class-definition-syntax" class="slide level2">
+<h2>Class definition syntax</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="kw">class</span> ClassName:</span>
+<span id="cb1-2"><a href=""></a>    <span class="op">&lt;</span>statement<span class="op">-</span><span class="dv">1</span><span class="op">&gt;</span></span>
+<span id="cb1-3"><a href=""></a>    .</span>
+<span id="cb1-4"><a href=""></a>    .</span>
+<span id="cb1-5"><a href=""></a>    .</span>
+<span id="cb1-6"><a href=""></a>    <span class="op">&lt;</span>statement<span class="op">-</span>N<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<blockquote>
+<p>A <strong>Class</strong> is defined by the keyword <code>class</code> followed by the name of the class.</p>
+<p>Note the colon “<strong>:</strong>” and “<strong>indentation</strong>”</p>
+</blockquote>
+<ul>
+<li>The statements can define variables</li>
+<li>The statements can define functions</li>
+<li>The statements can implement all sorts of stuff you need to.</li>
+</ul>
+</section>
+<section id="concept-a-gentle-introduction" class="slide level2">
+<h2>Concept: A gentle introduction</h2>
 <ul>
 <li>Template for a <strong>Circle</strong></li>
 </ul>
-<div id="4a163b5b" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="kw">class</span> Circle:</span>
-<span id="cb1-2"><a href=""></a></span>
-<span id="cb1-3"><a href=""></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, center_outside, radius_outside):</span>
-<span id="cb1-4"><a href=""></a>        <span class="va">self</span>.center <span class="op">=</span> center_outside</span>
-<span id="cb1-5"><a href=""></a>        <span class="va">self</span>.radius <span class="op">=</span> radius_outside</span>
-<span id="cb1-6"><a href=""></a></span>
-<span id="cb1-7"><a href=""></a>    <span class="kw">def</span> draw(<span class="va">self</span>):</span>
-<span id="cb1-8"><a href=""></a>        <span class="bu">print</span>(<span class="st">"Drawing is done"</span>)    <span class="co"># plotting is done here.</span></span>
-<span id="cb1-9"><a href=""></a></span>
-<span id="cb1-10"><a href=""></a>    <span class="kw">def</span> show_data(<span class="va">self</span>):</span>
-<span id="cb1-11"><a href=""></a>        <span class="bu">print</span>(<span class="ss">f"Circle: center = </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>center<span class="sc">}</span><span class="ss">, radius = </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>radius<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="4f8fe7e0" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="kw">class</span> Circle:       <span class="co"># class name</span></span>
+<span id="cb2-2"><a href=""></a></span>
+<span id="cb2-3"><a href=""></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, center_outside, radius_outside): <span class="co"># constructor</span></span>
+<span id="cb2-4"><a href=""></a>        <span class="va">self</span>.center <span class="op">=</span> center_outside        <span class="co"># data</span></span>
+<span id="cb2-5"><a href=""></a>        <span class="va">self</span>.radius <span class="op">=</span> radius_outside        <span class="co"># data</span></span>
+<span id="cb2-6"><a href=""></a></span>
+<span id="cb2-7"><a href=""></a>    <span class="kw">def</span> draw(<span class="va">self</span>):                         <span class="co"># method</span></span>
+<span id="cb2-8"><a href=""></a>        <span class="bu">print</span>(<span class="st">"Drawing is done"</span>)    <span class="co"># plotting is done here.</span></span>
+<span id="cb2-9"><a href=""></a></span>
+<span id="cb2-10"><a href=""></a>    <span class="kw">def</span> show_data(<span class="va">self</span>):                    <span class="co"># method</span></span>
+<span id="cb2-11"><a href=""></a>        <span class="bu">print</span>(<span class="ss">f"Circle: center = </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>center<span class="sc">}</span><span class="ss">, radius = </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>radius<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>A <strong>Circle</strong> can be created and used</li>
 </ul>
-<div id="efbdc298" class="cell" data-execution_count="2">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a>c <span class="op">=</span> Circle(center_outside<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">1</span>), radius_outside<span class="op">=</span><span class="fl">0.5</span>)</span>
-<span id="cb2-2"><a href=""></a>c.show_data()</span>
-<span id="cb2-3"><a href=""></a>c.draw()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="3e8787d4" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href=""></a>c <span class="op">=</span> Circle(center_outside<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">1</span>), radius_outside<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb3-2"><a href=""></a>c.show_data()</span>
+<span id="cb3-3"><a href=""></a>c.draw()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Circle: center = (1, 1), radius = 0.5
 Drawing is done</code></pre>
 </div>
 </div>
 </section>
+<section id="concept-about-constructor" class="slide level2">
+<h2>Concept: about Constructor</h2>
+<div id="84e6aaa7" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href=""></a>c <span class="op">=</span> Circle(center_outside<span class="op">=</span>(<span class="dv">1</span>, <span class="dv">1</span>), radius_outside<span class="op">=</span><span class="fl">0.5</span>)</span>
+<span id="cb5-2"><a href=""></a>c.show_data()</span>
+<span id="cb5-3"><a href=""></a>c.draw()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Circle: center = (1, 1), radius = 0.5
+Drawing is done</code></pre>
+</div>
+</div>
+<p>What has just happened</p>
+<ul>
+<li>When the statement <code>c = Circle((1, 1), 0.5)</code> is executed, the function <code>__init__()</code> is executed. Then, an object is created and assigned the variable <code>c</code>.</li>
+<li>The variable <code>c</code> now exists and represent an object of type <code>Circle</code>.</li>
+</ul>
+</section>
 <section id="syntax-example" class="slide level2">
 <h2>Syntax: Example</h2>
-<div id="a1e76ad2" class="cell" data-execution_count="3">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="kw">class</span> SimpleClass:</span>
-<span id="cb4-2"><a href=""></a>    class_value <span class="op">=</span> <span class="dv">42</span>                <span class="co"># class variable</span></span>
-<span id="cb4-3"><a href=""></a></span>
-<span id="cb4-4"><a href=""></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, value):      <span class="co"># Constructor</span></span>
-<span id="cb4-5"><a href=""></a>        <span class="va">self</span>.value <span class="op">=</span> value          <span class="co"># object variable</span></span>
-<span id="cb4-6"><a href=""></a></span>
-<span id="cb4-7"><a href=""></a>    <span class="kw">def</span> say_hello(<span class="va">self</span>):            <span class="co"># method</span></span>
-<span id="cb4-8"><a href=""></a>        <span class="bu">print</span>(<span class="st">"Hello there!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="cf9fe1e3" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href=""></a><span class="kw">class</span> SimpleClass:</span>
+<span id="cb7-2"><a href=""></a>    class_value <span class="op">=</span> <span class="dv">42</span>                <span class="co"># class variable</span></span>
+<span id="cb7-3"><a href=""></a></span>
+<span id="cb7-4"><a href=""></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, value_outside):      <span class="co"># Constructor</span></span>
+<span id="cb7-5"><a href=""></a>        <span class="va">self</span>.value <span class="op">=</span> value_outside          <span class="co"># object variable</span></span>
+<span id="cb7-6"><a href=""></a></span>
+<span id="cb7-7"><a href=""></a>    <span class="kw">def</span> say_hello(<span class="va">self</span>):            <span class="co"># method</span></span>
+<span id="cb7-8"><a href=""></a>        <span class="bu">print</span>(<span class="st">"Hello there!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>How to use it</p>
-<div id="8ab894ce" class="cell" data-execution_count="4">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href=""></a><span class="bu">print</span>(SimpleClass.class_value)      <span class="co"># value assosicated with the class</span></span>
-<span id="cb5-2"><a href=""></a></span>
-<span id="cb5-3"><a href=""></a><span class="bu">object</span> <span class="op">=</span> SimpleClass(<span class="dv">24</span>)            <span class="co"># create an object</span></span>
-<span id="cb5-4"><a href=""></a><span class="bu">print</span>(<span class="ss">f"object.value = </span><span class="sc">{</span><span class="bu">object</span><span class="sc">.</span>value<span class="sc">}</span><span class="ss">"</span>)     <span class="co"># value associated with object</span></span>
-<span id="cb5-5"><a href=""></a><span class="bu">object</span>.say_hello()                  <span class="co"># object call "say_hello()"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="fbacb921" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href=""></a><span class="bu">print</span>(SimpleClass.class_value)      <span class="co"># value assosicated with the class</span></span>
+<span id="cb8-2"><a href=""></a></span>
+<span id="cb8-3"><a href=""></a><span class="bu">object</span> <span class="op">=</span> SimpleClass(<span class="dv">24</span>)            <span class="co"># create an object</span></span>
+<span id="cb8-4"><a href=""></a><span class="bu">print</span>(<span class="ss">f"object.value = </span><span class="sc">{</span><span class="bu">object</span><span class="sc">.</span>value<span class="sc">}</span><span class="ss">"</span>)     <span class="co"># value associated with object</span></span>
+<span id="cb8-5"><a href=""></a><span class="bu">object</span>.say_hello()                  <span class="co"># object call "say_hello()"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>42
 object.value = 24
@@ -269,82 +304,310 @@ Hello there!</code></pre>
 </section>
 <section id="syntax-example---further-explanation" class="slide level2">
 <h2>Syntax: Example - further explanation</h2>
-<div id="12151748" class="cell" data-execution_count="5">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href=""></a><span class="kw">class</span> SimpleClass:</span>
-<span id="cb7-2"><a href=""></a>    class_value <span class="op">=</span> <span class="dv">42</span>                <span class="co"># class variable</span></span>
-<span id="cb7-3"><a href=""></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, value):      <span class="co"># Constructor</span></span>
-<span id="cb7-4"><a href=""></a>        <span class="va">self</span>.value <span class="op">=</span> value          <span class="co"># object variable</span></span>
-<span id="cb7-5"><a href=""></a>    <span class="kw">def</span> say_hello(<span class="va">self</span>):            <span class="co"># method</span></span>
-<span id="cb7-6"><a href=""></a>        <span class="bu">print</span>(<span class="st">"Hello there!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li><code>value_outside</code> is just a variable name.</li>
+<li><code>value</code> is another <em>data</em> associated with the object “self”.</li>
+<li><code>value_outside</code> cannot be confused with <code>self.value</code> even if its name is changed to <code>value</code>.</li>
+<li>The variable “self” will be explained later.</li>
+</ul>
+<div class="fragment">
+<p>Thus, Python perfectly permits</p>
+<div id="38886332" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href=""></a><span class="kw">class</span> SimpleClass:</span>
+<span id="cb10-2"><a href=""></a>    class_value <span class="op">=</span> <span class="dv">42</span>                <span class="co"># class variable</span></span>
+<span id="cb10-3"><a href=""></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, value):      <span class="co"># Constructor</span></span>
+<span id="cb10-4"><a href=""></a>        <span class="va">self</span>.value <span class="op">=</span> value          <span class="co"># object variable</span></span>
+<span id="cb10-5"><a href=""></a>    <span class="kw">def</span> say_hello(<span class="va">self</span>):            <span class="co"># method</span></span>
+<span id="cb10-6"><a href=""></a>        <span class="bu">print</span>(<span class="st">"Hello there!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>a simple interpretation of <code>say_hello()</code></p>
-<div id="97fbe23d" class="cell" data-execution_count="6">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href=""></a><span class="bu">object</span>.say_hello()              <span class="co"># this works</span></span>
-<span id="cb8-2"><a href=""></a><span class="co"># This works too!</span></span>
-<span id="cb8-3"><a href=""></a>SimpleClass.say_hello(<span class="bu">object</span>)   <span class="co"># without object argument, it will give error</span></span>
-<span id="cb8-4"><a href=""></a><span class="cf">try</span>:</span>
-<span id="cb8-5"><a href=""></a>    SimpleClass.say_hello()         <span class="co"># Need try to catch the error here!</span></span>
-<span id="cb8-6"><a href=""></a><span class="cf">except</span>:</span>
-<span id="cb8-7"><a href=""></a>    <span class="bu">print</span>(<span class="st">"error detected!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<blockquote>
+<p>This is the <strong>recommended</strong> way of writing a <strong>constructor</strong>.</p>
+</blockquote>
+</section>
+<section id="syntax-questions-and-sweets" class="slide level2">
+<h2>Syntax: Questions and Sweets</h2>
+<ul>
+<li>How do we write the constructor <code>__init__()</code> for the class <code>Circle</code> using the recommended practice?</li>
+<li>How can we write a functions to set the center and the radius to new values?</li>
+</ul>
+<div class="fragment">
+<div id="4217d661" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href=""></a><span class="kw">class</span> Circle:       <span class="co"># class name</span></span>
+<span id="cb11-2"><a href=""></a></span>
+<span id="cb11-3"><a href=""></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, center, outside):    <span class="co"># constructor</span></span>
+<span id="cb11-4"><a href=""></a>        <span class="va">self</span>.center <span class="op">=</span> center                <span class="co"># data</span></span>
+<span id="cb11-5"><a href=""></a>        <span class="va">self</span>.radius <span class="op">=</span> radius                <span class="co"># data</span></span>
+<span id="cb11-6"><a href=""></a></span>
+<span id="cb11-7"><a href=""></a>    <span class="kw">def</span> set_center(<span class="va">self</span>, center):</span>
+<span id="cb11-8"><a href=""></a>        <span class="va">self</span>.center <span class="op">=</span> center</span>
+<span id="cb11-9"><a href=""></a>    </span>
+<span id="cb11-10"><a href=""></a>    <span class="kw">def</span> set_radius(<span class="va">self</span>, radius):</span>
+<span id="cb11-11"><a href=""></a>        <span class="va">self</span>.radius <span class="op">=</span> radius</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<blockquote>
+<p>Remember: The first argument of every function is <code>self</code>.</p>
+</blockquote>
+</div>
+</section>
+<section id="syntax-example-further-explanation" class="slide level2">
+<h2>Syntax: Example – further explanation</h2>
+<div id="69a37195" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href=""></a><span class="kw">class</span> SimpleClass:</span>
+<span id="cb12-2"><a href=""></a>    class_value <span class="op">=</span> <span class="dv">42</span>                <span class="co"># class variable</span></span>
+<span id="cb12-3"><a href=""></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, value):      <span class="co"># Constructor</span></span>
+<span id="cb12-4"><a href=""></a>        <span class="va">self</span>.value <span class="op">=</span> value          <span class="co"># object variable</span></span>
+<span id="cb12-5"><a href=""></a>    <span class="kw">def</span> say_hello(<span class="va">self</span>):            <span class="co"># method</span></span>
+<span id="cb12-6"><a href=""></a>        <span class="bu">print</span>(<span class="st">"Hello there!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="fragment">
+<p>A simple interpretation of <code>say_hello()</code></p>
+<div id="f715ce87" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href=""></a><span class="bu">object</span>.say_hello()              <span class="co"># this works</span></span>
+<span id="cb13-2"><a href=""></a><span class="co"># This works too: without object argument, it will give error</span></span>
+<span id="cb13-3"><a href=""></a>SimpleClass.say_hello(<span class="bu">object</span>)   </span>
+<span id="cb13-4"><a href=""></a><span class="cf">try</span>:</span>
+<span id="cb13-5"><a href=""></a>    SimpleClass.say_hello()         <span class="co"># Need try to catch the error here!</span></span>
+<span id="cb13-6"><a href=""></a><span class="cf">except</span>:</span>
+<span id="cb13-7"><a href=""></a>    <span class="bu">print</span>(<span class="st">"error detected!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hello there!
 Hello there!
 error detected!</code></pre>
 </div>
 </div>
+</div>
 </section>
 <section id="interpretation-of-self-variable" class="slide level2">
 <h2>Interpretation of <code>self</code> variable</h2>
-<div id="68b5d03a" class="cell" data-execution_count="7">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href=""></a><span class="kw">class</span> Student:</span>
-<span id="cb10-2"><a href=""></a></span>
-<span id="cb10-3"><a href=""></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, ID):</span>
-<span id="cb10-4"><a href=""></a>        <span class="va">self</span>.ID <span class="op">=</span> ID</span>
-<span id="cb10-5"><a href=""></a></span>
-<span id="cb10-6"><a href=""></a>    <span class="kw">def</span> do_job(<span class="va">self</span>):</span>
-<span id="cb10-7"><a href=""></a>        <span class="bu">print</span>(<span class="st">"I am studying"</span>)</span>
-<span id="cb10-8"><a href=""></a></span>
-<span id="cb10-9"><a href=""></a>    <span class="kw">def</span> reveal_ID(<span class="va">self</span>):</span>
-<span id="cb10-10"><a href=""></a>        <span class="bu">print</span>(<span class="va">self</span>.ID)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="b48c1b37" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href=""></a><span class="kw">class</span> Student:</span>
+<span id="cb15-2"><a href=""></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, ID):</span>
+<span id="cb15-3"><a href=""></a>        <span class="va">self</span>.ID <span class="op">=</span> ID</span>
+<span id="cb15-4"><a href=""></a>    <span class="kw">def</span> do_job(<span class="va">self</span>):</span>
+<span id="cb15-5"><a href=""></a>        <span class="bu">print</span>(<span class="st">"I am studying"</span>)</span>
+<span id="cb15-6"><a href=""></a>    <span class="kw">def</span> reveal_ID(<span class="va">self</span>):</span>
+<span id="cb15-7"><a href=""></a>        <span class="bu">print</span>(<span class="va">self</span>.ID)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="fdaf91a7" class="cell" data-execution_count="8">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href=""></a>khiem <span class="op">=</span> Student(<span class="dv">3040787</span>)</span>
-<span id="cb11-2"><a href=""></a><span class="bu">print</span>(khiem.ID)</span>
-<span id="cb11-3"><a href=""></a>khiem.reveal_ID()</span>
-<span id="cb11-4"><a href=""></a>Student.reveal_ID(khiem)    <span class="co"># This give the same result</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<p>Create an object</p>
+<div id="4d5fa956" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href=""></a>khiem <span class="op">=</span> Student(<span class="dv">3040787</span>)</span>
+<span id="cb16-2"><a href=""></a><span class="bu">print</span>(khiem.ID)             <span class="co"># print ID through the object variable</span></span>
+<span id="cb16-3"><a href=""></a>khiem.reveal_ID()           <span class="co"># print ID through the function call</span></span>
+<span id="cb16-4"><a href=""></a>Student.reveal_ID(khiem)    <span class="co"># This give the same result</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>3040787
 3040787
 3040787</code></pre>
 </div>
 </div>
+</div>
+<div class="fragment">
+<blockquote>
+
+<ul>
+<li>During the process of defining the class <code>Student</code>, we cannot create an object and assign it to any variable. We cannot write <code>khiem.ID</code> and <code>khiem.reveal_ID()</code>.</li>
+</ul>
+
+</blockquote>
+</div>
 </section>
 <section id="interpretation-of-self-variable-1" class="slide level2">
 <h2>Interpretation of <code>self</code> variable</h2>
-<div id="83cc275b" class="cell" data-execution_count="9">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href=""></a><span class="kw">class</span> Student:</span>
-<span id="cb13-2"><a href=""></a></span>
-<span id="cb13-3"><a href=""></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, ID):</span>
-<span id="cb13-4"><a href=""></a>        <span class="va">self</span>.ID <span class="op">=</span> ID</span>
-<span id="cb13-5"><a href=""></a></span>
-<span id="cb13-6"><a href=""></a>    <span class="kw">def</span> do_job(<span class="va">self</span>):</span>
-<span id="cb13-7"><a href=""></a>        <span class="bu">print</span>(<span class="st">"I am studying"</span>)</span>
-<span id="cb13-8"><a href=""></a></span>
-<span id="cb13-9"><a href=""></a>    <span class="kw">def</span> reveal_ID(<span class="va">self</span>):</span>
-<span id="cb13-10"><a href=""></a>        <span class="bu">print</span>(<span class="va">self</span>.ID)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="9e5c623d" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href=""></a><span class="kw">class</span> Student:</span>
+<span id="cb18-2"><a href=""></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, ID):</span>
+<span id="cb18-3"><a href=""></a>        <span class="va">self</span>.ID <span class="op">=</span> ID</span>
+<span id="cb18-4"><a href=""></a>    <span class="kw">def</span> do_job(<span class="va">self</span>):</span>
+<span id="cb18-5"><a href=""></a>        <span class="bu">print</span>(<span class="st">"I am studying"</span>)</span>
+<span id="cb18-6"><a href=""></a>    <span class="kw">def</span> reveal_ID(<span class="va">self</span>):</span>
+<span id="cb18-7"><a href=""></a>        <span class="bu">print</span>(<span class="va">self</span>.ID)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="4073d0e0" class="cell" data-execution_count="10">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href=""></a>stuart <span class="op">=</span> Student(<span class="dv">3000000</span>)</span>
-<span id="cb14-2"><a href=""></a><span class="bu">print</span>(stuart.ID)</span>
-<span id="cb14-3"><a href=""></a>stuart.reveal_ID()</span>
-<span id="cb14-4"><a href=""></a>stuart.<span class="fu">__init__</span>(<span class="dv">3456789</span>)    <span class="co"># have just changed Stuart's ID</span></span>
-<span id="cb14-5"><a href=""></a>Student.reveal_ID(stuart)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="fragment">
+<blockquote>
+<p>Note</p>
+<ul>
+<li>If <code>self</code> is a variable in a function definition, we can actually make use of it in the sytntax <code>Student.reveal_ID(object)</code>.</li>
+<li>In fact, <code>__init__(self, ID)</code> is just a function too.</li>
+</ul>
+</blockquote>
+</div>
+</section>
+<section id="interpretation-of-self-variable-2" class="slide level2">
+<h2>Interpretation of <code>self</code> variable</h2>
+<div id="bb9c81dd" class="cell" data-execution_count="13">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href=""></a><span class="kw">class</span> Student:</span>
+<span id="cb19-2"><a href=""></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, ID):</span>
+<span id="cb19-3"><a href=""></a>        <span class="va">self</span>.ID <span class="op">=</span> ID</span>
+<span id="cb19-4"><a href=""></a>    <span class="kw">def</span> do_job(<span class="va">self</span>):</span>
+<span id="cb19-5"><a href=""></a>        <span class="bu">print</span>(<span class="st">"I am studying"</span>)</span>
+<span id="cb19-6"><a href=""></a>    <span class="kw">def</span> reveal_ID(<span class="va">self</span>):</span>
+<span id="cb19-7"><a href=""></a>        <span class="bu">print</span>(<span class="va">self</span>.ID)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="039a834e" class="cell" data-execution_count="14">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href=""></a>stuart <span class="op">=</span> Student(<span class="dv">3000000</span>)   <span class="co"># create Stuart</span></span>
+<span id="cb20-2"><a href=""></a>stuart.reveal_ID()          <span class="co"># shows his ID</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>3000000
-3000000
-3456789</code></pre>
+<pre><code>3000000</code></pre>
 </div>
 </div>
+<div class="fragment">
+<p>Questions</p>
+<ul>
+<li>How to change his ID?</li>
+<li>How to reveal his ID using the class name, instead of the object?</li>
+</ul>
+</div>
+</section>
+<section id="interpretation-of-self-variable-3" class="slide level2">
+<h2>Interpretation of <code>self</code> variable</h2>
+<p><strong>Questions</strong>:</p>
+<ul>
+<li>How to change his ID?</li>
+<li>How to reveal his ID using the class name, instead of the object?</li>
+</ul>
+<p><strong>Solutions</strong>:</p>
+<div class="fragment">
+<div id="26f8bb91" class="cell" data-execution_count="15">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href=""></a>stuart.ID <span class="op">=</span> <span class="dv">3456789</span>         <span class="co"># change the object variable</span></span>
+<span id="cb22-2"><a href=""></a>stuart.reveal_ID()          </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>3456789</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div id="948a3f75" class="cell" data-execution_count="16">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href=""></a>stuart.<span class="fu">__init__</span>(<span class="dv">9876543</span>)    <span class="co"># 've just changed Stuart's ID</span></span>
+<span id="cb24-2"><a href=""></a>Student.reveal_ID(stuart)   <span class="co"># reveal ID using different syntax</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>9876543</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div id="53dee58a" class="cell" data-execution_count="17">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href=""></a>Student.<span class="fu">__init__</span>(stuart, <span class="dv">1234567</span>)   <span class="co"># not recommended</span></span>
+<span id="cb26-2"><a href=""></a>stuart.reveal_ID()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1234567</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="object" class="slide level2">
+<h2>Object</h2>
+<p>Of course, some object of complicated concept needs multiple inputs to be created.</p>
+<div id="5809cdb4" class="cell" data-execution_count="18">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href=""></a><span class="kw">class</span> Complex:</span>
+<span id="cb28-2"><a href=""></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, real<span class="op">=</span><span class="dv">0</span>, imag<span class="op">=</span><span class="dv">0</span>):</span>
+<span id="cb28-3"><a href=""></a>        <span class="va">self</span>.real <span class="op">=</span> real</span>
+<span id="cb28-4"><a href=""></a>        <span class="va">self</span>.imag <span class="op">=</span> imag</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="b86d7430" class="cell" data-execution_count="19">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href=""></a>a <span class="op">=</span> Complex(<span class="dv">0</span>, <span class="dv">0</span>)</span>
+<span id="cb29-2"><a href=""></a>b <span class="op">=</span> Complex()</span>
+<span id="cb29-3"><a href=""></a>c <span class="op">=</span> Complex(<span class="dv">0</span>, <span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li>Question: What does <code>print(a)</code>, <code>print(b)</code> and <code>print(c)</code> give us?</li>
+</ul>
+<div class="fragment">
+<div id="62807ee6" class="cell" data-execution_count="20">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href=""></a><span class="bu">print</span>(a)</span>
+<span id="cb30-2"><a href=""></a><span class="bu">print</span>(b)</span>
+<span id="cb30-3"><a href=""></a><span class="bu">print</span>(c)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>&lt;__main__.Complex object at 0x7264aab53fb0&gt;
+&lt;__main__.Complex object at 0x7264aab52f30&gt;
+&lt;__main__.Complex object at 0x7264aab50a10&gt;</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="object-1" class="slide level2">
+<h2>Object</h2>
+<ul>
+<li>Question: How do we show the complex number in a human-reading form?</li>
+</ul>
+<div class="fragment">
+<p>We write a method to present the complex number itself.</p>
+<div id="7a00d682" class="cell" data-execution_count="21">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href=""></a><span class="kw">class</span> Complex:</span>
+<span id="cb32-2"><a href=""></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, real<span class="op">=</span><span class="dv">0</span>, imag<span class="op">=</span><span class="dv">0</span>):</span>
+<span id="cb32-3"><a href=""></a>        <span class="va">self</span>.real <span class="op">=</span> real</span>
+<span id="cb32-4"><a href=""></a>        <span class="va">self</span>.imag <span class="op">=</span> imag</span>
+<span id="cb32-5"><a href=""></a></span>
+<span id="cb32-6"><a href=""></a>    <span class="kw">def</span> <span class="bu">print</span>(<span class="va">self</span>):</span>
+<span id="cb32-7"><a href=""></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>real<span class="sc">}</span><span class="ss"> * i + </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>imag<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<ul>
+<li>Question: How do we use this above-defined function?</li>
+</ul>
+<div class="fragment">
+<div id="d78a8bd5" class="cell" data-execution_count="22">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href=""></a>a <span class="op">=</span> Complex(<span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb33-2"><a href=""></a>b <span class="op">=</span> Complex(<span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb33-3"><a href=""></a>a.<span class="bu">print</span>()</span>
+<span id="cb33-4"><a href=""></a>b.<span class="bu">print</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1 * i + 0
+0 * i + 1</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="documentation-string" class="slide level2">
+<h2>Documentation string</h2>
+<p>We can write doc strings for class and its methods (functions).</p>
+<div id="765fab61" class="cell" data-execution_count="23">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href=""></a><span class="kw">class</span> Car():</span>
+<span id="cb35-2"><a href=""></a>    <span class="co">"""Model a Car."""</span></span>
+<span id="cb35-3"><a href=""></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, make, model):</span>
+<span id="cb35-4"><a href=""></a>        <span class="co">"""</span></span>
+<span id="cb35-5"><a href=""></a><span class="co">        The constructor receives the producer and model of the car.</span></span>
+<span id="cb35-6"><a href=""></a><span class="co">        """</span></span>
+<span id="cb35-7"><a href=""></a>        <span class="va">self</span>.make <span class="op">=</span> make        </span>
+<span id="cb35-8"><a href=""></a>        <span class="va">self</span>.model <span class="op">=</span> model</span>
+<span id="cb35-9"><a href=""></a>        <span class="va">self</span>.tank_cap <span class="op">=</span> <span class="dv">60</span>    <span class="co"># 60 liter tank</span></span>
+<span id="cb35-10"><a href=""></a>        <span class="va">self</span>.tank <span class="op">=</span> <span class="dv">0</span>         <span class="co"># initial fuel tank is empty</span></span>
+<span id="cb35-11"><a href=""></a>    <span class="kw">def</span> fill_up(<span class="va">self</span>):</span>
+<span id="cb35-12"><a href=""></a>        <span class="co">"""Fill the tank to full."""</span></span>
+<span id="cb35-13"><a href=""></a>        <span class="va">self</span>.tank <span class="op">=</span> <span class="va">self</span>.tank_cap</span>
+<span id="cb35-14"><a href=""></a>        <span class="bu">print</span>(<span class="st">"Fill up done: Full!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="ec20c8e3" class="cell" data-execution_count="24">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href=""></a>my_car <span class="op">=</span> Car(<span class="st">"Nissan"</span>, <span class="st">"Micra"</span>)</span>
+<span id="cb36-2"><a href=""></a>my_car.fill_up()</span>
+<span id="cb36-3"><a href=""></a><span class="bu">print</span>(my_car.tank)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Fill up done: Full!
+60</code></pre>
+</div>
+</div>
+</section></section>
+<section>
+<section id="class-variables-and-class-methods" class="title-slide slide level1 center">
+<h1>Class variables and class methods</h1>
+
+</section>
+<section id="syntax" class="slide level2">
+<h2>Syntax</h2>
+<p><strong>Syntax</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href=""></a><span class="kw">class</span> ClassName:</span>
+<span id="cb38-2"><a href=""></a>    class_variable_1 <span class="op">=</span> <span class="dv">0</span>        <span class="co"># it can have any values</span></span>
+<span id="cb38-3"><a href=""></a>    class_variable_2 <span class="op">=</span> <span class="dv">0</span>        </span>
+<span id="cb38-4"><a href=""></a>    ...</span>
+<span id="cb38-5"><a href=""></a></span>
+<span id="cb38-6"><a href=""></a>    <span class="at">@classmethod</span></span>
+<span id="cb38-7"><a href=""></a>    <span class="kw">def</span> class_method(cls):</span>
+<span id="cb38-8"><a href=""></a>        <span class="op">&lt;</span>statement<span class="op">-</span><span class="dv">1</span><span class="op">&gt;</span></span>
+<span id="cb38-9"><a href=""></a>        .</span>
+<span id="cb38-10"><a href=""></a>        .</span>
+<span id="cb38-11"><a href=""></a>        .</span>
+<span id="cb38-12"><a href=""></a>        <span class="op">&lt;</span>statement<span class="op">-</span>N<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 </section></section>
     </div>
