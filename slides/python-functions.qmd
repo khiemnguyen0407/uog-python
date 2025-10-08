@@ -135,11 +135,11 @@ max(fred, anne)     # accept variables too, print out 7
 - In this example, the order of the variables `a` and `b` is not important as they carry the same meaning.
 :::
 ::: {.fragment}
-- Question: Can you give me an example in which the positions of the input arguments are important?
+- <font color="red">**Question**</font>: Can you give me an example in which the positions of the input arguments are important?
 :::
 
 
-## Function: **positional* arguments
+## Function: <font color="red">positional</font> arguments
 - Solve a linear equation $a x + b = 0$
 ```{python}
 def solve_linear_equation(a, b):
@@ -154,7 +154,7 @@ def solve_linear_equation(a, b):
 ```
 
 ::: {.fragment}
-- Question: What happens and what is the return of this function when $a = b = 0$?
+- <font color="red">**Question**</font>: What happens and what is the return of this function when $a = b = 0$?
 ::: 
 
 ## Function: **positional** arguments
@@ -167,11 +167,11 @@ print("Solve equation 0 x + 1 = 0:", solve_linear_equation(0, 1))
 ```
 
 ::: {.fragment}
-- Question: How can we remember the meanings of all the input arguments if the function needs a long list of arguments?
+- <font color="red">**Question**</font>: How can we remember the meanings of all the input arguments if the function needs a long list of arguments?
 :::
 
 ::: {.fragment}
-- Answer: Use of **keyword** argument. We can specify which argument takes which value.
+- *Answer*: Use of <font color="blue">**keyword**</font> argument. We can specify which argument takes which value.
 :::
 
 ## Keyword arguments
@@ -218,7 +218,7 @@ print("Solve equation 2 x + 1 = 0:", solve_linear_equation(b=b, a=a))
 ```
 
 ::: {.fragment}
-- Question: Can you name any scenario that may need a lot of input arguments and thus the use of keyword arguments will benefit such cases?
+- <font color="red">**Question**</font>: Can you name any scenario that may need a lot of input arguments and thus the use of keyword arguments will benefit such cases?
 :::
 
 ## Brain storm
@@ -230,10 +230,10 @@ So let us examine a Newton-Raphson method to solve algebraic equation $f(x) = 0$
 ![Newton-Raphson iterations](./figures/python-functions/newton-raphson-method.png)
 
 ::: {.fragment}
-- Question: What happens if don't need to supply values to all the input arguments?
+- <font color="red">**Question**</font>: What happens if don't need to supply values to all the input arguments?
 :::
 ::: {.fragment}
-- Answer: Some input arguments may take **default** values if no values are supplied.
+- *Answer*: Some input arguments may take **default** values if no values are supplied.
     - number of iterations $N_\text{iter}$
     - tolerance $\varepsilon$ for stopping the iterations: $|f(x)| < \varepsilon$
 - However, very often we want $N_\text{iter}$ and $\varepsilon$ to be defaulted to some sensible numbers, e.g. $N_\text{iter} = 10^{4}$ and $\varepsilon = 10^{-6}$.
@@ -311,7 +311,7 @@ def tweak(a):
 ```
 
 ::: {.fragment}
-- Question: What output do you expect from the following code snippet?
+- <font color="red">**Question**</font>: What output do you expect from the following code snippet?
 ```python
 x = 10
 tweak_output = tweak(x)   
@@ -330,7 +330,7 @@ def tweak(a):
 ```
 
 ::: {.fragment}
-- Answer:
+- *Answer*:
 ```{python}
 x = 10
 tweak_output = tweak(x)   
@@ -366,7 +366,7 @@ print("After changing list_alias:")
 print("my_list    =", my_list)
 print("list_alias =", list_alias)
 ```
-- **Question**: What output do you expect to see?
+- <font color="red">**Question**</font>: What output do you expect to see?
 
 ## List as input in functions: Understanding a list
 ```{python}
@@ -406,7 +406,7 @@ print("\n" + 45*"=")
 
 print("people (after function call)  =", people)
 ```
-- **Question**: What output do you expect to see?
+- <font color="red">**Question**</font>: What output do you expect to see?
 
 ## List as input in functions
 ```{python}
@@ -444,7 +444,7 @@ def say_hello(name):
 
 output = say_hello("Khiem")
 ```
-- **Question**: What is the value of output?
+- <font color="red">**Question**</font>: What is the value of output?
 ::: 
 
 ::: {.fragment}
@@ -487,7 +487,7 @@ def find_min_max(array):
     return min_val, max_val
 ```
 ::: {.fragment}
-- **Question**: What is the code for finding the min and max values of a list $\begin{bmatrix} 1 & 3 & 5 & \ldots & 999 \end{bmatrix}$?
+- <font color="red">**Question**</font>: What is the code for finding the min and max values of a list $\begin{bmatrix} 1 & 3 & 5 & \ldots & 999 \end{bmatrix}$?
 :::
 
 ::: {.fragment}
@@ -583,7 +583,7 @@ my_tuple = ("This", "is", "a", "short", "sentence")
 my_string = " -- "
 print(my_string.join(my_tuple))
 ```
-- **Question**: How can we define the function `concat` as described above?
+- <font color="red">**Question**</font>: How can we define the function `concat` as described above?
 
 ## Arbitrary argument list: Arguments wrapped up in a tuple
 
@@ -595,7 +595,7 @@ returns the string `earth--mars--venus`.
 returns the string `"Mech Engineering Skills 3"`
 
 ::: {.fragment}
-**Answer**
+*Answer*
 
 ```{python}
 def concat(*args, sep="--"):
@@ -615,3 +615,19 @@ print(concat("Mech", "Engineering", "Skills", "3", sep=" "))
 def function_name(..., *args, **kwargs):
     <statements>
 ```
+
+**Best by example**
+```{python}
+def print_kwargs(**kwargs):
+    print(kwargs)
+```
+
+```{python}
+print_kwargs(one=1, two=2, three=3, four=4) # Then we use
+```
+
+**Explanation**
+
+- Python packs the keyword arguments `one=1`, `two=2`, `three=3` and `four=4` into a dictionary.
+- We can use `kwargs` dictionary in the function body as a *regular dictionary*.
+- We can use any name, but the peculiar `kwargs` -- short for **keyword arguments** -- is widely used and has become a standard.
