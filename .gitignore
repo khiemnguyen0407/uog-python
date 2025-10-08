@@ -5,6 +5,7 @@ presentation-demo_files/
 presentation_files/
 demo_files/
 demo/
+jupyter_env/
 *.pdf
 *.docx
 *.tex
