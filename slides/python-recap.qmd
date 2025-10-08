@@ -9,7 +9,6 @@ format:
     revealjs:
         theme: default
         title-slide-style: pandoc
-        echo: true
         code-overflow: wrap
         code-line-numbers: true
         css: style.css

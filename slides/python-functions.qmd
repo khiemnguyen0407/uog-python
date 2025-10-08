@@ -222,15 +222,396 @@ print("Solve equation 2 x + 1 = 0:", solve_linear_equation(b=b, a=a))
 :::
 
 ## Brain storm
-So let us examine a Newton-Raphson method to solve algebraic equation $f(x) = 0$.
+So let us examine a Newton-Raphson method to solve algebraic equation $f(x) = 0$
+
+![](./figures/python-functions/newton-raphson-method.png)
+
+## Brain storm
+![Newton-Raphson iterations](./figures/python-functions/newton-raphson-method.png)
 
 ::: {.fragment}
 - Question: What happens if don't need to supply values to all the input arguments?
 :::
 ::: {.fragment}
-    Answer: Some input arguments may take **default** values if no values are supplied.
+- Answer: Some input arguments may take **default** values if no values are supplied.
+    - number of iterations $N_\text{iter}$
+    - tolerance $\varepsilon$ for stopping the iterations: $|f(x)| < \varepsilon$
+- However, very often we want $N_\text{iter}$ and $\varepsilon$ to be defaulted to some sensible numbers, e.g. $N_\text{iter} = 10^{4}$ and $\varepsilon = 10^{-6}$.
 :::
 
-## Positional arguments
+::: {.fragment}
+<center> This leads to **default argument values**. </center>
+:::
+
+## default argument values
+
+- The argument can take <font color="red">**default value**</font> if the function call does <font color="red">not specify the value for it.</font>
+
+```{python}
+# variable "retries" and "reminder" are defaulted to 4 
+# and 'Come on!...' 
+def ask_ok(prompt, retries=4, reminder='Only "yes" or "no"'):     
+    """ Ask until receiving 'yes' or 'no' """
+    while True:
+        ok = input(prompt)
+        if ok in ('y', 'ye', 'yes'):
+            return True
+        if ok in ('n', 'no', 'nah'):
+            return False
+        retries = retries - 1
+        if retries < 0:
+            print(reminder)
+            return False # or return None
+```
+
+## default argument values
+```python
+def ask_ok(prompt, retries=4, reminder='Only "yes" or "no"'):     
+    """ Ask until receiving 'yes' or 'no' """
+    while True:
+        ok = input(prompt)
+        if ok in ('y', 'ye', 'yes'):
+            return True
+        if ok in ('n', 'no', 'nah'):
+            return False
+        retries = retries - 1
+        if retries < 0:
+            print(reminder)
+            return False # or return None
+```
+
+- This function can be called in several ways
+```python
+# By default, reminder = 'Only "yes" or "no"'
+ask_ok("Want a Quiz?", retries=2)
+# By default, retries = 4, reminder = 'Only "yes" or "no"'
+ask_ok("Want another Quiz?")
+```
+
+## Scope of variables in functions
+- **Scope of variables** is a very complex topic in programming in general, and deserves a separate lecture on its own.
+- In general, the topic is about how a part of the program can recognize the variables and up to which space that part cannot see those variables anymore.
+
+::: {.fragment}
+- Here, we focus on the scope of variables in using functions.
+:::
+::: {.fragment}
+- We are concerned with two cases:
+    - Copy of input argument in functions
+    - List as input in functions
+:::
+
+## Copy of input argument in functions
+```{python}
+def tweak(a):
+    print(a)        # print a before changing
+    a = 20          # assign 20 to a
+    print(a)        # print a after changing
+    # tweak_output is None -- we talk later about this
+```
+
+::: {.fragment}
+- Question: What output do you expect from the following code snippet?
+```python
+x = 10
+tweak_output = tweak(x)   
+print(x)
+print(tweak_output)
+```
+:::
+
+## Copy of input argument in functions
+```{python}
+def tweak(a):
+    print(a)        # print a before changing
+    a = 20          # assign 20 to a
+    print(a)        # print a after changing
+    # tweak_output is None -- we talk later about this
+```
+
+::: {.fragment}
+- Answer:
+```{python}
+x = 10
+tweak_output = tweak(x)   
+print(x)
+print(tweak_output)
+```
+:::
+
+## Copy of input argument in functions
+```{python}
+x = 10
+tweak_output = tweak(x)   
+print(x)
+print(tweak_output)
+```
+**Explanation** 
+
+- The copy of `x` has been made in the function so that the value of `x` does not change after calling `tweak()`. 
+- `print(x)` prints `10` because `x` is equal to $10$.
+- There is no `return` statement in the function `tweak()`, so the function return `None`. Therefore `tweak_output` takes value `None`.
+
+## List as input in functions: Understanding a list
+```python
+my_list = ["element 1", "element 2", "element 3"]
+list_alias = my_list
+print("id(my_list)    =", id(my_list))       
+print("id(list_alias) =", id(list_alias))
+print("my_list    =", my_list)
+print("list_alias =", list_alias)
+# Let us change the first element of list_alias
+list_alias[0] = "something"
+print("After changing list_alias:")
+print("my_list    =", my_list)
+print("list_alias =", list_alias)
+```
+- **Question**: What output do you expect to see?
+
+## List as input in functions: Understanding a list
+```{python}
+my_list = ["element 1", "element 2", "element 3"]
+list_alias = my_list
+# --> list_alias and my_list point to the same list
+print("id(my_list)    =", id(my_list))       
+print("id(list_alias) =", id(list_alias))
+print("my_list    =", my_list)
+print("list_alias =", list_alias)
+# Let us change the first element of list_alias
+list_alias[0] = "something"
+print("After changing list_alias:")
+print("my_list    =", my_list)
+print("list_alias =", list_alias)
+```
+
+## List as input in functions
+```{python}
+def greeting(names):
+    """Say hello to everyone."""
+    print("id(input-argument) =", id(names))    # print ID of the input argument
+    for name in names:
+        print("Hello " + name + "!", end = "\t")
+    names[0] = "Somebody else"  # Change the first element of the input-argument (as a list)
+    names[-1] = "Stranger"      # Change the last element of the input-argument (as a list)
+```
+
+```python
+people = ["Fred",  "Anna", "Bob"]       # create a list
+print("people (before function call) =", people)    
+print("id(people) =", id(people))
+
+print(15*"=" + " Function call " + 15*"=")
+greeting(people)                      
+print("\n" + 45*"=")
+
+print("people (after function call)  =", people)
+```
+- **Question**: What output do you expect to see?
+
+## List as input in functions
+```{python}
+people = ["Fred",  "Anna", "Bob"]       # create a list
+print("people (before function call) =", people)    
+print("id(people) =", id(people))
+
+print(15*"=" + " Function call " + 15*"=")
+greeting(people)                      
+print("\n" + 45*"=")
+
+# see the changes after the function call
+print("people (after function call)  =", people)    
+```
+
+## Function outputs
+
+- Every function (just like in maths) returns one thing, using the `return` statement.
+- Even if the function does not return anything, it actually returns with the value `None`.
+
+::: {.fragment}
+```{python}
+def addition(a, b):
+    """Is there a duller function?"""
+    return a + b
+s = addition(3, 7)      # usage is dull too
+print(s)
+```
+:::
+
+::: {.fragment}
+```{python}
+def say_hello(name):
+    print("Hello", name, "!")
+
+output = say_hello("Khiem")
+```
+- **Question**: What is the value of output?
+::: 
+
+::: {.fragment}
+```{python}
+print(output)
+```
+:::
+
+## Function outputs
+- To implement many outputs for one function return, we just return a tuple, a list or dictionary. The purpose of the function will usually suggest which one is best.
+- Returning a tuple is the most common use.
+
+```{python}
+def find_min_max(array):
+    min_val, max_val = array[0], array[0]   
+    for i in range(1, len(array)):
+        if array[i] < min_val:
+            min_val = array[i]
+        if array[i] > max_val:
+            max_val = array[i]
+    return min_val, max_val
+```
+```{python}
+min_val, max_val = find_min_max([-1, -4, 3, 5, 2])
+print(f"min value = {min_val}")
+print(f"max value = {max_val}")
+```
+- **Note**: Don't use `min` and `max` as variable names; they are functions provided by Python.
+
+## Function outputs
+
+```{python}
+def find_min_max(array):
+    min_val, max_val = array[0], array[0]   
+    for i in range(1, len(array)):
+        if array[i] < min_val:
+            min_val = array[i]
+        if array[i] > max_val:
+            max_val = array[i]
+    return min_val, max_val
+```
+::: {.fragment}
+- **Question**: What is the code for finding the min and max values of a list $\begin{bmatrix} 1 & 3 & 5 & \ldots & 999 \end{bmatrix}$?
+:::
+
+::: {.fragment}
+```{python}
+find_min_max(list(range(1, 1000, 2)))
+```
+:::
+
+## Documentation string
+
+- All functions can have text as their first line to explain its functioning.
+- This can be a one line or multiple lines.
+- Signified by three double quotations on the left and on the right: `"""documentation strings"""`
+- By convention, Python uses this as documentation for the function, and the function `help()` to fetches them.#
+Instead of `help(function_name)`, we can also use `function_name?`
+
+```{python}
+def add(a, b):
+    """Is there a duller function?"""
+    return a + b
+```
+
+## Documentation string
+Repeat example
+
+```{python}
+def add(a, b):
+    """Is there a duller function?"""
+    return a + b
+```
+
+::: {.fragment}
+- The question mark syntax `add?` does not work on this slide but `help(add)` does.
+```{python}
+help(add)
+```
+:::
+
+::: {.fragment}
+- To use the question mark syntax `add?`, let us turn to Jupyter Notebook (live code illustration).
+:::
 
 
+
+# Arbitrary number of input arguments
+
+## Variable number of inputs: tuple as inputs
+
+**Syntax**
+```python
+def function_name(normal_arg1, normal_arg2, ..., *args):
+    <statements>
+```
+
+- Very often, you might want to have a variable number of inputs to a function -- by convention, these inputs are named in the variable `args`
+- The variable `args` will always be a tuple, and is placed as the last argument (still before variable number of inputs as keyword arguments).
+- There is no positional arguments after `args`.
+- The asterisk `*` in front of `args` is to signify that the tuple is unpacked and passed in as separate arguments. These seprate arguments are then accessed by indexing.
+
+## Variable number of inputs: tuple as inputs
+
+**Example** 
+
+```{python}
+def print_out_info(name, age, *args):
+    print("Name:", name)
+    print("Age:", age)
+    print("Gender:", args[0])
+    print("Profession:", args[1])
+    print("Years of experience:", args[2])
+```
+
+Use of this function
+
+```{python}
+print_out_info("Khiem", 38, "male", "lecturer", 4)
+```
+
+## Arbitrary argument list: Arguments wrapped up in a tuple
+**Problem statement** 
+
+- We want to define a function `concat` that joins all the input parameters by a seprator which is defaulted to `"--"`.
+- Below are two examples: 
+    - The statement `concat("earth", "mars", "venus")`   
+    returns the string `earth--mars--venus`.
+    - The statement `concat("Mech", "Engineering", "Skills", "3", sep=" ")`  
+    returns the string `"Mech Engineering Skills 3"`
+
+- Before defining this function, let us study the method `join` for a string.
+
+```{python}
+my_tuple = ("This", "is", "a", "short", "sentence")
+my_string = " -- "
+print(my_string.join(my_tuple))
+```
+- **Question**: How can we define the function `concat` as described above?
+
+## Arbitrary argument list: Arguments wrapped up in a tuple
+
+Define a function `concat` receiving arbitrary number of inputs so that
+
+- The statement `concat("earth", "mars", "venus")`   
+returns the string `earth--mars--venus`.
+- The statement `concat("Mech", "Engineering", "Skills", "3", sep=" ")`  
+returns the string `"Mech Engineering Skills 3"`
+
+::: {.fragment}
+**Answer**
+
+```{python}
+def concat(*args, sep="--"):
+    return sep.join(args)
+```
+
+```{python}
+print(concat("earth", "mars", "venus"))
+print(concat("Mech", "Engineering", "Skills", "3", sep=" "))
+```
+:::
+
+## Arbitrary argument list: Arguments wrapped into a dictionary
+
+**Syntax**
+```python
+def function_name(..., *args, **kwargs):
+    <statements>
+```
