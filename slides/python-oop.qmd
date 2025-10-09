@@ -326,7 +326,7 @@ print(my_car.tank)
 
 # Class variables and class methods
 
-## Syntax
+## Class variables and class methods
 **Syntax**
 ```python
 class ClassName:
@@ -342,3 +342,71 @@ class ClassName:
         .
         <statement-N>
 ```
+
+## Class variables and class methods: Example
+
+**Example**
+
+```{python}
+class Car:
+    number_of_cars = 0
+    def __init__(self, make, model):
+        """ Constructor receives producer and model of the car"""
+        Car.number_of_cars += 1
+        self.make = make
+        self.model = model
+        self.tank_cap = 60
+        self.tank = 0
+    def fill_up(self):
+        self.tank = self.tank_cap
+    @classmethod
+    def how_many(cls):
+        # 'self' for "object". By convention, we use 'cls' for "class".
+        print(f"Number of cars = {cls.number_of_cars}")
+```
+
+## Class variables and class methods: Example
+```{python}
+print(f"Number of cars (using class variable) = {Car.number_of_cars}")
+
+my_car = Car("Nissan", "Micra")
+print(f"Number of cars = {Car.number_of_cars}")
+
+your_car = Car("Mercedes", "A160")
+print(f"Number of cars = {Car.number_of_cars}")
+
+his_car = Car("Mercedes", "A140")
+print(f"Number of cars = {Car.number_of_cars}")
+
+her_car = Car("BMW", "B160")
+print(f"Number of cars = {Car.number_of_cars}")
+```
+
+## Factory functions using class method
+- We can use the class method to create an object.
+
+```{python}
+class Pizza:
+    def __init__(self, ingredients):
+        self.ingredients = ingredients
+    
+    @classmethod
+    def margherita(cls):
+        return cls(["mozzarella", "tomatoes"])
+```
+
+```{python}
+my_pizza = Pizza(["cheese", "cheese", "cheese", "cheese"])
+print(my_pizza.ingredients)
+
+your_pizza = Pizza.margherita()
+print(your_pizza.ingredients)
+```
+::: {.fragment}
+
+## Special functions in class
+```{python}
+print(my_pizza)
+print(your_pizza)
+```
+:::
