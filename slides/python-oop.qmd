@@ -262,7 +262,7 @@ b = Complex()
 c = Complex(0, 1)
 ```
 
-- Question: What does `print(a)`,  `print(b)` and `print(c)` give us?
+- <font color="red">**Question**</font>: What does `print(a)`,  `print(b)` and `print(c)` give us?
 
 ::: {.fragment}
 ```{python}
@@ -274,10 +274,11 @@ print(c)
 
 ## Object
 
-- Question: How do we show the complex number in a human-reading form?
+- <font color="red">**Question**</font>: How do we show the complex number in a human-reading form?
 
 ::: {.fragment}
 We write a method to present the complex number itself.
+
 ```{python}
 class Complex:
     def __init__(self, real=0, imag=0):
@@ -289,8 +290,11 @@ class Complex:
 ```
 :::
 
-- Question: How do we use this above-defined function?
 
+
+:::{.fragment}
+- <font color="red">**Question**</font>: How do we use this above-defined function?
+:::
 :::{.fragment}
 ```{python}
 a = Complex(1, 0)
