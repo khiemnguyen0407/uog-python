@@ -1,5 +1,6 @@
 ---
-title: "Object-oriented Programming in Python"
+title: "Object-oriented Programming"
+subtitle: "Implementation of OOP in Python"
 author: |
     Khiem Nguyen 
     <br>Lecturer in Multiscale Materials
@@ -16,6 +17,149 @@ format:
 ---
 
 # Object-oriented programing
+## Concept
+
+> **Object-Oriented Programming** (OOP) is a programming paradigm that organizes software design around objects, which are instances of classes. These objects encapsulate data (attributes) and behavior (methods), making it easier to model real-world entities in code.
+
+<center> <img src='./figures/python-oop/drawing-shapes.png' width="650"> </center>
+
+
+## Core principles of OOP
+
+1. <span style="font-family:monospace;"><font color="red">**Encapsulation**</font></span>
+    - Bundles data and methods that operate on that data into a single unit (class)
+    - Protects internal state by controlling access through public/private interfaces.
+2. <span style="font-family:monospace;"><font color="red">**Inheritance**</font></span>
+    - Allows a class to inherit properties and behaviors from another class.
+    - Promotes code reuse and hierarchical relationships.
+3. <span style="font-family:monospace;"><font color="red">**Polymorphism**</font></span>
+    - Enables objects to be treated as instances of their parent class, even if they have different implementations.
+    - Example: Different shapes (Circle, Square) can share a common interface draw().
+4. <span style="font-family:monospace;"><font color="red">**Abstraction**</font></span>
+    - Hides complex implementation details and exposes only essential features.
+    - Helps reduce complexity for the user of the class.
+
+
+## Why do we need OOP?
+
+- <font color="red">**Modularity**</font>    
+    Code is organized into classes, making it easier to maintain and debug.
+- <font color="red">**Reusablity**</font>  
+    Inheritance and polymorphism allow you to reuse existing code.
+- <font color="red">**Scalability**</font>    
+    Large systems become easier to manage because functionality is grouped logically.
+- <font color="red">**Maintainability**</font>  
+    Changes in one part of the system have minimial impact on others
+- <font color="red">**Real-world modelling**</font>  
+    OOP maps naturally to real-world entities, making design intuitive.
+
+## Procedure Programming
+- **Definition**  
+    A programming paradigm based on procedures (functions) and sequential executtion of instructions
+- **Structure**  
+    Code is organized into functions that operate on data, but data and behaviors are separate.
+- **Examples**
+    C, Pascal, early Python scripts, MATLAB (MATLAB has OOP but OOP in MATLAB is not popular)
+
+## Procedural Programming vs OOP
+
+<font color="red">**Procedure Programming**</font>  
+
+| **Pros** | **Cons** |
+|:---------|:---------|
+| Simple and easy to learn for small programs | Harder to maintain as codebase grows (spaghettie code risk) |
+| Good for tasks that are linear and algorithmic | Poor modelling of real-world entities
+| Lower overhead compared to OOP for small-scale projects | Code reuse is limited; duplication (Copy/Paste) is common
+| | Changes in data structures often require changes in many functions
+
+## Procedure Programming vs OOP
+<font color="red">**Object-oriented programming**</font>
+
+| **Pros** | **Cons** |
+|:---------|:---------|
+| *Encapsulation*: Keep data and method, improving *moduliarty* | More complex for beginners |
+| *Reusuability*: Inheritance and polymorphism reduce duplication | Slightly more overhead (memory and design time)
+| *Maintainability*: Easier to update and extend larger systems | Can lead to over-engineering for simple tasks
+| *Real-world modelling*: Classes map naturally to entitities | 
+
+:::{.fragment}
+<font color="red">**Key Difference**</font>
+
+- **Procedural**: Focuses on *functions* and *procedures* acting on data.
+
+- **OOP**: Focuses on *objects* that encapsulate both data and behavior.
+:::
+
+
+## Objects we have used all the time
+- **String**
+```{python}
+sep = '--'
+t = 'Mechanical', 'Engineering', 'Skills', '3'
+sep.join(t)
+```
+
+- **List**
+```{python}
+a = [i for i in range(4)]
+b = [4 - i for i in range(4)]
+print(f"a + b = {a + b}")
+```
+
+- **NumPy Arrays**
+```{python}
+import numpy as np
+a = np.array([1, 2, 3, 4])
+b = np.array([4, 3, 2, 1])
+print(f"a + b = {a + b}")
+```
+
+## Objects we have used all the time
+```{python}
+import matplotlib.pyplot as plt
+
+fig = plt.figure(figsize=(6, 4))  # Creates a Figure object
+print(type(fig))  # <class 'matplotlib.figure.Figure'>
+
+ax = fig.add_subplot(111)         # Adds an Axes object
+ax.plot([1, 2, 3], [4, 5, 6])
+plt.show()
+```
+
+## Why do we have to learn OOP in Python?
+A lot of Python libraries are written and provided in OOP paradigm.
+
+```{python}
+from sklearn.linear_model import LinearRegression # for linear regression
+import numpy as np
+model = LinearRegression()          # Create a LinearRegression object
+
+# Prepare data for fitting
+X = np.array([[1], [2], [3], [4], [5]])     # Features
+y = np.array([2, 4, 6, 8, 10])              # Target
+# Fit the Linear Regression model to data
+model.fit(X, y)                      
+# predict new values
+predictions = model.predict(np.array([[1.5], [2.5]]))
+
+print(type(model))
+print(type(predictions))
+print(predictions)
+```
+
+## Why do we have to learn OOP in Python?
+A lot of Python libraries are written and provided in OOP paradigm.
+```{python}
+import matplotlib.pyplot as plt
+from matplotlib.patches import Circle, Rectangle
+fig, ax = plt.subplots(figsize=(4.5, 4.5))
+circle = Circle((0.5, 0.5), 0.3, color='skyblue', alpha=0.7)
+ax.add_patch(circle)
+rect = Rectangle((0.1, 0.1), 0.3, 0.2, color='orange', alpha=0.8)
+ax.add_patch(rect)
+plt.show()
+```
+
 
 ## Class definition syntax
 ```python
