@@ -173,6 +173,9 @@ Last but not least, you will deal with OOP all the time in advanced courses
 
 # Syntax and Concept
 
+## Concept: Class vs Objects
+![Cookie Cutter as Class](./figures/python-oop/cookie-cutter-class-vs-object.jpg)
+
 ## Syntax: Class definition
 ```python
 class ClassName:
@@ -218,9 +221,9 @@ class Circle:       # <---- class name
 ```
 - A **Circle** can be created and used
 ```{python}
-c = Circle(center_outside=(1, 1), radius_outside=0.5) # create an object
-c.show_data()   # execute method "show_data" of object "c"
-c.draw()        # execute method "draw" of object "c"
+shit = Circle(center_outside=(1, 1), radius_outside=0.5) # create an object
+shit.show_data()   # execute method "show_data" of object "c"
+shit.draw()        # execute method "draw" of object "c"
 ```
 
 ## Concept: About Constructor
