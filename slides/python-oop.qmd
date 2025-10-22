@@ -9,6 +9,7 @@ author-meta: "Lecturer in Multiscale Materials"
 format: 
     revealjs:
         theme: default
+        slide-number: true
         title-slide-style: pandoc
         echo: true
         code-overflow: wrap
@@ -16,7 +17,7 @@ format:
         css: style.css
 ---
 
-# Object-oriented programing
+# Object-oriented programing: Principles and Rationale
 ## Concept
 
 > **Object-Oriented Programming** (OOP) is a programming paradigm that organizes software design around objects, which are instances of classes. These objects encapsulate data (attributes) and behavior (methods), making it easier to model real-world entities in code.
@@ -91,7 +92,10 @@ format:
 :::
 
 
-## Objects we have used all the time
+## Why OOP in Python: We have used it all the time.
+
+**Objects** we have used all the time
+
 - **String**
 ```{python}
 sep = '--'
@@ -106,34 +110,34 @@ b = [4 - i for i in range(4)]
 print(f"a + b = {a + b}")
 ```
 
+## Why OOP in Python: We have used it all the time.
+
+- **Figure** and **Axe** objects
+```{python}
+import matplotlib.pyplot as plt
+fig = plt.figure(figsize=(5, 3)) # Creates a Figure object
+print(type(fig))      # <class 'matplotlib.figure.Figure'>
+ax = fig.add_subplot(111)        # Adds an Axes object
+ax.plot([1, 2, 3], [4, 5, 6])
+plt.show()
+```
+## Why OOP in Python
+A lot of Python libraries are written and provided in OOP paradigm.
+
 - **NumPy Arrays**
 ```{python}
-import numpy as np
+import numpy as np 
 a = np.array([1, 2, 3, 4])
 b = np.array([4, 3, 2, 1])
 print(f"a + b = {a + b}")
 ```
 
-## Objects we have used all the time
-```{python}
-import matplotlib.pyplot as plt
-
-fig = plt.figure(figsize=(6, 4))  # Creates a Figure object
-print(type(fig))  # <class 'matplotlib.figure.Figure'>
-
-ax = fig.add_subplot(111)         # Adds an Axes object
-ax.plot([1, 2, 3], [4, 5, 6])
-plt.show()
-```
-
-## Why do we have to learn OOP in Python?
-A lot of Python libraries are written and provided in OOP paradigm.
-
+## Why OOP in Python
+- **Linear Regression Models**
 ```{python}
 from sklearn.linear_model import LinearRegression # for linear regression
 import numpy as np
 model = LinearRegression()          # Create a LinearRegression object
-
 # Prepare data for fitting
 X = np.array([[1], [2], [3], [4], [5]])     # Features
 y = np.array([2, 4, 6, 8, 10])              # Target
@@ -141,18 +145,17 @@ y = np.array([2, 4, 6, 8, 10])              # Target
 model.fit(X, y)                      
 # predict new values
 predictions = model.predict(np.array([[1.5], [2.5]]))
-
 print(type(model))
 print(type(predictions))
 print(predictions)
 ```
 
-## Why do we have to learn OOP in Python?
-A lot of Python libraries are written and provided in OOP paradigm.
+## Why OOP in Python
+- **Circle** and **Rectangle** from `matplotlib.patches`
 ```{python}
 import matplotlib.pyplot as plt
 from matplotlib.patches import Circle, Rectangle
-fig, ax = plt.subplots(figsize=(4.5, 4.5))
+fig, ax = plt.subplots(figsize=(3.5, 3.5))
 circle = Circle((0.5, 0.5), 0.3, color='skyblue', alpha=0.7)
 ax.add_patch(circle)
 rect = Rectangle((0.1, 0.1), 0.3, 0.2, color='orange', alpha=0.8)
@@ -160,8 +163,17 @@ ax.add_patch(rect)
 plt.show()
 ```
 
+## Why OOP: A pratical point of view
 
-## Class definition syntax
+Last but not least, you will deal with OOP all the time in advanced courses
+
+- <font color="magenta">**ENG3091**</font>&nbsp; Advanced Programming and Software Engineering
+- <font color="magenta">**ENG4200**</font>&nbsp; Introduction to Artificial Intelligence and Machine Learning
+- <font color="magenta">**ENG5337**</font>&nbsp; Advanced Artificial Intelligence and Machine Learning
+
+# Syntax and Concept
+
+## Syntax: Class definition
 ```python
 class ClassName:
     <statement-1>
@@ -181,37 +193,55 @@ class ClassName:
 ## Concept: A gentle introduction
 - Template for a **Circle**
 ```{python}
-class Circle:       # class name
+class Circle:       # <---- class name
 
     def __init__(self, center_outside, radius_outside): # constructor
-        self.center = center_outside        # data
-        self.radius = radius_outside        # data
+        self.center = center_outside # <-- data, local to each object
+        self.radius = radius_outside # <-- data, local to each object
 
-    def draw(self):                         # method
-        print("Drawing is done")    # plotting is done here.
+    def draw(self):                  # <---- method
+        print("Drawing is done")     # plotting is done here.
+    def show_data(self):             # <---- method
+        print(f"Circle: center={self.center}, radius={self.radius}")
+```
 
-    def show_data(self):                    # method
-        print(f"Circle: center = {self.center}, radius = {self.radius}")
+## Concept: A gentle introduction
+```{python}
+class Circle:       # <---- class name
+    def __init__(self, center_outside, radius_outside): # constructor
+        self.center = center_outside # <-- data, local to each object
+        self.radius = radius_outside # <-- data, local to each object
+    def draw(self):                  # <---- method
+        print("Drawing is done")     # plotting is done here.
+    def show_data(self):             # <---- method
+        print(f"Circle: center={self.center}, radius={self.radius}")
 ```
 - A **Circle** can be created and used
 ```{python}
-c = Circle(center_outside=(1, 1), radius_outside=0.5)
-c.show_data()
-c.draw()
+c = Circle(center_outside=(1, 1), radius_outside=0.5) # create an object
+c.show_data()   # execute method "show_data" of object "c"
+c.draw()        # execute method "draw" of object "c"
 ```
 
-## Concept: about Constructor
+## Concept: About Constructor
 ```{python}
-c = Circle(center_outside=(1, 1), radius_outside=0.5)
-c.show_data()
-c.draw()
+circ = Circle(center_outside=(1, 1), radius_outside=0.5)
+circ.show_data()
+circ.draw()
 ```
+::: {.fragment}
 What has just happened
 
-- When the statement `c = Circle((1, 1), 0.5)` is executed, the function `__init__()` is executed. Then, an object is created and assigned the variable `c`.
+- When the statement `c = Circle((1, 1), 0.5)` is executed, the function `__init__()` is executed. 
+- Right after that, an object of data tyle `Circle` is created and assigned the variable `c`.
 - The variable `c` now exists and represent an object of type `Circle`.
+:::
 
-## Syntax: Example
+::: {.fragment}
+`__init__(self, ...)` is the constructor for the class `Circle`.
+:::
+
+## Concept: Simple example
 ```{python}
 class SimpleClass:
     class_value = 42                # class variable
@@ -273,8 +303,6 @@ class Circle:       # class name
 
 > Remember: The first argument of every function is `self`.
 :::
-
-
 
 ## Syntax: Example -- further explanation
 ```{python}
@@ -355,7 +383,7 @@ stuart = Student(3000000)   # create Stuart
 stuart.reveal_ID()          # shows his ID
 ```
 ::: {.fragment}
-Questions
+<font color="red">**Questions**</font>
 
 - How to change his ID?
 - How to reveal his ID using the class name, instead of the object?
@@ -388,6 +416,41 @@ Student.__init__(stuart, 1234567)   # not recommended
 stuart.reveal_ID()
 ```
 :::
+
+## Interpretation of `self` variable
+- Recall that in the declaration  
+```{python}
+def do_useless(*args, **kwargs):
+    """args and kwargs can take different names"""
+    print(args, kwargs)
+
+do_useless(1, 2, 3, one=1, two=2, three=3)
+```  
+both `args` and `kwargs` can take different variables.
+```{python}
+def do_useless(*stuffs, **things):
+    """This function works as above. Just different argument names"""
+    print(stuffs, things)
+
+do_useless(1, 2, 3, one=1, two=2, three=3)
+```
+
+## Interpretation of `self` variable
+- In the same way, `self` is just the first argument in *functions* declared in a class. It can take different names.
+```{python}
+class Student:
+    def __init__(this, ID): # this is the first argument
+        this.ID = ID
+    def reveal_ID(that):    # that is the first argument
+        print(that.ID)
+    def do_job(self):       # you can even mix self and this
+        print(f"{self.ID} is studying.")
+```
+```{python}
+Khiem = Student(42424242)
+Khiem.do_job()
+```
+> By convention, always use `self` please
 
 ## Object
 
@@ -474,26 +537,24 @@ print(my_car.tank)
 
 # Class variables and class methods
 
-## Class variables and class methods
-**Syntax**
+## Concept: class variables and class methods
+- A class may also have its own status and thus its own attributes and methods.
+- A **class variable** is defined in a class and intended to be modified at class level. There is no need of an object to use these attributes.
+- A **class method** is defined in a class and indented to be used at class level. We can use class methods even without creating an object.
 ```python
 class ClassName:
     class_variable_1 = 0        # it can have any values
     class_variable_2 = 0        
     ...
 
-    @classmethod
+    @classmethod                # to define class methods
     def class_method(cls):
         <statement-1>
-        .
-        .
-        .
+        ...
         <statement-N>
 ```
 
 ## Class variables and class methods: Example
-
-**Example**
 
 ```{python}
 class Car:
@@ -519,15 +580,14 @@ print(f"Number of cars (using class variable) = {Car.number_of_cars}")
 
 my_car = Car("Nissan", "Micra")
 print(f"Number of cars = {Car.number_of_cars}")
-
 your_car = Car("Mercedes", "A160")
 print(f"Number of cars = {Car.number_of_cars}")
-
 his_car = Car("Mercedes", "A140")
 print(f"Number of cars = {Car.number_of_cars}")
 
-her_car = Car("BMW", "B160")
-print(f"Number of cars = {Car.number_of_cars}")
+# Finally, we can also ask
+print("Finally, we can also ask: ", end="")
+Car.how_many()
 ```
 
 ## Factory functions using class method
@@ -558,3 +618,25 @@ print(my_pizza)
 print(your_pizza)
 ```
 :::
+
+# Inheritance & Composition
+
+## Concept: Composition and Inheritance
+- **Composition**
+    - Objects can contain other objects in their instance variables; this is known as *object composition*.
+    - *Object composition* is used to represent <u>has-a</u> relationships.
+
+    <u> Example</u>: Every Student has an ID (number), email (string), courses & grades (Table)
+
+```{python}
+
+```
+- **Inheritance**
+    - Programming languages that support classes always support <font color="red">**inheritance**</font>.
+    - Inheritance allows classes to be arranged in a hierarchy that represents <u>is-a-type-of</u> relationships.
+
+    <u>Example</u>  
+    - A Rectangle is a Polygon, a Circle is an Ellipse. Rectangle, Polygon, Circle and Ellipse are all Shapes.
+    - A PhD Student is a Student, a Lecturer is a Staff.
+
+We shall focus on **inheritance**.
