@@ -8,13 +8,17 @@ author: |
 author-meta: "Lecturer in Multiscale Materials"
 format: 
     revealjs:
-        theme: default
+        theme: night   # other themes: beige, blood, dark, dracula, league, moon, night, serif, simple, sky, solarized
         slide-number: true
         title-slide-style: pandoc
         echo: true
         code-overflow: wrap
         code-line-numbers: true
-        css: style.css
+        code-block-bg: false          # <-- remove white background in code blocks
+        # code-block-border-left: false # optional: remove left border
+        # highlight-style: monokai      # good for dark images
+
+        css: halloween.css
 ---
 
 # Object-oriented programing: Principles and Rationale
@@ -167,14 +171,14 @@ plt.show()
 
 Last but not least, you will deal with OOP all the time in advanced courses
 
-- <font color="magenta">**ENG3091**</font>&nbsp; Advanced Programming and Software Engineering
-- <font color="magenta">**ENG4200**</font>&nbsp; Introduction to Artificial Intelligence and Machine Learning
-- <font color="magenta">**ENG5337**</font>&nbsp; Advanced Artificial Intelligence and Machine Learning
+- <font color="orange">**ENG3091**</font>&nbsp; Advanced Programming and Software Engineering
+- <font color="orange">**ENG4200**</font>&nbsp; Introduction to Artificial Intelligence and Machine Learning
+- <font color="orange">**ENG5337**</font>&nbsp; Advanced Artificial Intelligence and Machine Learning
 
 # Syntax and Concept
 
 ## Concept: Class vs Objects
-![Cookie Cutter as Class](./figures/python-oop/cookie-cutter-class-vs-object.jpg)
+![](./figures/python-oop/cookie-cutter-class-vs-object.jpg)
 
 ## Syntax: Class definition
 ```python
@@ -578,6 +582,7 @@ class Car:
 ```
 
 ## Class variables and class methods: Example
+
 ```{python}
 print(f"Number of cars (using class variable) = {Car.number_of_cars}")
 
@@ -594,8 +599,8 @@ Car.how_many()
 ```
 
 ## Factory functions using class method
-- We can use the class method to create an object.
 
+- We can use the class method to create an object.
 ```{python}
 class Pizza:
     def __init__(self, ingredients):
@@ -605,7 +610,7 @@ class Pizza:
     def margherita(cls):
         return cls(["mozzarella", "tomatoes"])
 ```
-
+::: {.fragment}
 ```{python}
 my_pizza = Pizza(["cheese", "cheese", "cheese", "cheese"])
 print(my_pizza.ingredients)
@@ -613,14 +618,13 @@ print(my_pizza.ingredients)
 your_pizza = Pizza.margherita()
 print(your_pizza.ingredients)
 ```
-::: {.fragment}
+:::
 
 ## Special functions in class
 ```{python}
 print(my_pizza)
 print(your_pizza)
 ```
-:::
 
 # Inheritance & Composition
 

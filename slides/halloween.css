@@ -1,0 +1,59 @@
+/* Global background for the deck */
+.reveal {
+    font-size: 28px;
+    background: #ffffff;
+    background-image: url("./figures/background-images/halloween-03.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* Fallback color if image fails to load */
+}
+
+.reveal pre {
+    font-size: 1.8rem !important;
+}
+
+.reveal code {
+    font-size: 0.85em !important;
+}
+
+
+/* Optional: slightly dark overlay for legibility */
+.reveal:before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.35);
+    /* adjust to taste */
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Make content sit above overlay */
+.reveal .slides {
+    position: relative;
+    z-index: 1;
+}
+
+/* Headings & text hues with Halloween vibe */
+.reveal h1,
+.reveal h2,
+.reveal h3 {
+    color: #e2a66d;
+    /* pumpkin orange */
+    /* text-shadow: 0 2px 8px rgb(218, 228, 76); */
+}
+
+.reveal section {
+    color: #f6f2e9;
+    /* warm off-white */
+}
+
+/* Links */
+.reveal a {
+    color: #ffffff;
+}
+
+.reveal a:hover {
+    color: #ffffff;
+}
