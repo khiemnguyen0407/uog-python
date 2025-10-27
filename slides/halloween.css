@@ -39,7 +39,8 @@
 .reveal h1,
 .reveal h2,
 .reveal h3 {
-    color: #e2a66d;
+    color: #ff7a18;
+    /* pumpkin orange */
     /* pumpkin orange */
     /* text-shadow: 0 2px 8px rgb(218, 228, 76); */
 }
@@ -49,11 +50,12 @@
     /* warm off-white */
 }
 
+
 /* Links */
 .reveal a {
-    color: #ffffff;
+    color: #ffb703;
 }
 
 .reveal a:hover {
-    color: #ffffff;
+    color: #ffd166;
 }

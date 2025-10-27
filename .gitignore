@@ -12,3 +12,4 @@ jupyter_env/
 demo.*
 presentation-demo.*
 ./'Python Code -- Functions.ipynb'
+.ipynb_checkpoints
