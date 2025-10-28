@@ -8,7 +8,7 @@ author: |
 author-meta: "Lecturer in Multiscale Materials"
 format: 
     revealjs:
-        theme: night   # other themes: beige, blood, dark, dracula, league, moon, night, serif, simple, sky, solarized
+        theme: default   # other themes: beige, blood, dark, dracula, league, moon, night, serif, simple, sky, solarized
         slide-number: true
         title-slide-style: pandoc
         echo: true
@@ -18,7 +18,7 @@ format:
         # code-block-border-left: false # optional: remove left border
         # highlight-style: monokai      # good for dark images
 
-        css: halloween.css
+        css: simple.css
 ---
 
 # Object-oriented programing: Principles and Rationale
@@ -229,6 +229,12 @@ shit = Circle(center_outside=(1, 1), radius_outside=0.5) # create an object
 shit.show_data()   # execute method "show_data" of object "c"
 shit.draw()        # execute method "draw" of object "c"
 ```
+
+## Terminology: Object, Attribute, and Method
+- Each object is said "an instance of a particular class".
+- Variables associated with objects are known as <font color="red">**attributes**</font>, <font color="red">**members**</font>, or <font color="red">**properties**</font> (depending on the community you are talking to)
+- Functions associated with objects are known as <font color="red">**methods**</font>.
+
 
 ## Concept: About Constructor
 ```{python}
@@ -630,10 +636,10 @@ print(your_pizza)
 
 ## Concept: Composition and Inheritance
 - **Composition**
-    - Objects can contain other objects in their instance variables; this is known as *object composition*.
-    - *Object composition* is used to represent <u>has-a</u> relationships.
+    - **Object composition**: Objects can contain other objects in their instance variables.
+    - *Object composition* is used to represent <u><font color="red">**has-a**</font></u> relationships.
 
-    <u> Example</u>: Every Student has an ID (number), email (string), courses & grades (Table)
+    <u> *Example*</u>: Every Student has an ID (number), email (string), courses & grades (Table)
 
 ```{python}
 
@@ -642,8 +648,145 @@ print(your_pizza)
     - Programming languages that support classes always support <font color="red">**inheritance**</font>.
     - Inheritance allows classes to be arranged in a hierarchy that represents <u>is-a-type-of</u> relationships.
 
-    <u>Example</u>  
+    <u>*Example*</u>  
     - A Rectangle is a Polygon, a Circle is an Ellipse. Rectangle, Polygon, Circle and Ellipse are all Shapes.
     - A PhD Student is a Student, a Lecturer is a Staff.
 
-We shall focus on **inheritance**.
+Although we briefly touch *composition*, we shall focus on **inheritance**.
+
+## Composition
+Objects can contain other objects as its attributes.
+```{python}
+class Engine:
+    def __init__(self, horsepower):
+        self.horsepower = horsepower
+
+    def start(self):
+        print(f"Engine with {self.horsepower} HP is starting...")
+
+class Car:
+    def __init__(self, make, model, engine):
+        self.make = make
+        self.model = model      
+        self.engine = engine    # Composition: Car has an Engine
+
+    def start(self):
+        print(f"Starting car: {self.make} {self.model}")
+        self.engine.start()
+```
+
+## Composition
+```{python}
+class Engine:
+    def __init__(self, horsepower):
+        self.horsepower = horsepower
+    def start(self):
+        print(f"Engine with {self.horsepower} HP is starting...")
+
+class Car:
+    def __init__(self, make, model, engine):
+        self.make, self.model, self.engine = make, model, engine # To save space
+    def start(self):
+        print(f"Starting car: {self.make} {self.model}")
+        self.engine.start()
+```
+
+::: {.fragment}
+```{python}
+engine = Engine(horsepower=300)
+my_car = Car(make="Toyota", model="Supra", engine=engine)
+my_car.start()
+```
+:::
+
+## Inheritance: Concept and Example
+
+<u>Repeat</u>: **Inheritance** allows classes to be arranged in a hierarchy that represents <font color="red">**is-a-type-of**</font> relationship.
+
+
+
+::: {.fragment}
+- Let us assume the following scenario:
+    - A lecturer is an employee.
+    - A member of teaching office (MTO) is an employee.
+    - A technician is an employee.
+    - A security guard is an employee.
+:::
+
+::: {.fragment}
+- Then, think of this scenario a bit:
+    - All these people have in common the personal information: Full Name, Age, Salary, Employee ID, etc.
+    - A lecturer teaches and does research. An MTO prepares course info, inputs grades. A technician does instruction, makes demonstration. A guard looks after people.
+:::
+
+## Inheritance: Concept and Example
+
+<font color="blue">**Example**</font>&nbsp;&nbsp;&nbsp;**Drawing here on iPad.**
+
+- The class `Employee` might define variables `full_name`, `age`, `salary`, `ID`, and define the methods `record_name()`, `register_ID()`, `receive_salary()`.
+- We can decdie all the classes `Lectuer`, `TeachingOfficeMember`, `Technician` and `SecurityGuard` can inherit from the class `Employee`. Then, these classes inherit all the attributes and methods defined in `Employee`. 
+
+> <font color="blue">**Principle benefits**</font>
+>
+> 1. Inheritance allows easy **reuse** of the procedures, functions, and data definitions.
+> 2. New classes can extend the existing classes.
+
+This mechanism mirrors real-world relationships in an intuitive way. Rather than utilizing database tables, and programming subroutines, the developer defines objects that the users are more familiar with in real life.
+
+
+## Inheritance: Terminology
+Let us assume the following relationship:  <u>class `A` is a type of class `B`</u>.
+
+We can say: 
+
+- class `A` **inherits** class `B`
+- class `A` is **derived from** class `B`
+
+<u>**Terminology**</u>&nbsp;&nbsp;&nbsp; We can call
+
+- class `A`:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **derived class** / **super class** / **child class**
+- class `B`:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **base class** / **subclass** / **parent class**
+
+In fact, the names are already self-explanatory in the child-parent relationship.
+
+
+## Inheritance: Syntax
+
+```python
+class DerivedClassName(BaseClassName):
+    <statement-1>
+    .
+    .
+    .
+    <statement-N>
+```
+> Remark
+>
+> - The name `BaseClassName` must be defined in a scope containing the derived class definition.
+> - In other words, the `DerivedClassName` must understand `BaseClassName` before it can be defined as its child.
+
+> **Multiple inheritance**: One class can be derived from many classes. Discuss later!!
+
+## Inheritance: Trash example
+
+::: {.fragment}
+- Waste Paper is a type of Trash
+- Can is a type of Trash
+- Trash can be shreaded or burnt.
+:::
+
+::: {.fragment}
+But:
+
+- Waste Paper has conditions Can does not have and vice versa.
+- Both Can and Waste Paper can be crushed but they are crushed differently -- Can need more effort using machines.
+:::
+
+::: {.fragment}
+Later, down the road we may want to add
+
+- Carton is a type of Trash
+- Plastic Box is a type of Trash
+- Metal Box is a type of Trash
+- etc.
+:::
