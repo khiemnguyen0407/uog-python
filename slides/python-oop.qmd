@@ -724,7 +724,7 @@ my_car.start()
 <font color="blue">**Example**</font>&nbsp;&nbsp;&nbsp;**Drawing here on iPad.**
 
 - The class `Employee` might define variables `full_name`, `age`, `salary`, `ID`, and define the methods `record_name()`, `register_ID()`, `receive_salary()`.
-- We can decdie all the classes `Lectuer`, `TeachingOfficeMember`, `Technician` and `SecurityGuard` can inherit from the class `Employee`. Then, these classes inherit all the attributes and methods defined in `Employee`. 
+- We can decdie all the classes `Lectuer`, `TeachingOfficeMember`, `Technician` and `SecurityGuard` can inherit from the class `Employee`. Then, these classes inherit all the attributes and methods defined in `Employee`.
 
 > <font color="blue">**Principle benefits**</font>
 >
@@ -732,6 +732,10 @@ my_car.start()
 > 2. New classes can extend the existing classes.
 
 This mechanism mirrors real-world relationships in an intuitive way. Rather than utilizing database tables, and programming subroutines, the developer defines objects that the users are more familiar with in real life.
+
+## Inheritance: Concept and Example
+
+![UML Diagram](./figures/python-oop/uml-employee.png)
 
 
 ## Inheritance: Terminology
@@ -789,4 +793,151 @@ Later, down the road we may want to add
 - Plastic Box is a type of Trash
 - Metal Box is a type of Trash
 - etc.
-:::git 
+:::
+
+## Code 
+```{python}
+class Trash:
+    
+    def __init__(self, weight, value):
+        """Initialize a Trash instance."""
+        self.weight = weight
+        self.value = value
+        print("Trash constructor: Trash({0}, {1})".
+              format(self.weight, self.value))
+    
+    def shread(sef):
+        print("In Trash: Shred me please!")
+        
+    def burn(self):
+        print("In Trash: Burn me please!")
+```
+
+## Code: WastePaper and Can
+```{python}
+class WastePaper(Trash):
+    def __init__(self, weight, value, condition, value_wet, value_dry):
+        super().__init__(weight, value)
+        self.condition = condition
+        self.value_wet = value_wet
+        self.value_dry = value_dry
+        print("WasePaper constructor: WastePaper({0}, {1}, {2}, {3}, {4})".
+              format(self.weight, self.value, self.condition, self.value_dry, self.value_wet))
+        
+    def value_refresh(self):
+        self.value_wet = 0
+        self.value_dry = 0
+```
+
+## Code: WastePaper and Can
+```{python}
+class Can(Trash):
+    def __init__(self, weight, value):
+        super().__init__(weight, value)
+        print("Can constructor: Can({0}, {1})".
+              format(weight, value))
+        
+    def crush(self):
+        print("In Can: Crush me please!")
+```
+
+## Code: Use of these objects
+```{python}
+my_trash = Trash(0.1, 1); print(50*"-")
+
+# Inside the constructor of WastePaper, the constructor of Trash 
+# is called explicitly. Then, the rest in 
+# WastePaper.__init__ is executed.
+my_waste_paper = WastePaper(0.2, 1, "new", 0.8, 0.2)
+print("my_waste_paper.weight =", my_waste_paper.weight)  
+print("my_waste_paper.value =", my_waste_paper.value)
+my_waste_paper.shread(); print(50*"-")
+# Similarly, the constructor of Trash is called 
+# inside the constructor of Can.
+my_can = Can(0.2, 2.0)
+my_can.crush()
+```
+
+## Overriding
+One of important and excited feature of inheritance is that the subclassses can ***override*** the methods defined by superclasses (base class).
+
+```{python}
+class Trash:
+    def __init__(self, weight, value):
+        """Initialize a Trash instance."""
+        self.weight = weight
+        self.value = value
+        print("Trash constructor: Trash({0}, {1})".
+              format(self.weight, self.value))
+    
+    def shread(sef):
+        print("In Trash: Shred me please!")
+        
+    def burn(self):
+        print("In Trash: Burn me please!")
+    
+    # We shall override this method of Trash
+    def crush(self):
+        print("In Trash: Crush me please!")
+```
+
+## Overriding
+
+```{python}
+class WastePaper(Trash):
+    def __init__(self, weight, value, condition, value_wet, value_dry):
+        super().__init__(weight, value)
+        self.condition = condition
+        self.value_wet = value_wet
+        self.value_dry = value_dry
+        print("WasePaper constructor: WastePaper({0}, {1}, {2}, {3}, {4})".
+              format(self.weight, self.value, self.condition, self.value_dry, self.value_wet))
+        
+    def value_refresh(self):
+        self.value_wet = 0
+        self.value_dry = 0
+        
+    def crush(self):
+        print("In WastePaper: Crush me please!")
+```
+
+## Overriding
+
+```{python}
+class Can(Trash):
+    def __init__(self, weight, value):
+        super().__init__(weight, value)
+        print("Can constructor: Can({0}, {1})".
+              format(weight, value))
+        
+    def crush(self):
+        print("In Can: Crush me please!")
+        
+class GoldDummyCan(Trash):
+    
+    def __init__(self, weight, value):
+        super().__init__(weight, value)
+        print("GoldDummyCan constructor: GoldDummyCan({0}, {1}) -- I am rich too!".
+              format(weight, value))
+        
+    def crush(self):
+        super().crush()
+        print("In GoldDummyCan: Crush me please!")
+```
+
+## Override
+
+```{python}
+# External code outside the above classes
+my_trash = Trash(0.1, 1)
+my_trash.crush(); print(50*"-")
+
+my_can = Can(0.2, 2.0)
+my_can.crush(); print(50*"-")
+
+his_waste_pp = WastePaper(0.02, 0.2, "old", 0.05, 0.15)
+his_waste_pp.crush(); print(50*"-")
+
+your_can = GoldDummyCan(0.05, 200)
+your_can.crush()
+```
