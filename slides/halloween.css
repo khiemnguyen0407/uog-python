@@ -3,7 +3,7 @@
     font-size: 28px;
     background: #ffffff;
     background-image: url("./figures/background-images/halloween-03.jpg");
-    background-size: cover;
+    /* background-size: cover; */
     background-repeat: no-repeat;
     background-position: center;
     /* Fallback color if image fails to load */

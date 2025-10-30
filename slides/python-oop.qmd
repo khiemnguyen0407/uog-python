@@ -8,7 +8,7 @@ author: |
 author-meta: "Lecturer in Multiscale Materials"
 format: 
     revealjs:
-        theme: default   # other themes: beige, blood, dark, dracula, league, moon, night, serif, simple, sky, solarized
+        theme: night   # other themes: beige, blood, dark, dracula, league, moon, night, serif, simple, sky, solarized
         slide-number: true
         title-slide-style: pandoc
         echo: true
@@ -793,6 +793,7 @@ Later, down the road we may want to add
 - Plastic Box is a type of Trash
 - Metal Box is a type of Trash
 - etc.
+<<<<<<< Updated upstream
 :::
 
 ## Code 
@@ -941,3 +942,5 @@ his_waste_pp.crush(); print(50*"-")
 your_can = GoldDummyCan(0.05, 200)
 your_can.crush()
 ```
+=======
+:::
