@@ -8,7 +8,7 @@ author: |
 author-meta: "Lecturer in Multiscale Materials"
 format: 
     revealjs:
-        theme: night   # other themes: beige, blood, dark, dracula, league, moon, night, serif, simple, sky, solarized
+        theme: dark   # other themes: beige, blood, dark, dracula, league, moon, night, serif, simple, sky, solarized
         slide-number: true
         title-slide-style: pandoc
         echo: true
@@ -17,7 +17,9 @@ format:
         code-block-bg: false          # <-- remove white background in code blocks
         # code-block-border-left: false # optional: remove left border
         # highlight-style: monokai      # good for dark images
-
+        toc: true
+        toc-depth: 1
+        toc-title: Presentation Outline
         css: simple.css
 ---
 
@@ -359,6 +361,7 @@ khiem.reveal_ID()           # print ID through the function call
 Student.reveal_ID(khiem)    # This give the same result
 ```
 :::
+
 ::: {.fragment}
 > - During the process of defining the class `Student`, we cannot create an object and assign it to any variable. We cannot write `khiem.ID` and `khiem.reveal_ID()`.
 :::
@@ -423,6 +426,7 @@ stuart.__init__(9876543)    # 've just changed Stuart's ID
 Student.reveal_ID(stuart)   # reveal ID using different syntax
 ```
 :::
+
 ::: {.fragment}
 ```{python}
 Student.__init__(stuart, 1234567)   # not recommended
@@ -510,11 +514,10 @@ class Complex:
 ```
 :::
 
-
-
 :::{.fragment}
 - <font color="red">**Question**</font>: How do we use this above-defined function?
 :::
+
 :::{.fragment}
 ```{python}
 a = Complex(1, 0)
@@ -932,15 +935,31 @@ class GoldDummyCan(Trash):
 # External code outside the above classes
 my_trash = Trash(0.1, 1)
 my_trash.crush(); print(50*"-")
-
 my_can = Can(0.2, 2.0)
 my_can.crush(); print(50*"-")
-
 his_waste_pp = WastePaper(0.02, 0.2, "old", 0.05, 0.15)
 his_waste_pp.crush(); print(50*"-")
-
 your_can = GoldDummyCan(0.05, 200)
 your_can.crush()
 ```
-=======
-:::
+
+# Dunder methods/Magic methods
+- Learn what Python's **dunder methods** or **magic methods** are
+- Understand the magic behind magic methods in Python
+- Customize different behaviors of your custom classes with **special methods**
+
+## Dunder methods: Introduction
+- A special method is a method whose name starts and ends with a double underscore.
+- You already learned one of them: `__init__(self, ...)` is a constructor.
+- These sepcial methods are known as **magic methods** or **dunder methods**
+- The *double underscores** flag these methods as core to some Python features.
+
+Some popular and well-known magic methods:
+
+| Magic Method | Description |
+|---|---|
+|`__init__()` | Provides an initializer in Python classes |
+|`__str__()` | Provide human-read representation for objects |
+|`__repr__()` | Provide developer point-of-view representation |
+|`__call__()` | Makes instances of a class callable |
+|`__len__()` | Supports the `len()` function |
