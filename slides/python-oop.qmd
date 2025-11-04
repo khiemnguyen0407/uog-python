@@ -962,4 +962,4 @@ Some popular and well-known magic methods:
 |`__str__()` | Provide human-read representation for objects |
 |`__repr__()` | Provide developer point-of-view representation |
 |`__call__()` | Makes instances of a class callable |
-|`__len__()` | Supports the `len()` function |
+|`__len__()` | Supports the `len()` functioclearn |
