@@ -9,5 +9,17 @@
 }
 
 .reveal code {
-    font-size: 0.7em !important;
+    font-size: 0.70em !important;
 }
+
+
+/* Make cell outputs (including errors) smaller */
+
+/* Optional: visually de-emphasize tracebacks */
+.reveal .cell-output-stderr pre {
+  background: #2e2e2e;     /* subtle dark background */
+  color: #f3d2d2;          /* softer red */
+  border-left: 4px solid #cc6666;
+  padding-left: 0.75rem;
+}
+
