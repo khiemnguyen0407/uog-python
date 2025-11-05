@@ -266,7 +266,7 @@
 <ul>
 <li>You have learned it all the way. This method works as an <strong>initializer</strong>/<strong>constructor</strong> because it allows us to provide initial values to any <em>instance attributes</em> that we define in our classes.</li>
 </ul>
-<div id="297f95fe" class="cell" data-execution_count="1">
+<div id="972cfc90" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="kw">class</span> Complex:</span>
 <span id="cb1-2"><a href=""></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, real<span class="op">=</span><span class="dv">0</span>, imag<span class="op">=</span><span class="dv">0</span>):</span>
 <span id="cb1-3"><a href=""></a>        <span class="va">self</span>.real <span class="op">=</span> real</span>
@@ -275,7 +275,7 @@
 <span id="cb1-6"><a href=""></a>    <span class="kw">def</span> display(<span class="va">self</span>):</span>
 <span id="cb1-7"><a href=""></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>real<span class="sc">}</span><span class="ss"> + i*</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>imag<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="dad885c1" class="cell" data-execution_count="2">
+<div id="5d3d2cbc" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a>a <span class="op">=</span> Complex()</span>
 <span id="cb2-2"><a href=""></a>b <span class="op">=</span> Complex(<span class="dv">1</span>, <span class="dv">2</span>)</span>
 <span id="cb2-3"><a href=""></a>a.display()     <span class="co"># we wish to write print(a) instead</span></span>
@@ -285,13 +285,13 @@
 <div class="cell-output cell-output-stdout">
 <pre><code>0 + i*0
 1 + i*2
-&lt;__main__.Complex object at 0x730237dd6fc0&gt;
-&lt;__main__.Complex object at 0x730237dd7c50&gt;</code></pre>
+&lt;__main__.Complex object at 0x78ec7abc3d40&gt;
+&lt;__main__.Complex object at 0x78ec7abc33e0&gt;</code></pre>
 </div>
 </div>
 <!-- ::: {.fragment}
 
-::: {#6c5b250b .cell execution_count=3}
+::: {#73ccde9c .cell execution_count=3}
 ``` {.python .cell-code}
 # We wish that we can plus two Complex numbers
 try:  # This will give error, so I must put in try-except statement
@@ -335,18 +335,16 @@ unsupported operand type(s) for +: 'Complex' and 'Complex'
 <ul>
 <li>Look at this NumPy example</li>
 </ul>
-<div id="876d435e" class="cell" data-execution_count="4">
+<div id="db33a512" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb4-2"><a href=""></a>a <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
 <span id="cb4-3"><a href=""></a>b <span class="op">=</span> np.array([<span class="fl">1.1</span>, <span class="fl">2.1</span>, <span class="fl">3.1</span>, <span class="fl">4.1</span>, <span class="fl">5.1</span>])</span>
-<span id="cb4-4"><a href=""></a></span>
-<span id="cb4-5"><a href=""></a><span class="bu">print</span>(a <span class="op">+</span> b)    <span class="co"># this print out a string</span></span>
-<span id="cb4-6"><a href=""></a></span>
-<span id="cb4-7"><a href=""></a><span class="bu">str</span>(a <span class="op">+</span> b) <span class="co"># returns a string that is printed out by the function print</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb4-4"><a href=""></a><span class="bu">print</span>(a <span class="op">+</span> b)    <span class="co"># this print out a string</span></span>
+<span id="cb4-5"><a href=""></a><span class="bu">str</span>(a <span class="op">+</span> b)      <span class="co"># returns a string that is printed out by the function print</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[ 2.1  4.1  6.1  8.1 10.1]</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="244">
+<div class="cell-output cell-output-display" data-execution_count="196">
 <pre><code>'[ 2.1  4.1  6.1  8.1 10.1]'</code></pre>
 </div>
 </div>
@@ -355,29 +353,29 @@ unsupported operand type(s) for +: 'Complex' and 'Complex'
 <ul>
 <li>But, if I write <code>a + b</code> in the interactive mode, you see the <code>array()</code> wrapping around the list of numbers</li>
 </ul>
-<div id="bd6859f8" class="cell" data-execution_count="5">
+<div id="b8c74c28" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href=""></a>a <span class="op">+</span> b</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="245">
+<div class="cell-output cell-output-display" data-execution_count="197">
 <pre><code>array([ 2.1,  4.1,  6.1,  8.1, 10.1])</code></pre>
 </div>
 </div>
 <ul>
 <li>In fact, the above output is the string given by</li>
 </ul>
-<div id="d7334b3f" class="cell" data-execution_count="6">
+<div id="18e04c84" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href=""></a><span class="bu">repr</span>(a <span class="op">+</span> b) <span class="co"># returns a string</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="246">
+<div class="cell-output cell-output-display" data-execution_count="198">
 <pre><code>'array([ 2.1,  4.1,  6.1,  8.1, 10.1])'</code></pre>
 </div>
 </div>
 </div>
 </section>
-<section id="user-friendly-string-representations-with-__str__" class="slide level2">
-<h2>User-friendly string representations with <code>__str__()</code></h2>
+<section id="user-friendly-representations-with-__str__" class="slide level2">
+<h2>User-friendly representations with <code>__str__()</code></h2>
 <ul>
 <li>Let us revisit out <code>Complex</code> class</li>
 </ul>
-<div id="e2933a7a" class="cell" data-execution_count="7">
+<div id="5892a407" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href=""></a><span class="kw">class</span> Complex:</span>
 <span id="cb11-2"><a href=""></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, real<span class="op">=</span><span class="dv">0</span>, imag<span class="op">=</span><span class="dv">0</span>):</span>
 <span id="cb11-3"><a href=""></a>        <span class="va">self</span>.real <span class="op">=</span> real</span>
@@ -387,130 +385,367 @@ unsupported operand type(s) for +: 'Complex' and 'Complex'
 <span id="cb11-7"><a href=""></a>        output <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>real<span class="sc">}</span><span class="ss">"</span></span>
 <span id="cb11-8"><a href=""></a>        <span class="cf">if</span> <span class="va">self</span>.imag <span class="op">!=</span> <span class="dv">0</span>:</span>
 <span id="cb11-9"><a href=""></a>            output <span class="op">+=</span> <span class="ss">f" + </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>imag<span class="sc">}</span><span class="ss">*i"</span></span>
-<span id="cb11-10"><a href=""></a> </span>
-<span id="cb11-11"><a href=""></a>        <span class="cf">return</span> output</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb11-10"><a href=""></a>        <span class="cf">return</span> output</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
 <li>Now, we can print a <code>Complex</code> number using <code>print()</code></li>
 </ul>
-<div id="ea665fb4" class="cell" data-execution_count="8">
+<div id="db7c540b" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href=""></a>a <span class="op">=</span> Complex()</span>
 <span id="cb12-2"><a href=""></a>b <span class="op">=</span> Complex(<span class="dv">1</span>, <span class="dv">0</span>)</span>
 <span id="cb12-3"><a href=""></a>c <span class="op">=</span> Complex(<span class="dv">4</span>, <span class="dv">2</span>)</span>
-<span id="cb12-4"><a href=""></a><span class="bu">print</span>(a)</span>
-<span id="cb12-5"><a href=""></a><span class="bu">print</span>(b)</span>
-<span id="cb12-6"><a href=""></a><span class="bu">print</span>(c)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb12-4"><a href=""></a><span class="bu">print</span>(<span class="ss">f"a = </span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">, b = </span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">, c = </span><span class="sc">{</span>c<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>0
-1
-4 + 2*i</code></pre>
+<pre><code>a = 0, b = 1, c = 4 + 2*i</code></pre>
 </div>
 </div>
 </section>
-<section id="developer-friendly-string-representation-with-__repr__" class="slide level2">
-<h2>Developer-friendly string representation with <code>__repr__()</code></h2>
-<ul>
-<li>Let us revisit our <code>Complex</code> class</li>
-</ul>
-<div id="767dcd1f" class="cell" data-execution_count="9">
+<section id="developer-friendly-representation-with-__repr__" class="slide level2">
+<h2>Developer-friendly representation with <code>__repr__()</code></h2>
+<div id="7ca11291" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href=""></a><span class="kw">class</span> Complex:</span>
 <span id="cb14-2"><a href=""></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, real<span class="op">=</span><span class="dv">0</span>, imag<span class="op">=</span><span class="dv">0</span>):</span>
 <span id="cb14-3"><a href=""></a>        <span class="va">self</span>.real <span class="op">=</span> real</span>
 <span id="cb14-4"><a href=""></a>        <span class="va">self</span>.imag <span class="op">=</span> imag</span>
 <span id="cb14-5"><a href=""></a></span>
 <span id="cb14-6"><a href=""></a>    <span class="kw">def</span> <span class="fu">__repr__</span>(<span class="va">self</span>):</span>
-<span id="cb14-7"><a href=""></a>        output <span class="op">=</span> <span class="st">"Complex: "</span> <span class="op">+</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>real<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb14-7"><a href=""></a>        output <span class="op">=</span> <span class="ss">f"Complex: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>real<span class="sc">}</span><span class="ss">"</span></span>
 <span id="cb14-8"><a href=""></a>        <span class="cf">if</span> <span class="va">self</span>.imag <span class="op">!=</span> <span class="dv">0</span>:</span>
-<span id="cb14-9"><a href=""></a>            output <span class="op">+=</span> <span class="ss">f" + </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>imag<span class="sc">}</span><span class="ss">"</span></span>
-<span id="cb14-10"><a href=""></a>        </span>
-<span id="cb14-11"><a href=""></a>        <span class="cf">return</span> output</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb14-9"><a href=""></a>            output <span class="op">+=</span> <span class="ss">f" + </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>imag<span class="sc">}</span><span class="ss">*i"</span></span>
+<span id="cb14-10"><a href=""></a>        <span class="cf">return</span> output</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
-<li>Now, we can understand the output represent an object of <code>Complex</code> class</li>
+<li>Now, we can understand better as the output represents an object of <code>Complex</code> class:</li>
 </ul>
-<div id="cf80b9f1" class="cell" data-execution_count="10">
+<div id="759d97e2" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href=""></a>a <span class="op">=</span> Complex(<span class="dv">1</span>, <span class="dv">2</span>)</span>
 <span id="cb15-2"><a href=""></a>a</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="250">
-<pre><code>Complex: 1 + 2</code></pre>
+<div class="cell-output cell-output-display" data-execution_count="202">
+<pre><code>Complex: 1 + 2*i</code></pre>
 </div>
 </div>
 <ul>
 <li>We can examine it closely by using <code>repr()</code> function:</li>
 </ul>
-<div id="4e10f973" class="cell" data-execution_count="11">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href=""></a>b <span class="op">=</span> Complex(<span class="dv">2</span>, <span class="dv">4</span>)</span>
-<span id="cb17-2"><a href=""></a><span class="bu">repr</span>(b)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="251">
-<pre><code>'Complex: 2 + 4'</code></pre>
+<div id="426674a0" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href=""></a><span class="bu">repr</span>(a)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="203">
+<pre><code>'Complex: 1 + 2*i'</code></pre>
 </div>
 </div>
 </section>
 <section id="overriding-operators" class="slide level2">
 <h2>Overriding operators</h2>
 <ul>
-<li>At this point, we want to do some operations on the Complex Number <span class="math display">\[a = 1 + 2 \mathrm{i},\quad b= 2 + \mathrm{i}\quad \Rightarrow\quad a + b = 3 + 3 \mathrm{i}\]</span></li>
-<li>But, we cannot do this by naively writing the code as follows</li>
+<li>At this point, we want to do some operations on the Complex Number: <span class="math inline">\(a = 1 + 2 \mathrm{i},\quad b= 2 + \mathrm{i}\quad \Rightarrow\quad a + b = 3 + 3 \mathrm{i}\)</span></li>
+<li>But we cannot do this by writing <strong>naive</strong> code <code>a + b</code> as computer does not understand the concept of Complex numbers. We must teach it how to do such operation.</li>
 </ul>
-<div id="3b84ca91" class="cell" data-execution_count="12">
+<div id="8e0e22e9" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href=""></a>a <span class="op">=</span> Complex(<span class="dv">1</span>, <span class="dv">2</span>)</span>
 <span id="cb19-2"><a href=""></a>b <span class="op">=</span> Complex(<span class="dv">2</span>, <span class="dv">1</span>)</span>
-<span id="cb19-3"><a href=""></a><span class="cf">try</span>: <span class="co"># This will produce an error, I must put it in try-except block</span></span>
-<span id="cb19-4"><a href=""></a>    <span class="bu">print</span>(a <span class="op">+</span> b)</span>
-<span id="cb19-5"><a href=""></a><span class="cf">except</span> <span class="pp">TypeError</span>:</span>
-<span id="cb19-6"><a href=""></a>    <span class="bu">print</span>(<span class="st">"unsupported operand type(s) for +: 'Complex' and 'Complex'"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>unsupported operand type(s) for +: 'Complex' and 'Complex'</code></pre>
+<span id="cb19-3"><a href=""></a><span class="bu">print</span>(a <span class="op">+</span> b)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[204]</span><span class="ansi-green-fg">, line 3</span>
+<span class="ansi-green-fg">      1</span> a = Complex(<span class="ansi-green-fg">1</span>, <span class="ansi-green-fg">2</span>)
+<span class="ansi-green-fg">      2</span> b = Complex(<span class="ansi-green-fg">2</span>, <span class="ansi-green-fg">1</span>)
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">3</span> <span style="color:rgb(0,135,0)">print</span>(<span class="ansi-yellow-bg">a</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">+</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">b</span>)
+
+<span class="ansi-red-fg">TypeError</span>: unsupported operand type(s) for +: 'Complex' and 'Complex'</pre>
 </div>
 </div>
+</div>
+</section>
+<section id="arithmetic-operations" class="slide level2">
+<h2>Arithmetic operations</h2>
 <ul>
-<li>Computer does not understand concept of Complex number. We must teach it how to do basic operations the way we want, such as
-<ul>
-<li>addition (using <code>__add__()</code>)</li>
-<li>subtraction (using <code>__sub__()</code>)</li>
-<li>multiplication (using <code>__mult__()</code>)</li>
-<li>division (using <code>__div__()</code>)</li>
-<li>etc.</li>
-</ul></li>
+<li>Arithmetic operators are those that we use to perform <em>arithmetic operations</em> on numeric values. Python represents them with the usual math signs.</li>
 </ul>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Supporting method</th>
+<th>Operation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>__add__(self, other)</code></td>
+<td>+</td>
+</tr>
+<tr class="even">
+<td><code>__sub__(self, other)</code></td>
+<td>-</td>
+</tr>
+<tr class="odd">
+<td><code>__mul__(self, other)</code></td>
+<td>*</td>
+</tr>
+<tr class="even">
+<td><code>__truediv(self, other)</code></td>
+<td>/</td>
+</tr>
+<tr class="odd">
+<td><code>__floordiv(self, other)</code></td>
+<td>//</td>
+</tr>
+<tr class="even">
+<td><code>__mod__(self, other)</code></td>
+<td>%</td>
+</tr>
+<tr class="odd">
+<td><code>__pow__(self, other)</code></td>
+<td>**</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Note that all these methods take a second argument called <code>other</code>. In most cases,</li>
+</ul>
+</section>
+<section id="arithmetic-operations-1" class="slide level2">
+<h2>Arithmetic operations</h2>
+<ul>
+<li>In fact, arithmetic operations are just functions.</li>
+</ul>
+<div id="e580c651" class="cell" data-execution_count="13">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href=""></a><span class="kw">def</span> add(a, b):</span>
+<span id="cb20-2"><a href=""></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
+<span id="cb20-3"><a href=""></a></span>
+<span id="cb20-4"><a href=""></a><span class="bu">print</span>(<span class="dv">1</span> <span class="op">+</span> <span class="dv">2</span>)        <span class="co"># An operation acting on two input arguments returns a value.   </span></span>
+<span id="cb20-5"><a href=""></a><span class="bu">print</span>(add(<span class="dv">1</span>, <span class="dv">2</span>))    <span class="co"># A function acting on two input arguments returns a value.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>3
+3</code></pre>
+</div>
+</div>
+<ul>
+<li>In OOP language, we can write</li>
+</ul>
+<div id="9fa98f8c" class="cell" data-execution_count="14">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href=""></a>(<span class="dv">1</span>).<span class="fu">__add__</span>(<span class="dv">2</span>)  <span class="co"># Note the parentheses around 1. We cannot write 1.__add__(2)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="206">
+<pre><code>3</code></pre>
+</div>
+</div>
+<p>instead of</p>
+<div id="bf6e7b29" class="cell" data-execution_count="15">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href=""></a><span class="dv">1</span> <span class="op">+</span> <span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="207">
+<pre><code>3</code></pre>
+</div>
+</div>
 </section>
 <section id="overriding-addition-and-subtraction" class="slide level2">
 <h2>Overriding addition and subtraction</h2>
-<div id="96f300aa" class="cell" data-execution_count="13">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href=""></a><span class="kw">class</span> Complex:</span>
-<span id="cb21-2"><a href=""></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, real<span class="op">=</span><span class="dv">0</span>, imag<span class="op">=</span><span class="dv">0</span>):</span>
-<span id="cb21-3"><a href=""></a>        <span class="va">self</span>.real <span class="op">=</span> real<span class="op">;</span> <span class="va">self</span>.imag <span class="op">=</span> imag</span>
-<span id="cb21-4"><a href=""></a>    </span>
-<span id="cb21-5"><a href=""></a>    <span class="kw">def</span> <span class="fu">__add__</span>(<span class="va">self</span>, a):</span>
-<span id="cb21-6"><a href=""></a>        output <span class="op">=</span> Complex(<span class="va">self</span>.real <span class="op">+</span> a.real, <span class="va">self</span>.imag <span class="op">+</span> b.imag)</span>
-<span id="cb21-7"><a href=""></a>        <span class="cf">return</span> output</span>
-<span id="cb21-8"><a href=""></a></span>
-<span id="cb21-9"><a href=""></a>    <span class="kw">def</span> <span class="fu">__sub__</span>(<span class="va">self</span>, a):</span>
-<span id="cb21-10"><a href=""></a>        output <span class="op">=</span> Complex(<span class="va">self</span>.real <span class="op">-</span> a.real, <span class="va">self</span>.imag <span class="op">-</span> b.imag)</span>
-<span id="cb21-11"><a href=""></a>        <span class="cf">return</span> output</span>
-<span id="cb21-12"><a href=""></a>    </span>
-<span id="cb21-13"><a href=""></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):  <span class="co"># I shorten the code by lazy code</span></span>
-<span id="cb21-14"><a href=""></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>real<span class="sc">}</span><span class="ss"> + </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>imag<span class="sc">}</span><span class="ss">*i"</span></span>
-<span id="cb21-15"><a href=""></a>    <span class="kw">def</span> <span class="fu">__repr__</span>(<span class="va">self</span>): <span class="co"># I shorten the code by lazy code</span></span>
-<span id="cb21-16"><a href=""></a>        <span class="cf">return</span> <span class="ss">f"Complex Number: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>real<span class="sc">}</span><span class="ss"> + </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>imag<span class="sc">}</span><span class="ss">*i"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="4082ecad" class="cell" data-execution_count="16">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href=""></a><span class="kw">class</span> Complex:</span>
+<span id="cb26-2"><a href=""></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, real<span class="op">=</span><span class="dv">0</span>, imag<span class="op">=</span><span class="dv">0</span>):</span>
+<span id="cb26-3"><a href=""></a>        <span class="va">self</span>.real <span class="op">=</span> real<span class="op">;</span> <span class="va">self</span>.imag <span class="op">=</span> imag</span>
+<span id="cb26-4"><a href=""></a>    </span>
+<span id="cb26-5"><a href=""></a>    <span class="kw">def</span> <span class="fu">__add__</span>(<span class="va">self</span>, other):</span>
+<span id="cb26-6"><a href=""></a>        <span class="cf">if</span> <span class="kw">not</span> <span class="bu">isinstance</span>(other, <span class="bu">type</span>(<span class="va">self</span>)):</span>
+<span id="cb26-7"><a href=""></a>            <span class="cf">raise</span> <span class="pp">TypeError</span>(<span class="st">"unsupported operand for +: "</span> </span>
+<span id="cb26-8"><a href=""></a>                            <span class="op">+</span> <span class="ss">f"</span><span class="sc">{</span><span class="bu">type</span>(<span class="va">self</span>)<span class="sc">.</span><span class="va">__name__</span><span class="sc">}</span><span class="ss"> and </span><span class="sc">{</span><span class="bu">type</span>(other)<span class="sc">.</span><span class="va">__name__</span><span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb26-9"><a href=""></a>        output <span class="op">=</span> Complex(<span class="va">self</span>.real <span class="op">+</span> other.real, <span class="va">self</span>.imag <span class="op">+</span> other.imag)</span>
+<span id="cb26-10"><a href=""></a>        <span class="cf">return</span> output</span>
+<span id="cb26-11"><a href=""></a></span>
+<span id="cb26-12"><a href=""></a>    <span class="kw">def</span> <span class="fu">__sub__</span>(<span class="va">self</span>, other):</span>
+<span id="cb26-13"><a href=""></a>        <span class="cf">if</span> <span class="kw">not</span> <span class="bu">isinstance</span>(other, <span class="bu">type</span>(<span class="va">self</span>)):</span>
+<span id="cb26-14"><a href=""></a>            <span class="cf">raise</span> <span class="pp">TypeError</span>(<span class="st">"unsupported operand for -: "</span> </span>
+<span id="cb26-15"><a href=""></a>                            <span class="op">+</span> <span class="ss">f"</span><span class="sc">{</span><span class="bu">type</span>(<span class="va">self</span>)<span class="sc">.</span><span class="va">__name__</span><span class="sc">}</span><span class="ss"> and </span><span class="sc">{</span><span class="bu">type</span>(other)<span class="sc">.</span><span class="va">__name__</span><span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb26-16"><a href=""></a>        <span class="cf">return</span> Complex(<span class="va">self</span>.real <span class="op">-</span> other.real, <span class="va">self</span>.imag <span class="op">-</span> other.imag)</span>
+<span id="cb26-17"><a href=""></a>    </span>
+<span id="cb26-18"><a href=""></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):  <span class="co"># I shorten the code by lazy code</span></span>
+<span id="cb26-19"><a href=""></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>real<span class="sc">}</span><span class="ss"> + </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>imag<span class="sc">}</span><span class="ss">*i"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+</section>
+<section id="overriding-addition-and-subtraction-1" class="slide level2">
+<h2>Overriding addition and subtraction</h2>
 <ul>
 <li>Then, we can do addition and subtraction now:</li>
 </ul>
-<div id="069a8936" class="cell" data-execution_count="14">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href=""></a>a <span class="op">=</span> Complex(<span class="dv">1</span>, <span class="dv">2</span>)</span>
-<span id="cb22-2"><a href=""></a>b <span class="op">=</span> Complex(<span class="dv">2</span>, <span class="dv">1</span>)</span>
-<span id="cb22-3"><a href=""></a><span class="bu">print</span>(<span class="ss">f"a + b = </span><span class="sc">{</span>a <span class="op">+</span> b<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb22-4"><a href=""></a><span class="bu">print</span>(<span class="ss">f"a - b = </span><span class="sc">{</span>a <span class="op">-</span> b<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb22-5"><a href=""></a>a <span class="op">+</span> b, a <span class="op">-</span> b</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="e135e66d" class="cell" data-execution_count="17">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href=""></a>a <span class="op">=</span> Complex(<span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb27-2"><a href=""></a>b <span class="op">=</span> Complex(<span class="dv">2</span>, <span class="dv">1</span>)</span>
+<span id="cb27-3"><a href=""></a><span class="bu">print</span>(<span class="ss">f"a + b = </span><span class="sc">{</span>a <span class="op">+</span> b<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb27-4"><a href=""></a><span class="bu">print</span>(<span class="ss">f"a - b = </span><span class="sc">{</span>a <span class="op">-</span> b<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>a + b = 3 + 3*i
 a - b = -1 + 1*i</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="254">
-<pre><code>(Complex Number: 3 + 3*i, Complex Number: -1 + 1*i)</code></pre>
+</div>
+<ul>
+<li>But since we did not define <code>__repr__(self)</code> in the above class template, we get in the interactive mode as follows</li>
+</ul>
+<div id="59b6931d" class="cell" data-execution_count="18">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href=""></a>a <span class="op">+</span> b   <span class="co"># in the interactive mode: __repr__(self) will be executed</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="210">
+<pre><code>&lt;__main__.Complex at 0x78ec792bda60&gt;</code></pre>
 </div>
 </div>
+<ul>
+<li>To fix this issue, we only need to write <code>__repr__(self)</code> in the class template.<br>
+<font color="magenta">You should do it as a homework</font></li>
+</ul>
+</section>
+<section id="overriding-multiplication" class="slide level2">
+<h2>Overriding multiplication</h2>
+<ul>
+<li>Of course, we want to do multiplications as well</li>
+</ul>
+<div id="520de625" class="cell" data-execution_count="19">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href=""></a>a, b <span class="op">=</span> Complex(<span class="dv">1</span>, <span class="dv">2</span>), Complex(<span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb31-2"><a href=""></a><span class="bu">print</span>(a <span class="op">*</span> b)</span>
+<span id="cb31-3"><a href=""></a><span class="bu">print</span>(<span class="fl">3.14</span> <span class="op">*</span> a)</span>
+<span id="cb31-4"><a href=""></a><span class="bu">print</span>(a <span class="op">*</span> <span class="fl">3.14</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[211]</span><span class="ansi-green-fg">, line 2</span>
+<span class="ansi-green-fg">      1</span> a, b = Complex(<span class="ansi-green-fg">1</span>, <span class="ansi-green-fg">2</span>), Complex(<span class="ansi-green-fg">2</span>, <span class="ansi-green-fg">3</span>)
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">2</span> <span style="color:rgb(0,135,0)">print</span>(<span class="ansi-yellow-bg">a</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">*</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">b</span>)
+<span class="ansi-green-fg">      3</span> <span style="color:rgb(0,135,0)">print</span>(<span class="ansi-green-fg">3.14</span> * a)
+<span class="ansi-green-fg">      4</span> <span style="color:rgb(0,135,0)">print</span>(a * <span class="ansi-green-fg">3.14</span>)
+
+<span class="ansi-red-fg">TypeError</span>: unsupported operand type(s) for *: 'Complex' and 'Complex'</pre>
+</div>
+</div>
+</div>
+</section>
+<section id="overriding-multiplication-1" class="slide level2">
+<h2>Overriding multiplication</h2>
+<div id="9a890946" class="cell" data-execution_count="20">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href=""></a><span class="im">from</span> numbers <span class="im">import</span> Real</span>
+<span id="cb32-2"><a href=""></a><span class="kw">class</span> Complex:</span>
+<span id="cb32-3"><a href=""></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, real<span class="op">=</span><span class="dv">0</span>, imag<span class="op">=</span><span class="dv">0</span>):</span>
+<span id="cb32-4"><a href=""></a>        <span class="va">self</span>.real <span class="op">=</span> real<span class="op">;</span> <span class="va">self</span>.imag <span class="op">=</span> imag</span>
+<span id="cb32-5"><a href=""></a>    </span>
+<span id="cb32-6"><a href=""></a>    <span class="kw">def</span> <span class="fu">__mul__</span>(<span class="va">self</span>, other):</span>
+<span id="cb32-7"><a href=""></a>        <span class="cf">if</span> <span class="bu">isinstance</span>(other, <span class="bu">type</span>(<span class="va">self</span>))<span class="op">==</span><span class="va">False</span> <span class="kw">and</span> <span class="bu">isinstance</span>(other, Real)<span class="op">==</span><span class="va">False</span>:</span>
+<span id="cb32-8"><a href=""></a>            <span class="cf">raise</span> <span class="pp">TypeError</span>(<span class="st">"unsupported operand for *: "</span> </span>
+<span id="cb32-9"><a href=""></a>                            <span class="op">+</span> <span class="ss">f"</span><span class="sc">{</span><span class="bu">type</span>(<span class="va">self</span>)<span class="sc">.</span><span class="va">__name__</span><span class="sc">}</span><span class="ss"> and </span><span class="sc">{</span><span class="bu">type</span>(other)<span class="sc">.</span><span class="va">__name__</span><span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb32-10"><a href=""></a>        <span class="cf">if</span> <span class="bu">isinstance</span>(other, <span class="bu">type</span>(<span class="va">self</span>)):</span>
+<span id="cb32-11"><a href=""></a>            output <span class="op">=</span> Complex(<span class="va">self</span>.real<span class="op">*</span>other.real <span class="op">-</span> <span class="va">self</span>.imag<span class="op">*</span>other.imag, </span>
+<span id="cb32-12"><a href=""></a>                             <span class="va">self</span>.real<span class="op">*</span>other.imag <span class="op">+</span> <span class="va">self</span>.imag<span class="op">*</span>other.real)</span>
+<span id="cb32-13"><a href=""></a>            <span class="cf">return</span> output</span>
+<span id="cb32-14"><a href=""></a>        <span class="cf">if</span> <span class="bu">isinstance</span>(other, Real):</span>
+<span id="cb32-15"><a href=""></a>            output <span class="op">=</span> Complex(other<span class="op">*</span><span class="va">self</span>.real, other<span class="op">*</span><span class="va">self</span>.imag)</span>
+<span id="cb32-16"><a href=""></a>            <span class="cf">return</span> output</span>
+<span id="cb32-17"><a href=""></a></span>
+<span id="cb32-18"><a href=""></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):  <span class="co"># I shorten the code by lazy code</span></span>
+<span id="cb32-19"><a href=""></a>        <span class="cf">return</span> <span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>real<span class="sc">}</span><span class="ss"> + </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>imag<span class="sc">}</span><span class="ss">*i"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="overriding-multiplication-2" class="slide level2">
+<h2>Overriding multiplication</h2>
+<ul>
+<li>Now we can use the multiplication</li>
+</ul>
+<div id="63c57fa0" class="cell" data-execution_count="21">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href=""></a>a, b <span class="op">=</span> Complex(<span class="dv">1</span>, <span class="dv">2</span>), Complex(<span class="dv">2</span>, <span class="dv">1</span>)</span>
+<span id="cb33-2"><a href=""></a><span class="bu">print</span>(<span class="ss">f"a * b = </span><span class="sc">{</span>a <span class="op">*</span> b<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb33-3"><a href=""></a><span class="bu">print</span>(<span class="ss">f"a * 5 = </span><span class="sc">{</span>a <span class="op">*</span> <span class="dv">5</span><span class="sc">}</span><span class="ss">"</span>)       <span class="co"># note that a is on the left-hand side of 5</span></span>
+<span id="cb33-4"><a href=""></a><span class="bu">print</span>(<span class="ss">f"a * 5.0 = </span><span class="sc">{</span>a <span class="op">*</span> <span class="fl">5.0</span><span class="sc">}</span><span class="ss">"</span>)   <span class="co"># note that a is on the left-hand side of 5.0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>a * b = 0 + 5*i
+a * 5 = 5 + 10*i
+a * 5.0 = 5.0 + 10.0*i</code></pre>
+</div>
+</div>
+<ul>
+<li>But the multiplication between a <code>float</code> and a <code>Complex</code> has not been defined.<br>
+Note that <code>a</code> is on the right-hand side of <code>5.0</code></li>
+</ul>
+<div id="d0a8beb7" class="cell" data-execution_count="22">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href=""></a><span class="bu">print</span>(<span class="fl">5.0</span> <span class="op">*</span> a)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansi-cyan-fg">Cell</span><span class="ansi-cyan-fg"> </span><span class="ansi-green-fg">In[214]</span><span class="ansi-green-fg">, line 1</span>
+<span class="ansi-green-fg">----&gt; </span><span class="ansi-green-fg">1</span> <span style="color:rgb(0,135,0)">print</span>(<span class="ansi-green-fg ansi-yellow-bg">5.0</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">*</span><span class="ansi-yellow-bg"> </span><span class="ansi-yellow-bg">a</span>)
+
+<span class="ansi-red-fg">TypeError</span>: unsupported operand type(s) for *: 'float' and 'Complex'</pre>
+</div>
+</div>
+</div>
+</section>
+<section id="overriding-right-multiplication" class="slide level2">
+<h2>Overriding right multiplication</h2>
+<div id="8fb73d57" class="cell" data-execution_count="24">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href=""></a><span class="kw">class</span> Complex:</span>
+<span id="cb36-2"><a href=""></a>    <span class="co"># PREVIOUS CODE AS BEFORE</span></span>
+<span id="cb36-3"><a href=""></a></span>
+<span id="cb36-4"><a href=""></a>    <span class="co"># right multiplication</span></span>
+<span id="cb36-5"><a href=""></a>    <span class="kw">def</span> <span class="fu">__rmul__</span>(<span class="va">self</span>, other):</span>
+<span id="cb36-6"><a href=""></a>        <span class="cf">if</span> <span class="bu">isinstance</span>(other, Real)<span class="op">==</span><span class="va">False</span>:</span>
+<span id="cb36-7"><a href=""></a>            <span class="cf">raise</span> <span class="pp">TypeError</span>(<span class="st">"unsupported operand for *: "</span></span>
+<span id="cb36-8"><a href=""></a>                            <span class="op">+</span> <span class="ss">f"</span><span class="sc">{</span><span class="bu">type</span>(other)<span class="sc">.</span><span class="va">__name__</span><span class="sc">}</span><span class="ss"> and </span><span class="sc">{</span><span class="bu">type</span>(<span class="va">self</span>)<span class="sc">.</span><span class="va">__name__</span><span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb36-9"><a href=""></a>        output <span class="op">=</span> Complex(other<span class="op">*</span><span class="va">self</span>.real, other<span class="op">*</span><span class="va">self</span>.imag)</span>
+<span id="cb36-10"><a href=""></a>        <span class="cf">return</span> output</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<ul>
+<li>We can multiply a scalar in front of (by) a <code>Complex</code> object now:</li>
+</ul>
+<div id="35dcba16" class="cell" data-execution_count="25">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href=""></a>a <span class="op">=</span> Complex(<span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb37-2"><a href=""></a><span class="bu">print</span>(<span class="dv">5</span> <span class="op">*</span> a)</span>
+<span id="cb37-3"><a href=""></a><span class="bu">print</span>(<span class="fl">5.5</span> <span class="op">*</span> a)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>5 + 10*i
+5.5 + 11.0*i</code></pre>
+</div>
+</div>
+<ul>
+<li>Simiarly, you have <font color="red"><strong>right addition</strong></font> implemented by<br>
+<code>__radd__(self, other)</code></li>
+</ul>
+</section>
+<section id="comparison-operator-methods" class="slide level2">
+<h2>Comparison operator methods</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Operator</th>
+<th>Supporting method</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>&lt;</code></td>
+<td><code>__lt__(self, other)</code></td>
+</tr>
+<tr class="even">
+<td><code>&lt;=</code></td>
+<td><code>__le__(self, other)</code></td>
+</tr>
+<tr class="odd">
+<td><code>==</code></td>
+<td><code>__eq__(self, other)</code></td>
+</tr>
+<tr class="even">
+<td><code>!=</code></td>
+<td><code>__ne__(self, other)</code></td>
+</tr>
+<tr class="odd">
+<td><code>&gt;=</code></td>
+<td><code>__ge__(self, other)</code></td>
+</tr>
+<tr class="even">
+<td><code>&gt;</code></td>
+<td><code>__gt__(self, other)</code></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Of course, we cannot say <span class="math inline">\(1 + 2i &gt; 0.5 + 1.5 i\)</span> but we can say <span class="math inline">\(1 + 2i = 1 + 2i\)</span>.</li>
+<li>We can define comparison “equal to” and “not equal to” for <code>Complex</code> objects.</li>
+<li>So, we can define <code>__eq__(self, other)</code> for “equal” comparison <code>==</code> and <code>__ne__(self, other)</code> for “not-equal” comparison.</li>
+</ul>
 
 </section></section>
     </div>
