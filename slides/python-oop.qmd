@@ -943,8 +943,8 @@ your_can = GoldDummyCan(0.05, 200)
 your_can.crush()
 ```
 
-# Dunder methods/Magic methods
-- Learn what Python's **dunder methods** or **magic methods** are
+# Special methods/Dunder methods
+- Learn what Python's **special methods** (**dunder methods** or **magic methods**) are.
 - Understand the magic behind magic methods in Python
 - Customize different behaviors of your custom classes with **special methods**
 
