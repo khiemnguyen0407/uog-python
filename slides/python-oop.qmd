@@ -8,7 +8,7 @@ author: |
 author-meta: "Lecturer in Multiscale Materials"
 format: 
     revealjs:
-        theme: dark   # other themes: beige, blood, dark, dracula, league, moon, night, serif, simple, sky, solarized
+        theme: serif   # other themes: beige, blood, dark, dracula, league, moon, night, serif, simple, sky, solarized
         slide-number: true
         title-slide-style: pandoc
         echo: true
