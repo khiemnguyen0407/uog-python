@@ -942,24 +942,3 @@ his_waste_pp.crush(); print(50*"-")
 your_can = GoldDummyCan(0.05, 200)
 your_can.crush()
 ```
-
-# Special methods/Dunder methods
-- Learn what Python's **special methods** (**dunder methods** or **magic methods**) are.
-- Understand the magic behind magic methods in Python
-- Customize different behaviors of your custom classes with **special methods**
-
-## Dunder methods: Introduction
-- A special method is a method whose name starts and ends with a double underscore.
-- You already learned one of them: `__init__(self, ...)` is a constructor.
-- These sepcial methods are known as **magic methods** or **dunder methods**
-- The *double underscores** flag these methods as core to some Python features.
-
-Some popular and well-known magic methods:
-
-| Magic Method | Description |
-|---|---|
-|`__init__()` | Provides an initializer in Python classes |
-|`__str__()` | Provide human-read representation for objects |
-|`__repr__()` | Provide developer point-of-view representation |
-|`__call__()` | Makes instances of a class callable |
-|`__len__()` | Supports the `len()` functioclearn |
