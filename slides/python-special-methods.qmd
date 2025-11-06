@@ -209,10 +209,11 @@ print(add(1, 2))    # A function acting on two input arguments returns a value.
 - In OOP language, we can write  
 ```{python}
 (1).__add__(2)  # Note the parentheses around 1. We cannot write 1.__add__(2)
-```  
-instead of
+```
+or
 ```{python}
-1 + 2
+x = 1; 
+x.__add__(2) # this one is also ok
 ```
 
 ## Overriding addition and subtraction
@@ -329,6 +330,14 @@ class Complex:
                             + f"{type(other).__name__} and {type(self).__name__}")
         output = Complex(other*self.real, other*self.imag)
         return output 
+    
+    def __eq__(self, other):
+        if isinstance(other, type(self)):
+            return self.real == other.real and self.imag == other.imag
+
+    def __ne__(self, other):
+        if isinstance(other, type(self)):
+            return self.real != other.real or self.imag != other.imag
 
     def __str__(self):  # I shorten the code by lazy code
         return f"{self.real} + {self.imag}*i"
@@ -372,3 +381,28 @@ print(5.5 * a)
 - Of course, we cannot say $1 + 2i > 0.5 + 1.5 i$ but we can say $1 + 2i = 1 + 2i$.
 - We can define comparison "equal to" and "not equal to" for `Complex` objects.
 - So, we can define `__eq__(self, other)` for "equal" comparison `==` and `__ne__(self, other)` for "not-equal" comparison.
+
+## Comparison operator methods: Example
+
+```{python}
+#| eval: false
+#| echo: true
+class Complex:
+    # PREVIOUS CODE AS BEFORE
+
+     def __eq__(self, other):
+        if isinstance(other, type(self)):
+            return self.real == other.real and self.imag == other.imag
+
+    def __ne__(self, other):
+        if isinstance(other, type(self)):
+            return self.real != other.real or self.image != other.imag
+```
+
+```{python}
+a, b, c = Complex(1, 2), Complex(2, 1), Complex(1, 2)
+print(f"a == b: {a == b}")
+print(f"a != b: {a != b}")
+print(f"a == c: {a == c}")
+print(f"a != c: {a != c}")
+```
