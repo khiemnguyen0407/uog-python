@@ -1,0 +1,64 @@
+---
+title: "Programming in Python"
+subtitle: "For Year 2 and Year 3"
+author: 
+    Khiem Nguyen
+    <br>Lecturer in Multiscale Materials  
+    <br><khiem.nguyen@glasgow.ac.uk>
+author-meta: "Lecturer in Multiscale Materials"
+format: 
+    pdf:
+        theme: dark   # other themes: beige, blood, dark, dracula, league, moon, night, serif, simple, sky, solarized
+        code-fold: false
+        toc: true
+        css: simple.css
+jupyter: python3
+execute:
+    echo: true
+    warning: false
+    error: false
+---
+
+# An informal introduction to Python
+
+Python is a high-level programming language. As a consequence, the Python code can be sometimes self-explanatory and close to human language. In this chapter, I walk you through some of the basic concepts in Python and we will dive deeper in *less basic* knowledge of Python programming. The aim of this chapter is to lure you in the world of programming and to convince you that **Python is rather easy to learn**.
+
+## Using Python as a Calculator
+
+Let us try some simple Python commands. By starting the interpreter in the interactive mode, you should see the primary prompt `>>>`. Alternatively, you can create a new Jupyter Notebook and start to write code in different code cells. I assume that you can do these steps following the installation instruction in the last section. We will start from here.
+
+
+### Numbers
+The interpreter acts as a simple calculator. You can type an expression at it and it will write the value. Expression syntax is straightforward, almost like writing on papers. Parentheses `()` are used for grouping. 
+
+In this note, the Python code cells instead of the code in the interactive interpreter will be presented. In this way, you can easily copy/paste the code to Jupyter Notebook to try it out. By placing the mouse cursor on the code cell, the **Copy to Clipboard** icon will appear. Then, by moving the cursor to the icon and left-clicking the mouse, the code cell will be copied to your clipboard. After that, you can paste the code anywhere you like by **Ctrl + V** (in Windows) or **Cmd + V** (in MacOS) and **Ctrl + Shift + V** (in Linux Ubuntu). Don't panic, you will figure it out easily!
+
+
+So, the first code cell looks like this:
+```{python}
+x = 42      # assign the literal constant 42 to the variable "x"
+print(x)    # you will use function print() a lot more
+print(42 - 24)      
+print(42/3)         # division always returns a floating point number
+print(2/3)          # division always returns a floating point number
+```
+The integer numbers (e.g., `42`, `2`, `3`) have type `int`, the ones with fractional part (e.g. `14.0`, `0.66...`) have type `float`.  
+
+Division (`/`) always returns a float. To do **floor division** and get an integer result (discarding the fractional part), we can use the `//` operator; to calculate the remainder of division of an integer by another integer we use `%` (modulus):
+```{python}
+2 / 3
+```
+```{python}
+42 // 5
+```
+```{python}
+42 % 5
+```
+```{python}
+(42 // 5) * 5 + (42 % 5)
+```
+Powers are computed using the `**` operator:
+```{python}
+2**10
+```
+$$\exp(-\frac{1}{10}\sin(2 x))$$
