@@ -8,7 +8,7 @@ author: |
 author-meta: "Lecturer in Multiscale Materials"
 format: 
     revealjs:
-        theme: serif   # other themes: beige, blood, dark, dracula, league, moon, night, serif, simple, sky, solarized
+        theme: default   # other themes: beige, blood, dark, dracula, league, moon, night, serif, simple, sky, solarized
         slide-number: true
         title-slide-style: pandoc
         echo: true
@@ -406,3 +406,7 @@ print(f"a != b: {a != b}")
 print(f"a == c: {a == c}")
 print(f"a != c: {a != c}")
 ```
+
+## Special method names
+- There are a lot of special methods that cannot be studied through this course.
+- Complete reference can be found from [this official Python documentation](https://docs.python.org/3.13/reference/datamodel.html#special-method-names).
