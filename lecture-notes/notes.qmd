@@ -7,8 +7,8 @@ author:
     <br><khiem.nguyen@glasgow.ac.uk>
 author-meta: "Lecturer in Multiscale Materials"
 format: 
-    pdf:
-        theme: dark   # other themes: beige, blood, dark, dracula, league, moon, night, serif, simple, sky, solarized
+    html:
+        theme: serif   # other themes: beige, blood, dark, dracula, league, moon, night, serif, simple, sky, solarized
         code-fold: false
         toc: true
         css: simple.css
@@ -61,4 +61,3 @@ Powers are computed using the `**` operator:
 ```{python}
 2**10
 ```
-$$\exp(-\frac{1}{10}\sin(2 x))$$
