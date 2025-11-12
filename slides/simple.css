@@ -1,0 +1,34 @@
+.reveal {
+    font-size: 28px;
+    /* font-family: Georgia, 'Times New Roman', Times, serif */
+    /* Adjust as needed */
+}
+
+.reveal pre {
+    font-size: 1.8rem !important;
+}
+
+.reveal code {
+    font-size: 0.70em !important;
+}
+
+
+/* Make cell outputs (including errors) smaller */
+
+/* Optional: visually de-emphasize tracebacks */
+.reveal .cell-output-stderr pre {
+    background: #2e2e2e;
+    /* subtle dark background */
+    color: #f3d2d2;
+    /* softer red */
+    border-left: 4px solid #cc6666;
+    padding-left: 0.75rem;
+}
+
+
+pre code.language-pycon {
+    background: #0d1117;
+    /* dark */
+    color: #c9d1d9;
+    border-left: 4px solid #58a6ff;
+}

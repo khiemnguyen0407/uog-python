@@ -1,0 +1,125 @@
+---
+title: "NumPy library "
+subtitle: "The fundamental package for scientific computing with Python"
+author: |
+    Khiem Nguyen 
+    <br>Lecturer in Multiscale Materials
+    <br><khiem.nguyen@glasgow.ac.uk>
+author-meta: "Lecturer in Multiscale Materials"
+format: 
+    revealjs:
+        theme: serif   # other themes: beige, blood, dark, dracula, league, moon, night, serif, simple, sky, solarized
+        slide-number: true
+        title-slide-style: pandoc
+        echo: true
+        code-overflow: wrap
+        code-line-numbers: true
+        code-block-bg: false          # <-- remove white background in code blocks
+        # code-block-border-left: false # optional: remove left border
+        # highlight-style: monokai      # good for dark images
+        toc: true
+        toc-depth: 1
+        toc-title: Presentation Outline
+        css: simple.css
+---
+
+# Gentle Introduction to NumPy library
+
+## NumPy: Quick introduction
+- **Open-source** Python library used in almost every field of science and engineering
+- Universal standard for working with numerical data
+- Core of the scientific Python and PyData ecosystem (Data Science)
+- Extensively used in Pandas (library for data science), matplotlib, sckit-learn, etc.
+- Official webiste: [Click this link](https://numpy.org)
+
+![Logo of NumPy library](./figures/python_numpy/NumPy_Logo.png)
+
+## Install and import, Documentation
+- Installation of NumPy
+    1. With Conda environment: `conda install numpy`
+    2. With pip: `pip install numpy`
+
+- Import NumPy
+```python
+import numpy as np
+```
+
+- Where to start?  
+Useful tutorials in the order of complexity/difficulty (1. simple $\rightarrow$ 3. complex)
+    1. [NumPy: the absolute basics for beginners -- Click on this link](https://numpy.org/doc/stable/user/absolute_beginners.html#numpy-the-absolute-basics-for-beginners)
+    2. [NumPy fundamentals -- Click on this link](https://numpy.org/doc/stable/user/basics.html)
+    3. [NumPy User Guide -- Click on this link](https://numpy.org/doc/2.3/user/index.html#user)
+
+**The absolute basics for beginners** tutorial is *more than enough* for this course.
+
+## Array in NumPy
+- Array is a central data structure of the NumPy library.
+- Array is a grid of values, contains info about the raw data (floating or integer, how to allocate elements, etc.)
+- The elements in the array are of the same type -- **homogeneous data**
+- Array is an object of data type `ndarray`.
+
+![](./figures/python_numpy/numpy_array_illustrations.png)
+
+## Array in NumPy
+`axis` is an important concept in `ndarray`
+![](./figures/python_numpy/numpy_array_illustrations.png)
+
+## Why use NumPy instead of Python list
+- Fast and efficient ways of creating arrays
+- Homogeneous data type (`ndarray`) vs heterogeneous data type (`list`)
+- Many supported mathematical operations on array and in linear algebra
+- Faster: shorter running time
+- More compact implementation: shorter code
+- Less memory
+- More and more
+
+## Things are easy in NumPy but complicated in List
+- Dot product of two $n$-dimensional vectors, matrix multiplication
+$$
+\mathbf{a}=(1, 2, 3), \quad \mathbf{b} = (4, 5, 6)\quad\Rightarrow\quad \mathbf{a}\cdot \mathbf{b} = 1\cdot 2 + 2\cdot 5 + 3 \cdot 6 = ?
+$$
+$$
+\mathbf{A}= \begin{bmatrix} 1 & 2 \\ 3 & 4 \end{bmatrix}, \quad \mathbf{b} = \begin{bmatrix} 5 \\ 6 \end{bmatrix} \quad\Rightarrow\quad \mathbf{A}\mathbf{b} = ?
+$$
+- Summation of a series of numbers with or without weight factors
+$$
+\mathbf{q} = \bigg(1, \frac{1}{2}, \frac{1}{3}, \frac{1}{4}, \cdots, \frac{1}{100}\bigg) \quad\Rightarrow\quad
+\left\{\begin{aligned}
+ \sigma &= \sum\limits_{i=1}^{100} q_i = ?,\\ 
+ \gamma &= \sum\limits_{i=1}^{50}\frac{q_{2i-1}^2}{(2i + 1)^2} =?
+ \end{aligned}\right.
+$$
+- Extraction of numbers in a list of numbers that satisfy some specific conditions
+$$
+\mathbf{r} = (1, 2, \cdots, 10, 9, 8, \cdots 3) \quad\Rightarrow\quad \big\{r_i \quad|\quad 3 < r_i < 8 \big\} = ?
+$$
+
+## Access to elements in NumPy array
+- Access to elements in NumPy array is not really like access to elements in Python list.
+- There are many more and convenient ways of accessing elements in NumPy.
+    1. Indexed by a tuple of non-negative integers
+    2. Indexed by booleans (`True` extracts, `False` does not extract the data)
+    3. Indexed by teh way we work with Python list
+
+Python `ndarray`
+```python
+a = np.array([[1, 2, 3], [4, 5, 6]])
+print(a[1, 2])      # ok for ndarray
+print(a[[0,1]])     # ok 
+print(a[a > 3])     # ok
+```
+
+Python `list`
+```python
+a = [[1, 2, 3], [4, 5, 6]]
+print(a[1, 2])      # raise error
+print(a[[0, 1]])    # raise error
+print(a[a > 3])     # raise error
+```
+
+## Learn NumPy
+- In the end, it is a programming library
+- Learning a programming is almost like learning a speaking language (but well much easier than a speaking language)
+
+![](./figures/python_numpy/syntax.jpg) 
+![](./figures/python_numpy/examples.jpg)
