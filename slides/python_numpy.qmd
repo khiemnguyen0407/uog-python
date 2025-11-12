@@ -121,5 +121,184 @@ print(a[a > 3])     # raise error
 - In the end, it is a programming library
 - Learning a programming is almost like learning a speaking language (but well much easier than a speaking language)
 
+::: {.columns}
+::: {.column width="50%"}
 ![](./figures/python_numpy/syntax.jpg) 
+:::
+::: {.column width="50%"}
 ![](./figures/python_numpy/examples.jpg)
+:::
+:::
+Learn **Syntax**, then learn **examples** + **examples** + **examples**
+
+$\longrightarrow\quad$ **Practice with your own problem**
+
+## Learn NumPy: Google
+If you google keyword "numpy array" or "create array in numpy"
+![](./figures/python_numpy/numpy_array_function_doc.png)
+
+## Learn NumPy: Google
+Then, roll down to see examples
+![](./figures/python_numpy/numpy_array_examples_doc.png)
+
+# Create NumPy arrays
+
+## How to create a basic array
+There are many functions to create a NumPy array:
+- Create an array
+```python
+numpy.array(object, dtype=None, *, copy=True, order='K', subok=False, 
+            ndmin=0, like=None)
+```
+- Create an array of all zero elements
+```python
+numpy.zeros(shape, dtype=float, order='C', *, like=None)
+```
+- Create an array of all elements of value "one"
+```python
+numpy.ones(shape, dtype=None, order='C', *, like=None)
+```
+- Create a range array (like built-in function `range` but step can take floating)
+```python
+numpy.arange([start, ]stop, [step, ]dtype=None, *, like=None)
+```
+- Create a linear spacing array (uniformly spacing)
+```python
+numpy.linspace(start, stop, num=50, endpoint=True, retstep=False, 
+               dtype=None, axis=0)
+```
+
+## How to create a basic array
+```python
+numpy.array(object, dtype=None, *, copy=True, order='K', subok=False, 
+            ndmin=0, like=None)
+```
+> - When you see keyword arguments `keyword=value`, you don't need to remember these input arguments. Normally, the IDE will suggest them when we really need.
+> - You only need to remember the required arguments (the non-keyword arguments)
+
+## How to create a basic array: Example
+```{python}
+import numpy as np
+a1 = np.array([1, 2, 3])
+a2 = np.zeros((2, 3))
+a3 = np.ones((2, 3))
+a4 = np.arange(0.5, 1.5, 0.2)
+a5 = np.linspace(0.5, 1.5, 6)
+print(f"a1 = {a1}")
+print(f"a2 = \n{a2}")
+print(f"a3 = \n{a3}")
+print(f"a4 = {a4}") 
+print(f"a5 = {a5}")
+# Developer-friendly representation will be used here: repr(a5)
+a5
+```
+
+## Indexing, Slicing and Iterating
+Indexing, slicing for NumPy arrays versus Python list: **same same but different**
+
+::: {.columns}
+::: {.column width="50%"}
+Python `list`
+```{python}
+a = [0, 1, 2, 3, 4, 5]
+print(a[1:4])   # gives [1, 2, 3]
+print(a[1::2])  # gives [1, 3, 5]
+print(a[::2])   # gives [0, 2, 4]
+print(a[::-1])  # reverse
+print(a[-1])    # last element
+```
+```python
+A = [[0, 1, 2], [3, 4, 5], 
+     [6, 7, 8]]
+A[0][1]     # gives "1"
+A[0]        # 1st row: row #0
+A[0:2]      # rows #0, #1
+A[[0, 2]]   # SYNTAX ERROR 
+# Retrieving columns is complicated 
+# and needs 'list comprehession'
+```
+:::
+::: {.column width="50%"}
+NumPy `ndarray`
+```{python}
+a = np.arange(6)
+print(a[1:4])   # gives [1, 2, 3]
+print(a[1::2])  # gives [1, 3, 5]
+print(a[::2])   # gives [0, 2, 4]
+print(a[::-1])  # reverse
+print(a[-1])    # last element
+```
+:::
+:::
+
+## Indexing, Slicing, and Iterating
+```{python}
+A = np.array([[0, 1, 2], 
+              [3, 4, 5], 
+              [6, 7, 8]])
+print(A[0,1])          # row "0", column "1"
+```
+```{python}
+print(A[0,:])          # 1st row: row #0
+```
+```{python}
+print(A[0:2,:])        # rows #0, #1
+```
+```{python}
+print(A[[0, 2], :])    # rows #0, #2
+```
+```{python}
+print(A[:,0])          # 1st column: column #0
+```
+```{python}
+print(A[:,0:2])        # columns #0 and #1
+```
+
+## Dimension, shape, size
+![](./figures/python_numpy/numpy_array_illustrations.png)
+
+## Dimension, shape, size
+- An `ndarray` object has many attributes (properties).
+- Among many attributes, the dimension, shape, and size are frequently used attributes.
+- Of course, knowing the date type of array's elements is sometimes helpful.
+
+Some useful attributes
+
+- `ndarray.ndim`  
+    Number of array dimensions
+- `ndarray.shape`  
+    Tuple of array dimensions
+- `ndarray.size` (= `np.prod(a.shpe)`)
+    Number of elements in the array. This is equal to product of the array's dimension.
+- `ndarray.dtype`  
+    Datatype of the array's elements
+
+## Dimension, shape, size: Example
+::: {.columns}
+::: {.column width="50%"}
+```{python}
+array2d = np.array([[1, 2, 3], 
+                     [4, 5, 6]])
+
+print(f"ndim  = {array2d.ndim}")
+print(f"shape = {array2d.shape}")    
+print(f"size  = {array2d.size}")    
+print(f"dtype = {array2d.dtype}") 
+```
+:::
+::: {.column width="50%"}
+```{python}
+array3d = np.array([[[0, 1, 2, 3],
+                     [4, 5, 6, 7]],
+        
+                    [[0, 1, 2, 3],
+                     [4, 5, 6, 7]],
+                           
+                    [[0, 1, 2, 3],
+                     [4, 5, 6, 7]]])
+print(f"ndim  = {array3d.ndim}")
+print(f"size  = {array3d.size}")
+print(f"shape = {array3d.shape}") 
+```
+:::
+:::
