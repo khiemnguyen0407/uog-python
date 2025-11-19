@@ -302,3 +302,396 @@ print(f"shape = {array3d.shape}")
 ```
 :::
 :::
+
+## Change array shape
+![](./figures/python_numpy/np_reshape.png)
+
+## Change array shape
+- We can use methods associated with `ndarray` object.
+    - `ndarray.reshape(shape, order='C')`
+        Give a new shape to an array without changing its data
+    - `ndarray.ravel([order])`
+        Return a contiguous falttened array
+    - `ndarray.flatten([order])`
+        Return a copy of the array collapsed into one dimension
+    
+- Sometimes NumPy has routines accepting `ndarray` as input and functioning the same.
+    - `numpy.reshape(a, newshape, order='c')`
+    - `numpy.ravel(a)`
+
+**What to remmember**   
+
+NumPy `reshape` / `ravel` / `flatten` + Google
+
+## Change array shape: Example
+::: {.columns}
+::: {.column width="50%"}
+```{python}
+a1 = np.arange(6).reshape(2, 3)
+b1 = np.reshape(np.arange(6), (2, 3))
+a2 = a1.flatten()
+b2 = np.ravel(b1)
+print(f"a1 =\n{a1}")
+print(f"b1 =\n{b1}")
+print(f"a2 = {a2}")
+print(f"b2 = {b2}")
+```
+:::
+::: {.column width="50%"}
+```{python}
+A2d = np.arange(12).reshape((3, 4))
+A3d = A2d.reshape((3, 2, 2))
+print(f"A2d =\n{A2d}")
+print(f"A3d =\n{A3d}")
+```
+:::
+::: 
+
+## Tranpose
+Particularly useful for computational purposes:
+
+- Tranpose of a matrix, or even a high-dimensional array.
+- If you think about it: a matrix is just a two-dimensional array.
+
+- `numpy.tranpose(a, axes=None)`
+
+    Returns a view of the array with axes tranposed. `axes` is a tuple or list of ints, optional.
+- `ndarray.tranpose(*axes)`
+
+    Returns an array with axes tranposed
+
+## Transpose: Example
+```{python}
+a = np.array([[1, 2], 
+              [3, 4]])
+b1 = a.transpose()
+b2 = a.transpose((1, 0))
+b3 = a.transpose(1, 0)
+print(f"a =\n{a}")
+print(f"b1 =\n{b1}")
+print(f"b2 =\n{b2}")
+print(f"b3 =\n{b3}")
+```
+
+## Tranpose: Example
+```{python}
+np.random.seed(42)
+a = np.array([[[1, 2], [3, 4]], 
+              [[1, 0], [0, 1]]])
+print(a.shape)
+print(a)
+```
+```{python}
+print(a[0]); print(15*"-")
+print(a[1])
+
+```
+```{python}
+print(a[0,1,:]) # Second row of the first matrix
+print(a[0,:,1]) # Second column of the first matrix
+```
+
+## Tranpose: Example
+```{python}
+# This does not swap two blocks of matrices for you!
+b = a.transpose((0, 2, 1))
+print(b)
+```
+
+```{python}
+# What truly happens
+c = np.zeros(shape=(2, 2, 2)) # float
+for i in range(2):
+    for j in range(2):
+        for k in range(2):
+            c[i,j,k] = a[i,k,j]
+print(c)
+```
+
+
+
+## Tranpose: Example
+```{python}
+# array of shape 2 x 3 x 4 x 5
+a = np.random.random((2, 3, 4, 5))
+b = a.transpose((0, 1, 2, 3))
+c = a.transpose((3, 2, 1, 0))
+```
+
+**Questions**
+
+- What would be the shape of `b`: `b.shape`?
+- What would be the shape of `c`: `c.shape`?
+
+::: {.fragment}
+```{python}
+print(b.shape)
+```
+:::
+
+::: {.fragment}
+```{python}
+print(c.shape)
+```
+:::
+
+# Doing maths in NumPY
+
+## Basic operations
+
+- Basic arithmetic operations such as `+`, `-`, `*`, `/`, etc. act in the **element-by-element basis**
+
+
+![](./figures/python_numpy/np_data_plus_ones_snip.png)
+![](./figures/python_numpy/np_sub_mult_divide_snip.png)
+
+## Basic operations
+- The basic **element-by-element** arithmetic operations work also for $n$-dimensional arrays.
+![](./figures/python_numpy/np_matrix_arithmetic_snip.png)
+
+## Aggregation
+
+![](./figures/python_numpy/np_aggregation_snip.png)
+![](./figures/python_numpy/np_matrix_aggregation_snip.png)
+
+NumPy routine version of these object methods:
+- `np.max(data)`
+- `np.min(data)`
+- `np.sum(data)`
+
+## `axis` in NumPy array: an important concept
+![](./figures/python_numpy/np_axis_concept_snip.png)
+
+
+## Aggregation along specific `axis`
+```python
+ndarray.max(axis=None, out=None, keepdims=False, initial=<no value>, where=True)
+```
+```python
+ndarray.min(axis=None, out=None, keepdims=False, initial=<no value>, where=True)
+```
+```python
+ndarray.sum(axis=None, dtype=None, out=None, keepdims=False, initial=0, where=True)
+```
+![](./figures/python_numpy/np_matrix_aggregation_row_snip.png)
+
+*What to remember*
+
+- `ndarray.max()` / `ndarray.min()` / `ndarray.sum()` + **Google**
+
+*What to understand*
+
+`axis` keyword argument
+
+# Doing maths in NumPy
+
+## `axis` in NumPy array
+![](./figures/python_numpy/np_matrix_aggregation_row_snip.png)
+
+**Small challenge**
+```{python}
+A = np.arange(12).reshape((3, 4))
+```
+What would be the results of the following
+```python
+A.sum(axis=0)
+A.sum(axis=1)
+```
+
+**Answer**
+
+::: {.fragment}
+```{python}
+A.sum(axis=0)
+```
+
+```{python}
+A.sum(axis=1)
+```
+:::
+
+## `axis` in NumPy array
+
+$$
+\mathbf{A} = \begin{bmatrix}
+    0 & 1 & 2 & 3 \\ 4 & 5 & 6 & 7 \\ 8 & 9 & 10 & 11
+\end{bmatrix}
+$$
+`A.sum(axis=0)`
+
+$$
+\begin{aligned}
+\sum\limits_{k=1}^{3}{A_{k \diamond}} &= \begin{bmatrix}
+\underbrace{0 + 4 + 8}_{12} & \underbrace{1 + 5 + 9}_{15} & \underbrace{2 + 6 + 10}_{18} & \underbrace{3 + 7 + 11}_{21} \end{bmatrix} \\
+&=\begin{bmatrix}
+    12 & 15 & 18 & 21
+\end{bmatrix}
+\end{aligned}
+$$
+
+`A.sum(axis=1)`
+$$
+\begin{aligned}
+\sum\limits_{k=1}^{4}{A_{\diamond k}} = \begin{bmatrix}
+0 + 1 + 2 + 3 \\ 4 +5 + 6 + 7 \\ 8 + 9 + 10 + 11 \end{bmatrix}
+= \begin{bmatrix}
+    6 \\ 22 \\ 38
+\end{bmatrix}
+\end{aligned}
+$$
+
+## Working with linear algebra
+Objectives
+
+- Dot product of two vectors
+- Dot product of two arrays, e.g., multiplication of two matrices
+
+Note easy and cumbersom to be implemented by using Python list
+
+::: { .columns}
+::: { .column width="50%"}
+```{python}
+a = list(range(1, 100, 1))
+b = list(range(1, 199, 2))
+sum = 0
+for i in range(len(a)):
+    sum += a[i] * b[i]
+
+print(sum)
+```
+:::
+::: { .column width="50%"}
+```{python}
+A = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+B = [[1, 2], [3, 4], [5, 6]]
+C = []
+mC, nC, nA = 3, 2, 3
+for i in range(mC):
+    C_row = []
+    for j in range(nC):
+        sum = 0
+        for k in range(nA):
+            sum += A[i][k] * B[k][j]
+        C_row.append(sum)
+    C.append(C_row)
+print(C)
+```
+:::
+:::
+
+## Dot product of two vectors
+<img src="./figures/python_numpy/two-numpy-arrays_for-dot-product_example.png" width=300>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="./figures/python_numpy/numpy-dot-product_simple-visual-example.png" width=350>
+
+Official syntax
+
+- `ndarray.dot(b, out=None)`
+- `numpy.dot(a, b, out=None)`
+
+```{python}
+a = np.array([3, 4, 5])
+b = np.array([7, 8, 9])
+a_dot_b = a.dot(b)   
+print(a_dot_b)    
+a_dot_b = np.dot(a, b)  # either is ok
+print(a_dot_b)
+```
+
+## Dot product of two arrays
+![](./figures/python_numpy/multi-matrix-as-dot-product-1.png)
+![](./figures/python_numpy/multi-matrix-as-dot-product-2.png)
+
+
+
+The **last axis** of the matrix $\mathbf{A}$ is "dot producted" with the "second-to-last axis" of the matrix $\mathbf{B}$
+$$
+C_{ij} = \sum\limits_{k=1}^{N} A_{ik} B_{k j} = \texttt{A[i,:]}.\mathrm{dot}(\texttt{B[:,j]})
+$$
+
+
+## Dot Product of two arrays
+```{python}
+# In the nutshell but not necessary
+A = np.array([[1, 2, 3], [4, 5, 6]])
+B = np.array([[7, 8], [9, 10], [11, 12]])
+C = np.zeros((2, 2))
+for i in range(A.shape[0]):
+    for j in range(B.shape[1]):
+        C[i,j] = A[i,:].dot(B[:,j])
+print(C)
+```
+
+```{python}
+# Use this instead!!!
+C = A.dot(B)        # or
+C = np.dot(A, B)    # or
+C = A @ B           # or
+C = np.matmul(A, B) # or
+print(C)
+```
+
+## Working with mathematical formulas: Mean square error
+
+In Machine Learning, error estimation and engineering applications, we need to compute the following formula frequently 
+
+**Mean Square Error Formula**
+
+$$
+\mathrm{MSE} = \frac{1}{n}\sum\limits_{j=1}^{n}\big(y_{j}^\text{prediction} - y_{j}^{\text{label}} \big)^2
+$$
+
+- Assume that we have two 1-dimensional `ndarray`: `ypred` and `ylabel`. 
+- Then, we need only one single line of code to compute MSE.
+- The code looks almost like the formula itself.
+
+```python
+mse = 1/n * np.sum(np.square(ypred - ylabel))
+```
+
+## Working with formulas: Mean square error
+
+$$
+\mathrm{MSE} = \frac{1}{n}\sum\limits_{j=1}^{n}\big(y_{j}^\text{prediction} - y_{j}^{\text{label}} \big)^2
+$$
+
+- Step [1] $\longrightarrow$ `ypred - ylabel`
+- Step [2] $\longrightarrow$ `(ypred - ylabel) ** 2`
+- Step [3] $\longrightarrow$ `np.sum( (ypred - ylabel) ** 2)`
+- Step [4] $\longrightarrow$ `1/n * np.sum( (ypred - ylabel) ** 2)`
+
+All in all: by using `np.square` instead of `**2`, we can write
+```python
+mse = 1 / ypred.shape[0] * np.sum(np.square(ypred - ylabel))
+```
+## Working with formulas: Mean square error
+
+Let us do one example:
+
+- Let us compute MSE using a `for` loop
+```{python}
+ypred = np.array([1, 1, 1])
+ylabel = np.array([1, 2, 3])
+# Let us compute MSE by using for loop
+mse = 0
+for i in range(ypred.shape[0]):
+    mse += (ypred[i] - ylabel[i])**2
+mse /= ypred.shape[0]
+print(mse)
+```
+
+- Let us employ the power of NumPy library
+```{python}
+mse = 1/ypred.shape[0] * np.sum( (ypred - ylabel) ** 2); print(mse)
+mse = 1/ypred.shape[0] * np.sum(np.square(ypred - ylabel)); print(mse)
+```
+
+## Working with formulas: MSE
+![](./figures/python_numpy/np_mse_viz1.png)
+![](./figures/python_numpy/np_mse_viz2.png)
+
+## Working with formulas: MSE
+![](./figures/python_numpy/np_mse_viz2_snip.png)
+![](./figures/python_numpy/np_mse_explanation2_snip.png)
+
+
+

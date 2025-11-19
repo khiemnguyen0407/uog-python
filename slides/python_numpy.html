@@ -203,6 +203,8 @@
 <ul>
 <li><a href="#/gentle-introduction-to-numpy-library" id="/toc-gentle-introduction-to-numpy-library">Gentle Introduction to NumPy library</a></li>
 <li><a href="#/create-numpy-arrays" id="/toc-create-numpy-arrays">Create NumPy arrays</a></li>
+<li><a href="#/doing-maths-in-numpy" id="/toc-doing-maths-in-numpy">Doing maths in NumPY</a></li>
+<li><a href="#/doing-maths-in-numpy-1" id="/toc-doing-maths-in-numpy-1">Doing maths in NumPy</a></li>
 </ul>
 </nav>
 </section>
@@ -378,7 +380,7 @@ Useful tutorials in the order of complexity/difficulty (1. simple <span class="m
 </section>
 <section id="how-to-create-a-basic-array-example" class="slide level2">
 <h2>How to create a basic array: Example</h2>
-<div id="19de052e" class="cell" data-execution_count="1">
+<div id="39d273a3" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href=""></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb10-2"><a href=""></a>a1 <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
 <span id="cb10-3"><a href=""></a>a2 <span class="op">=</span> np.zeros((<span class="dv">2</span>, <span class="dv">3</span>))</span>
@@ -403,7 +405,7 @@ a3 =
 a4 = [0.5 0.7 0.9 1.1 1.3]
 a5 = [0.5 0.7 0.9 1.1 1.3 1.5]</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="1">
+<div class="cell-output cell-output-display" data-execution_count="3675">
 <pre><code>array([0.5, 0.7, 0.9, 1.1, 1.3, 1.5])</code></pre>
 </div>
 </div>
@@ -414,7 +416,7 @@ a5 = [0.5 0.7 0.9 1.1 1.3 1.5]</code></pre>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p>Python <code>list</code></p>
-<div id="727f3168" class="cell" data-execution_count="2">
+<div id="f20fab8d" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href=""></a>a <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
 <span id="cb13-2"><a href=""></a><span class="bu">print</span>(a[<span class="dv">1</span>:<span class="dv">4</span>])   <span class="co"># gives [1, 2, 3]</span></span>
 <span id="cb13-3"><a href=""></a><span class="bu">print</span>(a[<span class="dv">1</span>::<span class="dv">2</span>])  <span class="co"># gives [1, 3, 5]</span></span>
@@ -439,7 +441,7 @@ a5 = [0.5 0.7 0.9 1.1 1.3 1.5]</code></pre>
 <span id="cb15-8"><a href=""></a><span class="co"># and needs 'list comprehession'</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column" style="width:50%;">
 <p>NumPy <code>ndarray</code></p>
-<div id="380d6a37" class="cell" data-execution_count="3">
+<div id="9405da2f" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href=""></a>a <span class="op">=</span> np.arange(<span class="dv">6</span>)</span>
 <span id="cb16-2"><a href=""></a><span class="bu">print</span>(a[<span class="dv">1</span>:<span class="dv">4</span>])   <span class="co"># gives [1, 2, 3]</span></span>
 <span id="cb16-3"><a href=""></a><span class="bu">print</span>(a[<span class="dv">1</span>::<span class="dv">2</span>])  <span class="co"># gives [1, 3, 5]</span></span>
@@ -458,7 +460,7 @@ a5 = [0.5 0.7 0.9 1.1 1.3 1.5]</code></pre>
 </section>
 <section id="indexing-slicing-and-iterating-1" class="slide level2">
 <h2>Indexing, Slicing, and Iterating</h2>
-<div id="1e40eb2f" class="cell" data-execution_count="4">
+<div id="adbea324" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href=""></a>A <span class="op">=</span> np.array([[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>], </span>
 <span id="cb18-2"><a href=""></a>              [<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>], </span>
 <span id="cb18-3"><a href=""></a>              [<span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>]])</span>
@@ -467,33 +469,33 @@ a5 = [0.5 0.7 0.9 1.1 1.3 1.5]</code></pre>
 <pre><code>1</code></pre>
 </div>
 </div>
-<div id="84c7a375" class="cell" data-execution_count="5">
+<div id="3c30173d" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href=""></a><span class="bu">print</span>(A[<span class="dv">0</span>,:])          <span class="co"># 1st row: row #0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[0 1 2]</code></pre>
 </div>
 </div>
-<div id="2c3589cf" class="cell" data-execution_count="6">
+<div id="9f82cfc5" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href=""></a><span class="bu">print</span>(A[<span class="dv">0</span>:<span class="dv">2</span>,:])        <span class="co"># rows #0, #1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[0 1 2]
  [3 4 5]]</code></pre>
 </div>
 </div>
-<div id="2741fd01" class="cell" data-execution_count="7">
+<div id="a7b279f4" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href=""></a><span class="bu">print</span>(A[[<span class="dv">0</span>, <span class="dv">2</span>], :])    <span class="co"># rows #0, #2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[0 1 2]
  [6 7 8]]</code></pre>
 </div>
 </div>
-<div id="46fc3052" class="cell" data-execution_count="8">
+<div id="207d8c9d" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href=""></a><span class="bu">print</span>(A[:,<span class="dv">0</span>])          <span class="co"># 1st column: column #0</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[0 3 6]</code></pre>
 </div>
 </div>
-<div id="ea8164ff" class="cell" data-execution_count="9">
+<div id="dcfd880e" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href=""></a><span class="bu">print</span>(A[:,<span class="dv">0</span>:<span class="dv">2</span>])        <span class="co"># columns #0 and #1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[0 1]
@@ -528,7 +530,7 @@ Datatype of the array’s elements</li>
 <h2>Dimension, shape, size: Example</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div id="106af416" class="cell" data-execution_count="10">
+<div id="1b4f242a" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href=""></a>array2d <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], </span>
 <span id="cb30-2"><a href=""></a>                     [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]])</span>
 <span id="cb30-3"><a href=""></a></span>
@@ -544,7 +546,7 @@ dtype = int64</code></pre>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
-<div id="be66bc87" class="cell" data-execution_count="11">
+<div id="35871a63" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href=""></a>array3d <span class="op">=</span> np.array([[[<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],</span>
 <span id="cb32-2"><a href=""></a>                     [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>]],</span>
 <span id="cb32-3"><a href=""></a>        </span>
@@ -563,6 +565,478 @@ shape = (3, 2, 4)</code></pre>
 </div>
 </div>
 </div></div>
+</section>
+<section id="change-array-shape" class="slide level2">
+<h2>Change array shape</h2>
+
+<img data-src="./figures/python_numpy/np_reshape.png" class="r-stretch"></section>
+<section id="change-array-shape-1" class="slide level2">
+<h2>Change array shape</h2>
+<ul>
+<li>We can use methods associated with <code>ndarray</code> object.
+<ul>
+<li><code>ndarray.reshape(shape, order='C')</code> Give a new shape to an array without changing its data</li>
+<li><code>ndarray.ravel([order])</code> Return a contiguous falttened array</li>
+<li><code>ndarray.flatten([order])</code> Return a copy of the array collapsed into one dimension</li>
+</ul></li>
+<li>Sometimes NumPy has routines accepting <code>ndarray</code> as input and functioning the same.
+<ul>
+<li><code>numpy.reshape(a, newshape, order='c')</code></li>
+<li><code>numpy.ravel(a)</code></li>
+</ul></li>
+</ul>
+<p><strong>What to remmember</strong></p>
+<p>NumPy <code>reshape</code> / <code>ravel</code> / <code>flatten</code> + Google</p>
+</section>
+<section id="change-array-shape-example" class="slide level2">
+<h2>Change array shape: Example</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div id="bac27423" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href=""></a>a1 <span class="op">=</span> np.arange(<span class="dv">6</span>).reshape(<span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb34-2"><a href=""></a>b1 <span class="op">=</span> np.reshape(np.arange(<span class="dv">6</span>), (<span class="dv">2</span>, <span class="dv">3</span>))</span>
+<span id="cb34-3"><a href=""></a>a2 <span class="op">=</span> a1.flatten()</span>
+<span id="cb34-4"><a href=""></a>b2 <span class="op">=</span> np.ravel(b1)</span>
+<span id="cb34-5"><a href=""></a><span class="bu">print</span>(<span class="ss">f"a1 =</span><span class="ch">\n</span><span class="sc">{</span>a1<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb34-6"><a href=""></a><span class="bu">print</span>(<span class="ss">f"b1 =</span><span class="ch">\n</span><span class="sc">{</span>b1<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb34-7"><a href=""></a><span class="bu">print</span>(<span class="ss">f"a2 = </span><span class="sc">{</span>a2<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb34-8"><a href=""></a><span class="bu">print</span>(<span class="ss">f"b2 = </span><span class="sc">{</span>b2<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>a1 =
+[[0 1 2]
+ [3 4 5]]
+b1 =
+[[0 1 2]
+ [3 4 5]]
+a2 = [0 1 2 3 4 5]
+b2 = [0 1 2 3 4 5]</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div id="eb01f6e3" class="cell" data-execution_count="13">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href=""></a>A2d <span class="op">=</span> np.arange(<span class="dv">12</span>).reshape((<span class="dv">3</span>, <span class="dv">4</span>))</span>
+<span id="cb36-2"><a href=""></a>A3d <span class="op">=</span> A2d.reshape((<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb36-3"><a href=""></a><span class="bu">print</span>(<span class="ss">f"A2d =</span><span class="ch">\n</span><span class="sc">{</span>A2d<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb36-4"><a href=""></a><span class="bu">print</span>(<span class="ss">f"A3d =</span><span class="ch">\n</span><span class="sc">{</span>A3d<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>A2d =
+[[ 0  1  2  3]
+ [ 4  5  6  7]
+ [ 8  9 10 11]]
+A3d =
+[[[ 0  1]
+  [ 2  3]]
+
+ [[ 4  5]
+  [ 6  7]]
+
+ [[ 8  9]
+  [10 11]]]</code></pre>
+</div>
+</div>
+</div></div>
+</section>
+<section id="tranpose" class="slide level2">
+<h2>Tranpose</h2>
+<p>Particularly useful for computational purposes:</p>
+<ul>
+<li><p>Tranpose of a matrix, or even a high-dimensional array.</p></li>
+<li><p>If you think about it: a matrix is just a two-dimensional array.</p></li>
+<li><p><code>numpy.tranpose(a, axes=None)</code></p>
+<p>Returns a view of the array with axes tranposed. <code>axes</code> is a tuple or list of ints, optional.</p></li>
+<li><p><code>ndarray.tranpose(*axes)</code></p>
+<p>Returns an array with axes tranposed</p></li>
+</ul>
+</section>
+<section id="transpose-example" class="slide level2">
+<h2>Transpose: Example</h2>
+<div id="5ff10883" class="cell" data-execution_count="14">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href=""></a>a <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>], </span>
+<span id="cb38-2"><a href=""></a>              [<span class="dv">3</span>, <span class="dv">4</span>]])</span>
+<span id="cb38-3"><a href=""></a>b1 <span class="op">=</span> a.transpose()</span>
+<span id="cb38-4"><a href=""></a>b2 <span class="op">=</span> a.transpose((<span class="dv">1</span>, <span class="dv">0</span>))</span>
+<span id="cb38-5"><a href=""></a>b3 <span class="op">=</span> a.transpose(<span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb38-6"><a href=""></a><span class="bu">print</span>(<span class="ss">f"a =</span><span class="ch">\n</span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb38-7"><a href=""></a><span class="bu">print</span>(<span class="ss">f"b1 =</span><span class="ch">\n</span><span class="sc">{</span>b1<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb38-8"><a href=""></a><span class="bu">print</span>(<span class="ss">f"b2 =</span><span class="ch">\n</span><span class="sc">{</span>b2<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb38-9"><a href=""></a><span class="bu">print</span>(<span class="ss">f"b3 =</span><span class="ch">\n</span><span class="sc">{</span>b3<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>a =
+[[1 2]
+ [3 4]]
+b1 =
+[[1 3]
+ [2 4]]
+b2 =
+[[1 3]
+ [2 4]]
+b3 =
+[[1 3]
+ [2 4]]</code></pre>
+</div>
+</div>
+</section>
+<section id="tranpose-example" class="slide level2">
+<h2>Tranpose: Example</h2>
+<div id="80a9c9d9" class="cell" data-execution_count="15">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href=""></a>np.random.seed(<span class="dv">42</span>)</span>
+<span id="cb40-2"><a href=""></a>a <span class="op">=</span> np.array([[[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]], </span>
+<span id="cb40-3"><a href=""></a>              [[<span class="dv">1</span>, <span class="dv">0</span>], [<span class="dv">0</span>, <span class="dv">1</span>]]])</span>
+<span id="cb40-4"><a href=""></a><span class="bu">print</span>(a.shape)</span>
+<span id="cb40-5"><a href=""></a><span class="bu">print</span>(a)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(2, 2, 2)
+[[[1 2]
+  [3 4]]
+
+ [[1 0]
+  [0 1]]]</code></pre>
+</div>
+</div>
+<div id="8e4adc78" class="cell" data-execution_count="16">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href=""></a><span class="bu">print</span>(a[<span class="dv">0</span>])<span class="op">;</span> <span class="bu">print</span>(<span class="dv">15</span><span class="op">*</span><span class="st">"-"</span>)</span>
+<span id="cb42-2"><a href=""></a><span class="bu">print</span>(a[<span class="dv">1</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[1 2]
+ [3 4]]
+---------------
+[[1 0]
+ [0 1]]</code></pre>
+</div>
+</div>
+<div id="ed548eee" class="cell" data-execution_count="17">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href=""></a><span class="bu">print</span>(a[<span class="dv">0</span>,<span class="dv">1</span>,:]) <span class="co"># Second row of the first matrix</span></span>
+<span id="cb44-2"><a href=""></a><span class="bu">print</span>(a[<span class="dv">0</span>,:,<span class="dv">1</span>]) <span class="co"># Second column of the first matrix</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[3 4]
+[2 4]</code></pre>
+</div>
+</div>
+</section>
+<section id="tranpose-example-1" class="slide level2">
+<h2>Tranpose: Example</h2>
+<div id="9c5205e2" class="cell" data-execution_count="18">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href=""></a><span class="co"># This does not swap two blocks of matrices for you!</span></span>
+<span id="cb46-2"><a href=""></a>b <span class="op">=</span> a.transpose((<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">1</span>))</span>
+<span id="cb46-3"><a href=""></a><span class="bu">print</span>(b)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[[1 3]
+  [2 4]]
+
+ [[1 0]
+  [0 1]]]</code></pre>
+</div>
+</div>
+<div id="c1ecc852" class="cell" data-execution_count="19">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href=""></a><span class="co"># What truly happens</span></span>
+<span id="cb48-2"><a href=""></a>c <span class="op">=</span> np.zeros(shape<span class="op">=</span>(<span class="dv">2</span>, <span class="dv">2</span>, <span class="dv">2</span>)) <span class="co"># float</span></span>
+<span id="cb48-3"><a href=""></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>):</span>
+<span id="cb48-4"><a href=""></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>):</span>
+<span id="cb48-5"><a href=""></a>        <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">2</span>):</span>
+<span id="cb48-6"><a href=""></a>            c[i,j,k] <span class="op">=</span> a[i,k,j]</span>
+<span id="cb48-7"><a href=""></a><span class="bu">print</span>(c)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[[1. 3.]
+  [2. 4.]]
+
+ [[1. 0.]
+  [0. 1.]]]</code></pre>
+</div>
+</div>
+</section>
+<section id="tranpose-example-2" class="slide level2">
+<h2>Tranpose: Example</h2>
+<div id="8c9ca405" class="cell" data-execution_count="20">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href=""></a><span class="co"># array of shape 2 x 3 x 4 x 5</span></span>
+<span id="cb50-2"><a href=""></a>a <span class="op">=</span> np.random.random((<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>))</span>
+<span id="cb50-3"><a href=""></a>b <span class="op">=</span> a.transpose((<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>))</span>
+<span id="cb50-4"><a href=""></a>c <span class="op">=</span> a.transpose((<span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>, <span class="dv">0</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Questions</strong></p>
+<ul>
+<li>What would be the shape of <code>b</code>: <code>b.shape</code>?</li>
+<li>What would be the shape of <code>c</code>: <code>c.shape</code>?</li>
+</ul>
+<div class="fragment">
+<div id="5179f0b9" class="cell" data-execution_count="21">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href=""></a><span class="bu">print</span>(b.shape)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(2, 3, 4, 5)</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div id="9e00d229" class="cell" data-execution_count="22">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href=""></a><span class="bu">print</span>(c.shape)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(5, 4, 3, 2)</code></pre>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="doing-maths-in-numpy" class="title-slide slide level1 center">
+<h1>Doing maths in NumPY</h1>
+
+</section>
+<section id="basic-operations" class="slide level2">
+<h2>Basic operations</h2>
+<ul>
+<li>Basic arithmetic operations such as <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, etc. act in the <strong>element-by-element basis</strong></li>
+</ul>
+<p><img data-src="./figures/python_numpy/np_data_plus_ones_snip.png"> <img data-src="./figures/python_numpy/np_sub_mult_divide_snip.png"></p>
+</section>
+<section id="basic-operations-1" class="slide level2">
+<h2>Basic operations</h2>
+<ul>
+<li>The basic <strong>element-by-element</strong> arithmetic operations work also for <span class="math inline">\(n\)</span>-dimensional arrays. <img data-src="./figures/python_numpy/np_matrix_arithmetic_snip.png"></li>
+</ul>
+</section>
+<section id="aggregation" class="slide level2">
+<h2>Aggregation</h2>
+<p><img data-src="./figures/python_numpy/np_aggregation_snip.png"> <img data-src="./figures/python_numpy/np_matrix_aggregation_snip.png"></p>
+<p>NumPy routine version of these object methods: - <code>np.max(data)</code> - <code>np.min(data)</code> - <code>np.sum(data)</code></p>
+</section>
+<section id="axis-in-numpy-array-an-important-concept" class="slide level2">
+<h2><code>axis</code> in NumPy array: an important concept</h2>
+
+<img data-src="./figures/python_numpy/np_axis_concept_snip.png" class="r-stretch"></section>
+<section id="aggregation-along-specific-axis" class="slide level2">
+<h2>Aggregation along specific <code>axis</code></h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb55"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href=""></a>ndarray.<span class="bu">max</span>(axis<span class="op">=</span><span class="va">None</span>, out<span class="op">=</span><span class="va">None</span>, keepdims<span class="op">=</span><span class="va">False</span>, initial<span class="op">=&lt;</span>no value<span class="op">&gt;</span>, where<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb56"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href=""></a>ndarray.<span class="bu">min</span>(axis<span class="op">=</span><span class="va">None</span>, out<span class="op">=</span><span class="va">None</span>, keepdims<span class="op">=</span><span class="va">False</span>, initial<span class="op">=&lt;</span>no value<span class="op">&gt;</span>, where<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb57"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href=""></a>ndarray.<span class="bu">sum</span>(axis<span class="op">=</span><span class="va">None</span>, dtype<span class="op">=</span><span class="va">None</span>, out<span class="op">=</span><span class="va">None</span>, keepdims<span class="op">=</span><span class="va">False</span>, initial<span class="op">=</span><span class="dv">0</span>, where<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+
+<img data-src="./figures/python_numpy/np_matrix_aggregation_row_snip.png" class="r-stretch"><p><em>What to remember</em></p>
+<ul>
+<li><code>ndarray.max()</code> / <code>ndarray.min()</code> / <code>ndarray.sum()</code> + <strong>Google</strong></li>
+</ul>
+<p><em>What to understand</em></p>
+<p><code>axis</code> keyword argument</p>
+</section></section>
+<section>
+<section id="doing-maths-in-numpy-1" class="title-slide slide level1 center">
+<h1>Doing maths in NumPy</h1>
+
+</section>
+<section id="axis-in-numpy-array" class="slide level2">
+<h2><code>axis</code> in NumPy array</h2>
+
+<img data-src="./figures/python_numpy/np_matrix_aggregation_row_snip.png" class="r-stretch"><p><strong>Small challenge</strong></p>
+<div id="11b9ab6f" class="cell" data-execution_count="23">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href=""></a>A <span class="op">=</span> np.arange(<span class="dv">12</span>).reshape((<span class="dv">3</span>, <span class="dv">4</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>What would be the results of the following</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb59"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href=""></a>A.<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb59-2"><a href=""></a>A.<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p><strong>Answer</strong></p>
+<div class="fragment">
+<div id="52dc232a" class="cell" data-execution_count="24">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href=""></a>A.<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="3698">
+<pre><code>array([12, 15, 18, 21])</code></pre>
+</div>
+</div>
+<div id="1aba2ffb" class="cell" data-execution_count="25">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href=""></a>A.<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="3699">
+<pre><code>array([ 6, 22, 38])</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="axis-in-numpy-array-1" class="slide level2">
+<h2><code>axis</code> in NumPy array</h2>
+<p><span class="math display">\[
+\mathbf{A} = \begin{bmatrix}
+    0 &amp; 1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 &amp; 7 \\ 8 &amp; 9 &amp; 10 &amp; 11
+\end{bmatrix}
+\]</span> <code>A.sum(axis=0)</code></p>
+<p><span class="math display">\[
+\begin{aligned}
+\sum\limits_{k=1}^{3}{A_{k \diamond}} &amp;= \begin{bmatrix}
+\underbrace{0 + 4 + 8}_{12} &amp; \underbrace{1 + 5 + 9}_{15} &amp; \underbrace{2 + 6 + 10}_{18} &amp; \underbrace{3 + 7 + 11}_{21} \end{bmatrix} \\
+&amp;=\begin{bmatrix}
+    12 &amp; 15 &amp; 18 &amp; 21
+\end{bmatrix}
+\end{aligned}
+\]</span></p>
+<p><code>A.sum(axis=1)</code> <span class="math display">\[
+\begin{aligned}
+\sum\limits_{k=1}^{4}{A_{\diamond k}} = \begin{bmatrix}
+0 + 1 + 2 + 3 \\ 4 +5 + 6 + 7 \\ 8 + 9 + 10 + 11 \end{bmatrix}
+= \begin{bmatrix}
+    6 \\ 22 \\ 38
+\end{bmatrix}
+\end{aligned}
+\]</span></p>
+</section>
+<section id="working-with-linear-algebra" class="slide level2">
+<h2>Working with linear algebra</h2>
+<p>Objectives</p>
+<ul>
+<li>Dot product of two vectors</li>
+<li>Dot product of two arrays, e.g., multiplication of two matrices</li>
+</ul>
+<p>Note easy and cumbersom to be implemented by using Python list</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div id="729ccf31" class="cell" data-execution_count="26">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href=""></a>a <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">100</span>, <span class="dv">1</span>))</span>
+<span id="cb64-2"><a href=""></a>b <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">199</span>, <span class="dv">2</span>))</span>
+<span id="cb64-3"><a href=""></a><span class="bu">sum</span> <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb64-4"><a href=""></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(a)):</span>
+<span id="cb64-5"><a href=""></a>    <span class="bu">sum</span> <span class="op">+=</span> a[i] <span class="op">*</span> b[i]</span>
+<span id="cb64-6"><a href=""></a></span>
+<span id="cb64-7"><a href=""></a><span class="bu">print</span>(<span class="bu">sum</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>651750</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<div id="91c422b8" class="cell" data-execution_count="27">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href=""></a>A <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>], [<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>]]</span>
+<span id="cb66-2"><a href=""></a>B <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>], [<span class="dv">5</span>, <span class="dv">6</span>]]</span>
+<span id="cb66-3"><a href=""></a>C <span class="op">=</span> []</span>
+<span id="cb66-4"><a href=""></a>mC, nC, nA <span class="op">=</span> <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">3</span></span>
+<span id="cb66-5"><a href=""></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(mC):</span>
+<span id="cb66-6"><a href=""></a>    C_row <span class="op">=</span> []</span>
+<span id="cb66-7"><a href=""></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(nC):</span>
+<span id="cb66-8"><a href=""></a>        <span class="bu">sum</span> <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb66-9"><a href=""></a>        <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(nA):</span>
+<span id="cb66-10"><a href=""></a>            <span class="bu">sum</span> <span class="op">+=</span> A[i][k] <span class="op">*</span> B[k][j]</span>
+<span id="cb66-11"><a href=""></a>        C_row.append(<span class="bu">sum</span>)</span>
+<span id="cb66-12"><a href=""></a>    C.append(C_row)</span>
+<span id="cb66-13"><a href=""></a><span class="bu">print</span>(C)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[22, 28], [49, 64], [76, 100]]</code></pre>
+</div>
+</div>
+</div></div>
+</section>
+<section id="dot-product-of-two-vectors" class="slide level2">
+<h2>Dot product of two vectors</h2>
+<p><img src="./figures/python_numpy/two-numpy-arrays_for-dot-product_example.png" width="300">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="./figures/python_numpy/numpy-dot-product_simple-visual-example.png" width="350"></p>
+<p>Official syntax</p>
+<ul>
+<li><code>ndarray.dot(b, out=None)</code></li>
+<li><code>numpy.dot(a, b, out=None)</code></li>
+</ul>
+<div id="534d892d" class="cell" data-execution_count="28">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href=""></a>a <span class="op">=</span> np.array([<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
+<span id="cb68-2"><a href=""></a>b <span class="op">=</span> np.array([<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>])</span>
+<span id="cb68-3"><a href=""></a>a_dot_b <span class="op">=</span> a.dot(b)   </span>
+<span id="cb68-4"><a href=""></a><span class="bu">print</span>(a_dot_b)    </span>
+<span id="cb68-5"><a href=""></a>a_dot_b <span class="op">=</span> np.dot(a, b)  <span class="co"># either is ok</span></span>
+<span id="cb68-6"><a href=""></a><span class="bu">print</span>(a_dot_b)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>98
+98</code></pre>
+</div>
+</div>
+</section>
+<section id="dot-product-of-two-arrays" class="slide level2">
+<h2>Dot product of two arrays</h2>
+<p><img data-src="./figures/python_numpy/multi-matrix-as-dot-product-1.png"> <img data-src="./figures/python_numpy/multi-matrix-as-dot-product-2.png"></p>
+<p>The <strong>last axis</strong> of the matrix <span class="math inline">\(\mathbf{A}\)</span> is “dot producted” with the “second-to-last axis” of the matrix <span class="math inline">\(\mathbf{B}\)</span> <span class="math display">\[
+C_{ij} = \sum\limits_{k=1}^{N} A_{ik} B_{k j} = \texttt{A[i,:]}.\mathrm{dot}(\texttt{B[:,j]})
+\]</span></p>
+</section>
+<section id="dot-product-of-two-arrays-1" class="slide level2">
+<h2>Dot Product of two arrays</h2>
+<div id="f8a8be53" class="cell" data-execution_count="29">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href=""></a><span class="co"># In the nutshell but not necessary</span></span>
+<span id="cb70-2"><a href=""></a>A <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]])</span>
+<span id="cb70-3"><a href=""></a>B <span class="op">=</span> np.array([[<span class="dv">7</span>, <span class="dv">8</span>], [<span class="dv">9</span>, <span class="dv">10</span>], [<span class="dv">11</span>, <span class="dv">12</span>]])</span>
+<span id="cb70-4"><a href=""></a>C <span class="op">=</span> np.zeros((<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb70-5"><a href=""></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(A.shape[<span class="dv">0</span>]):</span>
+<span id="cb70-6"><a href=""></a>    <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(B.shape[<span class="dv">1</span>]):</span>
+<span id="cb70-7"><a href=""></a>        C[i,j] <span class="op">=</span> A[i,:].dot(B[:,j])</span>
+<span id="cb70-8"><a href=""></a><span class="bu">print</span>(C)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[ 58.  64.]
+ [139. 154.]]</code></pre>
+</div>
+</div>
+<div id="29d6061a" class="cell" data-execution_count="30">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href=""></a><span class="co"># Use this instead!!!</span></span>
+<span id="cb72-2"><a href=""></a>C <span class="op">=</span> A.dot(B)        <span class="co"># or</span></span>
+<span id="cb72-3"><a href=""></a>C <span class="op">=</span> np.dot(A, B)    <span class="co"># or</span></span>
+<span id="cb72-4"><a href=""></a>C <span class="op">=</span> A <span class="op">@</span> B           <span class="co"># or</span></span>
+<span id="cb72-5"><a href=""></a>C <span class="op">=</span> np.matmul(A, B) <span class="co"># or</span></span>
+<span id="cb72-6"><a href=""></a><span class="bu">print</span>(C)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[ 58  64]
+ [139 154]]</code></pre>
+</div>
+</div>
+</section>
+<section id="working-with-mathematical-formulas-mean-square-error" class="slide level2">
+<h2>Working with mathematical formulas: Mean square error</h2>
+<p>In Machine Learning, error estimation and engineering applications, we need to compute the following formula frequently</p>
+<p><strong>Mean Square Error Formula</strong></p>
+<p><span class="math display">\[
+\mathrm{MSE} = \frac{1}{n}\sum\limits_{j=1}^{n}\big(y_{j}^\text{prediction} - y_{j}^{\text{label}} \big)^2
+\]</span></p>
+<ul>
+<li>Assume that we have two 1-dimensional <code>ndarray</code>: <code>ypred</code> and <code>ylabel</code>.</li>
+<li>Then, we need only one single line of code to compute MSE.</li>
+<li>The code looks almost like the formula itself.</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb74"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href=""></a>mse <span class="op">=</span> <span class="dv">1</span><span class="op">/</span>n <span class="op">*</span> np.<span class="bu">sum</span>(np.square(ypred <span class="op">-</span> ylabel))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="working-with-formulas-mean-square-error" class="slide level2">
+<h2>Working with formulas: Mean square error</h2>
+<p><span class="math display">\[
+\mathrm{MSE} = \frac{1}{n}\sum\limits_{j=1}^{n}\big(y_{j}^\text{prediction} - y_{j}^{\text{label}} \big)^2
+\]</span></p>
+<ul>
+<li>Step [1] <span class="math inline">\(\longrightarrow\)</span> <code>ypred - ylabel</code></li>
+<li>Step [2] <span class="math inline">\(\longrightarrow\)</span> <code>(ypred - ylabel) ** 2</code></li>
+<li>Step [3] <span class="math inline">\(\longrightarrow\)</span> <code>np.sum( (ypred - ylabel) ** 2)</code></li>
+<li>Step [4] <span class="math inline">\(\longrightarrow\)</span> <code>1/n * np.sum( (ypred - ylabel) ** 2)</code></li>
+</ul>
+<p>All in all: by using <code>np.square</code> instead of <code>**2</code>, we can write</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb75"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href=""></a>mse <span class="op">=</span> <span class="dv">1</span> <span class="op">/</span> ypred.shape[<span class="dv">0</span>] <span class="op">*</span> np.<span class="bu">sum</span>(np.square(ypred <span class="op">-</span> ylabel))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="working-with-formulas-mean-square-error-1" class="slide level2">
+<h2>Working with formulas: Mean square error</h2>
+<p>Let us do one example:</p>
+<ul>
+<li>Let us compute MSE using a <code>for</code> loop</li>
+</ul>
+<div id="9601e8c3" class="cell" data-execution_count="31">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href=""></a>ypred <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">1</span>])</span>
+<span id="cb76-2"><a href=""></a>ylabel <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
+<span id="cb76-3"><a href=""></a><span class="co"># Let us compute MSE by using for loop</span></span>
+<span id="cb76-4"><a href=""></a>mse <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb76-5"><a href=""></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(ypred.shape[<span class="dv">0</span>]):</span>
+<span id="cb76-6"><a href=""></a>    mse <span class="op">+=</span> (ypred[i] <span class="op">-</span> ylabel[i])<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb76-7"><a href=""></a>mse <span class="op">/=</span> ypred.shape[<span class="dv">0</span>]</span>
+<span id="cb76-8"><a href=""></a><span class="bu">print</span>(mse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1.6666666666666667</code></pre>
+</div>
+</div>
+<ul>
+<li>Let us employ the power of NumPy library</li>
+</ul>
+<div id="169fd93b" class="cell" data-execution_count="32">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href=""></a>mse <span class="op">=</span> <span class="dv">1</span><span class="op">/</span>ypred.shape[<span class="dv">0</span>] <span class="op">*</span> np.<span class="bu">sum</span>( (ypred <span class="op">-</span> ylabel) <span class="op">**</span> <span class="dv">2</span>)<span class="op">;</span> <span class="bu">print</span>(mse)</span>
+<span id="cb78-2"><a href=""></a>mse <span class="op">=</span> <span class="dv">1</span><span class="op">/</span>ypred.shape[<span class="dv">0</span>] <span class="op">*</span> np.<span class="bu">sum</span>(np.square(ypred <span class="op">-</span> ylabel))<span class="op">;</span> <span class="bu">print</span>(mse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1.6666666666666665
+1.6666666666666665</code></pre>
+</div>
+</div>
+</section>
+<section id="working-with-formulas-mse" class="slide level2">
+<h2>Working with formulas: MSE</h2>
+<p><img data-src="./figures/python_numpy/np_mse_viz1.png"> <img data-src="./figures/python_numpy/np_mse_viz2.png"></p>
+</section>
+<section id="working-with-formulas-mse-1" class="slide level2">
+<h2>Working with formulas: MSE</h2>
+<p><img data-src="./figures/python_numpy/np_mse_viz2_snip.png"> <img data-src="./figures/python_numpy/np_mse_explanation2_snip.png"></p>
 
 </section></section>
     </div>
