@@ -40,12 +40,12 @@ execute:
 Some popular and well-known special methods:
 
 | Magic Method | Description |
-|---|---|
-|`__init__()` | Provides an initializer in Python classes |
-|`__str__()` | Provide human-read representation for objects |
-|`__repr__()` | Provide developer point-of-view representation |
-|`__call__()` | Makes instances of a class callable |
-|`__len__()` | Supports the `len()` function |
+|--------------|-------------|
+|`__init__()`  | Provides an initializer in Python classes |
+|`__str__()`   | Provide human-read representation for objects |
+|`__repr__()`  | Provide developer point-of-view representation |
+|`__call__()`  | Makes instances of a class callable |
+|`__len__()`   | Supports the `len()` function |
 
 ## Special methods: Introduction
 Here's how the Python official documentation defines the term **special methods**
@@ -185,15 +185,15 @@ print(a + b)
 ## Arithmetic operations
 - Arithmetic operators are those that we use to perform *arithmetic operations* on numeric values. Python represents them with the usual math signs.
 
-| Supporting method | Operation   |
-|-------------------|-------------|
-| `__add__(self, other)`    | +   |
-| `__sub__(self, other)`    | -   |
-| `__mul__(self, other)`    | *   |
-| `__truediv(self, other)`  | /   |
-| `__floordiv(self, other)` | //  |
-| `__mod__(self, other)`    | %   |
-| `__pow__(self, other)`    | **  |
+| Supporting method         | Operator    |
+|---------------------------|-------------|
+| `__add__(self, other)`    | `+`         |
+| `__sub__(self, other)`    | `-`         |
+| `__mul__(self, other)`    | `*`         |
+| `__truediv(self, other)`  | `/`         |
+| `__floordiv(self, other)` | `//`        |
+| `__mod__(self, other)`    | `%`         |
+| `__pow__(self, other)`    | `**`        |
 
 - Note that all these methods take a second argument called `other`. In most cases, 
 
