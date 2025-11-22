@@ -1,9 +1,9 @@
 __pycache__/\n*.pyc\n.env
-fem/
 assignments/
 presentation-demo_files/
 presentation_files/
 demo_files/
+grades/
 demo/
 jupyter_env/
 *.pdf
@@ -13,3 +13,5 @@ demo.*
 presentation-demo.*
 ./'Python Code -- Functions.ipynb'
 .ipynb_checkpoints
+lecture_notes/10_cupy.py
+lecture_notes/11_torch.py
