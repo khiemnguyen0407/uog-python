@@ -13,3 +13,5 @@ demo.*
 presentation-demo.*
 ./'Python Code -- Functions.ipynb'
 .ipynb_checkpoints
+*.sh
+run.py

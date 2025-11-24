@@ -8,6 +8,7 @@ device_cpu = torch.device("cpu")
 device_gpu = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"Using GPU: {torch.cuda.is_available()}")
 
+print(f"{torch.cuda.is_available()}")
 # %%
 
 # Create a large tensor
