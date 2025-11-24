@@ -13,5 +13,3 @@ demo.*
 presentation-demo.*
 ./'Python Code -- Functions.ipynb'
 .ipynb_checkpoints
-lecture_notes/10_cupy.py
-lecture_notes/11_torch.py
