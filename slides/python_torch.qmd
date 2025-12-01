@@ -1,0 +1,306 @@
+---
+title: "Torch"
+subtitle: "A Framework for Artificial Intelligece and Machine Learning"
+author: |
+    Khiem Nguyen 
+    <br>Lecturer in Multiscale Materials
+    <br><khiem.nguyen@glasgow.ac.uk>
+author-meta: "Lecturer in Multiscale Materials"
+format: 
+    revealjs:
+        theme: serif   # other themes: beige, blood, dark, dracula, league, moon, night, serif, simple, sky, solarized
+        slide-number: true
+        title-slide-style: pandoc
+        echo: true
+        code-overflow: wrap
+        code-line-numbers: true
+        code-block-bg: false          # <-- remove white background in code blocks
+        # code-block-border-left: false # optional: remove left border
+        # highlight-style: monokai      # good for dark images
+        fig-align: center
+        toc: true
+        toc-depth: 1
+        toc-title: Presentation Outline
+        css: simple.css
+---
+
+## Torch
+
+- **PyTorch** is a powerful library which is used for training machine learning models.
+- **PyTorch** provides a powerful auto-differentiation engine, which helps us to compute derivative of a function automatically.
+- Fun facts:
+    - ChatGPT from OpenAI is built on top of PyTorch, which provides necessary functionality for traning and running deep neural networks like GPT-3.5 model.
+    - The codebase for ChatGPT is written in Python, the langage used to create models and application logic.
+
+    - The project also utilizes other PyTroch-related librarie, such as `transformers` from Hugging Face, which provides high-level APIs for building and training transformer-based models
+
+## Create tensors
+
+- Import `torch` as any other libraries:
+```{python}
+import torch
+import numpy as np
+```
+
+- It feels like using NumPy library
+```{python}
+data = [[1, 2], [3,  4]]
+x_np = np.array(data)
+print(repr(x_np))       # use "repr" to show developer point of view
+x_np                    # equivalent to print(repr(x_np))
+```
+
+```{python}
+x_torch = torch.tensor(data)
+x_torch
+```
+
+## Create tensors
+- We can convert the NumPy array to a Torch tensor
+```{python}
+np_array = np.random.random(size=(3, 4))
+np_array
+```
+```{python}
+torch_array = torch.from_numpy(np_array)
+torch_array
+```
+
+## Create tensors
+- If you are familiar with NumPy, you should transition well to PyTorch
+
+:::{.columns}
+
+:::{.column width="50%"}
+```{python}
+np_zeros = np.zeros(shape=(2, 2))
+np_zeros
+```
+```{python}
+np_ones = np.ones(shape=(2, 2))
+np_ones
+```
+
+```{python}
+np_rand = np.random.random(size=(2, 2))
+np_rand
+```
+:::
+
+:::{.column width="50%"}
+```{python}
+tensor_zeros = torch.zeros(size=(2, 2))
+tensor_zeros
+```
+```{python}
+tensor_ones = torch.ones(size=(2, 2))
+tensor_ones
+```
+
+```{python}
+tensor_rand = torch.rand(size=(2, 2))
+tensor_rand
+```
+:::
+:::
+
+## Arithematic operations on tensors
+- Just like NumPy, basic arithemetic operations on tensors work in element-by-element basis
+
+::: {.columns}
+::: {.column width="50%"}
+```{python}
+a = np.array([1, 2, 3])
+b = np.array([4, 5, 6])
+print(f"a + b = {repr(a + b)}")
+print(f"a - b = {repr(a - b)}")
+print(f"a * b = {repr(a * b)}")
+print(f"a / b = {repr(a / b)}")
+print(f"a.dot(b) = {repr(a.dot(b))}")
+```
+:::
+::: {.column width="50%"}
+```{python}
+a = torch.tensor([1, 2, 3])
+b = torch.tensor([4, 5, 6])
+print(f"a + b = {a + b}")
+print(f"a - b = {a - b}")
+print(f"a * b = {a * b}")
+print(f"a / b = {a / b}")
+print(f"a.dot(b) = {a.dot(b)}")
+```
+:::
+:::
+
+## Arithematic operations on tensors
+- We can do matrix multiplication
+```{python}
+a = torch.tensor([[1, 2, 3], [4, 5, 6]],  dtype=torch.float32)  # if you don't specify the data type, it will be inferred as integer.
+b = torch.ones(size=(3, 4))
+print(f"a @ b =\n{a.matmul(b)}")
+print(f"a @ b =\n{a @ b}")
+```
+
+## Arithematic operations on tensors
+- Unlike **NumPy** `dot` only works for one-dimensional tensor
+```{python}
+#| error: true
+a = torch.tensor([[1.0, 2, 3], [4, 5, 6]])      # note "1.0", instead of just "1"
+b = torch.ones(size=(3, 4))
+a.dot(b)
+```
+
+## Aggregation
+- We can do all aggregation operations just like how we would do in NumPy
+
+```{python}
+x = torch.arange(1, 10, 1, dtype=torch.float32).reshape(shape=(3, 3))
+x
+```
+
+::: {.columns}
+::: {.column width="33%"}
+```{python}
+x.sum()
+```
+:::
+::: {.column width="33%"}
+```{python}
+x.sum(dim=0)
+```
+:::
+::: {.column width="33%"}
+```{python}
+x.sum(dim=1)
+```
+:::
+:::
+- To extract single-element tensor, we use `.item()`
+```{python}
+x = torch.ones(size=(2, 3))
+agg = x.sum()
+agg_item = agg.item()
+print(f"{agg} -- {type(agg)}")
+print(f"{agg_item} -- {type(agg_item)}")
+```
+
+# Automatic differentiation
+## Automatic differentiation & GPU Computing
+
+**Why do we need PyTorch in the first place if it is so much similar to NumPy?**
+
+
+- PyTorch’s **Autograd** feature is part of what make PyTorch flexible and fast for building machine learning projects. 
+- Autograd helps **the rapid and easy computation of multiple partial derivatives** (also referred to as gradients) over a complex computation. This operation is central to backpropagation-based neural network learning.
+- PyTorch also allows GPU computing, which is crucial in modern **High Performance Computting** (HPC).
+
+We study how `autograd` collects gradients via a simple example: We want to compute the gradient of $\nabla f(\mathbf{x})$ of the following function
+$$
+f(\mathbf{x}) = f(a, b) = 3 a^2 - b^2, \qquad \mathbf{x} = (a, b)
+$$
+
+## Automatic differentiation: Example
+**Repeat**: We want to compute the gradient $\nabla f$ of the following function:
+$$
+f(\mathbf{x}) = 3 a^2 - 2 a b + b^2, \qquad \mathbf{x} = (a, b)
+$$
+
+- We know in advance:
+$$
+\frac{\partial f}{\partial a} = 6 a - 2b, \qquad \frac{\partial f}{\partial b} = -2a + 2b \qquad \rightarrow \quad \nabla f(\mathbf{x}) = \begin{bmatrix} 6 a - 2 b \\ -2a + 2b \end{bmatrix}.
+$$
+- Let us compute the $\nabla f$ at two points $\mathbf{x}^{(1)} = (1, 2)$ and $\mathbf{x}^{(2)} = (3, 4)$. We know:
+$$
+\begin{aligned}
+\nabla f(\mathbf{x}^{(1)}) &= \begin{bmatrix} 6 \cdot 1 - 2\cdot 2 \\ -2\cdot 1 + 2 \cdot 2 \end{bmatrix} = \begin{bmatrix} 2 \\ 2 \end{bmatrix}, \\[6pt]
+\nabla f(\mathbf{x}^{(2)}) &= \begin{bmatrix} 6 \cdot 3 - 2\cdot 4 \\ -2\cdot 3 + 2 \cdot 4 \end{bmatrix} = \begin{bmatrix} 10 \\ 2 \end{bmatrix}, \\
+\end{aligned}
+$$
+
+## Autoamatic differentiation: Code Exxample
+```{python}
+a = torch.tensor([1.0, 3.0], requires_grad=True)
+b = torch.tensor([2.0, 4.0], requires_grad=True)
+f = 3*a**2 - 2*a*b + b**2
+```
+
+- When we call `.backward()` on the variable `f`, **autograd** calculates the gradient $\nabla f$ at $(1, 2)$ and $(3, 4)$ and stores them in the respective tensors `.grad` attribute.
+```{python}
+# there is a mathematical reasoning for this, but we don't go through this in this intro lecture
+external_grad = torch.tensor([1.0, 1.0])
+f.backward(gradient=external_grad)
+print(f"a.grad = {a.grad}")
+print(f"b.grad = {b.grad}")
+```
+- Recall $\qquad\left\{ \begin{aligned}
+\frac{\partial f}{\partial a}(\mathbf{x}^{(1)}) &= 2, \quad \frac{\partial f}{\partial a}(\mathbf{x}^{(2)}) = 10, \\[3pt] \frac{\partial f}{\partial b}(\mathbf{x}^{(1)}) &= 2,\quad  \frac{\partial f}{\partial b}(\mathbf{x}^{(2)}) = 2
+\end{aligned}\right.$
+
+# Overview of machine learning frameworks
+## Problem statement
+
+- Given a set of images of handwritten digits, can we tell which number the image prepresents?
+
+![](./figures/pytorch/handwritten_digits.png){fig-align="center"}
+
+## Problem statement and mathematica idea
+
+**Mathematical idea:** 
+
+![](./figures/pytorch/probability_function.png){fig-align="center"}
+
+
+- If I can build a function that tells the probabilities of $10$ digits (from $0$ to $9$) that a given image represents, then we can decide which number that image represents by picking up the highest probabilities.
+
+
+## Problem statement and mathematical idea
+
+![](./figures/pytorch/probability_function.png){fig-align="center"}
+
+- The function $P$ receives one single image $\mathbf{I}$ as the input, and output $10$ values corresponding the probabilities that input image represents the number $0$, the number $1$, $\ldots$, the number $9$.
+
+## Problem statement and mathematical idea
+
+![](./figures/pytorch/math_idea_prob_function.png){fig-align="center"}
+
+- Assume that this function $P$ receives the image $\mathbf{I}$, and gives the output
+$$
+\mathcal{P}_{\theta}(\mathbf{I}) = \big(0.01, 0.01, 0.01, 0.01, \underbrace{\mathbf{0.76}}_{\text{number } 4}, 0.04, 0.04, 0.04, 0.04, 0.04\big)
+$$
+    There is 
+    - $1\%$ probability the image is number $0$, $\ldots$, $1\%$ the image is number $2$, 
+    - $76\%$ probability the image is number $4$, 
+    - $4\%$ probability the image is number $5$, $\ldots$, $4\%$ the image is number $9$.
+
+
+## Maths: Measure the wellness of prediction
+- Develop the probability function $\mathcal{P}$ as a **neural network**. You don't know it for now and no need to know it in this lecture for now.
+- Develop a **cost function** that measures how well the prediction is. 
+- We want to -- **Do not worry about the details of the formulas for now**          
+    - **maximize the wellness of the prediction capability**, or equivalently
+    $$
+    \max\limits_{\theta }\bigg\{ \frac{1}{N} \sum\limits_{i=1}^{N} \mathbf{y}^{(i)}\cdot \log(\mathcal{P}_{\theta}(\mathbf{x}^{(i)})) + (1 - \mathbf{y}^{(i)}) \cdot \log(1 - \mathcal{P}_{\theta}(\mathbf{x}^{(i)})) \bigg\}
+    $$
+    - **minimize the error of the prediction function**
+    $$
+    \min\limits_{\theta} \underbrace{\bigg\{ -\frac{1}{N} \sum\limits_{i=1}^{N} \mathbf{y}^{(i)}\cdot \log(\mathcal{P}_{\theta}(\mathbf{x}^{(i)})) + (1 - \mathbf{y}^{(i)}) \cdot \log(1 - \mathcal{P}_{\theta}(\mathbf{x}^{(i)})) \bigg\}}_{\text{cost function } \mathcal{L} = \mathcal{L}(\theta)}
+    $$
+
+## Maths: Gradient descent method
+
+- To minimize a function, we can use the gradient descent method
+
+- In this gradient descent method, we need to compute the gradient of the cost function $\mathcal{L}(\theta)$
+- In other words, we need to compute the partial derivative of $\mathcal{L}$ with respect to all the parameters $\theta$.
+- The computation of these partial deritives involves extremely complex mathematical formulation.
+
+
+> **Autograd** from `torch` helps us to compute the such partial derivatives easily.
+
+# Prediction model
+## A quick look at result
+![](./figures/pytorch/digit_prediction_result.png){fig-align="center"}
+
+
+
+
