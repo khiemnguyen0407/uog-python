@@ -6,19 +6,21 @@ import time
 print(f"Cuda is avaiable: {cp.is_available()}")
 # %%
 tstart = time.time()
-A_cpu = np.linspace(0, 1, 10000000).reshape(10000, 1000)
-b_cpu = np.linspace(1, 2, 1000)
-for iter in range(500):
-    dot_prod = np.dot(A_cpu, b_cpu)
-
+x_cpu = np.random.random((1000, 1000))
+for i in range(500):
+    A = x_cpu.T @ x_cpu
 tend = time.time()
 print(f"telapsed (CPU) = {tend - tstart}")
 
 # %%
+cp.cuda.runtime.deviceSynchronize()
 tstart = time.time()
-A_gpu = cp.linspace(0, 1, 10000000).reshape(10000, 1000)
-b_gpu = cp.linspace(1, 2, 1000)
+x_gpu = cp.random.random((1000, 1000))
+
 for iter in range(500):
-    dot_prod = cp.dot(A_gpu, b_gpu)
+    A_gpu = x_gpu.T @ x_gpu
+
+cp.cuda.runtime.deviceSynchronize()
 tend = time.time()
 print(f"telapsed (GPU) = {tend - tstart}")
+# %%
