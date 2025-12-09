@@ -12,7 +12,7 @@ format:
         echo: true
         code-overflow: wrap
         code-line-numbers: true
-        css: style.css
+        css: simple.css
 ---
 
 # Intended Learning Outcomes
@@ -42,7 +42,8 @@ format:
 </span> </center>
 
 ## Function: Syntax
-```Python
+
+```python
 def function_name(argument1, argument2, argument3, ...):
     """
     Text description: Explain what the function does and the meanings
@@ -52,9 +53,11 @@ def function_name(argument1, argument2, argument3, ...):
     <statement>
     return expression   # optional --> function returns values
 ```
-⭕ Always write text description for function unless it is very short and self-explanatory.
+- Always write text description for function unless it is very short and self-explanatory.
 
-## Function: Doc string
+
+## Function -- Doc string
+
 ```{python}
 def call_me_maybe(number):
     """
@@ -63,13 +66,14 @@ def call_me_maybe(number):
     """
     print(f"Call me via number {number}")
 ```
-⭕ Use **question mark** to request function's doc string -- This slide does not show the output.
-```{python}
-call_me_maybe?
-```
-⭕ Illustration by live coding at this point.
+- Use **question mark** to request function's doc string -- This slide does not show the output.
+- Illustration by live coding at this point.
 
-## Function: Example
+```python
+call_me_maybe?  # you should see the docstring in live example
+```
+
+## Function -- Example
 ```{python}
 def cat_age_to_human_age(cat_age):
     """Translate cat age to human age."""
@@ -81,7 +85,7 @@ def cat_age_to_human_age(cat_age):
     return cat_age * multiplier + 16
 ```
 
-After the function is defined, we can call them by:
+- After the function is defined, we can call them by:
 ```{python}
 my_age = 46
 cat_age_to_human_age(12)  # pointless, ignores answer
@@ -90,6 +94,7 @@ print(cat_age_to_human_age(12))         # very old
 ```
 
 ## Call a function
+
 - As mentioned, every variable in Python is an object. A function is also an object.
 ```{python}
 def greet():
@@ -102,7 +107,6 @@ def greet():
 ```{python}
 # Call the function by:
 greet()
-
 # This is a function object - remember: every variable is an object
 greet
 ```
@@ -128,8 +132,6 @@ max(3, 4)           # accept literals, print out 4
 fred, anne = 7, 6   # multiple assignments
 max(fred, anne)     # accept variables too, print out 7
 ```
-
-
 
 ::: {.fragment}
 - In this example, the order of the variables `a` and `b` is not important as they carry the same meaning.
@@ -289,7 +291,7 @@ ask_ok("Want another Quiz?")
 ```
 
 ## Scope of variables in functions
-- **Scope of variables** is a very complex topic in programming in general, and deserves a separate lecture on its own.
+- <font color="red"> **Scope of variables** </font> is a very complex topic in programming in general, and deserves a separate lecture on its own.
 - In general, the topic is about how a part of the program can recognize the variables and up to which space that part cannot see those variables anymore.
 
 ::: {.fragment}
