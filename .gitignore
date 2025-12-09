@@ -17,3 +17,5 @@ presentation-demo.*
 run.py
 log_files/
 hpc/
+README_files/
+README.html
