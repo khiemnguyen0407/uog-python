@@ -1,0 +1,23 @@
+Job started on node01.cognition.gla.alces.network at Thu 27 Nov 18:10:44 GMT 2025
+
+Activate conda environment...
+
++++++ Output of the Python script +++++
+
+cupy is available: True
+==============================
+telapsed (CPU) = 29.118008136749268
+telapsed (GPU) = 5.672998905181885
+==============================
+
+
+Torch recognizes Cuda: True
+==============================
+CPU time: 20.1075 seconds
+GPU time: 0.1843 seconds
+==============================
+
++++++++++++++++++++++++++++++++++++++++
+
+Job finished at Thu 27 Nov 18:11:44 GMT 2025
+
