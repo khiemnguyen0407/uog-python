@@ -12,7 +12,7 @@ print(f"{torch.cuda.is_available()}")
 # %%
 
 # Create a large tensor
-size = (12000, 12000)
+size = (10_000, 10_000)
 x_cpu = torch.randn(size, device=device_cpu)
 x_gpu = torch.randn(size, device=device_gpu)
 
