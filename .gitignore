@@ -15,3 +15,5 @@ presentation-demo.*
 .ipynb_checkpoints
 *.sh
 run.py
+log_files/
+hpc/
