@@ -25,18 +25,21 @@ This repository is constantly updated throughout the semesters to reflect the qu
 
 **Download from GitHub Website**
 
-- The easiest way is to download this repository from the Github https: [Link to this Repo](https://github.com/khiemnguyen0407/uog-python). Click on the **Green Tab** `<> Code` when you access the above link, and then choose `Download ZIP`. Unzip the entire downloaded `.zip` file.
-- If you are familar with git control, then you can clone the the repository by using the `git` command. Note that you can copy this command by hoving the mouse to the command, and then the *copy icon* appears on the right of the banner.
+- **Without experience with git control**  
+    The easiest way is to download this repository from the Github https: [Link to this Repo](https://github.com/khiemnguyen0407/uog-python). Click on the **Green Tab** `<> Code` when you access the above link, and then choose `Download ZIP`. Unzip the entire downloaded `.zip` file.
+- **With experience with git control**  
+    If you are familar with git control, then you can clone the the repository by using the `git` command. Note that you can copy this command by hoving the mouse to the command, and then the *copy icon* appears on the right of the banner.
 
     ```bash
     git clone https://github.com/khiemnguyen0407/uog-python
     ```
 
-    After cloning the repo, you can update this repo by pulling the new content from time to time with the command
+    After cloning the repo, you can update this repo by pulling the new content from time to time with the command.
 
     ```bash
     git pull
     ```
+    The advantage of using git control and GitHub is that you can make **pull request** and becomes a contributor for this repo. It is a way to impress your friends 🤗.
 
 ## Directory `lecture_notes`
 The lecture notes are prepared in Jupyter Notebook format. Students at James Watt School of Engineering, UoG only need to study up to lecture $8$ for plotting in Python.
@@ -57,12 +60,12 @@ The slides are prepared using Quarto with `format: revealjs`. You can examine `.
 
 Currently, the slides cover:
 
-| Topic | `.html` file | `.qmd` file |
-|:------| :------------| :-----------|
-| Recap of basic Python | `python_recap.html` | `python_recap.qmd` |
-| Functions | `python_functions.html` | `python_functions.qmd` |
-| Object-oriented programming | `python_oop.html` | `python_oop.qmd` |
-| Special methods in OOP | `python_special_methods.html` | `python_special_methods.qmd` |
-| NumPy library | `python_numpy.html` | `python_numpy.qmd` |
+| Topic                           | `.html` file            | `.qmd` file            |
+|:--------------------------------| :-----------------------| :----------------------|
+| **Recap: Basics of Python**     | `python_recap.html`     | `python_recap.qmd`     |
+| **Functions**                   | `python_functions.html` | `python_functions.qmd` |
+| **Object-oriented programming** | `python_oop.html`       | `python_oop.qmd`       |
+| **Special methods in OOP**      | `python_special_methods.html` | `python_special_methods.qmd` |
+| **NumPy library**               | `python_numpy.html`     | `python_numpy.qmd`     |
 
 
