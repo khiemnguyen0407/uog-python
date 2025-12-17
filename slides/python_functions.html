@@ -253,7 +253,7 @@
 </section>
 <section id="function-doc-string" class="slide level2">
 <h2>Function – Doc string</h2>
-<div id="0108a087" class="cell" data-execution_count="1">
+<div id="a91fc24f" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a><span class="kw">def</span> call_me_maybe(number):</span>
 <span id="cb2-2"><a href=""></a>    <span class="co">"""</span></span>
 <span id="cb2-3"><a href=""></a><span class="co">    This function is inspired by a famous song.</span></span>
@@ -269,7 +269,7 @@
 </section>
 <section id="function-example" class="slide level2">
 <h2>Function – Example</h2>
-<div id="e64ee598" class="cell" data-execution_count="2">
+<div id="ec6bacc3" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="kw">def</span> cat_age_to_human_age(cat_age):</span>
 <span id="cb4-2"><a href=""></a>    <span class="co">"""Translate cat age to human age."""</span></span>
 <span id="cb4-3"><a href=""></a>    multiplier <span class="op">=</span> <span class="dv">4</span></span>
@@ -282,7 +282,7 @@
 <ul>
 <li>After the function is defined, we can call them by:</li>
 </ul>
-<div id="af80ad42" class="cell" data-execution_count="3">
+<div id="0be2c693" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href=""></a>my_age <span class="op">=</span> <span class="dv">46</span></span>
 <span id="cb5-2"><a href=""></a>cat_age_to_human_age(<span class="dv">12</span>)  <span class="co"># pointless, ignores answer</span></span>
 <span id="cb5-3"><a href=""></a>felix_age <span class="op">=</span> cat_age_to_human_age(<span class="dv">4</span>)     <span class="co"># felix_age = 32</span></span>
@@ -297,7 +297,7 @@
 <ul>
 <li>As mentioned, every variable in Python is an object. A function is also an object.</li>
 </ul>
-<div id="405dd110" class="cell" data-execution_count="4">
+<div id="db699982" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href=""></a><span class="kw">def</span> greet():</span>
 <span id="cb7-2"><a href=""></a>    <span class="co">"""Simple function to greet people."""</span></span>
 <span id="cb7-3"><a href=""></a>    <span class="bu">print</span>(<span class="st">"Hello there!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -305,7 +305,7 @@
 <ul>
 <li>We call a function by using parentheses after the function name.</li>
 </ul>
-<div id="c89fdea8" class="cell" data-execution_count="5">
+<div id="20f9b9d1" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href=""></a><span class="co"># Call the function by:</span></span>
 <span id="cb8-2"><a href=""></a>greet()</span>
 <span id="cb8-3"><a href=""></a><span class="co"># This is a function object - remember: every variable is an object</span></span>
@@ -313,7 +313,7 @@
 <div class="cell-output cell-output-stdout">
 <pre><code>Hello there!</code></pre>
 </div>
-<div class="cell-output cell-output-display" data-execution_count="331">
+<div class="cell-output cell-output-display" data-execution_count="5">
 <pre><code>&lt;function __main__.greet()&gt;</code></pre>
 </div>
 </div>
@@ -334,7 +334,7 @@
 <section id="function-multiple-input-arguments" class="slide level2">
 <h2>Function: Multiple input arguments</h2>
 <p>In function definition many input arguments can be declared – recall the syntax!</p>
-<div id="12cc3263" class="cell" data-execution_count="6">
+<div id="c5262895" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href=""></a><span class="kw">def</span> print_max(a, b):</span>
 <span id="cb11-2"><a href=""></a>    <span class="co">"""Print the maximum value between a and b."""</span></span>
 <span id="cb11-3"><a href=""></a>    <span class="cf">if</span> a <span class="op">&gt;</span> b:</span>
@@ -347,7 +347,7 @@
 <span id="cb11-10"><a href=""></a><span class="bu">max</span>(<span class="dv">3</span>, <span class="dv">4</span>)           <span class="co"># accept literals, print out 4</span></span>
 <span id="cb11-11"><a href=""></a>fred, anne <span class="op">=</span> <span class="dv">7</span>, <span class="dv">6</span>   <span class="co"># multiple assignments</span></span>
 <span id="cb11-12"><a href=""></a><span class="bu">max</span>(fred, anne)     <span class="co"># accept variables too, print out 7</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="332">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>7</code></pre>
 </div>
 </div>
@@ -367,7 +367,7 @@
 <ul>
 <li>Solve a linear equation <span class="math inline">\(a x + b = 0\)</span></li>
 </ul>
-<div id="37c37065" class="cell" data-execution_count="7">
+<div id="67bd450c" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href=""></a><span class="kw">def</span> solve_linear_equation(a, b):</span>
 <span id="cb13-2"><a href=""></a>    <span class="co">"""Solve equation a x + b = 0 for x"""</span></span>
 <span id="cb13-3"><a href=""></a>    <span class="cf">if</span> a <span class="op">!=</span> <span class="dv">0</span>:</span>
@@ -389,7 +389,7 @@
 <ul>
 <li>Use of the function <code>solver_linear_equation()</code></li>
 </ul>
-<div id="19b7cc24" class="cell" data-execution_count="8">
+<div id="4146401b" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href=""></a><span class="bu">print</span>(<span class="st">"Solve equation 2 x + 1 = 0:"</span>, solve_linear_equation(<span class="dv">2</span>, <span class="dv">1</span>))</span>
 <span id="cb14-2"><a href=""></a><span class="bu">print</span>(<span class="st">"Solve equation   x + 2 = 0:"</span>, solve_linear_equation(<span class="dv">1</span>, <span class="dv">2</span>))</span>
 <span id="cb14-3"><a href=""></a><span class="bu">print</span>(<span class="st">"Solve equation   x     = 0:"</span>, solve_linear_equation(<span class="dv">1</span>, <span class="dv">0</span>)) </span>
@@ -415,7 +415,7 @@ Solve equation 0 x + 1 = 0: None</code></pre>
 </section>
 <section id="keyword-arguments" class="slide level2">
 <h2>Keyword arguments</h2>
-<div id="a48849cf" class="cell" data-execution_count="9">
+<div id="f352d4e0" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href=""></a><span class="kw">def</span> solve_linear_equation(a, b):</span>
 <span id="cb16-2"><a href=""></a>    <span class="co">"""Solve equation a x + b = 0 for x"""</span></span>
 <span id="cb16-3"><a href=""></a>    <span class="cf">if</span> a <span class="op">!=</span> <span class="dv">0</span>:</span>
@@ -433,7 +433,7 @@ Solve equation 0 x + 1 = 0: None</code></pre>
 <center>
 <code>kwarg=value</code>
 </center>
-<div id="65060e7a" class="cell" data-execution_count="10">
+<div id="fd0fa263" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href=""></a><span class="co"># These two lines of code are equivalent</span></span>
 <span id="cb17-2"><a href=""></a><span class="co"># as we have assigned a and b to the same set of values.</span></span>
 <span id="cb17-3"><a href=""></a><span class="bu">print</span>(<span class="st">"Solve equation 2 x + 1 = 0:"</span>, solve_linear_equation(b<span class="op">=</span><span class="dv">1</span>, a<span class="op">=</span><span class="dv">2</span>)) </span>
@@ -454,7 +454,7 @@ Solve equation 2 x + 1 = 0: -0.5</code></pre>
 </center>
 In this function call, the variables on the right-hand side of assignment sign “=” provide the values to the input arguments with the names as indicated on the left-hand side.</li>
 </ul>
-<div id="47afa9c7" class="cell" data-execution_count="11">
+<div id="7ef38542" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href=""></a>v1, v2 <span class="op">=</span> <span class="dv">2</span>, <span class="dv">1</span></span>
 <span id="cb19-2"><a href=""></a><span class="bu">print</span>(<span class="st">"Solve equation 2 x + 1 = 0:"</span>, solve_linear_equation(a<span class="op">=</span>v1, b<span class="op">=</span>v2))</span>
 <span id="cb19-3"><a href=""></a></span>
@@ -478,12 +478,26 @@ Solve equation 2 x + 1 = 0: -0.5</code></pre>
 <section id="brain-storm" class="slide level2">
 <h2>Brain storm</h2>
 <p>So let us examine a Newton-Raphson method to solve algebraic equation <span class="math inline">\(f(x) = 0\)</span></p>
-
-<img data-src="./figures/python-functions/newton-raphson-method.png" class="r-stretch"></section>
+<center>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./figures/python_functions/newton_raphson_method.png"></p>
+<figcaption>newton-raphson</figcaption>
+</figure>
+</div>
+</center>
+</section>
 <section id="brain-storm-1" class="slide level2">
 <h2>Brain storm</h2>
-
-<img data-src="./figures/python-functions/newton-raphson-method.png" class="r-stretch quarto-figure-center"><p class="caption">Newton-Raphson iterations</p><div class="fragment">
+<center>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="./figures/python_functions/newton_raphson_method.png"></p>
+<figcaption>Newton-Raphson iterations</figcaption>
+</figure>
+</div>
+</center>
+<div class="fragment">
 <ul>
 <li><font color="red"><strong>Question</strong></font>: What happens if don’t need to supply values to all the input arguments?</li>
 </ul>
@@ -509,7 +523,7 @@ This leads to <strong>default argument values</strong>.
 <ul>
 <li>The argument can take <font color="red"><strong>default value</strong></font> if the function call does <font color="red">not specify the value for it.</font></li>
 </ul>
-<div id="50f19d24" class="cell" data-execution_count="12">
+<div id="7615bcc0" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href=""></a><span class="co"># variable "retries" and "reminder" are defaulted to 4 </span></span>
 <span id="cb21-2"><a href=""></a><span class="co"># and 'Come on!...' </span></span>
 <span id="cb21-3"><a href=""></a><span class="kw">def</span> ask_ok(prompt, retries<span class="op">=</span><span class="dv">4</span>, reminder<span class="op">=</span><span class="st">'Only "yes" or "no"'</span>):     </span>
@@ -571,7 +585,7 @@ This leads to <strong>default argument values</strong>.
 </section>
 <section id="copy-of-input-argument-in-functions" class="slide level2">
 <h2>Copy of input argument in functions</h2>
-<div id="199da04a" class="cell" data-execution_count="13">
+<div id="ab41c002" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href=""></a><span class="kw">def</span> tweak(a):</span>
 <span id="cb24-2"><a href=""></a>    <span class="bu">print</span>(a)        <span class="co"># print a before changing</span></span>
 <span id="cb24-3"><a href=""></a>    a <span class="op">=</span> <span class="dv">20</span>          <span class="co"># assign 20 to a</span></span>
@@ -590,7 +604,7 @@ This leads to <strong>default argument values</strong>.
 </section>
 <section id="copy-of-input-argument-in-functions-1" class="slide level2">
 <h2>Copy of input argument in functions</h2>
-<div id="f4393008" class="cell" data-execution_count="14">
+<div id="d8962119" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href=""></a><span class="kw">def</span> tweak(a):</span>
 <span id="cb26-2"><a href=""></a>    <span class="bu">print</span>(a)        <span class="co"># print a before changing</span></span>
 <span id="cb26-3"><a href=""></a>    a <span class="op">=</span> <span class="dv">20</span>          <span class="co"># assign 20 to a</span></span>
@@ -601,7 +615,7 @@ This leads to <strong>default argument values</strong>.
 <ul>
 <li><em>Answer</em>:</li>
 </ul>
-<div id="308a2881" class="cell" data-execution_count="15">
+<div id="d42768f0" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href=""></a>x <span class="op">=</span> <span class="dv">10</span></span>
 <span id="cb27-2"><a href=""></a>tweak_output <span class="op">=</span> tweak(x)   </span>
 <span id="cb27-3"><a href=""></a><span class="bu">print</span>(x)</span>
@@ -617,7 +631,7 @@ None</code></pre>
 </section>
 <section id="copy-of-input-argument-in-functions-2" class="slide level2">
 <h2>Copy of input argument in functions</h2>
-<div id="ed2613fc" class="cell" data-execution_count="16">
+<div id="4b52256e" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href=""></a>x <span class="op">=</span> <span class="dv">10</span></span>
 <span id="cb29-2"><a href=""></a>tweak_output <span class="op">=</span> tweak(x)   </span>
 <span id="cb29-3"><a href=""></a><span class="bu">print</span>(x)</span>
@@ -655,7 +669,7 @@ None</code></pre>
 </section>
 <section id="list-as-input-in-functions-understanding-a-list-1" class="slide level2">
 <h2>List as input in functions: Understanding a list</h2>
-<div id="61501c45" class="cell" data-execution_count="17">
+<div id="5c713f3c" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href=""></a>my_list <span class="op">=</span> [<span class="st">"element 1"</span>, <span class="st">"element 2"</span>, <span class="st">"element 3"</span>]</span>
 <span id="cb32-2"><a href=""></a>list_alias <span class="op">=</span> my_list</span>
 <span id="cb32-3"><a href=""></a><span class="co"># --&gt; list_alias and my_list point to the same list</span></span>
@@ -669,8 +683,8 @@ None</code></pre>
 <span id="cb32-11"><a href=""></a><span class="bu">print</span>(<span class="st">"my_list    ="</span>, my_list)</span>
 <span id="cb32-12"><a href=""></a><span class="bu">print</span>(<span class="st">"list_alias ="</span>, list_alias)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>id(my_list)    = 131156422490304
-id(list_alias) = 131156422490304
+<pre><code>id(my_list)    = 124553881546752
+id(list_alias) = 124553881546752
 my_list    = ['element 1', 'element 2', 'element 3']
 list_alias = ['element 1', 'element 2', 'element 3']
 After changing list_alias:
@@ -681,7 +695,7 @@ list_alias = ['something', 'element 2', 'element 3']</code></pre>
 </section>
 <section id="list-as-input-in-functions" class="slide level2">
 <h2>List as input in functions</h2>
-<div id="4bc69604" class="cell" data-execution_count="18">
+<div id="cfa2f8e7" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href=""></a><span class="kw">def</span> greeting(names):</span>
 <span id="cb34-2"><a href=""></a>    <span class="co">"""Say hello to everyone."""</span></span>
 <span id="cb34-3"><a href=""></a>    <span class="bu">print</span>(<span class="st">"id(input-argument) ="</span>, <span class="bu">id</span>(names))    <span class="co"># print ID of the input argument</span></span>
@@ -705,7 +719,7 @@ list_alias = ['something', 'element 2', 'element 3']</code></pre>
 </section>
 <section id="list-as-input-in-functions-1" class="slide level2">
 <h2>List as input in functions</h2>
-<div id="f4455ca6" class="cell" data-execution_count="19">
+<div id="a15f7dbb" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href=""></a>people <span class="op">=</span> [<span class="st">"Fred"</span>,  <span class="st">"Anna"</span>, <span class="st">"Bob"</span>]       <span class="co"># create a list</span></span>
 <span id="cb36-2"><a href=""></a><span class="bu">print</span>(<span class="st">"people (before function call) ="</span>, people)    </span>
 <span id="cb36-3"><a href=""></a><span class="bu">print</span>(<span class="st">"id(people) ="</span>, <span class="bu">id</span>(people))</span>
@@ -718,9 +732,9 @@ list_alias = ['something', 'element 2', 'element 3']</code></pre>
 <span id="cb36-10"><a href=""></a><span class="bu">print</span>(<span class="st">"people (after function call)  ="</span>, people)    </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>people (before function call) = ['Fred', 'Anna', 'Bob']
-id(people) = 131153807149952
+id(people) = 124553881545600
 =============== Function call ===============
-id(input-argument) = 131153807149952
+id(input-argument) = 124553881545600
 Hello Fred! Hello Anna! Hello Bob!  
 =============================================
 people (after function call)  = ['Somebody else', 'Anna', 'Stranger']</code></pre>
@@ -734,7 +748,7 @@ people (after function call)  = ['Somebody else', 'Anna', 'Stranger']</code></pr
 <li>Even if the function does not return anything, it actually returns with the value <code>None</code>.</li>
 </ul>
 <div class="fragment">
-<div id="31e6d24f" class="cell" data-execution_count="20">
+<div id="54ae08b1" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href=""></a><span class="kw">def</span> addition(a, b):</span>
 <span id="cb38-2"><a href=""></a>    <span class="co">"""Is there a duller function?"""</span></span>
 <span id="cb38-3"><a href=""></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
@@ -746,7 +760,7 @@ people (after function call)  = ['Somebody else', 'Anna', 'Stranger']</code></pr
 </div>
 </div>
 <div class="fragment">
-<div id="97c2d49e" class="cell" data-execution_count="21">
+<div id="fcaad9d3" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href=""></a><span class="kw">def</span> say_hello(name):</span>
 <span id="cb40-2"><a href=""></a>    <span class="bu">print</span>(<span class="st">"Hello"</span>, name, <span class="st">"!"</span>)</span>
 <span id="cb40-3"><a href=""></a></span>
@@ -760,7 +774,7 @@ people (after function call)  = ['Somebody else', 'Anna', 'Stranger']</code></pr
 </ul>
 </div>
 <div class="fragment">
-<div id="a45c3e13" class="cell" data-execution_count="22">
+<div id="78a2077e" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href=""></a><span class="bu">print</span>(output)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>None</code></pre>
@@ -774,7 +788,7 @@ people (after function call)  = ['Somebody else', 'Anna', 'Stranger']</code></pr
 <li>To implement many outputs for one function return, we just return a tuple, a list or dictionary. The purpose of the function will usually suggest which one is best.</li>
 <li>Returning a tuple is the most common use.</li>
 </ul>
-<div id="672aed63" class="cell" data-execution_count="23">
+<div id="e79a1836" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href=""></a><span class="kw">def</span> find_min_max(array):</span>
 <span id="cb44-2"><a href=""></a>    min_val, max_val <span class="op">=</span> array[<span class="dv">0</span>], array[<span class="dv">0</span>]   </span>
 <span id="cb44-3"><a href=""></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(array)):</span>
@@ -784,7 +798,7 @@ people (after function call)  = ['Somebody else', 'Anna', 'Stranger']</code></pr
 <span id="cb44-7"><a href=""></a>            max_val <span class="op">=</span> array[i]</span>
 <span id="cb44-8"><a href=""></a>    <span class="cf">return</span> min_val, max_val</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="adafef4c" class="cell" data-execution_count="24">
+<div id="c4992ddb" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href=""></a>min_val, max_val <span class="op">=</span> find_min_max([<span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">2</span>])</span>
 <span id="cb45-2"><a href=""></a><span class="bu">print</span>(<span class="ss">f"min value = </span><span class="sc">{</span>min_val<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb45-3"><a href=""></a><span class="bu">print</span>(<span class="ss">f"max value = </span><span class="sc">{</span>max_val<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -799,7 +813,7 @@ max value = 5</code></pre>
 </section>
 <section id="function-outputs-2" class="slide level2">
 <h2>Function outputs</h2>
-<div id="6e605db7" class="cell" data-execution_count="25">
+<div id="7976595e" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href=""></a><span class="kw">def</span> find_min_max(array):</span>
 <span id="cb47-2"><a href=""></a>    min_val, max_val <span class="op">=</span> array[<span class="dv">0</span>], array[<span class="dv">0</span>]   </span>
 <span id="cb47-3"><a href=""></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="bu">len</span>(array)):</span>
@@ -815,9 +829,9 @@ max value = 5</code></pre>
 </ul>
 </div>
 <div class="fragment">
-<div id="32b30edc" class="cell" data-execution_count="26">
+<div id="4443d8fb" class="cell" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href=""></a>find_min_max(<span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">1000</span>, <span class="dv">2</span>)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="352">
+<div class="cell-output cell-output-display" data-execution_count="26">
 <pre><code>(1, 999)</code></pre>
 </div>
 </div>
@@ -831,7 +845,7 @@ max value = 5</code></pre>
 <li>Signified by three double quotations on the left and on the right: <code>"""documentation strings"""</code></li>
 <li>By convention, Python uses this as documentation for the function, and the function <code>help()</code> to fetches them.# Instead of <code>help(function_name)</code>, we can also use <code>function_name?</code></li>
 </ul>
-<div id="88b8fca9" class="cell" data-execution_count="27">
+<div id="21ca7182" class="cell" data-execution_count="27">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href=""></a><span class="kw">def</span> add(a, b):</span>
 <span id="cb50-2"><a href=""></a>    <span class="co">"""Is there a duller function?"""</span></span>
 <span id="cb50-3"><a href=""></a>    <span class="cf">return</span> a <span class="op">+</span> b</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -840,7 +854,7 @@ max value = 5</code></pre>
 <section id="documentation-string-1" class="slide level2">
 <h2>Documentation string</h2>
 <p>Repeat example</p>
-<div id="d7f277ac" class="cell" data-execution_count="28">
+<div id="016eae70" class="cell" data-execution_count="28">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href=""></a><span class="kw">def</span> add(a, b):</span>
 <span id="cb51-2"><a href=""></a>    <span class="co">"""Is there a duller function?"""</span></span>
 <span id="cb51-3"><a href=""></a>    <span class="cf">return</span> a <span class="op">+</span> b</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -849,7 +863,7 @@ max value = 5</code></pre>
 <ul>
 <li>The question mark syntax <code>add?</code> does not work on this slide but <code>help(add)</code> does.</li>
 </ul>
-<div id="850bd2ec" class="cell" data-execution_count="29">
+<div id="5f95b457" class="cell" data-execution_count="29">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href=""></a><span class="bu">help</span>(add)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Help on function add in module __main__:
@@ -886,7 +900,7 @@ add(a, b)
 <section id="variable-number-of-inputs-tuple-as-inputs-1" class="slide level2">
 <h2>Variable number of inputs: tuple as inputs</h2>
 <p><strong>Example</strong></p>
-<div id="33a73b37" class="cell" data-execution_count="30">
+<div id="72d8f2f5" class="cell" data-execution_count="30">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href=""></a><span class="kw">def</span> print_out_info(name, age, <span class="op">*</span>args):</span>
 <span id="cb55-2"><a href=""></a>    <span class="bu">print</span>(<span class="st">"Name:"</span>, name)</span>
 <span id="cb55-3"><a href=""></a>    <span class="bu">print</span>(<span class="st">"Age:"</span>, age)</span>
@@ -895,7 +909,7 @@ add(a, b)
 <span id="cb55-6"><a href=""></a>    <span class="bu">print</span>(<span class="st">"Years of experience:"</span>, args[<span class="dv">2</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Use of this function</p>
-<div id="cf6b6671" class="cell" data-execution_count="31">
+<div id="751b3895" class="cell" data-execution_count="31">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href=""></a>print_out_info(<span class="st">"Khiem"</span>, <span class="dv">38</span>, <span class="st">"male"</span>, <span class="st">"lecturer"</span>, <span class="dv">4</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Name: Khiem
@@ -920,7 +934,7 @@ returns the string <code>"Mech Engineering Skills 3"</code></li>
 </ul></li>
 <li>Before defining this function, let us study the method <code>join</code> for a string.</li>
 </ul>
-<div id="a38bdd28" class="cell" data-execution_count="32">
+<div id="25d2a909" class="cell" data-execution_count="32">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href=""></a>my_tuple <span class="op">=</span> (<span class="st">"This"</span>, <span class="st">"is"</span>, <span class="st">"a"</span>, <span class="st">"short"</span>, <span class="st">"sentence"</span>)</span>
 <span id="cb58-2"><a href=""></a>my_string <span class="op">=</span> <span class="st">" -- "</span></span>
 <span id="cb58-3"><a href=""></a><span class="bu">print</span>(my_string.join(my_tuple))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -943,11 +957,11 @@ returns the string <code>"Mech Engineering Skills 3"</code></li>
 </ul>
 <div class="fragment">
 <p><em>Answer</em></p>
-<div id="61b32f69" class="cell" data-execution_count="33">
+<div id="d4f3521c" class="cell" data-execution_count="33">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href=""></a><span class="kw">def</span> concat(<span class="op">*</span>args, sep<span class="op">=</span><span class="st">"--"</span>):</span>
 <span id="cb60-2"><a href=""></a>    <span class="cf">return</span> sep.join(args)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="b33dcbd0" class="cell" data-execution_count="34">
+<div id="678613aa" class="cell" data-execution_count="34">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href=""></a><span class="bu">print</span>(concat(<span class="st">"earth"</span>, <span class="st">"mars"</span>, <span class="st">"venus"</span>))</span>
 <span id="cb61-2"><a href=""></a><span class="bu">print</span>(concat(<span class="st">"Mech"</span>, <span class="st">"Engineering"</span>, <span class="st">"Skills"</span>, <span class="st">"3"</span>, sep<span class="op">=</span><span class="st">" "</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -963,11 +977,11 @@ Mech Engineering Skills 3</code></pre>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb63"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb63-1"><a href=""></a><span class="kw">def</span> function_name(..., <span class="op">*</span>args, <span class="op">**</span>kwargs):</span>
 <span id="cb63-2"><a href=""></a>    <span class="op">&lt;</span>statements<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>Best by example</strong></p>
-<div id="21ab266b" class="cell" data-execution_count="35">
+<div id="c90cdb3e" class="cell" data-execution_count="35">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href=""></a><span class="kw">def</span> print_kwargs(<span class="op">**</span>kwargs):</span>
 <span id="cb64-2"><a href=""></a>    <span class="bu">print</span>(kwargs)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="ba52ad8f" class="cell" data-execution_count="36">
+<div id="26453bec" class="cell" data-execution_count="36">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb65-1"><a href=""></a>print_kwargs(one<span class="op">=</span><span class="dv">1</span>, two<span class="op">=</span><span class="dv">2</span>, three<span class="op">=</span><span class="dv">3</span>, four<span class="op">=</span><span class="dv">4</span>) <span class="co"># Then we use</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>{'one': 1, 'two': 2, 'three': 3, 'four': 4}</code></pre>

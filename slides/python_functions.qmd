@@ -226,10 +226,18 @@ print("Solve equation 2 x + 1 = 0:", solve_linear_equation(b=b, a=a))
 ## Brain storm
 So let us examine a Newton-Raphson method to solve algebraic equation $f(x) = 0$
 
-![](./figures/python-functions/newton-raphson-method.png)
+<center>
+
+![Newton-Raphson iterations](./figures/python_functions/newton_raphson_method.png)
+
+</center>
 
 ## Brain storm
-![Newton-Raphson iterations](./figures/python-functions/newton-raphson-method.png)
+<center>
+
+![Newton-Raphson iterations](./figures/python_functions/newton_raphson_method.png)
+
+</center>
 
 ::: {.fragment}
 - <font color="red">**Question**</font>: What happens if don't need to supply values to all the input arguments?
