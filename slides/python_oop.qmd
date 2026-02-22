@@ -28,7 +28,7 @@ format:
 
 > **Object-Oriented Programming** (OOP) is a programming paradigm that organizes software design around objects, which are instances of classes. These objects encapsulate data (attributes) and behavior (methods), making it easier to model real-world entities in code.
 
-<center> <img src='./figures/python-oop/drawing-shapes.png' width="650"> </center>
+<center> <img src='./figures/python_oop/drawing_shapes.png' width="650"> </center>
 
 
 ## Core principles of OOP
@@ -738,7 +738,7 @@ This mechanism mirrors real-world relationships in an intuitive way. Rather than
 
 ## Inheritance: Concept and Example
 
-![UML Diagram](./figures/python-oop/uml-employee.png)
+![UML Diagram](./figures/python_oop/uml_employee.png)
 
 
 ## Inheritance: Terminology
