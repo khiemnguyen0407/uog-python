@@ -7,11 +7,24 @@ author: |
 author-meta: "Lecturer in Multiscale Materials"
 format: 
     revealjs:
-        theme: default
+        theme: default   # other themes: beige, blood, dark, dracula, league, moon, night, serif, simple, sky, solarized
+        slide-number: true
+        number-sections: true
+        # incremental: true
+        transition: slide
         title-slide-style: pandoc
+        # Regarding CODE style
+        echo: true
         code-overflow: wrap
         code-line-numbers: true
-        css: style.css
+        code-block-bg: false          # <-- remove white background in code blocks
+        code-block-border-left: true # optional: remove left border
+        highlight-style: github      # good for dark images
+        toc: true
+        toc-depth: 1
+        toc-title: Presentation Outline
+        # css: simple.css
+        css: style/simple.css
 ---
 
 # Literals and variables
@@ -166,7 +179,7 @@ print(f"a = {v1:.5f}, b = {v2:.5f}")
 
 ## `if` statement
 
-![](./figures/python-recap/python-if-statement.png)
+![](./figures/python_recap/python_if_statement.png)
 
 **Remark** &nbsp; (Remember please please please !!!)
 
@@ -174,14 +187,14 @@ print(f"a = {v1:.5f}, b = {v2:.5f}")
 - **Indentation** using ***tab*** for the block of statements associated with `if` condition
 
 ## `if-else` statement
-![](./figures/python-recap/python-if-else-statement.png)
+![](./figures/python_recap/python_if_else_statement.png)
 
 
 **Interpretation**: If you can read English, you should understand this construction.
 
 ## `if-elif-else` statement
 
-![](./figures/python-recap/python-if-elif-else-statement.png)
+![](./figures/python_recap/python_if_elif_else_statement.png)
 
 **Interpretation**: If you can read English, you should understand this construction.
 
@@ -242,7 +255,7 @@ print("Letter grade is", grade)
 
 ## `while` loop
 
-![](./figures/python-recap/python-while-loop.png)
+![](./figures/python_recap/python_while_loop.png)
 
 > _Reminder_: **colon** ":" and **indentation** using "*tab*"
 
@@ -273,7 +286,7 @@ while True:
 
 ## `for` loop
 
-![](./figures/python-recap/python-for-loop.png)
+![](./figures/python_recap/python_for_loop.png)
 
 > _Reminder_: **colon** ":" and **indentation** using "*tab*"
 
@@ -300,7 +313,7 @@ for y in reversed(my_list):
 ## `break` and `continue`
 
 :::{.column}
-![](./figures/python-recap/python-break-and-continue.png)
+![](./figures/python_recap/python_break_and_continue.png)
 :::
 
 :::{.column}
@@ -318,12 +331,12 @@ for y in reversed(my_list):
 :::{.column}
 - Use of `break` statement
 
-![](./figures/python-recap/working-break-statement-python.png)
+![](./figures/python_recap/working_break_statement_python.png)
 :::
 :::{.column}
 - Use of `continue` statement 
 
-![](./figures/python-recap/working-continue-statement-python.png)
+![](./figures/python_recap/working_continue_statement_python.png)
 :::
     
 ## `break` and `continue`: Examples
@@ -349,7 +362,7 @@ while n < 10:
 # Basic data structures in Python
 
 ## List: Indexing
-<center> <img src='./figures/python-recap/python-list-indexing.png' width="800" height="200"> </center>
+<center> <img src='./figures/python_recap/python_list_indexing.png' width="800" height="200"> </center>
 
 ```{python}
 my_list = ['red', 'green', 'blue', 'yellow', 'black']
@@ -361,7 +374,7 @@ for element in my_list:
 ```
 
 ## List: Negative indexing
-<center> <img src='./figures/python-recap/python-list-negative-indexing.png' width="800" height="200"> </center>
+<center> <img src='./figures/python_recap/python_list_negative_indexing.png' width="800" height="200"> </center>
 
 <center> Indexing with $-1$ (negative one) means the last element in the array, $-2$ the second last element, etc. </center>
 
@@ -374,7 +387,7 @@ for j in range(-5, 0, 1):
 ```
 
 ## List: Negative indexing
-<center> <img src='./figures/python-recap/python-list-negative-indexing.png' width="800" height="200"> </center>
+<center> <img src='./figures/python_recap/python_list_negative_indexing.png' width="800" height="200"> </center>
 
 <center> Indexing with $-1$ (negative one) means the last element in the array, $-2$ the second last element, etc. </center>
 
@@ -385,7 +398,7 @@ for j in range(-1, -6, -1):
 ```
 
 ## List: Nested list
-<center> <img src='./figures/python-recap/python-nested-list-indexing.png'> </center>
+<center> <img src='./figures/python_recap/python_nested_list_indexing.png'> </center>
 
 ```{python}
 L = ['a', 'b', ['cc', 'dd', ['eee', 'fff']], 'g', 'h']
@@ -428,7 +441,7 @@ print("a1 + a2 =", a1 + a2)
 ```
 
 ## List: Slicing
-<center><img src='./figures/python-recap/Python-List-Slicing-Syntax.png' width=600 height=185></center>
+<center><img src='./figures/python_recap/python_list_slicing_syntax.png' width=600 height=185></center>
 
 - The slicing does not take the `stop` position -- it stops right before it
 - If `start` is mising, it counts from `0` (beginning of the list)
@@ -445,7 +458,7 @@ print(L[::3])       # gives [0, 3, 6, 9]
 ```
 
 ## Tuple
-![](./figures/python-recap/python-tuple.png)
+![](./figures/python_recap/python_tuple.png)
 
 :::{.column}
 **List**
@@ -538,3 +551,53 @@ print("list_from_dict =", list_from_dict)
 $$
 v = \begin{bmatrix}1 & 2 \\ 3 & 4\end{bmatrix} \in \mathbb{R}^{2 \times 2}
 $$
+
+# Words for this course
+
+## Written exam versus coursework exam
+
+Written exam is a **closed-book** exam. It is very easy if you learn:
+
+## Grade Distribution by Assessment Component
+
+| Grade band | Component 1 (25%) | Component 2 (25%) | Written Exam (50%) |
+|:-----------|------------------:|------------------:|-------------------:|
+| A1–A2      | 23                | 36                | 12                 |
+| A3–A5      | 58                | 40                | 13                 |
+| B1–B3      | 8                 | 1                 | 7                  |
+| C1–C3      | 1                 | 14                | 6                  |
+| D1–D3      | 1                 | 2                 | 14                 |
+| E1–E3      | 0                 | 1                 | 18                 |
+| F1–F3      | 4                 | 0                 | 12                 |
+| G1–G2      | 0                 | 0                 | 2                  |
+| H          | 1                 | 2                 | 3                  |
+| **Total**  | **96**            | **96**            | **87**             |
+
+: Grade distribution across the three assessment components
+
+## Grade Distribution by Chart: Coursework 1
+
+![](./figures/python_recap/eng3091_grade_component_01.png)
+
+## Grade Distribution by Chart: Coursework 2
+
+![](./figures/python_recap/eng3091_grade_component_02.png)
+
+## Grade Distribution by Chart: Written Exam
+![](./figures/python_recap/eng3091_grade_written_exam.png)
+
+
+## Office Hours
+
+I really don't understand why we need to have office hours. 
+
+- I am always available for you. 
+- You can contact me via email, or MS Teams, or even WhatsApp. 
+- I will respond to your questions as soon as possible. 
+- If you want to meet me in person, please send me an email to arrange a meeting time.
+
+## Office Hours
+
+My office is **Rankine 810**. This is what you see:
+
+![](./figures/python_recap/khiem_student_hours.jpeg)

@@ -7,11 +7,18 @@ author: |
 author-meta: "Lecturer in Multiscale Materials"
 format: 
     revealjs:
-        theme: default
+        theme: default   # other themes: beige, blood, dark, dracula, league, moon, night, serif, simple, sky, solarized
+        slide-number: true
         title-slide-style: pandoc
         echo: true
         code-overflow: wrap
         code-line-numbers: true
+        code-block-bg: false          # <-- remove white background in code blocks
+        # code-block-border-left: false # optional: remove left border
+        # highlight-style: monokai      # good for dark images
+        toc: true
+        toc-depth: 2
+        toc-title: Presentation Outline
         css: simple.css
 ---
 

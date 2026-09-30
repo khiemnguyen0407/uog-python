@@ -18,7 +18,7 @@ format:
         # code-block-border-left: false # optional: remove left border
         # highlight-style: monokai      # good for dark images
         toc: true
-        toc-depth: 1
+        toc-depth: 2
         toc-title: Presentation Outline
         css: simple.css
 execute:

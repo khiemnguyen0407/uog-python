@@ -180,7 +180,7 @@ Last but not least, you will deal with OOP all the time in advanced courses
 # Syntax and Concept
 
 ## Concept: Class vs Objects
-![](./figures/python-oop/cookie-cutter-class-vs-object.jpg)
+![](./figures/python_oop/cookie-cutter-class-vs-object.jpg)
 
 ## Syntax: Class definition
 ```python

@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="python-recap_files/libs/clipboard/clipboard.min.js"></script>
-<script src="python-recap_files/libs/quarto-html/tabby.min.js"></script>
-<script src="python-recap_files/libs/quarto-html/popper.min.js"></script>
-<script src="python-recap_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="python-recap_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="python-recap_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="python-recap_files/libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.8.25">
+<script src="python_recap_files/libs/clipboard/clipboard.min.js"></script>
+<script src="python_recap_files/libs/quarto-html/tabby.min.js"></script>
+<script src="python_recap_files/libs/quarto-html/popper.min.js"></script>
+<script src="python_recap_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="python_recap_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="python_recap_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="python_recap_files/libs/quarto-html/quarto-syntax-highlighting-bb62276ab45c84d9efd712f51ff97b5a.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
 
   <meta name="author" content="Lecturer in Multiscale Materials">
   <title>Python Recap</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="python-recap_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="python-recap_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="python_recap_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="python_recap_files/libs/revealjs/dist/reveal.css">
   <style>
-    code{white-space: pre-wrap;}
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     span.smallcaps{font-variant: small-caps;}
-    div.columns{display: flex; gap: min(4vw, 1.5em);}
-    div.column{flex: auto; overflow-x: auto;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
     ul.task-list li input[type="checkbox"] {
@@ -56,51 +62,51 @@
         -khtml-user-select: none; -moz-user-select: none;
         -ms-user-select: none; user-select: none;
         padding: 0 4px; width: 4em;
-        color: #aaaaaa;
       }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
     div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
+      { color: #24292e;  }
     @media screen {
     pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
     }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+    code span { color: #24292e; } /* Normal */
+    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
+    code span.an { color: #6a737d; } /* Annotation */
+    code span.at { color: #d73a49; } /* Attribute */
+    code span.bn { color: #005cc5; } /* BaseN */
+    code span.bu { color: #d73a49; } /* BuiltIn */
+    code span.cf { color: #d73a49; } /* ControlFlow */
+    code span.ch { color: #032f62; } /* Char */
+    code span.cn { color: #005cc5; } /* Constant */
+    code span.co { color: #6a737d; } /* Comment */
+    code span.cv { color: #6a737d; } /* CommentVar */
+    code span.do { color: #6a737d; } /* Documentation */
+    code span.dt { color: #d73a49; } /* DataType */
+    code span.dv { color: #005cc5; } /* DecVal */
+    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
+    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
+    code span.fl { color: #005cc5; } /* Float */
+    code span.fu { color: #6f42c1; } /* Function */
+    code span.im { color: #032f62; } /* Import */
+    code span.in { color: #6a737d; } /* Information */
+    code span.kw { color: #d73a49; } /* Keyword */
+    code span.op { color: #24292e; } /* Operator */
+    code span.ot { color: #6f42c1; } /* Other */
+    code span.pp { color: #d73a49; } /* Preprocessor */
+    code span.re { color: #6a737d; } /* RegionMarker */
+    code span.sc { color: #005cc5; } /* SpecialChar */
+    code span.ss { color: #032f62; } /* SpecialString */
+    code span.st { color: #032f62; } /* String */
+    code span.va { color: #e36209; } /* Variable */
+    code span.vs { color: #032f62; } /* VerbatimString */
+    code span.wa { color: #ff5555; } /* Warning */
   </style>
-  <link rel="stylesheet" href="python-recap_files/libs/revealjs/dist/theme/quarto-7586cc5da509d64c7202b7852ef18965.css">
-  <link rel="stylesheet" href="style.css">
-  <link href="python-recap_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="python-recap_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="python-recap_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="python-recap_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link rel="stylesheet" href="python_recap_files/libs/revealjs/dist/theme/quarto-b882816a490b5ef9c63480c3785ccdc9.css">
+  <link rel="stylesheet" href="style/simple.css">
+  <link href="python_recap_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="python_recap_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="python_recap_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="python_recap_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
@@ -196,31 +202,53 @@
 <section id="title-slide" class="center">
   <h1 class="title">Python Recap</h1>
   <p class="author"></p><p>Khiem Nguyen <br>Lecturer in Multiscale Materials <br><a href="mailto:khiem.nguyen@glasgow.ac.uk" class="email">khiem.nguyen@glasgow.ac.uk</a></p><p></p>
+</section><section id="TOC">
+<nav role="doc-toc"> 
+<h2 id="toc-title">Presentation Outline</h2>
+<ul>
+<li><a href="#/literals-and-variables" id="/toc-literals-and-variables"><span class="header-section-number">1</span> Literals and variables</a></li>
+<li><a href="#/operators" id="/toc-operators"><span class="header-section-number">2</span> Operators</a></li>
+<li><a href="#/print-with-style" id="/toc-print-with-style"><span class="header-section-number">3</span> Print with style</a></li>
+<li><a href="#/control-flows" id="/toc-control-flows"><span class="header-section-number">4</span> Control flows</a></li>
+<li><a href="#/basic-data-structures-in-python" id="/toc-basic-data-structures-in-python"><span class="header-section-number">5</span> Basic data structures in Python</a></li>
+<li><a href="#/words-for-this-course" id="/toc-words-for-this-course"><span class="header-section-number">6</span> Words for this course</a></li>
+</ul>
+</nav>
 </section>
 <section>
-<section id="literals-and-variables" class="title-slide slide level1 center">
-<h1>Literals and variables</h1>
+<section id="literals-and-variables" class="title-slide slide level1 center" data-number="1">
+<h1><span class="header-section-number">1</span> Literals and variables</h1>
 
 </section>
-<section id="literals-and-variables-1" class="slide level2">
-<h2>Literals and variables</h2>
+<section id="literals-and-variables-1" class="slide level2" data-number="1.1">
+<h2><span class="header-section-number">1.1</span> Literals and variables</h2>
 <ul>
 <li>are common in daily, programming, and scientific languages</li>
 <li>is one of the smallest components in any programming language</li>
 </ul>
-<div id="b8d7ce7a" class="cell" data-execution_count="1">
+<div id="bdec3f6b" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python code-overflow-wrap number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="" aria-label="1"></a><span class="co"># Good to repeat here: Comments are always useful in any code. </span></span>
+<span id="cb1-2"><a href="" aria-label="2"></a><span class="co"># Comments in Python start with the hash tag "#"</span></span>
+<span id="cb1-3"><a href="" aria-label="3"></a><span class="co"># 'Albert' is a literal, first_name is a variable, single quotes for string</span></span>
+<span id="cb1-4"><a href="" aria-label="4"></a>first_name <span class="op">=</span> <span class="st">'Albert'</span></span>
+<span id="cb1-5"><a href="" aria-label="5"></a><span class="co"># "Einstein" is a literal, last_name is a variable, double quotes for a string</span></span>
+<span id="cb1-6"><a href="" aria-label="6"></a>last_name <span class="op">=</span> <span class="st">"Einstein"</span></span>
+<span id="cb1-7"><a href="" aria-label="7"></a><span class="co"># evaluate the right-hand side (RHS), </span></span>
+<span id="cb1-8"><a href="" aria-label="8"></a><span class="co"># then assign to the left-hand side (LHS) variable</span></span>
+<span id="cb1-9"><a href="" aria-label="9"></a>full_name <span class="op">=</span> first_name <span class="op">+</span> <span class="st">' '</span> <span class="op">+</span> last_name</span>
+<span id="cb1-10"><a href="" aria-label="10"></a><span class="bu">print</span>(full_name)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Albert Einstein</code></pre>
 </div>
 </div>
 </section></section>
 <section>
-<section id="operators" class="title-slide slide level1 center">
-<h1>Operators</h1>
+<section id="operators" class="title-slide slide level1 center" data-number="2">
+<h1><span class="header-section-number">2</span> Operators</h1>
 
 </section>
-<section id="useful-operators" class="slide level2">
-<h2>Useful operators</h2>
+<section id="useful-operators" class="slide level2" data-number="2.1">
+<h2><span class="header-section-number">2.1</span> Useful operators</h2>
 <table class="caption-top">
 <caption>Logical operators</caption>
 <tbody>
@@ -252,8 +280,8 @@
 </tbody>
 </table>
 </section>
-<section id="arithmetic-operators" class="slide level2">
-<h2>Arithmetic operators</h2>
+<section id="arithmetic-operators" class="slide level2" data-number="2.2">
+<h2><span class="header-section-number">2.2</span> Arithmetic operators</h2>
 <ul>
 <li>Arithmetic operators such as <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code> are well-known.</li>
 <li>Furthermore:</li>
@@ -309,54 +337,73 @@
 </tbody>
 </table>
 </section>
-<section id="operators-examples" class="slide level2">
-<h2>Operators: Examples</h2>
+<section id="operators-examples" class="slide level2" data-number="2.3">
+<h2><span class="header-section-number">2.3</span> Operators: Examples</h2>
 <p>Example 1</p>
-<div id="33d96b8f" class="cell" data-execution_count="2">
+<div id="7a3659d6" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="" aria-label="1"></a>x <span class="op">=</span> <span class="dv">7</span><span class="op">;</span> x <span class="op">//=</span> <span class="dv">3</span></span>
+<span id="cb3-2"><a href="" aria-label="2"></a>y <span class="op">=</span> <span class="dv">7</span><span class="op">;</span> y <span class="op">%=</span> <span class="dv">3</span></span>
+<span id="cb3-3"><a href="" aria-label="3"></a>z <span class="op">=</span> <span class="dv">3</span><span class="op">;</span> z <span class="op">**=</span> <span class="dv">3</span></span>
+<span id="cb3-4"><a href="" aria-label="4"></a><span class="bu">print</span>(<span class="ss">f"x = </span><span class="sc">{</span>x<span class="sc">}</span><span class="ss">, y = </span><span class="sc">{</span>y<span class="sc">}</span><span class="ss">, z = </span><span class="sc">{</span>z<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>x = 2, y = 1, z = 27</code></pre>
 </div>
 </div>
 <p>Example 2</p>
-<div id="2724fb4d" class="cell" data-execution_count="3">
+<div id="cba978b3" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="" aria-label="1"></a>x <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb5-2"><a href="" aria-label="2"></a><span class="bu">print</span>(<span class="bu">id</span>(x), <span class="bu">id</span>(<span class="dv">3</span>))</span>
+<span id="cb5-3"><a href="" aria-label="3"></a>y <span class="op">=</span> <span class="st">'3'</span></span>
+<span id="cb5-4"><a href="" aria-label="4"></a><span class="bu">print</span>(<span class="bu">id</span>(y), <span class="bu">id</span>(<span class="st">'3'</span>))</span>
+<span id="cb5-5"><a href="" aria-label="5"></a></span>
+<span id="cb5-6"><a href="" aria-label="6"></a><span class="bu">print</span>(<span class="ss">f"x is y = </span><span class="sc">{</span>x <span class="kw">is</span> y<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb5-7"><a href="" aria-label="7"></a><span class="bu">print</span>(<span class="ss">f"x is not y = </span><span class="sc">{</span>x <span class="kw">is</span> <span class="kw">not</span> y<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>9666928 9666928
-9729224 9729224
+<pre><code>106012074605328 106012074605328
+106012074669744 106012074669744
 x is y = False
 x is not y = True</code></pre>
 </div>
 </div>
 </section></section>
 <section>
-<section id="print-with-style" class="title-slide slide level1 center">
-<h1>Print with style</h1>
+<section id="print-with-style" class="title-slide slide level1 center" data-number="3">
+<h1><span class="header-section-number">3</span> Print with style</h1>
 
 </section>
-<section id="nice-printing-with-string-format" class="slide level2">
-<h2>Nice printing with string format</h2>
+<section id="nice-printing-with-string-format" class="slide level2" data-number="3.1">
+<h2><span class="header-section-number">3.1</span> Nice printing with string format</h2>
 <p>A useful method of string: <code>str.format(*args, **kwargs)</code></p>
 <ul>
 <li>The string contains literal text or replacement fields delimited by braces <code>{}</code>.</li>
 <li>Replacement fields contain the numeric index of a positional arg/name of a keyword argument.</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href=""></a><span class="co"># default ordering</span></span>
-<span id="cb4-2"><a href=""></a><span class="bu">print</span>(<span class="st">"a = </span><span class="sc">{}</span><span class="st">, b = </span><span class="sc">{}</span><span class="st">, c = </span><span class="sc">{}</span><span class="st">."</span>.<span class="bu">format</span>(arg1, arg2, arg3))    </span>
-<span id="cb4-3"><a href=""></a><span class="co"># positional argument   </span></span>
-<span id="cb4-4"><a href=""></a><span class="bu">print</span>(<span class="st">"a = </span><span class="sc">{2}</span><span class="st">, b = </span><span class="sc">{0}</span><span class="st">, c = </span><span class="sc">{1}</span><span class="st">"</span>.<span class="bu">format</span>(arg1, arg2, arg3))     </span>
-<span id="cb4-5"><a href=""></a><span class="co"># keyword argument</span></span>
-<span id="cb4-6"><a href=""></a><span class="bu">print</span>(<span class="st">"a = </span><span class="sc">{v3}</span><span class="st">, b= </span><span class="sc">{v1}</span><span class="st">, c = </span><span class="sc">{v2}</span><span class="st">"</span>.<span class="bu">format</span>(v1<span class="op">=</span>arg1, v2<span class="op">=</span>arg2, v3<span class="op">=</span>arg3)) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="" aria-label="1"></a><span class="co"># default ordering</span></span>
+<span id="cb7-2"><a href="" aria-label="2"></a><span class="bu">print</span>(<span class="st">"a = </span><span class="sc">{}</span><span class="st">, b = </span><span class="sc">{}</span><span class="st">, c = </span><span class="sc">{}</span><span class="st">."</span>.<span class="bu">format</span>(arg1, arg2, arg3))    </span>
+<span id="cb7-3"><a href="" aria-label="3"></a><span class="co"># positional argument   </span></span>
+<span id="cb7-4"><a href="" aria-label="4"></a><span class="bu">print</span>(<span class="st">"a = </span><span class="sc">{2}</span><span class="st">, b = </span><span class="sc">{0}</span><span class="st">, c = </span><span class="sc">{1}</span><span class="st">"</span>.<span class="bu">format</span>(arg1, arg2, arg3))     </span>
+<span id="cb7-5"><a href="" aria-label="5"></a><span class="co"># keyword argument</span></span>
+<span id="cb7-6"><a href="" aria-label="6"></a><span class="bu">print</span>(<span class="st">"a = </span><span class="sc">{v3}</span><span class="st">, b= </span><span class="sc">{v1}</span><span class="st">, c = </span><span class="sc">{v2}</span><span class="st">"</span>.<span class="bu">format</span>(v1<span class="op">=</span>arg1, v2<span class="op">=</span>arg2, v3<span class="op">=</span>arg3)) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="nice-printing-with-string-format-1" class="slide level2">
-<h2>Nice printing with string format</h2>
+<section id="nice-printing-with-string-format-1" class="slide level2" data-number="3.2">
+<h2><span class="header-section-number">3.2</span> Nice printing with string format</h2>
 <p>Example 1</p>
-<div id="71d2670c" class="cell" data-execution_count="4">
+<div id="f2a9e2e8" class="cell" data-execution_count="4">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="" aria-label="1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb8-2"><a href="" aria-label="2"></a><span class="bu">print</span>(<span class="st">"a = </span><span class="sc">{:.5f}</span><span class="st">, b = </span><span class="sc">{}</span><span class="st">, c = </span><span class="sc">{}</span><span class="st">"</span>.<span class="bu">format</span>(np.pi, <span class="dv">2</span>, <span class="dv">3</span>))</span>
+<span id="cb8-3"><a href="" aria-label="3"></a><span class="bu">print</span>(<span class="st">"a = </span><span class="sc">{2:.5f}</span><span class="st">, b = </span><span class="sc">{0:.2f}</span><span class="st">, c = </span><span class="sc">{1:.1f}</span><span class="st">"</span>.<span class="bu">format</span>(<span class="fl">1.3</span>, <span class="fl">2.56</span>, np.pi))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>a = 3.14159, b = 2, c = 3
 a = 3.14159, b = 1.30, c = 2.6</code></pre>
 </div>
 </div>
 <p>Example 2: mostly useless for now – maybe useful later</p>
-<div id="f8365466" class="cell" data-execution_count="5">
+<div id="3538b8cf" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="" aria-label="1"></a><span class="co"># The following examples are self-explanatory</span></span>
+<span id="cb10-2"><a href="" aria-label="2"></a><span class="bu">print</span>(<span class="st">"</span><span class="sc">{:&lt;30}</span><span class="st">"</span>.<span class="bu">format</span>(<span class="st">'left aligned'</span>))      <span class="co"># &lt; -- aligned to the left</span></span>
+<span id="cb10-3"><a href="" aria-label="3"></a><span class="bu">print</span>(<span class="st">"</span><span class="sc">{:&gt;30}</span><span class="st">"</span>.<span class="bu">format</span>(<span class="st">'right aligned'</span>))     <span class="co"># &gt; -- aligned to the right</span></span>
+<span id="cb10-4"><a href="" aria-label="4"></a><span class="bu">print</span>(<span class="st">"</span><span class="sc">{:^30}</span><span class="st">"</span>.<span class="bu">format</span>(<span class="st">'centered'</span>))          <span class="co"># ^ -- alinged centered</span></span>
+<span id="cb10-5"><a href="" aria-label="5"></a><span class="bu">print</span>(<span class="st">"</span><span class="sc">{:*^30}</span><span class="st">"</span>.<span class="bu">format</span>(<span class="st">'centered using *'</span>))  <span class="co"># note * and then ^</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>left aligned                  
                  right aligned
@@ -365,8 +412,8 @@ a = 3.14159, b = 1.30, c = 2.6</code></pre>
 </div>
 </div>
 </section>
-<section id="nice-printing-with-f-string" class="slide level2">
-<h2>Nice printing with f-string</h2>
+<section id="nice-printing-with-f-string" class="slide level2" data-number="3.3">
+<h2><span class="header-section-number">3.3</span> Nice printing with f-string</h2>
 <p><strong>Formatted string</strong> literals</p>
 <ul>
 <li>prefixed with the Python code <code>f</code></li>
@@ -375,7 +422,12 @@ a = 3.14159, b = 1.30, c = 2.6</code></pre>
 <li>evaluated at run time, and then formatted using <code>format()</code> protocol</li>
 </ul>
 <p>Example</p>
-<div id="a1ecb695" class="cell" data-execution_count="6">
+<div id="352b8590" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="" aria-label="1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb12-2"><a href="" aria-label="2"></a>v1, v2 <span class="op">=</span> <span class="dv">10</span>, <span class="dv">20</span></span>
+<span id="cb12-3"><a href="" aria-label="3"></a><span class="bu">print</span>(<span class="ss">f"a = </span><span class="sc">{</span>v1<span class="sc">}</span><span class="ss">, b = </span><span class="sc">{</span>v2<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb12-4"><a href="" aria-label="4"></a>v1, v2 <span class="op">=</span> np.pi, np.exp(<span class="dv">1</span>)</span>
+<span id="cb12-5"><a href="" aria-label="5"></a><span class="bu">print</span>(<span class="ss">f"a = </span><span class="sc">{</span>v1<span class="sc">:.5f}</span><span class="ss">, b = </span><span class="sc">{</span>v2<span class="sc">:.5f}</span><span class="ss">"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>a = 10, b = 20
 a = 3.14159, b = 2.71828</code></pre>
@@ -383,12 +435,12 @@ a = 3.14159, b = 2.71828</code></pre>
 </div>
 </section></section>
 <section>
-<section id="control-flows" class="title-slide slide level1 center">
-<h1>Control flows</h1>
+<section id="control-flows" class="title-slide slide level1 center" data-number="4">
+<h1><span class="header-section-number">4</span> Control flows</h1>
 
 </section>
-<section id="control-flows-quick-intro" class="slide level2">
-<h2>Control flows: Quick Intro</h2>
+<section id="control-flows-quick-intro" class="slide level2" data-number="4.1">
+<h2><span class="header-section-number">4.1</span> Control flows: Quick Intro</h2>
 <ol type="1">
 <li><p><strong>Sequential statments</strong></p>
 <p>Run step by step</p></li>
@@ -400,58 +452,58 @@ a = 3.14159, b = 2.71828</code></pre>
 <p>Enhance the use of the loop</p></li>
 </ol>
 </section>
-<section id="if-statement" class="slide level2">
-<h2><code>if</code> statement</h2>
+<section id="if-statement" class="slide level2" data-number="4.2">
+<h2><span class="header-section-number">4.2</span> <code>if</code> statement</h2>
 
-<img data-src="./figures/python-recap/python-if-statement.png" class="r-stretch"><p><strong>Remark</strong> &nbsp; (Remember please please please !!!)</p>
+<img data-src="./figures/python_recap/python_if_statement.png" class="r-stretch"><p><strong>Remark</strong> &nbsp; (Remember please please please !!!)</p>
 <ul>
 <li><strong>Colon</strong> <code>:</code> at the end of <code>if</code> statement, right after the condition</li>
 <li><strong>Indentation</strong> using <strong><em>tab</em></strong> for the block of statements associated with <code>if</code> condition</li>
 </ul>
 </section>
-<section id="if-else-statement" class="slide level2">
-<h2><code>if-else</code> statement</h2>
+<section id="if-else-statement" class="slide level2" data-number="4.3">
+<h2><span class="header-section-number">4.3</span> <code>if-else</code> statement</h2>
 
-<img data-src="./figures/python-recap/python-if-else-statement.png" class="r-stretch"><p><strong>Interpretation</strong>: If you can read English, you should understand this construction.</p>
+<img data-src="./figures/python_recap/python_if_else_statement.png" class="r-stretch"><p><strong>Interpretation</strong>: If you can read English, you should understand this construction.</p>
 </section>
-<section id="if-elif-else-statement" class="slide level2">
-<h2><code>if-elif-else</code> statement</h2>
+<section id="if-elif-else-statement" class="slide level2" data-number="4.4">
+<h2><span class="header-section-number">4.4</span> <code>if-elif-else</code> statement</h2>
 
-<img data-src="./figures/python-recap/python-if-elif-else-statement.png" class="r-stretch"><p><strong>Interpretation</strong>: If you can read English, you should understand this construction.</p>
+<img data-src="./figures/python_recap/python_if_elif_else_statement.png" class="r-stretch"><p><strong>Interpretation</strong>: If you can read English, you should understand this construction.</p>
 </section>
-<section id="conditional-statement-exmaples" class="slide level2">
-<h2>Conditional statement exmaples</h2>
+<section id="conditional-statement-exmaples" class="slide level2" data-number="4.5">
+<h2><span class="header-section-number">4.5</span> Conditional statement exmaples</h2>
 <div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href=""></a>marks <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Your marks?"</span>)</span>
-<span id="cb8-2"><a href=""></a>marks <span class="op">=</span> <span class="bu">int</span>(marks)</span>
-<span id="cb8-3"><a href=""></a><span class="cf">if</span> (marks <span class="op">&lt;=</span> <span class="dv">50</span>):</span>
-<span id="cb8-4"><a href=""></a>    grade <span class="op">=</span> <span class="st">'D'</span></span>
-<span id="cb8-5"><a href=""></a><span class="cf">else</span>:</span>
-<span id="cb8-6"><a href=""></a>    <span class="cf">if</span> (marks <span class="op">&lt;=</span> <span class="dv">59</span>):</span>
-<span id="cb8-7"><a href=""></a>        grade <span class="op">=</span> <span class="st">'C'</span></span>
-<span id="cb8-8"><a href=""></a>    <span class="cf">else</span>:</span>
-<span id="cb8-9"><a href=""></a>        <span class="cf">if</span> (marks <span class="op">&lt;=</span> <span class="dv">69</span>):</span>
-<span id="cb8-10"><a href=""></a>            grade <span class="op">=</span> <span class="st">'B'</span></span>
-<span id="cb8-11"><a href=""></a>        <span class="cf">else</span>:</span>
-<span id="cb8-12"><a href=""></a>            grade <span class="op">=</span> <span class="st">'A'</span></span>
-<span id="cb8-13"><a href=""></a><span class="bu">print</span>(<span class="st">"Letter grade is"</span>, grade)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="" aria-label="1"></a>marks <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Your marks?"</span>)</span>
+<span id="cb14-2"><a href="" aria-label="2"></a>marks <span class="op">=</span> <span class="bu">int</span>(marks)</span>
+<span id="cb14-3"><a href="" aria-label="3"></a><span class="cf">if</span> (marks <span class="op">&lt;=</span> <span class="dv">50</span>):</span>
+<span id="cb14-4"><a href="" aria-label="4"></a>    grade <span class="op">=</span> <span class="st">'D'</span></span>
+<span id="cb14-5"><a href="" aria-label="5"></a><span class="cf">else</span>:</span>
+<span id="cb14-6"><a href="" aria-label="6"></a>    <span class="cf">if</span> (marks <span class="op">&lt;=</span> <span class="dv">59</span>):</span>
+<span id="cb14-7"><a href="" aria-label="7"></a>        grade <span class="op">=</span> <span class="st">'C'</span></span>
+<span id="cb14-8"><a href="" aria-label="8"></a>    <span class="cf">else</span>:</span>
+<span id="cb14-9"><a href="" aria-label="9"></a>        <span class="cf">if</span> (marks <span class="op">&lt;=</span> <span class="dv">69</span>):</span>
+<span id="cb14-10"><a href="" aria-label="10"></a>            grade <span class="op">=</span> <span class="st">'B'</span></span>
+<span id="cb14-11"><a href="" aria-label="11"></a>        <span class="cf">else</span>:</span>
+<span id="cb14-12"><a href="" aria-label="12"></a>            grade <span class="op">=</span> <span class="st">'A'</span></span>
+<span id="cb14-13"><a href="" aria-label="13"></a><span class="bu">print</span>(<span class="st">"Letter grade is"</span>, grade)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div><div class="column">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href=""></a>marks <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Your marks"</span>)</span>
-<span id="cb9-2"><a href=""></a>marks <span class="op">=</span> <span class="bu">int</span>(marks)</span>
-<span id="cb9-3"><a href=""></a><span class="cf">if</span> (marks <span class="op">&lt;=</span> <span class="dv">50</span>):</span>
-<span id="cb9-4"><a href=""></a>    grade <span class="op">=</span> <span class="st">'D'</span></span>
-<span id="cb9-5"><a href=""></a><span class="cf">elif</span> (marks <span class="op">&lt;=</span> <span class="dv">59</span>):</span>
-<span id="cb9-6"><a href=""></a>    grade <span class="op">=</span> <span class="st">'C'</span></span>
-<span id="cb9-7"><a href=""></a><span class="cf">elif</span> (marks <span class="op">&lt;=</span> <span class="dv">69</span>):</span>
-<span id="cb9-8"><a href=""></a>    grade <span class="op">=</span> <span class="st">'B'</span></span>
-<span id="cb9-9"><a href=""></a><span class="cf">else</span>:</span>
-<span id="cb9-10"><a href=""></a>    grade <span class="op">=</span> <span class="st">'A'</span></span>
-<span id="cb9-11"><a href=""></a><span class="bu">print</span>(<span class="st">"Letter grade is"</span>, grade)</span>
-<span id="cb9-12"><a href=""></a></span>
-<span id="cb9-13"><a href=""></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="" aria-label="1"></a>marks <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Your marks"</span>)</span>
+<span id="cb15-2"><a href="" aria-label="2"></a>marks <span class="op">=</span> <span class="bu">int</span>(marks)</span>
+<span id="cb15-3"><a href="" aria-label="3"></a><span class="cf">if</span> (marks <span class="op">&lt;=</span> <span class="dv">50</span>):</span>
+<span id="cb15-4"><a href="" aria-label="4"></a>    grade <span class="op">=</span> <span class="st">'D'</span></span>
+<span id="cb15-5"><a href="" aria-label="5"></a><span class="cf">elif</span> (marks <span class="op">&lt;=</span> <span class="dv">59</span>):</span>
+<span id="cb15-6"><a href="" aria-label="6"></a>    grade <span class="op">=</span> <span class="st">'C'</span></span>
+<span id="cb15-7"><a href="" aria-label="7"></a><span class="cf">elif</span> (marks <span class="op">&lt;=</span> <span class="dv">69</span>):</span>
+<span id="cb15-8"><a href="" aria-label="8"></a>    grade <span class="op">=</span> <span class="st">'B'</span></span>
+<span id="cb15-9"><a href="" aria-label="9"></a><span class="cf">else</span>:</span>
+<span id="cb15-10"><a href="" aria-label="10"></a>    grade <span class="op">=</span> <span class="st">'A'</span></span>
+<span id="cb15-11"><a href="" aria-label="11"></a><span class="bu">print</span>(<span class="st">"Letter grade is"</span>, grade)</span>
+<span id="cb15-12"><a href="" aria-label="12"></a></span>
+<span id="cb15-13"><a href="" aria-label="13"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div></section>
-<section id="loops" class="slide level2">
-<h2>Loops</h2>
+<section id="loops" class="slide level2" data-number="4.6">
+<h2><span class="header-section-number">4.6</span> Loops</h2>
 <blockquote>
 <p>😘 Two types of loops</p>
 </blockquote>
@@ -469,53 +521,65 @@ a = 3.14159, b = 2.71828</code></pre>
 <li><code>for</code> loop</li>
 </ol>
 </section>
-<section id="while-loop" class="slide level2">
-<h2><code>while</code> loop</h2>
+<section id="while-loop" class="slide level2" data-number="4.7">
+<h2><span class="header-section-number">4.7</span> <code>while</code> loop</h2>
 
-<img data-src="./figures/python-recap/python-while-loop.png" class="r-stretch"><blockquote>
+<img data-src="./figures/python_recap/python_while_loop.png" class="r-stretch"><blockquote>
 <p><em>Reminder</em>: <strong>colon</strong> “:” and <strong>indentation</strong> using “<em>tab</em>”</p>
 </blockquote>
 </section>
-<section id="while-loop-example" class="slide level2">
-<h2><code>while</code> loop: Example</h2>
+<section id="while-loop-example" class="slide level2" data-number="4.8">
+<h2><span class="header-section-number">4.8</span> <code>while</code> loop: Example</h2>
 <ul>
 <li>Example 1</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href=""></a>counter, value <span class="op">=</span> <span class="dv">0</span>, <span class="dv">1</span>       <span class="co"># multiple assignments</span></span>
-<span id="cb10-2"><a href=""></a>n <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Value of index?"</span>)</span>
-<span id="cb10-3"><a href=""></a><span class="cf">if</span> n.isnumeric():</span>
-<span id="cb10-4"><a href=""></a>    n <span class="op">=</span> <span class="bu">int</span>(n)      <span class="co"># convert to integer if it is numeric</span></span>
-<span id="cb10-5"><a href=""></a><span class="cf">else</span>:</span>
-<span id="cb10-6"><a href=""></a>    n <span class="op">=</span> <span class="dv">5</span>           <span class="co"># otherwise, default n to 5</span></span>
-<span id="cb10-7"><a href=""></a><span class="bu">print</span>(<span class="st">"2^</span><span class="sc">{0:^2}</span><span class="st"> = </span><span class="sc">{1}</span><span class="st">"</span>.<span class="bu">format</span>(counter, value))</span>
-<span id="cb10-8"><a href=""></a><span class="cf">while</span> counter <span class="op">&lt;</span> n:</span>
-<span id="cb10-9"><a href=""></a>    value <span class="op">*=</span> <span class="dv">2</span></span>
-<span id="cb10-10"><a href=""></a>    counter <span class="op">+=</span> <span class="dv">1</span></span>
-<span id="cb10-11"><a href=""></a>    <span class="bu">print</span>(<span class="st">"2^</span><span class="sc">{0:^2}</span><span class="st"> = </span><span class="sc">{1}</span><span class="st">"</span>.<span class="bu">format</span>(counter, value))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="" aria-label="1"></a>counter, value <span class="op">=</span> <span class="dv">0</span>, <span class="dv">1</span>       <span class="co"># multiple assignments</span></span>
+<span id="cb16-2"><a href="" aria-label="2"></a>n <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Value of index?"</span>)</span>
+<span id="cb16-3"><a href="" aria-label="3"></a><span class="cf">if</span> n.isnumeric():</span>
+<span id="cb16-4"><a href="" aria-label="4"></a>    n <span class="op">=</span> <span class="bu">int</span>(n)      <span class="co"># convert to integer if it is numeric</span></span>
+<span id="cb16-5"><a href="" aria-label="5"></a><span class="cf">else</span>:</span>
+<span id="cb16-6"><a href="" aria-label="6"></a>    n <span class="op">=</span> <span class="dv">5</span>           <span class="co"># otherwise, default n to 5</span></span>
+<span id="cb16-7"><a href="" aria-label="7"></a><span class="bu">print</span>(<span class="st">"2^</span><span class="sc">{0:^2}</span><span class="st"> = </span><span class="sc">{1}</span><span class="st">"</span>.<span class="bu">format</span>(counter, value))</span>
+<span id="cb16-8"><a href="" aria-label="8"></a><span class="cf">while</span> counter <span class="op">&lt;</span> n:</span>
+<span id="cb16-9"><a href="" aria-label="9"></a>    value <span class="op">*=</span> <span class="dv">2</span></span>
+<span id="cb16-10"><a href="" aria-label="10"></a>    counter <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb16-11"><a href="" aria-label="11"></a>    <span class="bu">print</span>(<span class="st">"2^</span><span class="sc">{0:^2}</span><span class="st"> = </span><span class="sc">{1}</span><span class="st">"</span>.<span class="bu">format</span>(counter, value))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>Example 2</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href=""></a><span class="cf">while</span> <span class="va">True</span>:</span>
-<span id="cb11-2"><a href=""></a>    n <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Input a floating number"</span>)</span>
-<span id="cb11-3"><a href=""></a>    <span class="cf">if</span> n.isnumeric():</span>
-<span id="cb11-4"><a href=""></a>        <span class="cf">break</span>   <span class="co"># we shall talk about "break" quickly</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="" aria-label="1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
+<span id="cb17-2"><a href="" aria-label="2"></a>    n <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Input a floating number"</span>)</span>
+<span id="cb17-3"><a href="" aria-label="3"></a>    <span class="cf">if</span> n.isnumeric():</span>
+<span id="cb17-4"><a href="" aria-label="4"></a>        <span class="cf">break</span>   <span class="co"># we shall talk about "break" quickly</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
-<section id="for-loop" class="slide level2">
-<h2><code>for</code> loop</h2>
+<section id="for-loop" class="slide level2" data-number="4.9">
+<h2><span class="header-section-number">4.9</span> <code>for</code> loop</h2>
 
-<img data-src="./figures/python-recap/python-for-loop.png" class="r-stretch"><blockquote>
+<img data-src="./figures/python_recap/python_for_loop.png" class="r-stretch"><blockquote>
 <p><em>Reminder</em>: <strong>colon</strong> “:” and <strong>indentation</strong> using “<em>tab</em>”</p>
 </blockquote>
 </section>
-<section id="for-loop-examples" class="slide level2">
-<h2><code>for</code> loop: Examples</h2>
-<div id="871c55f4" class="cell" data-execution_count="7">
+<section id="for-loop-examples" class="slide level2" data-number="4.10">
+<h2><span class="header-section-number">4.10</span> <code>for</code> loop: Examples</h2>
+<div id="1451d001" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="" aria-label="1"></a>value <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb18-2"><a href="" aria-label="2"></a><span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb18-3"><a href="" aria-label="3"></a>    <span class="bu">print</span>(<span class="st">"2^</span><span class="sc">{0:^1}</span><span class="st"> = </span><span class="sc">{1}</span><span class="st">"</span>.<span class="bu">format</span>(j, value), end<span class="op">=</span><span class="st">" </span><span class="ch">\t</span><span class="st">"</span>) <span class="co"># \t for tab</span></span>
+<span id="cb18-4"><a href="" aria-label="4"></a>    <span class="cf">if</span> (j <span class="op">+</span> <span class="dv">1</span>) <span class="op">%</span> <span class="dv">5</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb18-5"><a href="" aria-label="5"></a>        <span class="bu">print</span>()   <span class="co"># one new line is added by default</span></span>
+<span id="cb18-6"><a href="" aria-label="6"></a>    value <span class="op">*=</span> <span class="dv">2</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>2^0 = 1     2^1 = 2     2^2 = 4     2^3 = 8     2^4 = 16    
 2^5 = 32    2^6 = 64    2^7 = 128   2^8 = 256   2^9 = 512   </code></pre>
 </div>
 </div>
-<div id="46a320b4" class="cell" data-execution_count="8">
+<div id="5bae1edd" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="" aria-label="1"></a>my_list <span class="op">=</span> [<span class="st">"I"</span>, <span class="st">"have"</span>, <span class="dv">2</span>, <span class="st">"dogs"</span>, <span class="st">"&amp;"</span>, <span class="dv">3</span>, <span class="st">"cats"</span>]</span>
+<span id="cb20-2"><a href="" aria-label="2"></a><span class="cf">for</span> x <span class="kw">in</span> my_list:</span>
+<span id="cb20-3"><a href="" aria-label="3"></a>    <span class="bu">print</span>(x, end<span class="op">=</span><span class="st">' '</span>)</span>
+<span id="cb20-4"><a href="" aria-label="4"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">"</span>)   <span class="co"># two new lines, one line is added by default</span></span>
+<span id="cb20-5"><a href="" aria-label="5"></a><span class="cf">for</span> y <span class="kw">in</span> <span class="bu">reversed</span>(my_list):</span>
+<span id="cb20-6"><a href="" aria-label="6"></a>    <span class="bu">print</span>(y, end<span class="op">=</span><span class="st">' '</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>I have 2 dogs &amp; 3 cats 
 
@@ -523,10 +587,10 @@ cats 3 &amp; dogs 2 have I </code></pre>
 </div>
 </div>
 </section>
-<section id="break-and-continue" class="slide level2">
-<h2><code>break</code> and <code>continue</code></h2>
+<section id="break-and-continue" class="slide level2" data-number="4.11">
+<h2><span class="header-section-number">4.11</span> <code>break</code> and <code>continue</code></h2>
 <div class="column">
-<p><img data-src="./figures/python-recap/python-break-and-continue.png"></p>
+<p><img data-src="./figures/python_recap/python_break_and_continue.png"></p>
 </div><div class="column">
 <p><code>break</code> and <code>continue</code> statements are best demonstrated as in the <em>left</em> figure. They are <em>literally</em> interpreted as their English meanings.</p>
 <ul>
@@ -536,33 +600,39 @@ cats 3 &amp; dogs 2 have I </code></pre>
 <p><em>Execution jumps to the top of the loop.</em></p></li>
 </ul>
 </div></section>
-<section id="break-and-continue-1" class="slide level2">
-<h2><code>break</code> and <code>continue</code></h2>
+<section id="break-and-continue-1" class="slide level2" data-number="4.12">
+<h2><span class="header-section-number">4.12</span> <code>break</code> and <code>continue</code></h2>
 <div class="column">
 <ul>
 <li>Use of <code>break</code> statement</li>
 </ul>
-<p><img data-src="./figures/python-recap/working-break-statement-python.png"></p>
+<p><img data-src="./figures/python_recap/working_break_statement_python.png"></p>
 </div><div class="column">
 <ul>
 <li>Use of <code>continue</code> statement</li>
 </ul>
-<p><img data-src="./figures/python-recap/working-continue-statement-python.png"></p>
+<p><img data-src="./figures/python_recap/working_continue_statement_python.png"></p>
 </div></section>
-<section id="break-and-continue-examples" class="slide level2">
-<h2><code>break</code> and <code>continue</code>: Examples</h2>
+<section id="break-and-continue-examples" class="slide level2" data-number="4.13">
+<h2><span class="header-section-number">4.13</span> <code>break</code> and <code>continue</code>: Examples</h2>
 <ul>
 <li>Example 1</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href=""></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
-<span id="cb14-2"><a href=""></a>    n <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter a number smaller than 10"</span>)</span>
-<span id="cb14-3"><a href=""></a>    <span class="cf">if</span> <span class="bu">int</span>(n) <span class="op">&lt;</span> <span class="dv">10</span>:</span>
-<span id="cb14-4"><a href=""></a>        <span class="bu">print</span>(<span class="st">"Good job! You follow the instruction."</span>)</span>
-<span id="cb14-5"><a href=""></a>        <span class="cf">break</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="" aria-label="1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>):</span>
+<span id="cb22-2"><a href="" aria-label="2"></a>    n <span class="op">=</span> <span class="bu">input</span>(<span class="st">"Enter a number smaller than 10"</span>)</span>
+<span id="cb22-3"><a href="" aria-label="3"></a>    <span class="cf">if</span> <span class="bu">int</span>(n) <span class="op">&lt;</span> <span class="dv">10</span>:</span>
+<span id="cb22-4"><a href="" aria-label="4"></a>        <span class="bu">print</span>(<span class="st">"Good job! You follow the instruction."</span>)</span>
+<span id="cb22-5"><a href="" aria-label="5"></a>        <span class="cf">break</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>Example 2</li>
 </ul>
-<div id="b312b259" class="cell" data-execution_count="9">
+<div id="b71afe31" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="" aria-label="1"></a>n <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb23-2"><a href="" aria-label="2"></a><span class="cf">while</span> n <span class="op">&lt;</span> <span class="dv">10</span>:</span>
+<span id="cb23-3"><a href="" aria-label="3"></a>    n <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb23-4"><a href="" aria-label="4"></a>    <span class="cf">if</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb23-5"><a href="" aria-label="5"></a>        <span class="cf">continue</span></span>
+<span id="cb23-6"><a href="" aria-label="6"></a>    <span class="bu">print</span>(n)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>1
 3
@@ -573,16 +643,22 @@ cats 3 &amp; dogs 2 have I </code></pre>
 </div>
 </section></section>
 <section>
-<section id="basic-data-structures-in-python" class="title-slide slide level1 center">
-<h1>Basic data structures in Python</h1>
+<section id="basic-data-structures-in-python" class="title-slide slide level1 center" data-number="5">
+<h1><span class="header-section-number">5</span> Basic data structures in Python</h1>
 
 </section>
-<section id="list-indexing" class="slide level2">
-<h2>List: Indexing</h2>
+<section id="list-indexing" class="slide level2" data-number="5.1">
+<h2><span class="header-section-number">5.1</span> List: Indexing</h2>
 <center>
-<img src="./figures/python-recap/python-list-indexing.png" width="800" height="200">
+<img src="./figures/python_recap/python_list_indexing.png" width="800" height="200">
 </center>
-<div id="dbad66d0" class="cell" data-execution_count="10">
+<div id="7a6a8803" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="" aria-label="1"></a>my_list <span class="op">=</span> [<span class="st">'red'</span>, <span class="st">'green'</span>, <span class="st">'blue'</span>, <span class="st">'yellow'</span>, <span class="st">'black'</span>]</span>
+<span id="cb25-2"><a href="" aria-label="2"></a><span class="bu">print</span>(my_list[<span class="dv">0</span>])   <span class="co"># output: red</span></span>
+<span id="cb25-3"><a href="" aria-label="3"></a><span class="bu">print</span>(my_list[<span class="dv">3</span>])   <span class="co"># output: yellow</span></span>
+<span id="cb25-4"><a href="" aria-label="4"></a><span class="cf">for</span> element <span class="kw">in</span> my_list:</span>
+<span id="cb25-5"><a href="" aria-label="5"></a>    <span class="bu">print</span>(element, end<span class="op">=</span><span class="st">"; "</span>)</span>
+<span id="cb25-6"><a href="" aria-label="6"></a><span class="co"># output: red; green; blue; yellow; black;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>red
 yellow
@@ -590,15 +666,20 @@ red; green; blue; yellow; black; </code></pre>
 </div>
 </div>
 </section>
-<section id="list-negative-indexing" class="slide level2">
-<h2>List: Negative indexing</h2>
+<section id="list-negative-indexing" class="slide level2" data-number="5.2">
+<h2><span class="header-section-number">5.2</span> List: Negative indexing</h2>
 <center>
-<img src="./figures/python-recap/python-list-negative-indexing.png" width="800" height="200">
+<img src="./figures/python_recap/python_list_negative_indexing.png" width="800" height="200">
 </center>
 <center>
 Indexing with <span class="math inline">\(-1\)</span> (negative one) means the last element in the array, <span class="math inline">\(-2\)</span> the second last element, etc.
 </center>
-<div id="0bf9f0b9" class="cell" data-execution_count="11">
+<div id="db88b3b2" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="" aria-label="1"></a>my_list <span class="op">=</span> [<span class="st">'red'</span>, <span class="st">'green'</span>, <span class="st">'blue'</span>, <span class="st">'yellow'</span>, <span class="st">'black'</span>]</span>
+<span id="cb27-2"><a href="" aria-label="2"></a><span class="bu">print</span>(my_list[<span class="op">-</span><span class="dv">1</span>])   <span class="co"># output: black</span></span>
+<span id="cb27-3"><a href="" aria-label="3"></a><span class="bu">print</span>(my_list[<span class="op">-</span><span class="dv">5</span>])   <span class="co"># output: red</span></span>
+<span id="cb27-4"><a href="" aria-label="4"></a><span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="op">-</span><span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">1</span>):</span>
+<span id="cb27-5"><a href="" aria-label="5"></a>    <span class="bu">print</span>(my_list[j], end<span class="op">=</span><span class="st">" </span><span class="ch">\t</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>black
 red
@@ -606,53 +687,71 @@ red     green   blue    yellow  black   </code></pre>
 </div>
 </div>
 </section>
-<section id="list-negative-indexing-1" class="slide level2">
-<h2>List: Negative indexing</h2>
+<section id="list-negative-indexing-1" class="slide level2" data-number="5.3">
+<h2><span class="header-section-number">5.3</span> List: Negative indexing</h2>
 <center>
-<img src="./figures/python-recap/python-list-negative-indexing.png" width="800" height="200">
+<img src="./figures/python_recap/python_list_negative_indexing.png" width="800" height="200">
 </center>
 <center>
 Indexing with <span class="math inline">\(-1\)</span> (negative one) means the last element in the array, <span class="math inline">\(-2\)</span> the second last element, etc.
 </center>
-<div id="e3d0e24b" class="cell" data-execution_count="12">
+<div id="8d172d8d" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="" aria-label="1"></a>my_list <span class="op">=</span> [<span class="st">'red'</span>, <span class="st">'green'</span>, <span class="st">'blue'</span>, <span class="st">'yellow'</span>, <span class="st">'black'</span>]</span>
+<span id="cb29-2"><a href="" aria-label="2"></a><span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">6</span>, <span class="op">-</span><span class="dv">1</span>):</span>
+<span id="cb29-3"><a href="" aria-label="3"></a>    <span class="bu">print</span>(my_list[j], end<span class="op">=</span><span class="st">" </span><span class="ch">\t</span><span class="st">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>black   yellow  blue    green   red     </code></pre>
 </div>
 </div>
 </section>
-<section id="list-nested-list" class="slide level2">
-<h2>List: Nested list</h2>
+<section id="list-nested-list" class="slide level2" data-number="5.4">
+<h2><span class="header-section-number">5.4</span> List: Nested list</h2>
 <center>
-<img src="./figures/python-recap/python-nested-list-indexing.png">
+<img src="./figures/python_recap/python_nested_list_indexing.png">
 </center>
-<div id="a011d6ca" class="cell" data-execution_count="13">
+<div id="4f6dc560" class="cell" data-execution_count="13">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="" aria-label="1"></a>L <span class="op">=</span> [<span class="st">'a'</span>, <span class="st">'b'</span>, [<span class="st">'cc'</span>, <span class="st">'dd'</span>, [<span class="st">'eee'</span>, <span class="st">'fff'</span>]], <span class="st">'g'</span>, <span class="st">'h'</span>]</span>
+<span id="cb31-2"><a href="" aria-label="2"></a><span class="bu">print</span>(L[<span class="dv">2</span>])         <span class="co"># output: ['cc', 'dd', ['eee', 'fff']]</span></span>
+<span id="cb31-3"><a href="" aria-label="3"></a><span class="bu">print</span>(L[<span class="dv">2</span>][<span class="dv">2</span>])      <span class="co"># output: ['eee', 'fff']</span></span>
+<span id="cb31-4"><a href="" aria-label="4"></a></span>
+<span id="cb31-5"><a href="" aria-label="5"></a><span class="co"># print(L[2,2])       # this syntax gives error!!!</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>['cc', 'dd', ['eee', 'fff']]
 ['eee', 'fff']</code></pre>
 </div>
 </div>
 </section>
-<section id="list-sum-of-two-lists" class="slide level2">
-<h2>List: Sum of two lists</h2>
+<section id="list-sum-of-two-lists" class="slide level2" data-number="5.5">
+<h2><span class="header-section-number">5.5</span> List: Sum of two lists</h2>
 <ul>
 <li>List can contain elements of any data type.</li>
 <li>We can interpret them like a carrier (not a mathematical set).</li>
 <li>A list can contain elements with the same value, a set cannot.</li>
 <li>Sum of two lists just concatenate them.</li>
 </ul>
-<div id="b364c007" class="cell" data-execution_count="14">
+<div id="685e1668" class="cell" data-execution_count="14">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="" aria-label="1"></a>L1 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb33-2"><a href="" aria-label="2"></a>L2 <span class="op">=</span> [<span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>]</span>
+<span id="cb33-3"><a href="" aria-label="3"></a>L3 <span class="op">=</span> [<span class="st">'5'</span>, <span class="st">'4'</span>, <span class="st">'3'</span>, <span class="st">'2'</span>, <span class="st">'1'</span>]</span>
+<span id="cb33-4"><a href="" aria-label="4"></a><span class="bu">print</span>(<span class="st">"L1 + L2 ="</span>, L1 <span class="op">+</span> L2)</span>
+<span id="cb33-5"><a href="" aria-label="5"></a><span class="bu">print</span>(<span class="st">"L1 + L3 ="</span>, L1 <span class="op">+</span> L3)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>L1 + L2 = [1, 2, 3, 4, 5, 5, 4, 3, 2, 1]
 L1 + L3 = [1, 2, 3, 4, 5, '5', '4', '3', '2', '1']</code></pre>
 </div>
 </div>
 </section>
-<section id="quick-detour-to-numpy-arrays" class="slide level2">
-<h2>Quick detour to NumPy arrays</h2>
+<section id="quick-detour-to-numpy-arrays" class="slide level2" data-number="5.6">
+<h2><span class="header-section-number">5.6</span> Quick detour to NumPy arrays</h2>
 <ul>
 <li>Repeat “sum of two lists”</li>
 </ul>
-<div id="9feae3c6" class="cell" data-execution_count="15">
+<div id="a17dd867" class="cell" data-execution_count="15">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="" aria-label="1"></a>L1 <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb35-2"><a href="" aria-label="2"></a>L2 <span class="op">=</span> [<span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>]</span>
+<span id="cb35-3"><a href="" aria-label="3"></a>L3 <span class="op">=</span> [<span class="st">'5'</span>, <span class="st">'4'</span>, <span class="st">'3'</span>, <span class="st">'2'</span>, <span class="st">'1'</span>]</span>
+<span id="cb35-4"><a href="" aria-label="4"></a><span class="bu">print</span>(<span class="st">"L1 + L2 ="</span>, L1 <span class="op">+</span> L2)</span>
+<span id="cb35-5"><a href="" aria-label="5"></a><span class="bu">print</span>(<span class="st">"L1 + L3 ="</span>, L1 <span class="op">+</span> L3)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>L1 + L2 = [1, 2, 3, 4, 5, 5, 4, 3, 2, 1]
 L1 + L3 = [1, 2, 3, 4, 5, '5', '4', '3', '2', '1']</code></pre>
@@ -661,23 +760,34 @@ L1 + L3 = [1, 2, 3, 4, 5, '5', '4', '3', '2', '1']</code></pre>
 <ul>
 <li>Later we will learn <strong>NumPy</strong> arrays that allow arithemtic operations seemlessly</li>
 </ul>
-<div id="12e22243" class="cell" data-execution_count="16">
+<div id="54f49790" class="cell" data-execution_count="16">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="" aria-label="1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb37-2"><a href="" aria-label="2"></a>a1 <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])    <span class="co"># we discuss this later</span></span>
+<span id="cb37-3"><a href="" aria-label="3"></a>a2 <span class="op">=</span> np.array([<span class="dv">5</span>, <span class="dv">4</span>, <span class="dv">3</span>, <span class="dv">2</span>, <span class="dv">1</span>])</span>
+<span id="cb37-4"><a href="" aria-label="4"></a><span class="bu">print</span>(<span class="st">"a1 + a2 ="</span>, a1 <span class="op">+</span> a2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>a1 + a2 = [6 6 6 6 6]</code></pre>
 </div>
 </div>
 </section>
-<section id="list-slicing" class="slide level2">
-<h2>List: Slicing</h2>
+<section id="list-slicing" class="slide level2" data-number="5.7">
+<h2><span class="header-section-number">5.7</span> List: Slicing</h2>
 <center>
-<img src="./figures/python-recap/Python-List-Slicing-Syntax.png" width="600" height="185">
+<img src="./figures/python_recap/python_list_slicing_syntax.png" width="600" height="185">
 </center>
 <ul>
 <li>The slicing does not take the <code>stop</code> position – it stops right before it</li>
 <li>If <code>start</code> is mising, it counts from <code>0</code> (beginning of the list)</li>
 <li>If <code>stop</code> is missing, it steps until the end of the list (indexing <code>-1</code>)</li>
 </ul>
-<div id="c9055b19" class="cell" data-execution_count="17">
+<div id="b173310d" class="cell" data-execution_count="17">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="" aria-label="1"></a>L <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>]</span>
+<span id="cb39-2"><a href="" aria-label="2"></a><span class="bu">print</span>(L[<span class="dv">1</span>:<span class="dv">5</span>])       <span class="co"># gives [1, 2, 3, 4]</span></span>
+<span id="cb39-3"><a href="" aria-label="3"></a><span class="bu">print</span>(L[<span class="dv">1</span>:<span class="dv">5</span>:<span class="dv">2</span>])     <span class="co"># gives [1, 3]</span></span>
+<span id="cb39-4"><a href="" aria-label="4"></a><span class="bu">print</span>(L[:<span class="dv">5</span>:<span class="dv">3</span>])      <span class="co"># gives [0, 3]</span></span>
+<span id="cb39-5"><a href="" aria-label="5"></a><span class="bu">print</span>(L[<span class="dv">1</span>::<span class="dv">3</span>])      <span class="co"># gives [1, 4, 7]</span></span>
+<span id="cb39-6"><a href="" aria-label="6"></a><span class="bu">print</span>(L[::<span class="dv">3</span>])       <span class="co"># gives [0, 3, 6, 9]</span></span>
+<span id="cb39-7"><a href="" aria-label="7"></a><span class="co"># print(L[[0, 3, 6, 7]]) # Raise an Error, uncomment to see -- cannot slice like this!</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1, 2, 3, 4]
 [1, 3]
@@ -687,10 +797,10 @@ L1 + L3 = [1, 2, 3, 4, 5, '5', '4', '3', '2', '1']</code></pre>
 </div>
 </div>
 </section>
-<section id="tuple" class="slide level2">
-<h2>Tuple</h2>
+<section id="tuple" class="slide level2" data-number="5.8">
+<h2><span class="header-section-number">5.8</span> Tuple</h2>
 
-<img data-src="./figures/python-recap/python-tuple.png" class="r-stretch"><div class="column">
+<img data-src="./figures/python_recap/python_tuple.png" class="r-stretch"><div class="column">
 <p><strong>List</strong></p>
 <ul>
 <li>Use square brackets <code>[ ... ]</code></li>
@@ -714,8 +824,8 @@ L1 + L3 = [1, 2, 3, 4, 5, '5', '4', '3', '2', '1']</code></pre>
 mutable = modifiable/changable &nbsp;&nbsp;&nbsp;&nbsp; vs &nbsp;&nbsp;&nbsp;&nbsp; immutable = not modifiable/unchangable
 </center>
 </section>
-<section id="tuple-packing-and-unpacking" class="slide level2">
-<h2>Tuple: Packing and unpacking</h2>
+<section id="tuple-packing-and-unpacking" class="slide level2" data-number="5.9">
+<h2><span class="header-section-number">5.9</span> Tuple: Packing and unpacking</h2>
 <ul>
 <li><p><strong>Tuple packing</strong>: We don’t use parentheses in the following definition:</p>
 <p><code>t = 0, 1, 'two'   # equivalent to t = (0, 1, 'two')</code></p>
@@ -724,32 +834,46 @@ mutable = modifiable/changable &nbsp;&nbsp;&nbsp;&nbsp; vs &nbsp;&nbsp;&nbsp;&nb
 <p><code>t1, t2, t3 = t     # --&gt; t1 == 0, t2 == 1, t3 == 'two'</code></p>
 <p><em>Sequence unpacking</em> requires: There are as many variables on the left side of equal sign as there are elements in the sequence on the right side.</p></li>
 <li><p>Combining both <em>tuple packing</em> and <em>sequence unpacking</em></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb24"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href=""></a>t <span class="op">=</span> v1, v2, ..., vN     <span class="co"># tuple packing</span></span>
-<span id="cb24-2"><a href=""></a>t1, t2, ..., tN <span class="op">=</span> t     <span class="co"># sequence unpacking, t1 takes v1, t2 takes v2, etc.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb41"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="" aria-label="1"></a>t <span class="op">=</span> v1, v2, ..., vN     <span class="co"># tuple packing</span></span>
+<span id="cb41-2"><a href="" aria-label="2"></a>t1, t2, ..., tN <span class="op">=</span> t     <span class="co"># sequence unpacking, t1 takes v1, t2 takes v2, etc.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>Multiple asignment</p>
 <p><code>a, b, c = 1, 2, 3</code></p>
 <p>is a combination of <em>tuple packing</em>, and <u>then</u> <em>sequence unpacking</em>.</p></li>
 </ul>
 </section>
-<section id="dictionary" class="slide level2">
-<h2>Dictionary</h2>
+<section id="dictionary" class="slide level2" data-number="5.10">
+<h2><span class="header-section-number">5.10</span> Dictionary</h2>
 <ul>
 <li>unlike sequences (e.g.&nbsp;<em>list</em> and <em>tuple</em>) indexed by numbers, or range of numbers</li>
 <li>indexed by <strong>keys</strong> (immutable type - we shoud not/cannot change the keys)</li>
 </ul>
 <p>Syntax</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb25"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href=""></a>my_dict <span class="op">=</span> {key1: value1, key2: value2, ..., keyN: valueN}</span>
-<span id="cb25-2"><a href=""></a></span>
-<span id="cb25-3"><a href=""></a><span class="bu">dict</span>([(key1, value1), (key2, value2), ..., (keyN, valueN)])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb42"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="" aria-label="1"></a>my_dict <span class="op">=</span> {key1: value1, key2: value2, ..., keyN: valueN}</span>
+<span id="cb42-2"><a href="" aria-label="2"></a></span>
+<span id="cb42-3"><a href="" aria-label="3"></a><span class="bu">dict</span>([(key1, value1), (key2, value2), ..., (keyN, valueN)])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>The <em>key-value</em> pairs are put into curly braces</li>
 <li>Constructed by using the constructor <code>dict</code> (we must learn Classes and Objects to understand)</li>
 <li>Access elements of dictionary: Use key instead of numeric indexing</li>
 </ul>
 </section>
-<section id="dictionary-example" class="slide level2">
-<h2>Dictionary: Example</h2>
-<div id="a8adca2d" class="cell" data-execution_count="18">
+<section id="dictionary-example" class="slide level2" data-number="5.11">
+<h2><span class="header-section-number">5.11</span> Dictionary: Example</h2>
+<div id="385b8050" class="cell" data-execution_count="18">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="" aria-label="1"></a>tel <span class="op">=</span> {<span class="st">'Iron Man'</span>: <span class="dv">4098</span>, <span class="st">'Hulk'</span>: <span class="dv">4139</span>}  <span class="co"># define a list</span></span>
+<span id="cb43-2"><a href="" aria-label="2"></a></span>
+<span id="cb43-3"><a href="" aria-label="3"></a>tel[<span class="st">'Saitama'</span>] <span class="op">=</span> <span class="dv">5014</span>           <span class="co"># add key:value pair to the dictionary</span></span>
+<span id="cb43-4"><a href="" aria-label="4"></a>tel[<span class="st">'Mononoke'</span>] <span class="op">=</span> <span class="dv">6017</span>          <span class="co"># add more element to the dictionary</span></span>
+<span id="cb43-5"><a href="" aria-label="5"></a></span>
+<span id="cb43-6"><a href="" aria-label="6"></a><span class="bu">print</span>(<span class="st">"tel ="</span>, tel)             <span class="co"># print the whole dictionary</span></span>
+<span id="cb43-7"><a href="" aria-label="7"></a><span class="co"># access element of dictionary</span></span>
+<span id="cb43-8"><a href="" aria-label="8"></a><span class="bu">print</span>(<span class="st">"tel['Iron Man'] ="</span>, tel[<span class="st">'Iron Man'</span>]) </span>
+<span id="cb43-9"><a href="" aria-label="9"></a></span>
+<span id="cb43-10"><a href="" aria-label="10"></a><span class="kw">del</span> tel[<span class="st">'Hulk'</span>]                             <span class="co"># delete one element</span></span>
+<span id="cb43-11"><a href="" aria-label="11"></a><span class="bu">print</span>(<span class="st">"After deletion: tel = "</span>, tel)        <span class="co"># print after deletion</span></span>
+<span id="cb43-12"><a href="" aria-label="12"></a></span>
+<span id="cb43-13"><a href="" aria-label="13"></a>list_from_dict <span class="op">=</span> <span class="bu">list</span>(tel) <span class="co"># return a list of keys of the dictionary</span></span>
+<span id="cb43-14"><a href="" aria-label="14"></a><span class="bu">print</span>(<span class="st">"list_from_dict ="</span>, list_from_dict)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>tel = {'Iron Man': 4098, 'Hulk': 4139, 'Saitama': 5014, 'Mononoke': 6017}
 tel['Iron Man'] = 4098
@@ -758,13 +882,131 @@ list_from_dict = ['Iron Man', 'Saitama', 'Mononoke']</code></pre>
 </div>
 </div>
 </section>
-<section id="writing-mathematical-formulas" class="slide level2">
-<h2>Writing mathematical formulas</h2>
+<section id="writing-mathematical-formulas" class="slide level2" data-number="5.12">
+<h2><span class="header-section-number">5.12</span> Writing mathematical formulas</h2>
 <p><span class="math display">\[
 v = \begin{bmatrix}1 &amp; 2 \\ 3 &amp; 4\end{bmatrix} \in \mathbb{R}^{2 \times 2}
 \]</span></p>
-
 </section></section>
+<section>
+<section id="words-for-this-course" class="title-slide slide level1 center" data-number="6">
+<h1><span class="header-section-number">6</span> Words for this course</h1>
+
+</section>
+<section id="written-exam-versus-coursework-exam" class="slide level2" data-number="6.1">
+<h2><span class="header-section-number">6.1</span> Written exam versus coursework exam</h2>
+<p>Written exam is a <strong>closed-book</strong> exam. It is very easy if you learn:</p>
+</section>
+<section id="grade-distribution-by-assessment-component" class="slide level2" data-number="6.2">
+<h2><span class="header-section-number">6.2</span> Grade Distribution by Assessment Component</h2>
+<table class="caption-top" style="width:100%;">
+<caption>Grade distribution across the three assessment components</caption>
+<colgroup>
+<col style="width: 17%">
+<col style="width: 27%">
+<col style="width: 27%">
+<col style="width: 28%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Grade band</th>
+<th style="text-align: right;">Component 1 (25%)</th>
+<th style="text-align: right;">Component 2 (25%)</th>
+<th style="text-align: right;">Written Exam (50%)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">A1–A2</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">36</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">A3–A5</td>
+<td style="text-align: right;">58</td>
+<td style="text-align: right;">40</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">B1–B3</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">C1–C3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">14</td>
+<td style="text-align: right;">6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">D1–D3</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">14</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">E1–E3</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">18</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">F1–F3</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">G1–G2</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">H</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong>Total</strong></td>
+<td style="text-align: right;"><strong>96</strong></td>
+<td style="text-align: right;"><strong>96</strong></td>
+<td style="text-align: right;"><strong>87</strong></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="grade-distribution-by-chart-coursework-1" class="slide level2" data-number="6.3">
+<h2><span class="header-section-number">6.3</span> Grade Distribution by Chart: Coursework 1</h2>
+
+<img data-src="./figures/python_recap/eng3091_grade_component_01.png" class="r-stretch"></section>
+<section id="grade-distribution-by-chart-coursework-2" class="slide level2" data-number="6.4">
+<h2><span class="header-section-number">6.4</span> Grade Distribution by Chart: Coursework 2</h2>
+
+<img data-src="./figures/python_recap/eng3091_grade_component_02.png" class="r-stretch"></section>
+<section id="grade-distribution-by-chart-written-exam" class="slide level2" data-number="6.5">
+<h2><span class="header-section-number">6.5</span> Grade Distribution by Chart: Written Exam</h2>
+
+<img data-src="./figures/python_recap/eng3091_grade_written_exam.png" class="r-stretch"></section>
+<section id="office-hours" class="slide level2" data-number="6.6">
+<h2><span class="header-section-number">6.6</span> Office Hours</h2>
+<p>I really don’t understand why we need to have office hours.</p>
+<ul>
+<li>I am always available for you.</li>
+<li>You can contact me via email, or MS Teams, or even WhatsApp.</li>
+<li>I will respond to your questions as soon as possible.</li>
+<li>If you want to meet me in person, please send me an email to arrange a meeting time.</li>
+</ul>
+</section>
+<section id="office-hours-1" class="slide level2" data-number="6.7">
+<h2><span class="header-section-number">6.7</span> Office Hours</h2>
+<p>My office is <strong>Rankine 810</strong>. This is what you see:</p>
+
+
+<img data-src="./figures/python_recap/khiem_student_hours.jpeg" class="r-stretch"></section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
@@ -773,19 +1015,19 @@ v = \begin{bmatrix}1 &amp; 2 \\ 3 &amp; 4\end{bmatrix} \in \mathbb{R}^{2 \times 
 </div></div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="python-recap_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="python_recap_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="python-recap_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="python-recap_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="python-recap_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="python-recap_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="python-recap_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="python_recap_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="python_recap_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="python_recap_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="python_recap_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="python_recap_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="python-recap_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="python-recap_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="python-recap_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="python-recap_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="python_recap_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="python_recap_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="python_recap_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="python_recap_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -821,7 +1063,7 @@ v = \begin{bmatrix}1 &amp; 2 \\ 3 &amp; 4\end{bmatrix} \in \mathbb{R}^{2 \times 
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
@@ -926,7 +1168,7 @@ v = \begin{bmatrix}1 &amp; 2 \\ 3 &amp; 4\end{bmatrix} \in \mathbb{R}^{2 \times 
         previewLinks: false,
 
         // Transition style (none/fade/slide/convex/concave/zoom)
-        transition: 'none',
+        transition: 'slide',
 
         // Transition speed (default/fast/slow)
         transitionSpeed: 'default',

@@ -1,0 +1,136 @@
+/* =========================================================
+   VS Code Dark+ style for Quarto code blocks
+   ========================================================= */
+
+/* Code-block container */
+.reveal div.sourceCode {
+    background-color: #1e1e1e !important;
+    border: 1px solid #3c3c3c;
+    border-radius: 5px;
+}
+
+/* Main code-block appearance */
+.reveal pre.sourceCode,
+.reveal pre.sourceCode code,
+.reveal div.sourceCode pre,
+.reveal div.sourceCode code {
+    background-color: #1e1e1e !important;
+    color: #d4d4d4 !important;
+    font-family: "Cascadia Code", "Fira Code", "Ubuntu Mono",
+                 "DejaVu Sans Mono", monospace;
+}
+
+/* Ordinary source code */
+.reveal code {
+    color: #d4d4d4;
+}
+
+/* Comments: VS Code green */
+.reveal code span.co,
+.reveal code span.cv,
+.reveal code span.do {
+    color: #6a9955 !important;
+    font-style: normal;
+}
+
+/* Keywords: def, if, else, for, while, import, etc. */
+.reveal code span.kw,
+.reveal code span.cf,
+.reveal code span.ot {
+    color: #569cd6 !important;
+}
+
+/* Strings */
+.reveal code span.st,
+.reveal code span.ss,
+.reveal code span.vs,
+.reveal code span.ch {
+    color: #ce9178 !important;
+}
+
+/* Functions */
+.reveal code span.fu {
+    color: #dcdcaa !important;
+}
+
+/* Variables */
+.reveal code span.va {
+    color: #9cdcfe !important;
+}
+
+/* Built-in types */
+.reveal code span.bu,
+.reveal code span.dt {
+    color: #4ec9b0 !important;
+}
+
+/* Numbers */
+.reveal code span.dv,
+.reveal code span.fl,
+.reveal code span.bn {
+    color: #b5cea8 !important;
+}
+
+/* Operators */
+.reveal code span.op {
+    color: #d4d4d4 !important;
+}
+
+/* Constants */
+.reveal code span.cn {
+    color: #4fc1ff !important;
+}
+
+/* Import/module names */
+.reveal code span.im {
+    color: #c586c0 !important;
+}
+
+/* Attributes */
+.reveal code span.at {
+    color: #9cdcfe !important;
+}
+
+/* Errors and alerts */
+.reveal code span.er,
+.reveal code span.al {
+    color: #f44747 !important;
+}
+
+/* Line numbers */
+.reveal pre.numberSource code > span > a:first-child::before {
+    color: #858585 !important;
+}
+
+/* Alternative line-number selector used by some Quarto versions */
+.reveal code.sourceCode > span::before {
+    color: #858585 !important;
+}
+
+/* Selected code line */
+.reveal .code-line-highlighted {
+    background-color: #2a2d2e !important;
+}
+
+/* Scrollbar */
+.reveal div.sourceCode::-webkit-scrollbar,
+.reveal pre.sourceCode::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+}
+
+.reveal div.sourceCode::-webkit-scrollbar-track,
+.reveal pre.sourceCode::-webkit-scrollbar-track {
+    background: #1e1e1e;
+}
+
+.reveal div.sourceCode::-webkit-scrollbar-thumb,
+.reveal pre.sourceCode::-webkit-scrollbar-thumb {
+    background: #555555;
+    border-radius: 5px;
+}
+
+.reveal div.sourceCode::-webkit-scrollbar-thumb:hover,
+.reveal pre.sourceCode::-webkit-scrollbar-thumb:hover {
+    background: #6b6b6b;
+}

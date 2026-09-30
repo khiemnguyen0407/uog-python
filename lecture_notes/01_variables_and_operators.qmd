@@ -1,0 +1,22 @@
+---
+title: "Variables and Operators"
+author: "Khiem Nguyen"
+format: 
+  html:
+    code-fold: true
+    code-tools: true
+    toc: true
+    toc-location: left
+    toc-depth: 2
+    embed-resources: true
+---
+
+# Non-variables
+
+- Literal constants are just constants, literally!
+- Python decides on whether these literals are integers, floating points or Booleans and organizes memory storge appropriately.
+- string constants: using single quotes or double quotes and triple quotes for multi-line
+
+**Remark concerning output console**
+
+In the following, we have to write very short lines of code n three different code block to see the output although this is however unnecessary throughout the rest of the learning course. In fact, writing one line of code in each block is generally counter-productive and not a good idea. The reason for doing this now is to illustrate that every *literal* will be printed out in the output console without using any specific functionality given by Python interpreter. If we write all of the lines of code in one block, we can see the only output corresponding to the last literal. We will see this below. To see all the outputs, you can put these literals into the function `print()` provided by Python interpreter.

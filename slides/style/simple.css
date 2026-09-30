@@ -1,0 +1,224 @@
+/* =========================================================
+   General slide typography
+   ========================================================= */
+
+.reveal {
+    font-size: 28px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Slightly reduce heading sizes */
+.reveal h1 {
+    font-size: 2em;
+    color:#006400
+}
+
+.reveal h2 {
+    font-size: 1.45em;
+    color:#8b1a1a
+}
+
+.reveal h3 {
+    font-size: 1.15em;
+    color:#8b1a1a
+}
+
+
+/* =========================================================
+   Light VS Code-style code blocks
+   ========================================================= */
+
+/* Outer code-block container */
+.reveal div.sourceCode {
+    background-color: #f3f3f3 !important;
+    border: 1px solid #d4d4d4;
+    border-radius: 4px;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+/* Code-block dimensions and general appearance */
+.reveal pre.sourceCode,
+.reveal div.sourceCode pre {
+    background-color: #f3f3f3 !important;
+    border: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 0.5em 0.7em;
+    max-height: none;
+}
+
+/*
+   Set the code-block font size directly.
+
+   Avoid combining:
+       .reveal pre  { font-size: 1.8rem; }
+       .reveal code { font-size: 0.70em; }
+
+   because the code size then depends on nested scaling.
+*/
+.reveal pre.sourceCode code,
+.reveal div.sourceCode pre code {
+    background-color: transparent !important;
+    color: #000000 !important;
+    font-size: 18px !important;
+    line-height: 1.35;
+    font-family:
+        "Cascadia Code",
+        "Fira Code",
+        "Ubuntu Mono",
+        "DejaVu Sans Mono",
+        monospace;
+}
+
+/* Inline code, such as `print()` within ordinary text */
+.reveal :not(pre) > code {
+    color: #a31515;
+    background-color: #f3f3f3;
+    border-radius: 3px;
+    padding: 0.08em 0.25em;
+    font-size: 0.80em;
+}
+
+
+/* =========================================================
+   Python syntax colours
+   Light Visual Studio Code-inspired palette
+   ========================================================= */
+
+/* Comments: green */
+.reveal code span.co,
+.reveal code span.cv,
+.reveal code span.do {
+    color: #008000 !important;
+    font-style: normal;
+}
+
+/* Keywords: if, else, for, while, import, def, etc. */
+.reveal code span.kw,
+.reveal code span.cf,
+.reveal code span.ot {
+    color: #0000ff !important;
+}
+
+/* Strings */
+.reveal code span.st,
+.reveal code span.ss,
+.reveal code span.vs,
+.reveal code span.ch {
+    color: #a31515 !important;
+}
+
+/* Functions */
+.reveal code span.fu {
+    color: #795e26 !important;
+}
+
+/* Variables */
+.reveal code span.va {
+    color: #001080 !important;
+}
+
+/* Built-in functions and data types */
+.reveal code span.bu,
+.reveal code span.dt {
+    color: #267f99 !important;
+}
+
+/* Integer and floating-point numbers */
+.reveal code span.dv,
+.reveal code span.fl,
+.reveal code span.bn {
+    color: #098658 !important;
+}
+
+/* Operators and punctuation */
+.reveal code span.op,
+.reveal code span.sc {
+    color: #000000 !important;
+}
+
+/* Constants */
+.reveal code span.cn {
+    color: #0070c1 !important;
+}
+
+/* Imports */
+.reveal code span.im {
+    color: #af00db !important;
+}
+
+/* Attributes */
+.reveal code span.at {
+    color: #001080 !important;
+}
+
+/* Errors and alerts */
+.reveal code span.er,
+.reveal code span.al {
+    color: #cd3131 !important;
+}
+
+
+/* =========================================================
+   Code line numbers
+   ========================================================= */
+
+.reveal pre.numberSource code > span {
+    left: 0;
+}
+
+/* Accommodates line-number selectors from different versions */
+.reveal pre.numberSource code > span > a:first-child::before,
+.reveal code.sourceCode > span::before {
+    color: #999999 !important;
+    border-right-color: #d4d4d4 !important;
+}
+
+
+/* =========================================================
+   Code output
+   ========================================================= */
+
+.reveal .cell-output,
+.reveal .cell-output-display,
+.reveal .cell-output-stdout,
+.reveal .cell-output-stderr {
+    font-size: 0.72em;
+}
+
+.reveal .cell-output pre,
+.reveal .cell-output-stdout pre {
+    font-size: 18px !important;
+    line-height: 1.3;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0.2em 0.4em;
+}
+
+
+/* =========================================================
+   Error output and tracebacks
+   ========================================================= */
+
+.reveal .cell-output-stderr pre {
+    font-size: 16px !important;
+    line-height: 1.3;
+    background-color: #fff5f5;
+    color: #8b1a1a;
+    border-left: 4px solid #cc6666;
+    padding: 0.5em 0.75em;
+}
+
+
+/* =========================================================
+   Python console examples
+   ========================================================= */
+
+.reveal pre code.language-pycon {
+    background-color: #f3f3f3 !important;
+    color: #000000 !important;
+    border-left: 4px solid #007acc;
+    padding-left: 0.75em;
+}
