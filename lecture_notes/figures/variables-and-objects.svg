@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" width="720" height="330" font-family="'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#374151"/>
+    </marker>
+  </defs>
+  <rect x="1" y="1" width="718" height="328" rx="16" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+
+  <!-- code panel -->
+  <rect x="30" y="70" width="190" height="160" rx="12" fill="#1F2937"/>
+  <text x="48" y="96" font-size="13" fill="#9CA3AF">Python code</text>
+  <g font-family="Consolas, 'Courier New', monospace" font-size="20" fill="#F9FAFB">
+    <text x="55" y="135">x = 1</text>
+    <text x="55" y="170">y = x</text>
+    <text x="55" y="205">z = 3</text>
+  </g>
+
+  <!-- column headers -->
+  <text x="330" y="50" font-size="16" font-weight="bold" fill="#7A4100" text-anchor="middle">names (variables)</text>
+  <text x="585" y="50" font-size="16" font-weight="bold" fill="#123A73" text-anchor="middle">objects in memory</text>
+
+  <!-- name tags -->
+  <g font-family="Consolas, 'Courier New', monospace" font-size="22" fill="#7A4100" text-anchor="middle">
+    <rect x="290" y="75" width="80" height="44" rx="10" fill="#FFF4E0" stroke="#E8890C" stroke-width="2.5"/>
+    <text x="330" y="105">x</text>
+    <rect x="290" y="145" width="80" height="44" rx="10" fill="#FFF4E0" stroke="#E8890C" stroke-width="2.5"/>
+    <text x="330" y="175">y</text>
+    <rect x="290" y="218" width="80" height="44" rx="10" fill="#FFF4E0" stroke="#E8890C" stroke-width="2.5"/>
+    <text x="330" y="248">z</text>
+  </g>
+
+  <!-- objects -->
+  <rect x="500" y="88" width="170" height="80" rx="14" fill="#E8F1FD" stroke="#2E6FD8" stroke-width="2.5"/>
+  <text x="585" y="130" font-size="30" font-weight="bold" fill="#123A73" text-anchor="middle" font-family="Consolas, 'Courier New', monospace">1</text>
+  <text x="585" y="155" font-size="13" fill="#123A73" text-anchor="middle">type: int</text>
+
+  <rect x="500" y="200" width="170" height="80" rx="14" fill="#E8F1FD" stroke="#2E6FD8" stroke-width="2.5"/>
+  <text x="585" y="242" font-size="30" font-weight="bold" fill="#123A73" text-anchor="middle" font-family="Consolas, 'Courier New', monospace">3</text>
+  <text x="585" y="267" font-size="13" fill="#123A73" text-anchor="middle">type: int</text>
+
+  <!-- arrows -->
+  <g stroke="#374151" stroke-width="2.5" fill="none" marker-end="url(#arr)">
+    <line x1="372" y1="97" x2="496" y2="118"/>
+    <line x1="372" y1="167" x2="496" y2="140"/>
+    <line x1="372" y1="240" x2="496" y2="240"/>
+  </g>
+
+  <!-- footer -->
+  <g font-family="Consolas, 'Courier New', monospace" font-size="15" fill="#1F2937">
+    <text x="290" y="310">x is y  →  True</text>
+    <text x="500" y="310">x is z  →  False</text>
+  </g>
+</svg>

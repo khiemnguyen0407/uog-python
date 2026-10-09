@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 380" width="780" height="380" font-family="'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#374151"/>
+    </marker>
+  </defs>
+  <rect x="1" y="1" width="778" height="378" rx="16" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+
+  <!-- class box -->
+  <rect x="30" y="40" width="280" height="300" rx="12" fill="#F8FAFC" stroke="#003865" stroke-width="2.5"/>
+  <path d="M30,52 a12,12 0 0 1 12,-12 h256 a12,12 0 0 1 12,12 v34 h-280 z" fill="#003865"/>
+  <text x="170" y="70" font-size="19" font-weight="bold" fill="#FFFFFF" text-anchor="middle" font-family="Consolas, 'Courier New', monospace">class Car</text>
+  <text x="170" y="112" font-size="12.5" fill="#6B7280" text-anchor="middle" font-style="italic">the blueprint (one per program)</text>
+
+  <text x="48" y="145" font-size="13" font-weight="bold" fill="#003865">class variable (shared)</text>
+  <text x="58" y="170" font-size="15" fill="#1F2937" font-family="Consolas, 'Courier New', monospace">number_of_cars = 2</text>
+  <line x1="45" y1="190" x2="295" y2="190" stroke="#CBD5E1" stroke-width="1.5"/>
+  <text x="48" y="217" font-size="13" font-weight="bold" fill="#003865">methods</text>
+  <g font-size="14" fill="#1F2937" font-family="Consolas, 'Courier New', monospace">
+    <text x="58" y="243">__init__(self, make, model)</text>
+    <text x="58" y="268">fill_up(self)</text>
+    <text x="58" y="293">how_many(cls)</text>
+  </g>
+
+  <!-- instances -->
+  <g>
+    <rect x="460" y="30" width="290" height="150" rx="12" fill="#E8F1FD" stroke="#2E6FD8" stroke-width="2.5"/>
+    <text x="478" y="57" font-size="16" font-weight="bold" fill="#123A73" font-family="Consolas, 'Courier New', monospace">my_car</text>
+    <text x="560" y="57" font-size="12.5" fill="#123A73" font-style="italic">(an instance)</text>
+    <g font-size="14" fill="#1F2937" font-family="Consolas, 'Courier New', monospace">
+      <text x="485" y="88">make     = 'Nissan'</text>
+      <text x="485" y="111">model    = 'Micra'</text>
+      <text x="485" y="134">tank_cap = 60</text>
+      <text x="485" y="157">tank     = 0</text>
+    </g>
+  </g>
+  <g>
+    <rect x="460" y="200" width="290" height="150" rx="12" fill="#E6F6EC" stroke="#2E9E5B" stroke-width="2.5"/>
+    <text x="478" y="227" font-size="16" font-weight="bold" fill="#14532D" font-family="Consolas, 'Courier New', monospace">your_car</text>
+    <text x="575" y="227" font-size="12.5" fill="#14532D" font-style="italic">(another instance)</text>
+    <g font-size="14" fill="#1F2937" font-family="Consolas, 'Courier New', monospace">
+      <text x="485" y="258">make     = 'Nissan'</text>
+      <text x="485" y="281">model    = 'Leaf'</text>
+      <text x="485" y="304">tank_cap = 60</text>
+      <text x="485" y="327">tank     = 60</text>
+    </g>
+  </g>
+
+  <!-- arrows -->
+  <g stroke="#374151" stroke-width="2.5" fill="none" marker-end="url(#arr)">
+    <path d="M312,150 C380,150 390,105 456,105"/>
+    <path d="M312,230 C380,230 390,275 456,275"/>
+  </g>
+  <g font-size="12" fill="#374151" font-family="Consolas, 'Courier New', monospace" text-anchor="middle">
+    <text x="370" y="96">Car('Nissan',</text>
+    <text x="370" y="111">'Micra')</text>
+    <text x="370" y="290">Car('Nissan',</text>
+    <text x="370" y="305">'Leaf')</text>
+  </g>
+</svg>

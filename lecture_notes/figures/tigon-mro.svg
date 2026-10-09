@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 430" width="680" height="430" font-family="'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="tri" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="14" markerHeight="14" orient="auto-start-reverse">
+      <path d="M0,0 L12,6 L0,12 z" fill="#FFFFFF" stroke="#374151" stroke-width="1.5"/>
+    </marker>
+    <marker id="arrO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#E8890C"/>
+    </marker>
+  </defs>
+  <rect x="1" y="1" width="678" height="428" rx="16" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+
+  <!-- inheritance edges -->
+  <g stroke="#374151" stroke-width="2.2" fill="none">
+    <line x1="290" y1="300" x2="200" y2="232" marker-end="url(#tri)"/>
+    <line x1="390" y1="300" x2="480" y2="232" marker-end="url(#tri)"/>
+    <line x1="200" y1="132" x2="300" y2="77" marker-end="url(#tri)"/>
+    <line x1="480" y1="132" x2="380" y2="77" marker-end="url(#tri)"/>
+  </g>
+
+  <!-- search order path -->
+  <g stroke="#E8890C" stroke-width="3" fill="none" stroke-dasharray="8 6" marker-end="url(#arrO)">
+    <path d="M250,345 C120,345 70,250 105,200"/>
+    <path d="M297,215 C325,268 352,268 381,215"/>
+    <path d="M575,140 C600,90 520,45 425,45"/>
+  </g>
+
+  <!-- boxes -->
+  <rect x="270" y="22" width="140" height="52" rx="12" fill="#F3F4F6" stroke="#6B7280" stroke-width="2.2"/>
+  <text x="340" y="54" font-size="17" font-weight="bold" fill="#1F2937" text-anchor="middle" font-family="Consolas, 'Courier New', monospace">object</text>
+
+  <g>
+    <rect x="105" y="132" width="190" height="98" rx="12" fill="#FFF4E0" stroke="#E8890C" stroke-width="2.5"/>
+    <text x="200" y="156" font-size="17" font-weight="bold" fill="#7A4100" text-anchor="middle" font-family="Consolas, 'Courier New', monospace">Tiger</text>
+    <text x="200" y="182" font-size="13" fill="#1F2937" text-anchor="middle" font-family="Consolas, 'Courier New', monospace">run()  eat()</text>
+    <text x="200" y="203" font-size="13" fill="#1F2937" text-anchor="middle" font-family="Consolas, 'Courier New', monospace">hunt() meow()</text>
+  </g>
+  <g>
+    <rect x="385" y="132" width="190" height="98" rx="12" fill="#FFF4E0" stroke="#E8890C" stroke-width="2.5"/>
+    <text x="480" y="156" font-size="17" font-weight="bold" fill="#7A4100" text-anchor="middle" font-family="Consolas, 'Courier New', monospace">Lion</text>
+    <text x="480" y="182" font-size="13" fill="#1F2937" text-anchor="middle" font-family="Consolas, 'Courier New', monospace">run()  eat()</text>
+    <text x="480" y="203" font-size="13" fill="#1F2937" text-anchor="middle" font-family="Consolas, 'Courier New', monospace">hunt() roar()</text>
+  </g>
+  <g>
+    <rect x="245" y="300" width="190" height="80" rx="12" fill="#E8F1FD" stroke="#2E6FD8" stroke-width="2.5"/>
+    <text x="340" y="326" font-size="16" font-weight="bold" fill="#123A73" text-anchor="middle" font-family="Consolas, 'Courier New', monospace">Tigon(Tiger, Lion)</text>
+    <text x="340" y="352" font-size="13" fill="#1F2937" text-anchor="middle" font-family="Consolas, 'Courier New', monospace">__init__()  run()</text>
+  </g>
+
+  <!-- order badges -->
+  <g font-size="15" font-weight="bold" fill="#FFFFFF" text-anchor="middle">
+    <circle cx="445" cy="312" r="14" fill="#E8890C"/><text x="445" y="317">1</text>
+    <circle cx="105" cy="132" r="14" fill="#E8890C"/><text x="105" y="137">2</text>
+    <circle cx="575" cy="132" r="14" fill="#E8890C"/><text x="575" y="137">3</text>
+    <circle cx="410" cy="22" r="14" fill="#E8890C"/><text x="410" y="27">4</text>
+  </g>
+
+  <text x="340" y="415" font-size="15" fill="#1F2937" text-anchor="middle" font-family="Consolas, 'Courier New', monospace">Tigon.mro() → [Tigon, Tiger, Lion, object]</text>
+</svg>

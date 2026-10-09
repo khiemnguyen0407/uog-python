@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 600" width="720" height="600" font-family="'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#374151"/>
+    </marker>
+    <marker id="arrRed" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#C2410C"/>
+    </marker>
+    <marker id="arrBlue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#2E6FD8"/>
+    </marker>
+  </defs>
+  <rect x="1" y="1" width="718" height="598" rx="16" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+
+  <!-- decisions -->
+  <g stroke="#E8890C" stroke-width="2.5" fill="#FFF4E0">
+    <polygon points="300,55 410,90 300,125 190,90"/>
+    <polygon points="300,260 410,295 300,330 190,295"/>
+    <polygon points="300,375 410,410 300,445 190,410"/>
+  </g>
+  <g font-size="14" fill="#7A4100" text-anchor="middle">
+    <text x="300" y="86" font-weight="bold">loop</text>
+    <text x="300" y="104" font-weight="bold">condition?</text>
+    <text x="300" y="291">break</text>
+    <text x="300" y="309">condition?</text>
+    <text x="300" y="406">continue</text>
+    <text x="300" y="424">condition?</text>
+  </g>
+
+  <!-- statement boxes -->
+  <g stroke="#6B7280" stroke-width="2" fill="#F3F4F6">
+    <rect x="210" y="170" width="180" height="50" rx="10"/>
+    <rect x="210" y="480" width="180" height="50" rx="10"/>
+  </g>
+  <g font-size="15" fill="#1F2937" text-anchor="middle">
+    <text x="300" y="200">statements</text>
+    <text x="300" y="510">more statements</text>
+  </g>
+
+  <!-- break / continue / exit -->
+  <rect x="470" y="272" width="140" height="46" rx="10" fill="#FDECEC" stroke="#C2410C" stroke-width="2.5"/>
+  <text x="540" y="301" font-size="17" font-weight="bold" fill="#9A3412" text-anchor="middle" font-family="Consolas, 'Courier New', monospace">break</text>
+  <rect x="30" y="387" width="125" height="46" rx="10" fill="#E8F1FD" stroke="#2E6FD8" stroke-width="2.5"/>
+  <text x="92" y="416" font-size="17" font-weight="bold" fill="#123A73" text-anchor="middle" font-family="Consolas, 'Courier New', monospace">continue</text>
+  <rect x="460" y="480" width="180" height="50" rx="10" fill="#E6F6EC" stroke="#2E9E5B" stroke-width="2.5"/>
+  <text x="550" y="510" font-size="15" fill="#14532D" text-anchor="middle">code after the loop</text>
+
+  <!-- main arrows -->
+  <g stroke="#374151" stroke-width="2.2" fill="none" marker-end="url(#arr)">
+    <line x1="300" y1="15" x2="300" y2="53"/>
+    <line x1="300" y1="125" x2="300" y2="168"/>
+    <line x1="300" y1="220" x2="300" y2="258"/>
+    <line x1="300" y1="330" x2="300" y2="373"/>
+    <line x1="300" y1="445" x2="300" y2="478"/>
+    <polyline points="410,90 680,90 680,505 642,505"/>
+    <polyline points="300,530 300,565 15,565 15,90 188,90"/>
+  </g>
+  <!-- break path -->
+  <g stroke="#C2410C" stroke-width="2.5" fill="none">
+    <line x1="410" y1="295" x2="468" y2="295" marker-end="url(#arrRed)"/>
+    <line x1="540" y1="318" x2="540" y2="478" marker-end="url(#arrRed)"/>
+  </g>
+  <!-- continue path -->
+  <g stroke="#2E6FD8" stroke-width="2.5" fill="none">
+    <line x1="190" y1="410" x2="157" y2="410" marker-end="url(#arrBlue)"/>
+    <polyline points="92,387 92,90" />
+  </g>
+
+  <!-- labels -->
+  <g font-size="13" font-weight="bold">
+    <text x="310" y="152" fill="#2E9E5B">True</text>
+    <text x="430" y="80" fill="#C2410C">False</text>
+    <text x="420" y="285" fill="#2E9E5B">True</text>
+    <text x="310" y="358" fill="#C2410C">False</text>
+    <text x="158" y="400" fill="#2E9E5B">True</text>
+    <text x="310" y="469" fill="#C2410C">False</text>
+  </g>
+  <g font-size="13" fill="#6B7280" font-style="italic">
+    <text x="552" y="390">break: leave</text>
+    <text x="552" y="407">the loop at once</text>
+    <text x="38" y="330" transform="rotate(-90 38 330)">loop back</text>
+    <text x="108" y="250" transform="rotate(-90 108 250)" fill="#2E6FD8">continue: next iteration</text>
+  </g>
+</svg>

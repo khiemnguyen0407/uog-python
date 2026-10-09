@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 400" width="780" height="400" font-family="'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="tri" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="14" markerHeight="14" orient="auto-start-reverse">
+      <path d="M0,0 L12,6 L0,12 z" fill="#FFFFFF" stroke="#374151" stroke-width="1.5"/>
+    </marker>
+  </defs>
+  <rect x="1" y="1" width="778" height="398" rx="16" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="2"/>
+
+  <!-- base -->
+  <rect x="280" y="25" width="220" height="140" rx="12" fill="#F8FAFC" stroke="#003865" stroke-width="2.5"/>
+  <path d="M280,37 a12,12 0 0 1 12,-12 h196 a12,12 0 0 1 12,12 v20 h-220 z" fill="#003865"/>
+  <text x="390" y="50" font-size="17" font-weight="bold" fill="#FFFFFF" text-anchor="middle" font-family="Consolas, 'Courier New', monospace">Trash</text>
+  <g font-size="13.5" fill="#1F2937" font-family="Consolas, 'Courier New', monospace">
+    <text x="296" y="80">weight, value</text>
+    <line x1="292" y1="90" x2="488" y2="90" stroke="#CBD5E1" stroke-width="1.5"/>
+    <text x="296" y="110">shred()</text>
+    <text x="296" y="131">burn()</text>
+    <text x="296" y="152">crush()</text>
+  </g>
+  <text x="515" y="60" font-size="12.5" fill="#6B7280" font-style="italic">base class</text>
+  <text x="515" y="76" font-size="12.5" fill="#6B7280" font-style="italic">(parent / superclass)</text>
+
+  <!-- connectors -->
+  <g stroke="#374151" stroke-width="2.2" fill="none">
+    <line x1="135" y1="240" x2="135" y2="205"/>
+    <line x1="390" y1="240" x2="390" y2="205"/>
+    <line x1="645" y1="240" x2="645" y2="205"/>
+    <line x1="135" y1="205" x2="645" y2="205"/>
+    <line x1="390" y1="205" x2="390" y2="168" marker-end="url(#tri)"/>
+  </g>
+  <text x="660" y="198" font-size="12.5" fill="#6B7280" font-style="italic">"is a type of"</text>
+
+  <!-- children -->
+  <g>
+    <rect x="20" y="240" width="230" height="140" rx="12" fill="#E8F1FD" stroke="#2E6FD8" stroke-width="2.5"/>
+    <text x="135" y="265" font-size="16" font-weight="bold" fill="#123A73" text-anchor="middle" font-family="Consolas, 'Courier New', monospace">WastePaper</text>
+    <g font-size="13" fill="#1F2937" font-family="Consolas, 'Courier New', monospace">
+      <text x="34" y="291">+ condition, value_wet,</text>
+      <text x="34" y="309">  value_dry</text>
+      <line x1="32" y1="319" x2="238" y2="319" stroke="#CBD5E1" stroke-width="1.5"/>
+      <text x="34" y="339">+ value_refresh()</text>
+      <text x="34" y="360" fill="#C2410C" font-weight="bold">crush()  overrides</text>
+    </g>
+  </g>
+  <g>
+    <rect x="275" y="240" width="230" height="140" rx="12" fill="#E8F1FD" stroke="#2E6FD8" stroke-width="2.5"/>
+    <text x="390" y="265" font-size="16" font-weight="bold" fill="#123A73" text-anchor="middle" font-family="Consolas, 'Courier New', monospace">Can</text>
+    <g font-size="13" fill="#1F2937" font-family="Consolas, 'Courier New', monospace">
+      <text x="289" y="291">(inherits weight, value,</text>
+      <text x="289" y="309"> shred(), burn())</text>
+      <line x1="287" y1="319" x2="493" y2="319" stroke="#CBD5E1" stroke-width="1.5"/>
+      <text x="289" y="360" fill="#C2410C" font-weight="bold">crush()  overrides</text>
+    </g>
+  </g>
+  <g>
+    <rect x="530" y="240" width="230" height="140" rx="12" fill="#E8F1FD" stroke="#2E6FD8" stroke-width="2.5"/>
+    <text x="645" y="265" font-size="16" font-weight="bold" fill="#123A73" text-anchor="middle" font-family="Consolas, 'Courier New', monospace">GoldDummyCan</text>
+    <g font-size="13" fill="#1F2937" font-family="Consolas, 'Courier New', monospace">
+      <text x="544" y="291">(inherits weight, value,</text>
+      <text x="544" y="309"> shred(), burn())</text>
+      <line x1="542" y1="319" x2="748" y2="319" stroke="#CBD5E1" stroke-width="1.5"/>
+      <text x="544" y="339" fill="#2E9E5B" font-weight="bold">crush()  extends:</text>
+      <text x="544" y="360" fill="#2E9E5B">calls super().crush()</text>
+    </g>
+  </g>
+  <text x="148" y="228" font-size="12.5" fill="#6B7280" font-style="italic">derived classes (subclasses)</text>
+</svg>
