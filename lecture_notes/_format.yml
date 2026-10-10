@@ -1,0 +1,54 @@
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    title-block-banner: "#003865"
+    title-block-banner-color: "#FFFFFF"
+    toc: true
+    toc-depth: 3
+    toc-location: left
+    toc-title: "Contents"
+    number-sections: true
+    number-depth: 2
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+    fig-align: center
+    callout-icon: true
+    link-external-newwindow: true
+    smooth-scroll: true
+    embed-resources: true
+    default-image-extension: svg
+  pdf:
+    pdf-engine: lualatex
+    documentclass: scrartcl
+    classoption:
+      - DIV=12
+      - parskip=half-
+      - numbers=noenddot
+    papersize: a4
+    fontsize: 11pt
+    mainfont: "Libertinus Serif"
+    sansfont: "Source Sans Pro"
+    monofont: "Source Code Pro"
+    monofontoptions:
+      - Scale=0.85
+    linestretch: 1.1
+    toc: true
+    toc-depth: 2
+    toc-title: "Contents"
+    number-sections: true
+    number-depth: 2
+    colorlinks: true
+    linkcolor: UofGBlue
+    urlcolor: UofGBlue
+    citecolor: UofGBlue
+    highlight-style: github
+    code-block-bg: "#F5F7FA"
+    code-block-border-left: "#003865"
+    fig-pos: "H"
+    fig-align: center
+    default-image-extension: pdf
+    include-in-header:
+      - _pdf-preamble.tex
