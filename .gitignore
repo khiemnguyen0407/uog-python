@@ -1,21 +1,16 @@
 __pycache__/\n*.pyc\n.env
 assignments/
-presentation-demo_files/
-presentation_files/
-demo_files/
-grades/
-demo/
-jupyter_env/
-*.pdf
+
+lecture_notes_old/
+slides_old/
+
+lecture_notes/*.html
+lecture_notes/*.pdf
+slides/*.md
+# *.pdf
 *.docx
 *.tex
-demo.*
-presentation-demo.*
-./'Python Code -- Functions.ipynb'
 .ipynb_checkpoints
 *.sh
-run.py
-log_files/
-hpc/
 README_files/
 README.html
