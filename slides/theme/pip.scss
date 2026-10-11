@@ -1,0 +1,587 @@
+/*-- scss:defaults --*/
+// ===========================================================================
+//  "Pip's study notebook" — a reveal.js theme for the Python lectures
+//  Calm, high-contrast content slides; the anime flair lives in the title
+//  card, the manga-style section dividers and the question bubbles.
+//  Fonts and images are declared in theme/assets.css (relative URLs).
+// ===========================================================================
+
+// ---- palette (kept in sync with the figure scripts in figure_sources/) ----
+$ink:        #1E2049;
+$paper:      #FAFBFF;
+$sky:        #2F6BDE;
+$sky-tint:   #E3ECFF;
+$sakura:     #E8487E;
+$sakura-deep:#C02A62;
+$sakura-tint:#FFEAF2;
+$lemon:      #FFC83D;
+$lemon-tint: #FFF4D1;
+$mint:       #12A08A;
+$mint-deep:  #0B7E6C;
+$mint-tint:  #E2F6F0;
+$lilac:      #7553D9;
+$lilac-tint: #EFEAFF;
+$mist:       #F1F3FB;
+$grey:       #6B7099;
+
+// ---- type ------------------------------------------------------------------
+$font-family-sans-serif: "Atkinson Hyperlegible", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+$font-family-monospace:  "JetBrains Mono", "Cascadia Code", Consolas, Menlo, monospace;
+$presentation-heading-font: "Fredoka", "Atkinson Hyperlegible", "Segoe UI", sans-serif;
+
+$body-bg:    $paper;
+$body-color: $ink;
+$link-color: $sky;
+$selection-bg: $lemon-tint;
+
+$presentation-font-size-root: 34px;
+$presentation-line-height: 1.4;
+$presentation-heading-color: $ink;
+$presentation-heading-font-weight: 600;
+$presentation-heading-line-height: 1.15;
+$presentation-heading-letter-spacing: 0;
+$presentation-heading-text-transform: none;
+$presentation-h1-font-size: 2.2em;
+$presentation-h2-font-size: 1.32em;
+$presentation-h3-font-size: 1.05em;
+$presentation-h4-font-size: 1em;
+$presentation-block-margin: 14px;
+$presentation-title-slide-text-align: left;
+
+$code-block-bg: $mist;
+$code-block-border-color: $sky;
+$code-block-font-size: 0.64em;
+$code-color: $sakura-deep;
+$code-bg: $sakura-tint;
+
+/*-- scss:rules --*/
+
+// ---------------------------------------------------------------- canvas
+.reveal-viewport {
+  // faint dotted "notebook" paper behind every normal slide
+  background-color: $paper;
+  background-image: radial-gradient(rgba($sky, 0.10) 1.4px, transparent 1.6px);
+  background-size: 28px 28px;
+}
+
+.reveal .slides {
+  text-align: left;
+}
+
+.reveal .slides section {
+  // keep long lines from touching the slide edge
+  padding: 0 4px;
+}
+
+// ---------------------------------------------------------------- headings
+.reveal h2 {
+  position: relative;
+  margin-bottom: 0.55em;
+  padding-bottom: 0.12em;
+}
+
+// hand-drawn highlighter stroke under every slide title
+.reveal .slides section:not(.level1):not(#title-slide) > h2::after,
+.reveal #TOC h2::after {
+  content: "";
+  position: absolute;
+  left: -0.1em;
+  bottom: -0.08em;
+  width: 3.4em;
+  height: 0.24em;
+  border-radius: 1em 0.6em 1em 0.5em;
+  background: linear-gradient(90deg, $lemon 0%, $lemon 70%, rgba($lemon, 0.0) 100%);
+  transform: rotate(-1.2deg);
+  opacity: 0.9;
+}
+
+.reveal h3 {
+  color: $sky;
+}
+
+.reveal strong {
+  font-weight: 700;
+}
+
+// ---------------------------------------------------------------- lists
+.reveal ul li::marker {
+  color: $sakura;
+}
+
+.reveal ol li::marker {
+  color: $sky;
+  font-family: $presentation-heading-font;
+  font-weight: 600;
+}
+
+.reveal ul, .reveal ol {
+  margin-left: 1.1em;
+}
+
+.reveal li {
+  margin-bottom: 0.08em;
+}
+
+.reveal li > p {
+  margin: 0.1em 0;
+}
+
+// ---------------------------------------------------------------- inline code
+.reveal code,
+.reveal pre {
+  font-family: $font-family-monospace;
+  // show exactly what students must type: no "!=" -> "≠" ligatures
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "calt" 0;
+}
+
+.reveal p code,
+.reveal li code,
+.reveal td code,
+.reveal th code,
+.reveal blockquote code,
+.reveal .callout code,
+.reveal .question code,
+.reveal .answer code,
+.reveal .keybox code {
+  font-size: 0.86em;
+  padding: 0.04em 0.28em;
+  border-radius: 0.3em;
+  background: $sakura-tint;
+  color: $sakura-deep;
+  white-space: nowrap;
+}
+
+// ---------------------------------------------------------------- code blocks
+.reveal div.sourceCode {
+  border-radius: 14px;
+  border: 2px solid rgba($ink, 0.10);
+  border-left: 7px solid $sky;
+  box-shadow: 5px 5px 0 rgba($ink, 0.07);
+  margin: 0.45em 0;
+  background: $mist;
+}
+
+.reveal div.sourceCode pre.sourceCode {
+  border: none;
+  box-shadow: none;
+  margin: 0;
+  max-height: none;
+}
+
+.reveal pre code,
+.reveal pre.sourceCode code,
+.reveal div.sourceCode pre.sourceCode code {
+  padding: 0.45em 0.7em;
+  line-height: 1.42;
+  max-height: none;      // never hide lines of code behind a scrollbar
+}
+
+.reveal pre.sourceCode code > span > a:first-child::before,
+.reveal pre.numberSource code > span > a:first-child::before {
+  color: rgba($grey, 0.65);
+}
+
+// syntax colours (match the figures)
+.reveal pre code {
+  color: $ink;
+
+  span.kw, span.cf { color: $lilac; font-weight: 700; }   // keywords, control flow
+  span.im { color: $lilac; font-weight: 700; }
+  span.bu, span.fu { color: $sky; }                       // built-ins, functions
+  span.st, span.ss, span.sc, span.vs, span.dt { color: $mint-deep; }  // strings
+  span.dv, span.fl, span.bn, span.cn { color: $sakura-deep; }         // numbers, constants
+  span.co { color: #7A7FA8; font-style: italic; }         // comments
+  span.do { color: #5F8A3A; font-style: italic; }         // docstrings
+  span.op { color: $ink; }
+  span.ex, span.at, span.va { color: $ink; }
+  span.er, span.al { color: $sakura-deep; }
+}
+
+// ---------------------------------------------------------------- cell outputs
+.reveal .cell-output pre,
+.reveal .cell-output-stdout pre,
+.reveal .cell-output-display pre {
+  position: relative;
+  font-size: 0.6em;
+  background: $mint-tint;
+  border: 2px solid rgba($mint, 0.35);
+  border-left: 7px solid $mint;
+  border-radius: 14px;
+  box-shadow: none;
+  margin: 0.35em 0 0.5em 0;
+}
+
+.reveal .cell-output pre code,
+.reveal .cell-output-stdout pre code,
+.reveal .cell-output-display pre code {
+  font-size: 1em;
+  padding: 0.4em 0.7em;
+  color: #123E36;
+  background: transparent;
+}
+
+.reveal .cell-output-stdout pre::after,
+.reveal .cell-output-display pre::after {
+  content: "output";
+  position: absolute;
+  top: 0.15em;
+  right: 0.55em;
+  font-family: "Kalam", cursive;
+  font-weight: 700;
+  font-size: 0.72em;
+  color: $mint-deep;
+  opacity: 0.85;
+}
+
+.reveal .cell-output-error pre,
+.reveal .cell-output-stderr pre {
+  font-size: 0.56em;
+  background: $sakura-tint;
+  border: 2px solid rgba($sakura, 0.35);
+  border-left: 7px solid $sakura;
+  border-radius: 14px;
+}
+
+.reveal .cell-output-error pre code,
+.reveal .cell-output-stderr pre code {
+  font-size: 1em;
+  color: $sakura-deep;
+}
+
+.reveal .cell-output-display img {
+  border-radius: 10px;
+}
+
+// ---------------------------------------------------------------- tables
+.reveal table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 2px solid rgba($ink, 0.15);
+  border-radius: 14px;
+  overflow: hidden;
+  font-size: 0.78em;
+  box-shadow: 5px 5px 0 rgba($ink, 0.06);
+}
+
+.reveal table th {
+  background: $sky;
+  color: white;
+  font-family: $presentation-heading-font;
+  font-weight: 600;
+  border-bottom: none;
+}
+
+.reveal table th code {
+  background: rgba(white, 0.2);
+  color: white;
+}
+
+.reveal table td,
+.reveal table th {
+  padding: 0.32em 0.8em;
+  border-bottom: 1px solid rgba($ink, 0.08);
+}
+
+.reveal table tbody tr:nth-child(even) {
+  background: rgba($sky-tint, 0.55);
+}
+
+.reveal table caption,
+.reveal figcaption,
+.reveal .figure-caption {
+  font-family: "Kalam", cursive;
+  color: $grey;
+  font-size: 0.6em;
+}
+
+// ---------------------------------------------------------------- blockquote = sticky note
+.reveal blockquote {
+  width: auto;
+  margin: 0.6em 0;
+  padding: 0.45em 0.9em;
+  font-style: normal;
+  background: $lilac-tint;
+  border-left: 7px solid $lilac;
+  border-radius: 14px;
+  box-shadow: 5px 5px 0 rgba($ink, 0.06);
+  font-size: 0.9em;
+}
+
+.reveal blockquote p:first-child { margin-top: 0; }
+.reveal blockquote p:last-child { margin-bottom: 0; }
+
+// ---------------------------------------------------------------- question / answer bubbles
+.reveal .question,
+.reveal .answer {
+  position: relative;
+  margin: 1.05em 0 0.6em 0;
+  padding: 0.55em 0.9em 0.5em 3.1em;
+  border-radius: 26px;
+  font-size: 0.92em;
+  min-height: 2.15em;
+}
+
+.reveal .question {
+  background: $sakura-tint;
+  border: 3px solid $sakura;
+  box-shadow: 6px 6px 0 rgba($sakura, 0.22);
+}
+
+.reveal .answer {
+  background: $mint-tint;
+  border: 3px solid $mint;
+  box-shadow: 6px 6px 0 rgba($mint, 0.22);
+}
+
+.reveal .question::after,
+.reveal .answer::after {
+  position: absolute;
+  top: -0.78em;
+  left: 2.3em;
+  padding: 0.02em 0.65em;
+  border-radius: 999px;
+  border: 2px solid $ink;
+  font-family: "Kalam", cursive;
+  font-weight: 700;
+  font-size: 0.62em;
+  line-height: 1.3;
+  color: white;
+}
+
+.reveal .question::after { content: "Question"; background: $sakura; }
+.reveal .answer::after { content: "Answer"; background: $mint; }
+
+.reveal .question > p:first-child,
+.reveal .answer > p:first-child { margin-top: 0; }
+.reveal .question > p:last-child,
+.reveal .answer > p:last-child { margin-bottom: 0; }
+
+.reveal .question ul,
+.reveal .answer ul { margin-left: 0.9em; }
+
+.reveal .question div.sourceCode,
+.reveal .answer div.sourceCode { background: white; }
+
+// ---------------------------------------------------------------- key-idea box
+.reveal .keybox {
+  margin: 0.7em 0;
+  padding: 0.5em 0.9em;
+  background: $lemon-tint;
+  border: 3px solid $lemon;
+  border-radius: 20px;
+  box-shadow: 6px 6px 0 rgba($lemon, 0.35);
+  font-size: 0.92em;
+}
+
+.reveal .keybox > p:first-child { margin-top: 0; }
+.reveal .keybox > p:last-child { margin-bottom: 0; }
+
+// ---------------------------------------------------------------- callouts
+.reveal div.callout {
+  border-radius: 16px;
+  border-left-width: 7px !important;
+  box-shadow: 5px 5px 0 rgba($ink, 0.06);
+}
+
+// ---------------------------------------------------------------- title slide
+#title-slide {
+  text-align: left;
+  padding-right: 34%;
+
+  .title {
+    font-family: $presentation-heading-font;
+    font-weight: 700;
+    font-size: 2.35em;
+    line-height: 1.05;
+    color: $ink;
+    margin-bottom: 0.15em;
+  }
+
+  .subtitle {
+    font-family: $presentation-heading-font;
+    font-weight: 600;
+    color: $sakura;
+    font-size: 1.05em;
+    margin-top: 0.2em;
+  }
+
+  .quarto-title-authors {
+    justify-content: flex-start;
+    margin-top: 1.2em;
+  }
+
+  .quarto-title-author {
+    padding-left: 0;
+  }
+
+  .quarto-title-author-name {
+    font-family: $presentation-heading-font;
+    font-weight: 600;
+    font-size: 0.95em;
+  }
+
+  .quarto-title-affiliation,
+  .quarto-title-author-email,
+  .date {
+    font-size: 0.7em;
+    color: $grey;
+  }
+}
+
+// ---------------------------------------------------------------- section dividers (# headings)
+.reveal .slides section.level1:not(#title-slide) {
+  text-align: left;
+}
+
+.reveal .slides section.level1:not(#title-slide) h1 {
+  position: relative;
+  max-width: 58%;
+  color: white;
+  font-weight: 700;
+  font-size: 2.15em;
+  line-height: 1.08;
+  text-shadow: 0 4px 0 rgba(#140F3D, 0.45);
+}
+
+.reveal .slides section.level1:not(#title-slide) h1::after {
+  content: "";
+  display: block;
+  width: 2.4em;
+  height: 0.16em;
+  margin-top: 0.28em;
+  border-radius: 1em;
+  background: $lemon;
+  transform: rotate(-1.5deg);
+}
+
+// ---------------------------------------------------------------- outline (TOC) slide
+.reveal #TOC nav > ul {
+  list-style: none;
+  counter-reset: toc;
+  margin-left: 0;
+}
+
+.reveal #TOC nav > ul > li {
+  counter-increment: toc;
+  display: flex;
+  align-items: center;
+  margin: 0.35em 0;
+}
+
+.reveal #TOC nav > ul > li::before {
+  content: counter(toc);
+  flex: 0 0 1.55em;
+  height: 1.55em;
+  margin-right: 0.6em;
+  border-radius: 50%;
+  border: 2px solid $ink;
+  background: $sky;
+  color: white;
+  font-family: $presentation-heading-font;
+  font-weight: 600;
+  font-size: 0.8em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3px 3px 0 rgba($ink, 0.18);
+}
+
+.reveal #TOC nav > ul > li:nth-child(4n+2)::before { background: $sakura; }
+.reveal #TOC nav > ul > li:nth-child(4n+3)::before { background: $mint; }
+.reveal #TOC nav > ul > li:nth-child(4n)::before   { background: $lilac; }
+
+.reveal #TOC a {
+  color: $ink;
+  text-decoration: none;
+}
+
+// ---------------------------------------------------------------- images
+.reveal .slides img {
+  max-width: 100%;
+}
+
+.reveal .quarto-figure-center > figure > p,
+.reveal .quarto-figure-center > figure > div {
+  text-align: center;
+}
+
+.reveal img.photo {
+  border-radius: 16px;
+  border: 3px solid $ink;
+  box-shadow: 8px 8px 0 rgba($ink, 0.15);
+}
+
+// ---------------------------------------------------------------- utilities
+.reveal .pink  { color: $sakura-deep; }
+.reveal .blue  { color: $sky; }
+.reveal .mint  { color: $mint-deep; }
+.reveal .lilac { color: $lilac; }
+.reveal .grey  { color: $grey; }
+
+.reveal .hl {
+  background: linear-gradient(transparent 55%, rgba($lemon, 0.75) 55%, rgba($lemon, 0.75) 92%, transparent 92%);
+  padding: 0 0.08em;
+}
+
+.reveal .center { text-align: center; }
+.reveal .big { font-size: 1.6em; font-family: $presentation-heading-font; font-weight: 600; }
+.reveal .small { font-size: 0.8em; }
+.reveal .tiny { font-size: 0.65em; }
+
+.reveal .hand {
+  font-family: "Kalam", cursive;
+  font-weight: 700;
+}
+
+// ---------------------------------------------------------------- chrome
+.reveal .slide-number {
+  font-family: $presentation-heading-font;
+  background: $ink;
+  color: white;
+  border-radius: 999px 0 0 999px;
+  padding: 2px 12px 2px 14px;
+  font-size: 14px;
+  bottom: 12px;
+}
+
+.reveal .slide-number a {
+  color: white;
+}
+
+.reveal .progress {
+  color: $sakura;
+  height: 5px;
+}
+
+.reveal .controls {
+  color: $sky;
+}
+
+// the menu / chalkboard buttons sit bottom-left: give them a soft pill
+.reveal .slide-menu-button,
+.reveal .slide-chalkboard-buttons > div {
+  opacity: 0.75;
+}
+
+// ---------------------------------------------------------------- compact slides
+// Add {.compact} to a slide title when the content is a little too tall.
+// Text and code shrink ~12%; the slide title keeps its normal size.
+.reveal .slides section.compact {
+  font-size: 0.88em;
+}
+
+.reveal .slides section.compact > h2 {
+  font-size: 1.5em;
+}
+
+.reveal .slides section.compact div.sourceCode,
+.reveal .slides section.compact .cell-output pre {
+  margin-top: 0.3em;
+  margin-bottom: 0.3em;
+}
+
+// output placed beside the code ({python} cells with output-location: column)
+.reveal .columns.column-output-location .column:last-child .cell-output pre {
+  margin-top: 0.45em;
+}

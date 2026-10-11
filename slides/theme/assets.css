@@ -1,0 +1,95 @@
+/* ---------------------------------------------------------------------------
+   Assets for the "Pip's study notebook" theme.
+   Kept in plain CSS (not SCSS) so the relative URLs below resolve from the
+   theme/ folder.  All fonts are SIL Open Font License (see theme/fonts/OFL-*).
+   --------------------------------------------------------------------------- */
+
+@font-face {
+  font-family: "Fredoka";
+  src: url("fonts/Fredoka-SemiBold.woff2") format("woff2");
+  font-weight: 500 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fredoka";
+  src: url("fonts/Fredoka-Bold.woff2") format("woff2");
+  font-weight: 700 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("fonts/AtkinsonHyperlegible-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("fonts/AtkinsonHyperlegible-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("fonts/AtkinsonHyperlegible-Italic.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("fonts/AtkinsonHyperlegible-BoldItalic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("fonts/JetBrainsMono-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("fonts/JetBrainsMono-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Kalam";
+  src: url("fonts/Kalam-Bold.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Pip, the mascot, inside the question / answer bubbles */
+.reveal .question::before,
+.reveal .answer::before {
+  content: "";
+  position: absolute;
+  left: 0.35em;
+  top: 50%;
+  width: 2.1em;
+  height: 2.2em;
+  transform: translateY(-50%);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.reveal .question::before { background-image: url("pip-think.png"); }
+.reveal .answer::before   { background-image: url("pip-happy.png"); }
