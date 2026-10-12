@@ -3,10 +3,17 @@ assignments/
 
 lecture_notes_old/
 slides_old/
-
+projects/**/make_figures.py
+projects/**/*_solution.py
 lecture_notes/*.html
 lecture_notes/*.pdf
 slides/*.md
+slides/figure_sources/
+# slides/figure_sources/*.py
+# slides/figure_sources/__pycache__/
+
+projects/**/fonts/
+
 # *.pdf
 *.docx
 *.tex
@@ -14,3 +21,6 @@ slides/*.md
 *.sh
 README_files/
 README.html
+
+/.quarto/
+**/*.quarto_ipynb
