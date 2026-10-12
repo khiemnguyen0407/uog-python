@@ -2620,7 +2620,7 @@ window.Quarto = {
   </ul></li>
   <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="02_control_flows.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="../pdf/02_control_flows.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
 </div>
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
@@ -2698,7 +2698,7 @@ window.Quarto = {
 <p>By convention (<a href="https://peps.python.org/pep-0008/">PEP 8</a>), each level of indentation is <strong>four spaces</strong>. Jupyter and most editors insert them automatically when you press <strong>Tab</strong> or <strong>Enter</strong> after a colon. Forgetting to indent is a syntax error:</p>
 </div>
 </div>
-<div id="40d6665b" class="cell" data-execution_count="1">
+<div id="3f27b3fe" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="dv">3</span> <span class="op">&gt;</span> <span class="dv">2</span>:</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Three is greater than two&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
@@ -2777,7 +2777,7 @@ window.Quarto = {
 </section>
 <section id="examples" class="level2" data-number="3.2">
 <h2 data-number="3.2" class="anchored" data-anchor-id="examples"><span class="header-section-number">3.2</span> Examples</h2>
-<div id="57ecd542" class="cell" data-execution_count="2">
+<div id="c39e31b8" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>earth <span class="op">=</span> <span class="st">&#39;round&#39;</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> earth <span class="op">==</span> <span class="st">&#39;round&#39;</span>:                 <span class="co"># note the colon &quot;:&quot;</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;The Earth is round.&quot;</span>)     <span class="co"># note the indentation</span></span>
@@ -2796,7 +2796,7 @@ The Earth is round.</code></pre>
 c_2 x^2 + c_1 x + c_0 = 0.
 \]</span></p>
 <p>The equation has real roots if and only if the discriminant is non-negative: <span class="math inline">\(\Delta = c_1^2 - 4 c_2 c_0 \geq 0\)</span>. We should therefore test this condition <em>before</em> computing <span class="math inline">\(\sqrt{\Delta}\)</span>.</p>
-<div id="1a2849ea" class="cell" data-execution_count="3">
+<div id="071dba0a" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> sqrt</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Coefficients of c2*x^2 + c1*x + c0 = 0.</span></span>
@@ -2835,7 +2835,7 @@ c_2 x^2 + c_1 x + c_0 = 0.
 <section id="nested-if-else-versus-if-elif-else" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="nested-if-else-versus-if-elif-else"><span class="header-section-number">3.3</span> Nested <code>if-else</code> versus <code>if-elif-else</code></h2>
 <p>As mentioned above, the <code>if-elif-else</code> statement is a neat way of writing several nested <code>if-else</code> statements. The following two cells convert a mark into a letter grade and produce the same result, but the second version is much easier to read.</p>
-<div id="c9e63a1b" class="cell" data-execution_count="4">
+<div id="24770ae2" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Nested if-else statements</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>marks <span class="op">=</span> <span class="dv">70</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> marks <span class="op">&lt;=</span> <span class="dv">50</span>:</span>
@@ -2853,7 +2853,7 @@ c_2 x^2 + c_1 x + c_0 = 0.
 <pre><code>Your letter grade is A</code></pre>
 </div>
 </div>
-<div id="c7b4b9e7" class="cell" data-execution_count="5">
+<div id="bbf775ab" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># The same logic with if-elif-else</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>marks <span class="op">=</span> <span class="dv">70</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> marks <span class="op">&lt;=</span> <span class="dv">50</span>:</span>
@@ -2879,7 +2879,7 @@ c_2 x^2 + c_1 x + c_0 = 0.
 <section id="combining-conditions" class="level2" data-number="3.4">
 <h2 data-number="3.4" class="anchored" data-anchor-id="combining-conditions"><span class="header-section-number">3.4</span> Combining conditions</h2>
 <p>Conditions can be combined with the logical operators <code>and</code>, <code>or</code> and <code>not</code> from Lecture 1. Python also allows <strong>chained comparisons</strong> such as <code>0 &lt;= marks &lt;= 100</code>, which means exactly the same as <code>0 &lt;= marks and marks &lt;= 100</code>, just as in mathematics.</p>
-<div id="a85f204d" class="cell" data-execution_count="6">
+<div id="b2874b15" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>marks <span class="op">=</span> <span class="dv">72</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>attendance <span class="op">=</span> <span class="fl">0.9</span>    <span class="co"># fraction of classes attended</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -2909,7 +2909,7 @@ Excellent work and attendance!</code></pre>
 <span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>        <span class="op">&lt;</span>statement<span class="op">&gt;</span></span>
 <span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>        ...</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>If the value of <code>&lt;variable&gt;</code> matches one of the patterns <code>&lt;pattern-1&gt;</code>, <code>&lt;pattern-2&gt;</code>, etc., the block belonging to the <em>first</em> matching pattern is executed. The special pattern <code>_</code> (an underscore) is a <strong>wildcard</strong> that matches anything, so <code>case _:</code> catches every value not matched before it. It is optional: if you do not need to catch the unmatched cases, leave it out. Several alternatives can be combined in one pattern with <code>|</code>, which means “or”.</p>
-<div id="67558698" class="cell" data-execution_count="7">
+<div id="d35527c4" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Matching numbers</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>mark <span class="op">=</span> <span class="dv">7</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="cf">match</span> mark:</span>
@@ -2953,7 +2953,7 @@ Exit</code></pre>
 <section id="the-pass-statement" class="level2" data-number="3.6">
 <h2 data-number="3.6" class="anchored" data-anchor-id="the-pass-statement"><span class="header-section-number">3.6</span> The <code>pass</code> statement</h2>
 <p>A block of code can never be empty: <code>if</code>, <code>while</code>, <code>for</code>, function and class definitions all require at least one statement. When you want to leave a block empty for now — for instance, to fill it in later — use the <code>pass</code> statement, which simply does nothing.</p>
-<div id="2c709ab7" class="cell" data-execution_count="8">
+<div id="9c937556" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="op">=</span> <span class="dv">25</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> temperature <span class="op">&gt;</span> <span class="dv">30</span>:</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span>    <span class="co"># </span><span class="al">TODO</span><span class="co">: switch on the air conditioning (to be written later)</span></span>
@@ -2993,7 +2993,7 @@ Exit</code></pre>
 <li>Python evaluates <code>&lt;expression&gt;</code>. If it is <code>False</code>, the loop ends, and execution continues after the loop.</li>
 <li>If it is <code>True</code>, the statements in the block are executed, and then Python goes back to evaluate <code>&lt;expression&gt;</code> again.</li>
 </ul>
-<div id="516d5b31" class="cell" data-execution_count="9">
+<div id="0a672cad" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>counter, value <span class="op">=</span> <span class="dv">0</span>, <span class="dv">1</span>    <span class="co"># multiple assignment</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">5</span>                    <span class="co"># number of doublings; try n = int(input(&quot;n = &quot;)) instead</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;2^</span><span class="sc">{0:&lt;2}</span><span class="st"> = </span><span class="sc">{1}</span><span class="st">&quot;</span>.<span class="bu">format</span>(counter, value))</span>
@@ -3034,7 +3034,7 @@ Exit</code></pre>
 <span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    ...</span>
 <span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    <span class="op">&lt;</span>statement<span class="op">-</span>n<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>In the line <code>for element in iterable:</code>, the variable <code>element</code> takes the value of each item of <code>iterable</code> in turn, and the block is executed once for each of them. The iterable may be a string, a list, a <code>range()</code> and many other data types. Iteration is a very important concept in modern programming: you can picture an iterable as a queue at a service counter, where every customer is served in order, one at a time.</p>
-<div id="9769e764" class="cell" data-execution_count="10">
+<div id="dedc69d0" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> letter <span class="kw">in</span> <span class="st">&quot;Glasgow&quot;</span>:     <span class="co"># a string is a sequence of characters</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(letter, end<span class="op">=</span><span class="st">&quot; &quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -3072,7 +3072,7 @@ Exit</code></pre>
 </tbody>
 </table>
 <p>Note that <code>stop</code> itself is <strong>never</strong> included. In the next cell, we wrap <code>range()</code> in <code>list()</code> only to display all the numbers at once; lists are the topic of Lecture 3.</p>
-<div id="b5036c22" class="cell" data-execution_count="11">
+<div id="158b0cc4" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">5</span>)))          <span class="co"># 0 to 4: stop = 5 is excluded</span></span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">2</span>, <span class="dv">8</span>)))       <span class="co"># 2 to 7</span></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">2</span>)))   <span class="co"># the odd numbers from 1 to 9</span></span>
@@ -3085,7 +3085,7 @@ Exit</code></pre>
 </div>
 </div>
 <p>Here are the powers of two again, this time with a <code>for</code> loop. Compare it with the <code>while</code> version above: there is no counter to initialise or update, so there is no risk of an infinite loop.</p>
-<div id="927ce237" class="cell" data-execution_count="12">
+<div id="64bb00ae" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>value <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;2^</span><span class="sc">{0:&lt;2}</span><span class="st"> = </span><span class="sc">{1}</span><span class="st">&quot;</span>.<span class="bu">format</span>(<span class="dv">0</span>, value))</span>
@@ -3105,7 +3105,7 @@ Exit</code></pre>
 <section id="looping-over-a-list" class="level2" data-number="4.5">
 <h2 data-number="4.5" class="anchored" data-anchor-id="looping-over-a-list"><span class="header-section-number">4.5</span> Looping over a list</h2>
 <p>Even better, the sequence can be defined by the data themselves rather than by a counting variable. Here is a first look at a <strong>list</strong>: a sequence of values written between square brackets. We study lists properly in Lecture 3.</p>
-<div id="9a84c181" class="cell" data-execution_count="13">
+<div id="413c57ca" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>my_list <span class="op">=</span> [<span class="st">&quot;I&quot;</span>, <span class="st">&quot;have&quot;</span>, <span class="dv">2</span>, <span class="st">&quot;dogs&quot;</span>, <span class="st">&quot;and&quot;</span>, <span class="dv">3</span>, <span class="st">&quot;cats&quot;</span>]</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="co"># First loop: print each element on its own line</span></span>
@@ -3130,7 +3130,7 @@ I have 2 dogs and 3 cats </code></pre>
 <section id="nested-loops" class="level2" data-number="4.6">
 <h2 data-number="4.6" class="anchored" data-anchor-id="nested-loops"><span class="header-section-number">4.6</span> Nested loops</h2>
 <p>A loop can contain another loop. For each single iteration of the <strong>outer</strong> loop, the <strong>inner</strong> loop runs completely.</p>
-<div id="8f533a13" class="cell" data-execution_count="14">
+<div id="d213189b" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> x <span class="op">&lt;</span> <span class="dv">4</span>:</span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> x</span>
@@ -3204,7 +3204,7 @@ outer loop: x = 4</code></pre>
 </figure>
 </div>
 <p><strong>Examples.</strong> The first example needs no keyboard input:</p>
-<div id="3d025e5f" class="cell" data-execution_count="15">
+<div id="fe832b40" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> number <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">20</span>):</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> number <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">1</span>:</span>
 <span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">continue</span>          <span class="co"># skip the odd numbers ...</span></span>
@@ -3216,7 +3216,7 @@ outer loop: x = 4</code></pre>
 </div>
 </div>
 <p>The next examples are interactive. We want to leave a <code>while</code> loop as soon as the user types <code>10</code>. One way is to use a “flag” variable such as <code>keep_going</code>. This practice should be avoided where possible, for two reasons: (1) the code is longer, because we need an extra variable; and (2) with several nested loops, we would need several flag variables, <code>keep_going_1</code>, <code>keep_going_2</code>, and so on.</p>
-<div id="3ecde6eb" class="cell" data-execution_count="16">
+<div id="ae0cef2b" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># With a flag variable (avoid this style)</span></span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>keep_going <span class="op">=</span> <span class="va">True</span></span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> keep_going:</span>
@@ -3226,7 +3226,7 @@ outer loop: x = 4</code></pre>
 <span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>        keep_going <span class="op">=</span> <span class="va">False</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>The <code>break</code> statement does the same job more neatly:</p>
-<div id="647c0e23" class="cell" data-execution_count="17">
+<div id="899e4a32" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># With break (preferred)</span></span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> <span class="bu">int</span>(<span class="bu">input</span>(<span class="st">&quot;Type a number (10 to stop): &quot;</span>))</span>
@@ -3235,7 +3235,7 @@ outer loop: x = 4</code></pre>
 <span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">break</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>In the next example, we have two <code>while True</code> loops, called the outer loop and the inner loop. To escape from the inner loop, the user must type <code>x</code>; to escape from the outer loop, the user must type <code>y</code>. As long as we do not leave the outer loop, it will enter the inner loop again. Therefore, the only way out of both loops is to type <code>x</code> (Enter) and then <code>y</code> (Enter); anything other than <code>y</code> after <code>x</code> sends us through the inner loop once more.</p>
-<div id="47c060e9" class="cell" data-execution_count="18">
+<div id="8c0839e4" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>counter_for_outer_loop <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>counter_for_inner_loop <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span> <span class="va">True</span>:</span>
@@ -3267,7 +3267,7 @@ outer loop: x = 4</code></pre>
 <span id="cb41-29"><a href="#cb41-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;The last INNER iteration =&quot;</span>, counter_for_inner_loop)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Finally, we keep adding up the numbers typed by the user. If the input is not numeric, we skip the addition with <code>continue</code>; the user exits with <code>x</code>.</p>
-<div id="60d328a9" class="cell" data-execution_count="19">
+<div id="348416f3" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># do not call this variable &quot;sum&quot;: that is the name of a built-in function!</span></span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Total = </span><span class="sc">{}</span><span class="st">&quot;</span>.<span class="bu">format</span>(total))</span>
@@ -3318,7 +3318,7 @@ x----------x</code></pre>
 </ol>
 <p>Remember that <code>print()</code> ends with a new line by default; <code>print(&quot;something&quot;, end=&quot;&quot;)</code> prints “something” and nothing else.</p>
 <p><strong>A first solution.</strong> Translating the pseudo-code directly gives:</p>
-<div id="9bb960d0" class="cell" data-execution_count="20">
+<div id="b0cb4dd6" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> <span class="dv">12</span></span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(h):</span>
@@ -3347,7 +3347,7 @@ x----------x</code></pre>
 </div>
 </div>
 <p><strong>Refactoring 1.</strong> The first and last lines are identical, so we can merge their branches. <strong>Refactoring</strong> means improving the structure of code without changing what it does.</p>
-<div id="7a8d1a06" class="cell" data-execution_count="21">
+<div id="fbd66a44" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> <span class="dv">12</span></span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(h):</span>
@@ -3371,7 +3371,7 @@ x----------x</code></pre>
 </div>
 </div>
 <p><strong>Refactoring 2.</strong> Recall from Lecture 1 that a string can be repeated with <code>*</code>. This removes the inner loops altogether:</p>
-<div id="0daf846b" class="cell" data-execution_count="22">
+<div id="3bdc0580" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>h <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>w <span class="op">=</span> <span class="dv">12</span></span>
 <span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, h <span class="op">+</span> <span class="dv">1</span>):         <span class="co"># j = 1, 2, ..., h</span></span>

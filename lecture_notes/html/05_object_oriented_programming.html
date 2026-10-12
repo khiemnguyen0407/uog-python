@@ -2620,7 +2620,7 @@ window.Quarto = {
   </ul></li>
   <li><a href="#further-reading" id="toc-further-reading" class="nav-link" data-scroll-target="#further-reading">Further reading</a></li>
   </ul>
-<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="05_object_oriented_programming.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="../pdf/05_object_oriented_programming.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
 </div>
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
@@ -2716,7 +2716,7 @@ window.Quarto = {
 <p>A class object supports two kinds of operation: <em>attribute references</em> and <em>instantiation</em>.</p>
 <p><strong>Attribute references</strong> use the standard syntax <code>obj.name</code>. Valid attribute names are all the names defined in the class. In the next cell, <code>MyClass.i</code> and <code>MyClass.say_hello</code> are valid attribute references, returning an integer and a function object, respectively. Note that <code>MyClass.say_hello</code> only refers to the function; it does not execute it.</p>
 <p><strong>Instantiation</strong> uses function notation: pretend that the class is a function without parameters that returns a new instance of the class. For example, <code>x = MyClass()</code> creates a new instance (object) of the class and assigns it to the variable <code>x</code>. We can then call the method on the instance: <code>x.say_hello()</code>.</p>
-<div id="ef4da6c5" class="cell" data-execution_count="1">
+<div id="1597aa15" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MyClass:</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;A simple example class.&quot;&quot;&quot;</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    i <span class="op">=</span> <span class="dv">12345</span></span>
@@ -2730,7 +2730,7 @@ window.Quarto = {
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x.say_hello())         <span class="co"># call the method on the instance</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>12345
-&lt;function MyClass.say_hello at 0x786a92962090&gt;
+&lt;function MyClass.say_hello at 0x7dbc19ff85c0&gt;
 Hello World</code></pre>
 </div>
 </div>
@@ -2742,7 +2742,7 @@ Hello World</code></pre>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="va">self</span>.data <span class="op">=</span> []</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>When a class defines an <code>__init__()</code> method, instantiation automatically calls <code>__init__()</code> on the newly created object. So, in this example, a new, initialised instance is obtained with <code>x = MyClass()</code>, after which <code>x.data</code> exists.</p>
 <p>The <code>__init__()</code> method may of course have further parameters for greater flexibility; the arguments given to the class in the instantiation are passed on to <code>__init__()</code>. For example, let us define a class for complex numbers. A complex number has the form <span class="math inline">\(x = a + \mathrm{i}\, b\)</span>, where <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are real numbers and <span class="math inline">\(\mathrm{i}\)</span> is the imaginary unit, defined by <span class="math inline">\(\mathrm{i} = \sqrt{-1}\)</span>. Since <span class="math inline">\(\mathrm{i}\)</span> is always the same, a complex number is completely described by its <em>real part</em> <span class="math inline">\(a\)</span> and its <em>imaginary part</em> <span class="math inline">\(b\)</span>:</p>
-<div id="956d802b" class="cell" data-execution_count="2">
+<div id="b09a8ae4" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Complex:</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;A complex number a + ib, stored by its real and imaginary parts.&quot;&quot;&quot;</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, real_part, imag_part):</span>
@@ -2765,7 +2765,7 @@ Hello World</code></pre>
 <li>trash, with waste paper and cans as two specific types of trash.</li>
 </ul>
 <p>We start with the class <code>Car</code>.</p>
-<div id="999be278" class="cell" data-execution_count="3">
+<div id="b5ccdc84" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Car:</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Model a car.&quot;&quot;&quot;</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -2792,7 +2792,7 @@ Hello World</code></pre>
 <span id="cb7-24"><a href="#cb7-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># other methods would follow here, e.g.</span></span>
 <span id="cb7-25"><a href="#cb7-25" aria-hidden="true" tabindex="-1"></a>    <span class="co"># def other_method(self, ...):</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="00beeee9" class="cell" data-execution_count="4">
+<div id="bcd8902c" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Now we can create (instantiate) an object of type Car ...</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>my_car <span class="op">=</span> Car(<span class="st">&quot;Nissan&quot;</span>, <span class="st">&quot;Micra&quot;</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ... and access all its attributes.</span></span>
@@ -2809,7 +2809,7 @@ Tank in the initial state = 0
 </div>
 </div>
 <p>Note that external code can read (and change) all the data of a <code>Car</code> instance. Unlike C++ and Java, Python does not enforce private data members or private methods: everything can be seen and accessed from outside. We return to this point in the section on encapsulation.</p>
-<div id="e3d1af11" class="cell" data-execution_count="5">
+<div id="cd8840c5" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Of course, we can create another Car with different attributes.</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>your_car <span class="op">=</span> Car(<span class="st">&quot;Nissan&quot;</span>, <span class="st">&quot;Leaf&quot;</span>)</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(your_car.make)</span>
@@ -2832,10 +2832,10 @@ Tank after the fill-up = 60</code></pre>
 <figcaption>The class <code>Car</code> is the blueprint; <code>my_car</code> and <code>your_car</code> are two independent instances, each with its own instance variables. The class variable <code>number_of_cars</code> and the class method <code>how_many()</code> are added in the section on class variables.</figcaption>
 </figure>
 </div>
-<div id="bca7bfef" class="cell" data-execution_count="6">
+<div id="427a119a" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_car)    <span class="co"># not very informative -- we improve this below</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>&lt;__main__.Car object at 0x786ac82e3620&gt;</code></pre>
+<pre><code>&lt;__main__.Car object at 0x7dbc19fa16a0&gt;</code></pre>
 </div>
 </div>
 </section>
@@ -2847,7 +2847,7 @@ Tank after the fill-up = 60</code></pre>
 <p>Python automatically translates this into</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>Car.fill_up(my_car)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>so that, inside <code>fill_up()</code>, <code>self</code> refers to <code>my_car</code>, and <code>self.tank</code> means “the tank of <em>this particular</em> car”. When you call <code>your_car.fill_up()</code>, the same code runs with <code>self</code> referring to <code>your_car</code>. (The name <code>self</code> is only a convention, but you should always follow it.)</p>
-<div id="eeb2e8aa" class="cell" data-execution_count="7">
+<div id="c98cafcd" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MyDumbDataType:</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, data):</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.data <span class="op">=</span> data</span>
@@ -2868,7 +2868,7 @@ Hello World</code></pre>
 </div>
 </div>
 <p>The same holds for the <code>Car</code> class. The next two cells call <code>__init__()</code> and <code>fill_up()</code> directly — something you would not normally do — just to show the role of <code>self</code>.</p>
-<div id="bf360dac" class="cell" data-execution_count="8">
+<div id="57c030c1" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> Car(<span class="st">&quot;Audi&quot;</span>, <span class="st">&quot;Really Cheap&quot;</span>)</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="co"># __init__(self, make, model) was called AUTOMATICALLY right after the object was created.</span></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x.make, <span class="st">&quot;-&quot;</span>, x.model)</span>
@@ -2891,7 +2891,7 @@ Constructor of Car executed: Mercedes - Ridiculously Cheap
 Mercedes - Ridiculously Cheap</code></pre>
 </div>
 </div>
-<div id="7a097a97" class="cell" data-execution_count="9">
+<div id="dd83104c" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>x.fill_up()                    <span class="co"># the normal way: x is passed as self automatically</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x.tank)</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -2917,7 +2917,7 @@ Fill-up done: full!
 <li><code>__repr__()</code> returns an unambiguous representation, ideally one that looks like the code that creates the object; it is used when the object is displayed in Jupyter or inside a list, for example.</li>
 </ul>
 <p>Methods whose names begin and end with double underscores, such as <code>__init__()</code>, <code>__str__()</code> and <code>__repr__()</code>, are called <strong>special methods</strong> (or “dunder” methods); Python calls them automatically in particular situations.</p>
-<div id="929205fe" class="cell" data-execution_count="10">
+<div id="367fb3a4" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Point:</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;A point in the plane.&quot;&quot;&quot;</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, x, y):</span>
@@ -2957,7 +2957,7 @@ Fill-up done: full!
 <span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a>        ...</span>
 <span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>        <span class="op">&lt;</span>statement<span class="op">-</span>N<span class="op">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p><strong>Example.</strong> We extend our class <code>Car</code> with a class variable <code>number_of_cars</code>, which keeps track of how many <code>Car</code> instances have been created. The variable starts at zero and increases by one every time a new <code>Car</code> is created. Note that this class variable exists even before any car has been created: in that case, <code>number_of_cars</code> is simply zero. We also define a class method <code>how_many()</code>, which prints how many cars have been created.</p>
-<div id="d3996747" class="cell" data-execution_count="11">
+<div id="b9755a39" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Car:</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Model a car, and count how many cars have been created.&quot;&quot;&quot;</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -2981,7 +2981,7 @@ Fill-up done: full!
 <span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> how_many(cls):              <span class="co"># cls plays the role of &quot;self&quot; for the class</span></span>
 <span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;Number of cars = </span><span class="sc">{number}</span><span class="st">&quot;</span>.<span class="bu">format</span>(number<span class="op">=</span>cls.number_of_cars))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="0e125e53" class="cell" data-execution_count="12">
+<div id="42d1bf75" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># External code. Even before any Car instance exists, we can ask how many</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co"># cars have been created -- and the answer is, of course, zero.</span></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&#39;Number of cars (class variable) =&#39;</span>, Car.number_of_cars)</span>
@@ -3017,7 +3017,7 @@ Number of cars = 3</code></pre>
 </div>
 </div>
 <p><strong>Alternative constructors.</strong> A class method can also create objects. Since its first parameter <code>cls</code> refers to the class itself, <code>cls(...)</code> works exactly like the class name followed by brackets: it creates a new instance. In the following example, the class <code>Pizza</code> has a constructor <code>__init__(self, ingredients)</code> and a class method <code>margherita()</code>, which creates one particular type of pizza. Inside it, we write <code>cls([&quot;mozzarella&quot;, &quot;tomatoes&quot;])</code> instead of <code>Pizza([&quot;mozzarella&quot;, &quot;tomatoes&quot;])</code>: you can imagine that <code>cls</code> is literally replaced by <code>Pizza</code>. Such class methods are called <strong>factory methods</strong> or <strong>alternative constructors</strong>; you will meet them in libraries, e.g. <code>dict.fromkeys()</code>.</p>
-<div id="55ae1f47" class="cell" data-execution_count="13">
+<div id="ae5b9c0a" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Pizza:</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, ingredients):</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.ingredients <span class="op">=</span> ingredients</span>
@@ -3030,7 +3030,7 @@ Number of cars = 3</code></pre>
 <span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> margherita(cls):</span>
 <span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> cls([<span class="st">&quot;mozzarella&quot;</span>, <span class="st">&quot;tomatoes&quot;</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="8ca14def" class="cell" data-execution_count="14">
+<div id="97a3ef9d" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># External code, outside the class Pizza</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>my_pizza <span class="op">=</span> Pizza([<span class="st">&quot;cheese&quot;</span>, <span class="st">&quot;cheese&quot;</span>])</span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_pizza)</span>
@@ -3050,7 +3050,7 @@ Pizza([&#39;mozzarella&#39;, &#39;tomatoes&#39;])</code></pre>
 <p><strong>Data abstraction</strong> is a design principle whereby data are visible only to semantically related functions, in order to prevent misuse. Its success has made <strong>data hiding</strong> a common design principle in object-oriented and functional programming.</p>
 <p>If a class does not allow external code to access the internal data of its objects directly, and permits access only through methods, this is a strong form of abstraction known as <strong>information hiding</strong>. Some languages (Java, for example) let classes enforce access restrictions explicitly: internal data are marked with the keyword <code>private</code>, while methods intended for use by external code are marked <code>public</code>. Methods may also be public, private or have an intermediate level such as <code>protected</code>, which allows access from the same class and its subclasses, but not from objects of other classes.</p>
 <p>In other languages, such as Python, this is enforced only <strong>by convention</strong>: names that start with an underscore, such as <code>_tank</code>, are meant for internal use only, and well-behaved external code does not touch them. Nothing technically prevents misuse, however:</p>
-<div id="b06b24a2" class="cell" data-execution_count="15">
+<div id="aff4f3e0" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># In Python, the data of an object are easily accessible ... and easily misused.</span></span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>my_car.fill_up()</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>my_car.tank <span class="op">=</span> my_car.tank <span class="op">+</span> <span class="dv">5</span>           <span class="co"># put in some more fuel</span></span>
@@ -3069,7 +3069,7 @@ Tank capacity = 60</code></pre>
 <p>Hiding the data members may look complicated and unnecessary, but it turns out to be needed very often in real-world problems. In many situations, data members should only take values within a given range, or only of a particular type. For example, if a car has a tank capacity of 60 litres, adding 50 litres to a tank that already holds 20 litres would overfill it. External code might also accidentally “fill” the tank with a string instead of a number. Such operations are invalid and should raise an error or at least notify the user. In the worst case, no obvious error occurs when the data member is modified; instead, the invalid value silently spreads through the program and spoils the final results.</p>
 <p>Hiding the data members and letting external code access or modify them only through methods makes a class longer and somewhat more complicated. In the long run, however, this effort usually saves a lot of headaches when developing a sophisticated program.</p>
 <p><strong>Example.</strong> We extend the class <code>Car</code> once more, with a method <code>add_fuel(self, amount)</code> that checks whether the tank would overflow <em>before</em> adding the fuel. We also add a class variable <code>fuel_type</code>, which we will need later.</p>
-<div id="428f0f10" class="cell" data-execution_count="16">
+<div id="4753d4d1" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Car:</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Model a car, count the cars created, and protect the fuel tank.&quot;&quot;&quot;</span></span>
 <span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -3104,7 +3104,7 @@ Tank capacity = 60</code></pre>
 <span id="cb33-32"><a href="#cb33-32" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
 <span id="cb33-33"><a href="#cb33-33" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">&quot;The tank is not big enough!&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="b5b66de9" class="cell" data-execution_count="17">
+<div id="a36fb11e" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>my_car <span class="op">=</span> Car(<span class="st">&quot;Mercedes&quot;</span>, <span class="st">&quot;A 160&quot;</span>)</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;--------------------------&quot;</span>)</span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Add 50 litres to my car.&quot;</span>)</span>
@@ -3139,7 +3139,7 @@ my_car.tank = 50</code></pre>
 <p>Python offers an elegant way of combining the convenience of <code>obj.attribute</code> with the safety of a method: <strong>properties</strong>. With the decorator <code>@property</code>, reading <code>tank.level</code> actually calls a method; with <code>@level.setter</code>, <em>assigning</em> to <code>tank.level</code> calls another method, which can check the new value.</p>
 </div>
 </div>
-<div id="5f6abf04" class="cell" data-execution_count="18">
+<div id="0a232c5e" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Tank:</span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;A fuel tank whose level can never exceed its capacity.&quot;&quot;&quot;</span></span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, capacity):</span>
@@ -3172,7 +3172,7 @@ my_car.tank = 50</code></pre>
 <section id="composition" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> Composition</h1>
 <p>Objects can contain other objects in their instance variables; this is known as <strong>object composition</strong>. For example, an object of the class <code>Employee</code> might contain an object of the class <code>Address</code>, in addition to its own instance variables such as <code>first_name</code> and <code>position</code>. Composition represents <strong>“has-a”</strong> relationships: every employee <em>has an</em> address, so every <code>Employee</code> object has a place to store an <code>Address</code> object.</p>
-<div id="4e794d56" class="cell" data-execution_count="19">
+<div id="dfeea810" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Address:</span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, street, city, postcode):</span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.street <span class="op">=</span> street</span>
@@ -3220,7 +3220,7 @@ City: Glasgow</code></pre>
 <li><code>Can</code> is derived from <code>Trash</code>.</li>
 </ul>
 <p><code>Trash</code> has two attributes, <code>weight</code> and <code>value</code>, and two methods, <code>shred()</code> and <code>burn()</code>. <code>WastePaper</code> and <code>Can</code> inherit all of these from their base class <code>Trash</code>. In addition, <code>WastePaper</code> has three more attributes, <code>condition</code>, <code>value_wet</code> and <code>value_dry</code>, and one more method, <code>value_refresh()</code>, while <code>Can</code> has one more method, <code>crush()</code>. The child classes call the constructor of the parent class with <code>super().__init__(...)</code>, so that the inherited attributes are initialised too.</p>
-<div id="e026ae36" class="cell" data-execution_count="20">
+<div id="22fdab85" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Trash:</span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, weight, value):</span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>        <span class="co">&quot;&quot;&quot;Initialise a Trash instance.&quot;&quot;&quot;</span></span>
@@ -3255,7 +3255,7 @@ City: Glasgow</code></pre>
 <span id="cb41-32"><a href="#cb41-32" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> crush(<span class="va">self</span>):</span>
 <span id="cb41-33"><a href="#cb41-33" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;In Can: Crush me, please!&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="e08b0207" class="cell" data-execution_count="21">
+<div id="a3d78b53" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># External code, outside the classes above</span></span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>my_trash <span class="op">=</span> Trash(<span class="fl">0.1</span>, <span class="dv">1</span>)</span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;-----------------------------------&quot;</span>)</span>
@@ -3292,7 +3292,7 @@ In Can: Crush me, please!</code></pre>
 <h2 data-number="6.1" class="anchored" data-anchor-id="overriding-methods-and-super"><span class="header-section-number">6.1</span> Overriding methods and <code>super()</code></h2>
 <p>One of the most important and exciting features of inheritance is that subclasses can <strong>override</strong> the methods defined by their superclass: if a subclass defines a method with the same name as a method of its parent, the subclass’s version is used for its objects. Inside the overriding method, <code>super().method_name()</code> can still call the parent’s version, so that the subclass <em>extends</em> rather than replaces the parent’s behaviour.</p>
 <p>In the following example, we use <code>print()</code> to track which method is called and where it is executed. The example has no use other than to help you understand inheritance and the mechanism of overriding. This time, <code>Trash</code> also defines <code>crush()</code>. <code>WastePaper</code> and <code>Can</code> override it, <code>GoldDummyCan</code> extends it with <code>super()</code>, and the plain <code>Trash</code> keeps the original version.</p>
-<div id="f2786b91" class="cell" data-execution_count="22">
+<div id="425f5df1" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Trash:</span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, weight, value):</span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>        <span class="co">&quot;&quot;&quot;Initialise a Trash instance.&quot;&quot;&quot;</span></span>
@@ -3342,7 +3342,7 @@ In Can: Crush me, please!</code></pre>
 <span id="cb44-47"><a href="#cb44-47" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().crush()                    <span class="co"># first do what the parent does ...</span></span>
 <span id="cb44-48"><a href="#cb44-48" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;In GoldDummyCan: Crush me, please!&quot;</span>)   <span class="co"># ... then something extra</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="2c9bdace" class="cell" data-execution_count="23">
+<div id="91df3541" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="co"># External code, outside the classes above</span></span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>my_trash <span class="op">=</span> Trash(<span class="fl">0.1</span>, <span class="dv">1</span>)</span>
 <span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>my_trash.crush()</span>
@@ -3383,7 +3383,7 @@ In GoldDummyCan: Crush me, please!</code></pre>
 </figure>
 </div>
 <p><strong>Another example: an electric car.</strong> We define a class <code>ElectricCar</code> derived from the latest version of <code>Car</code>. An electric car has a battery capacity and a charge level instead of a tank capacity and a tank level, so it needs charging rather than refuelling. A first attempt reveals a problem:</p>
-<div id="c63473eb" class="cell" data-execution_count="24">
+<div id="3de77bcf" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ElectricCar(Car):</span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Model an electric car.&quot;&quot;&quot;</span></span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, make, model):</span>
@@ -3412,7 +3412,7 @@ petrol</code></pre>
 </div>
 </div>
 <p>The electric car has inherited <code>fill_up()</code> and <code>fuel_type = &#39;petrol&#39;</code> from <code>Car</code>. We fix this by <strong>overriding</strong> both the class variable and the method in the child class:</p>
-<div id="ffcf3ebd" class="cell" data-execution_count="25">
+<div id="8605fc28" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> ElectricCar(Car):</span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">&quot;&quot;&quot;Model an electric car.&quot;&quot;&quot;</span></span>
 <span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>    fuel_type <span class="op">=</span> <span class="st">&#39;electricity&#39;</span>         <span class="co"># overrides Car.fuel_type</span></span>
@@ -3453,7 +3453,7 @@ electricity</code></pre>
 <p><strong>Polymorphism</strong> (from the Greek for “many shapes”) means that code can work with objects of different classes in a hierarchy — the parent class or any of its descendants — without knowing which class each object actually belongs to. The same method name may then behave differently depending on the class of the object.</p>
 <p>For example, the classes <code>Circle</code> and <code>Rectangle</code> may be derived from a common class <code>Shape</code>. Each type of shape implements its own <code>draw()</code> method, while the code that calls <code>draw()</code> can remain indifferent to the particular type of shape being drawn. This is another type of abstraction: it simplifies the code outside the class hierarchy and enables a strong separation of concerns.</p>
 <p><strong>Example 1: crushing trash.</strong> The function below calls <code>crush()</code> on whatever trash it receives. Each object automatically uses its own version of the method.</p>
-<div id="a329d1b3" class="cell" data-execution_count="26">
+<div id="f20a12ef" class="cell" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> crush_random_trash(random_trash):</span>
 <span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>    random_trash.crush()       <span class="co"># works for ANY kind of trash</span></span>
 <span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -3486,7 +3486,7 @@ In GoldDummyCan: Crush me, please!
 </div>
 </div>
 <p><strong>Example 2: a mixed garage.</strong> The loop below treats petrol and electric cars alike; each car responds to <code>fill_up()</code> in its own way.</p>
-<div id="27fb14be" class="cell" data-execution_count="27">
+<div id="94efd61c" class="cell" data-execution_count="27">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>garage <span class="op">=</span> [Car(<span class="st">&quot;Toyota&quot;</span>, <span class="st">&quot;Corolla&quot;</span>), ElectricCar(<span class="st">&quot;Nissan&quot;</span>, <span class="st">&quot;Leaf&quot;</span>)]</span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;-------------------------&quot;</span>)</span>
 <span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> car <span class="kw">in</span> garage:</span>
@@ -3520,7 +3520,7 @@ Nissan Leaf runs on electricity -&gt; No fuel tank!</code></pre>
 </figure>
 </div>
 <p><strong>Example.</strong> A <em>tigon</em> is the offspring of a male tiger and a female lion. We model it with a class <code>Tigon</code> derived from both <code>Tiger</code> and <code>Lion</code>.</p>
-<div id="c8490c2b" class="cell" data-execution_count="28">
+<div id="d55a0b46" class="cell" data-execution_count="28">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Tiger:</span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name):</span>
 <span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
@@ -3555,7 +3555,7 @@ Nissan Leaf runs on electricity -&gt; No fuel tank!</code></pre>
 <span id="cb56-32"><a href="#cb56-32" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> roar(<span class="va">self</span>):</span>
 <span id="cb56-33"><a href="#cb56-33" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;GRRR&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="7ef005b5" class="cell" data-execution_count="29">
+<div id="ce57bd49" class="cell" data-execution_count="29">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Tigon(Tiger, Lion):</span>
 <span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name):</span>
 <span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
@@ -3564,7 +3564,7 @@ Nissan Leaf runs on electricity -&gt; No fuel tank!</code></pre>
 <span id="cb57-6"><a href="#cb57-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> run(<span class="va">self</span>):</span>
 <span id="cb57-7"><a href="#cb57-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">&quot;I run more slowly than both a tiger and a lion.&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="61e5c7af" class="cell" data-execution_count="30">
+<div id="7bad0a36" class="cell" data-execution_count="30">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>mary <span class="op">=</span> Tiger(<span class="st">&quot;Mary&quot;</span>)</span>
 <span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>tom <span class="op">=</span> Lion(<span class="st">&quot;Tom&quot;</span>)</span>
 <span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>jerrom <span class="op">=</span> Tigon(<span class="st">&quot;Jerrom&quot;</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -3574,7 +3574,7 @@ A lion is born with the name Tom.
 My father is a tiger and my mother is a lion. My name is Jerrom.</code></pre>
 </div>
 </div>
-<div id="ea130a60" class="cell" data-execution_count="31">
+<div id="7d839d09" class="cell" data-execution_count="31">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>mary.meow()</span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>tom.roar()</span>
 <span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a></span>
