@@ -1,0 +1,314 @@
+---
+title: "Getting the Course Materials with Git"
+subtitle: "Learning Python at the University of Glasgow"
+author:
+  - name: Khiem Nguyen
+    affiliation: University of Glasgow
+date: last-modified
+date-format: long
+description: |
+  How to download the lecture notes and slides with git clone, keep them up to
+  date with git pull, and find your way around the course repository.
+keywords: [Git, GitHub, git clone, git pull, course materials]
+lang: en-GB
+format:
+  html: default
+  pdf: default
+metadata-files:
+  - _format.yml
+---
+
+```{=latex}
+% PDF only: the operating-system tabs become subsections in the PDF.
+% Keep them unnumbered and out of the table of contents.
+\setcounter{secnumdepth}{1}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
+```
+
+::: {.callout-note title="What you will do"}
+1. Install Git (once).
+2. Download the course repository with `git clone` (once).
+3. Update it with `git pull` (every week).
+
+This takes about 15 minutes. You do **not** need a GitHub account.
+:::
+
+# What are Git and GitHub? {.unnumbered}
+
+**Git** is a program that keeps track of the changes made to a folder of files. **GitHub** is a website that stores such folders online; each one is called a **repository**. All the materials for this course are in one public repository:
+
+<https://github.com/khiemnguyen0407/uog-python>
+
+The lecture notes and slides are updated during the course. Instead of downloading everything again each time, you use two Git commands: `git clone` downloads the whole repository once, and `git pull` then brings in only what has changed since.
+
+![`git clone` makes a complete copy of the repository on your computer, once. Afterwards, `git pull` downloads only the changes.](figures/git-clone-pull){fig-alt="The GitHub repository on the left and your computer on the right. A blue arrow labelled git clone, once, downloads everything. A green arrow labelled git pull, every week, downloads only the changes." width=90%}
+
+# Open a terminal
+
+A **terminal** is a window in which you type commands and press **Enter** to run them. Choose your operating system:
+
+::: {.panel-tabset group="os"}
+
+## Windows
+
+Press the **Windows** key, type `PowerShell`, and open **Windows PowerShell**.
+
+After installing Git, you can also use **Git Bash**, which comes with it. All the Git commands in this guide are the same in both.
+
+## macOS
+
+Press **Cmd + Space**, type `Terminal`, and press **Enter**.
+
+## Linux
+
+Press **Ctrl + Alt + T** on most distributions, or search for **Terminal** in your applications.
+
+:::
+
+::: {.callout-tip title="Copy and paste commands"}
+Every command in this guide has a copy button when you hover over it. Paste into the terminal with **Ctrl + V** (Windows), **Cmd + V** (macOS) or **Ctrl + Shift + V** (Linux), then press **Enter**.
+:::
+
+# Install Git
+
+First, check whether Git is already installed:
+
+```bash
+git --version
+```
+
+If the terminal answers with something like `git version 2.43.0` (your number may differ), Git is installed: skip to the next section. If it says that `git` is *not recognized* or *command not found*, install it:
+
+::: {.panel-tabset group="os"}
+
+## Windows
+
+**Option A (recommended).** Go to <https://git-scm.com/downloads>, choose **Windows**, download the installer and run it. **Accept all the default options** by clicking **Next** until it finishes.
+
+**Option B.** Install it from PowerShell with the Windows package manager:
+
+```bash
+winget install --id Git.Git -e --source winget
+```
+
+Then **close PowerShell, open it again**, and run `git --version` to check.
+
+## macOS
+
+Run `git --version` in Terminal. If Git is missing, macOS offers to install the **command line developer tools**: click **Install** and wait until it finishes, then run `git --version` again.
+
+If no window appears, start the installation yourself:
+
+```bash
+xcode-select --install
+```
+
+If you already use Homebrew, `brew install git` works too.
+
+## Linux
+
+On Ubuntu or Debian:
+
+```bash
+sudo apt install git
+```
+
+On Fedora:
+
+```bash
+sudo dnf install git
+```
+
+Type your password when asked. Nothing appears on the screen while you type it; this is normal.
+
+:::
+
+# Choose a folder for the course
+
+Choose where you want to keep the course materials. These three commands create a folder called `Courses` in your home folder and move into it. They work on Windows (PowerShell or Git Bash), macOS and Linux:
+
+```bash
+cd ~
+mkdir Courses
+cd Courses
+```
+
+- `cd` (*change directory*) moves the terminal into a folder; `~` is your home folder.
+- `mkdir` (*make directory*) creates a new folder. If `Courses` already exists, you will see an error message; just ignore it and run the third command.
+
+The folder is then at:
+
+::: {.panel-tabset group="os"}
+
+## Windows
+
+`C:\Users\YourName\Courses`
+
+## macOS
+
+`/Users/yourname/Courses`
+
+## Linux
+
+`/home/yourname/Courses`
+
+:::
+
+::: {.callout-tip title="Using a different folder"}
+To use another folder, type `cd` followed by a space, then **drag the folder from File Explorer or Finder into the terminal window**: its full path appears. Press **Enter**. If you type a path yourself and it contains spaces, put it in quotation marks, e.g. `cd "C:\Users\Ana\My Courses"`.
+:::
+
+::: {.callout-warning title="Avoid OneDrive, iCloud and Dropbox folders"}
+Do not put the repository inside a folder that is synchronised to the cloud. On many Windows computers, *Documents* is such a folder (it is stored in OneDrive). Synchronisation can interfere with Git and damage the copy. The `Courses` folder created above is not synchronised.
+:::
+
+# Download the repository: `git clone`
+
+Make sure you are in your `Courses` folder (previous section), then run:
+
+```bash
+git clone https://github.com/khiemnguyen0407/uog-python.git
+```
+
+Git downloads about 50 MB; on slow Wi-Fi this can take a few minutes. When it has finished, a new folder `uog-python` appears inside `Courses`. Move into it and list its contents:
+
+```bash
+cd uog-python
+ls
+```
+
+You should see `advanced_learning`, `lecture_notes`, `projects`, `slides` and `README.md`, among others. (`ls` works in PowerShell, Git Bash, macOS and Linux.)
+
+![A complete session in the terminal (here on macOS or Linux; on Windows it looks the same). The lines starting with `$` are the commands you type; the grey lines are Git's answers. Your numbers will differ slightly.](figures/git-terminal){fig-alt="A terminal window showing git --version, cd ~/Courses, git clone with the address of the repository and the download progress, then cd uog-python and git pull answering Already up to date." width=95%}
+
+To see the folder in your usual file browser, run `explorer .` (Windows), `open .` (macOS) or `xdg-open .` (Linux). The dot means "the current folder".
+
+# Find the lecture notes and slides
+
+You only need two folders: `lecture_notes` and `slides`.
+
+![The parts of the repository that you need. Everything marked *ignore* is used by your lecturer to build the notes and slides.](figures/repo-map){fig-alt="A folder tree of uog-python. lecture_notes/html is marked start here, lecture_notes/pdf is marked PDF, slides/python_*.html is marked slides, and the slides' python_*_files folders are marked keep. Source folders are marked ignore." width=95%}
+
+**Lecture notes.** Open the files in `lecture_notes/html/` by double-clicking them: they open in your web browser and work offline, with all the diagrams built in. This is the best way to read the notes. The same notes are in `lecture_notes/pdf/`, for printing or reading on a tablet.
+
+| Lecture | Topic                          | File name (in `html/` and `pdf/`)    |
+|---------|--------------------------------|--------------------------------------|
+| 1       | Variables and operators        | `01_variables_and_operators`         |
+| 2       | Control flow                   | `02_control_flows`                   |
+| 3       | Built-in data structures       | `03_builtin_data_structures`         |
+| 4       | Functions                      | `04_functions`                       |
+| 5       | Object-oriented programming    | `05_object_oriented_programming`     |
+| 6       | Numerical computing with NumPy | `06_numpy`                           |
+| 7       | Plotting with Matplotlib       | `07_matplotlib`                      |
+
+**Slides.** The slides are the HTML files in the `slides` folder whose names start with `python_`, for example `python_functions.html`. Open them in your web browser. PDF versions are in `slides/pdf/`.
+
+::: {.callout-warning title="Slides need their companion folders"}
+Each slide file needs the folder with the same name plus `_files` next to it: for example, `python_functions.html` needs `python_functions_files/`. Open the slides where they are. If you copy a slide file somewhere else, copy its `_files` folder with it.
+:::
+
+The folder `lecture_notes/ipynb/` contains the same notes as Jupyter notebooks, in case you want to run the code yourself.
+
+# Keep your copy up to date: `git pull`
+
+Once a week — for example, before each lecture — move into the repository and pull the latest changes:
+
+```bash
+cd ~/Courses/uog-python
+git pull
+```
+
+If nothing has changed, Git answers:
+
+```text
+Already up to date.
+```
+
+If there are updates, Git lists the files that changed. The `+` and `-` signs show how many lines were added and removed:
+
+```text
+Updating a3f60ce..56a0271
+Fast-forward
+ lecture_notes/ipynb/02_control_flows.ipynb         | 38 ++++++++-------------
+ lecture_notes/ipynb/04_functions.ipynb             | 37 +++++++-------------
+ ...
+ 8 files changed, 80 insertions(+), 178 deletions(-)
+```
+
+If a file was open in your browser, reload it to see the new version.
+
+::: {.callout-important title="The golden rule: do not edit files inside `uog-python`"}
+`git pull` refuses to update a file that you have changed yourself. If you want to annotate the notes or experiment with the code, **copy the file to another folder first**, for example `Courses/my_notes/`, and edit the copy. Your copies are never touched by Git.
+:::
+
+# Troubleshooting {.unnumbered}
+
+Find the message you see, word for word, in the grey boxes below.
+
+**Git is not installed, or not found.**
+
+```text
+'git' is not recognized as an internal or external command
+command not found: git
+```
+
+Git is not installed, or the terminal was opened before the installation finished. Close the terminal, open a new one, and try again. If that does not help, go back to the installation section and install Git again, keeping the default options.
+
+**The folder already exists.**
+
+```text
+fatal: destination path 'uog-python' already exists and is not an empty directory.
+```
+
+You have already cloned the repository; you only need to update it. Run `cd uog-python` and then `git pull`.
+
+**You are in the wrong folder.**
+
+```text
+fatal: not a git repository (or any of the parent directories): .git
+```
+
+You ran `git pull` outside the repository. Move into it first with `cd ~/Courses/uog-python`, then run `git pull` again.
+
+**You edited a file inside the repository.**
+
+```text
+error: Your local changes to the following files would be overwritten by merge:
+        lecture_notes/ipynb/07_matplotlib.ipynb
+Please commit your changes or stash them before you merge.
+Aborting
+```
+
+You changed a file inside `uog-python` that has also been updated online; Git names the file in the message. If you want to keep your edits, copy that file to another folder first. Then discard your changes inside the repository and pull again:
+
+```bash
+git restore .
+git pull
+```
+
+Careful: `git restore .` throws away *all* the changes you made inside `uog-python`. This is why you should follow the golden rule above.
+
+**Git asks you to log in.**
+
+```text
+Username for 'https://github.com':
+```
+
+Or a GitHub sign-in window opens. The address is mistyped: GitHub asks you to log in when a repository does not exist, rather than saying "not found". Cancel (close the window, or press **Ctrl + C** in the terminal), then copy the `git clone` command from this guide again.
+
+**Anything else.** Copy the *complete* error message and ask your lecturer, a demonstrator, or an AI assistant. Always include the message and your operating system.
+
+# Plan B: download a ZIP file {.unnumbered}
+
+If you cannot get Git to work, open <https://github.com/khiemnguyen0407/uog-python>, click the green **Code** button, choose **Download ZIP**, and unzip the file. This gives you the same materials, but `git pull` will not work: to update, you must download the ZIP file again.
+
+# Quick reference {.unnumbered}
+
+| Task                                     | Command                                                             | How often      |
+|------------------------------------------|---------------------------------------------------------------------|----------------|
+| Check that Git is installed              | `git --version`                                                     | once           |
+| Go to your course folder                 | `cd ~/Courses`                                                      | once           |
+| Download the repository                  | `git clone https://github.com/khiemnguyen0407/uog-python.git`      | once           |
+| Go into the repository                   | `cd ~/Courses/uog-python`                                           | every time     |
+| Download the latest updates              | `git pull`                                                          | every week     |
+| Discard your own edits in the repository | `git restore .`                                                     | only if needed |
